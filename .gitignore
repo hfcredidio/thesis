@@ -11,3 +11,4 @@ main.dvi
 *.out.ps
 main.pdf
 *.toc
+*.swp
