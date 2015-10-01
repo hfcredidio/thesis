@@ -1,7 +1,7 @@
 default: main
 
 main: main.tex 
-	latexmk
+	latexmk main
 	dvipdf main.dvi
 	evince main.pdf &
 
