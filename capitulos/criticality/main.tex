@@ -1,2 +1,60 @@
 \chapter{Phase Transitions and Critical Systems Redux}
 \label{ch:criticality}
+
+
+We live in a world where particle physics can reach the headlines. This
+complicated kind of science can sound esoteric to people. It may come as a
+surprise that some of the most puzzling physics problems fit in a checkerboard.
+
+Let's make a bet. I'll take a checkerboard and throw a coin. If the coin falls
+on heads I'll put a checkers piece in the first tile of the board, if it falls
+on tails I'll leave it empty. The process is repeated for every tile of board
+successively until we end up with something the like board shown in Fig.~??.
+Naturally the pieces are randomly distributed along the board, but due to
+random chance some of them form dense clusters of neighboring pieces. We
+consider two pieces as neighbors if are in adjacent tiles along the vertical or
+horizontal directions, but not in the diagonal. Here are the rules of the bet.
+If by the end of the coin-throwing process you can trace a path from the bottom
+of the board all the way through the top passing only through neighboring
+pieces you get, say, double your money. If there's no such path you lose all
+you've bet. There's a twist though, we'll be playing in a gigantic 1,000,000 by
+1,000,000 tiles checkerboard, instead of the more traditional 8 by 8. How much
+money would you be willing to bet in this game?
+
+To answer this question let's take a step back and imagine we're playing the
+game on a board with only a single tile. In this case our probability of
+winning is 50\%, because we throw the coin only once, and filling the single
+tile will connect both sides of the board.
+
+On a 2 by 2 board there are 16 possible ways in which we can lay down the
+pieces. Of these, only 7 result in a configuration in which you win the bet.
+This can be seen in Fig.~??. The probability of winning is therefore 7/16 or
+approximately 44\%. Following the same line of thought, the probability of
+winning on a 3 by 3 board is around 38\%, and 33\% for a 4 by 4. For larger
+sizes this analysis gets unwieldy due to the number of possible configurations
+of an L by L board being $2^{L^2}$, which means a standard 8 by 8 board have
+more configurations than there are stars in the Milky Way by several orders of
+magnitude. We can compute the probability of winning approximately by
+simulating a game many times and simply counting the fraction of times the game
+resulted in victory. The result is shown in Fig.??. As you can see, the
+probability of winning falls steadily as the size of the board grows. But will
+this behavior continue until the probability approaches zero or will the curve
+flatten and eventually settle for a probability larger that zero? Running the
+same simulation for a 1,000 by 1,000 board (which has a number of
+configurations that completely dwarfs the number of particles in the know
+universe by several thousand orders of magnitude) for 10,000 times yielded not
+a single victory. Thus, It is not far fetched to imagine the curve int Fig.??
+will indeed approach zero.
+%bad sentence ahead
+This happens because all configurations are equally probable, because every
+coin toss is independent and perfectly fair. When we grow the size of the
+board, the number of winning configurations diminishes as a fraction of all
+possible configurations, this rendering the probability of winning.
+
+Going back to our bet, how much would you be willing to bet on a 1,000,000 by
+1,000,000 board? The only reasonable answer is none. Simply playing the game 
+is an assured way of losing all of your money.
+
+So if you have access to such a biased coin and possess the appropriate moral
+inclination to use it, the only logical action would be to bet all of your
+money in the game, as victory is a statistical certainty.
