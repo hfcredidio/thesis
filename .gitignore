@@ -12,3 +12,4 @@ main.dvi
 main.pdf
 *.toc
 *.swp
+.ipynb_checkpoints

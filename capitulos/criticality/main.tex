@@ -22,7 +22,7 @@ you've bet. There's a twist though, we'll be playing in a gigantic 1,000,000 by
 money would you be willing to bet in this game?
 
 To answer this question let's take a step back and imagine we're playing the
-game on a board with only a single tile. In this case our probability of
+game on a board with only a single tile. In this case your probability of
 winning is 50\%, because we throw the coin only once, and filling the single
 tile will connect both sides of the board.
 
@@ -30,7 +30,7 @@ On a 2 by 2 board there are 16 possible ways in which we can lay down the
 pieces. Of these, only 7 result in a configuration in which you win the bet.
 This can be seen in Fig.~??. The probability of winning is therefore 7/16 or
 approximately 44\%. Following the same line of thought, the probability of
-winning on a 3 by 3 board is around 38\%, and 33\% for a 4 by 4. For larger
+winning on a 3 by 3 board is around 38\%, and 34\% for a 4 by 4. For larger
 sizes this analysis gets unwieldy due to the number of possible configurations
 of an L by L board being $2^{L^2}$, which means a standard 8 by 8 board have
 more configurations than there are stars in the Milky Way by several orders of
@@ -38,14 +38,14 @@ magnitude. We can compute the probability of winning approximately by
 simulating a game many times and simply counting the fraction of times the game
 resulted in victory. The result is shown in Fig.??. As you can see, the
 probability of winning falls steadily as the size of the board grows. But will
-this behavior continue until the probability approaches zero or will the curve
+this behavior continue until the probability reaches zero or will the curve
 flatten and eventually settle for a probability larger that zero? Running the
 same simulation for a 1,000 by 1,000 board (which has a number of
 configurations that completely dwarfs the number of particles in the know
 universe by several thousand orders of magnitude) for 10,000 times yielded not
 a single victory. Thus, It is not far fetched to imagine the curve int Fig.??
 will indeed approach zero.
-%bad sentence ahead
+% TODO: Rewrite folowing sentence, it's shitty the way it is.
 This happens because all configurations are equally probable, because every
 coin toss is independent and perfectly fair. When we grow the size of the
 board, the number of winning configurations diminishes as a fraction of all
@@ -55,6 +55,24 @@ Going back to our bet, how much would you be willing to bet on a 1,000,000 by
 1,000,000 board? The only reasonable answer is none. Simply playing the game 
 is an assured way of losing all of your money.
 
+% TODO: Explain biased coin
+
 So if you have access to such a biased coin and possess the appropriate moral
 inclination to use it, the only logical action would be to bet all of your
-money in the game, as victory is a statistical certainty.
+money in the game, as victory is a statistical certainty. 
+
+I propose now another another game, more like a riddle really. I show you
+various coins, each coin has distinct number between 0.5 and 0.7 written that
+indicates the bias of the coin. There are coins that yield heads 53\% of the
+time, other with 68.97\% and so on. You should chose a coin and we'll play the
+game as described before. If you lose the game you lose the money as usual, but
+if you win the game you will get your money divided by the bias of the coin you
+chose. The smaller the value of the coin, the larger will be your prize. We
+know that choosing a coin with $p=0.5$ is silly because you will never win
+the game with it. Choosing the coin with $p=0.7$ yields a certain victory but
+with the smallest prize. What coin should you chose to certainly win, but
+that yields you the best prize, that is, what is the smallest bias that a
+coin must have to guarantee that you will win the game?
+
+The answer is $p=0.5962...$. This number marks a transition between two states
+of the game.
