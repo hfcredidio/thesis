@@ -1,15 +1,41 @@
 \chapter{Conformal Invariance and Critical Phenomena}
 \label{ch:conf}
 
+\begin{eqnarray*}
+    \phi\left(z'\right) & = & \phi\left(z\right)+
+                              \epsilon\left(z\right)\partial\phi\left(z\right)\\
+                        & = & \phi\left(z\right)+
+                              \sum_{n=-\infty}^{\infty}\epsilon_{n}z^{n+1}
+                              \partial_{z}\phi\left(z\right)\\
+                        & = & \phi\left(z\right)-
+                              \sum_{n=-\infty}^{\infty}\epsilon_{n}\ell_{n}
+                              \phi\left(z\right)
+\end{eqnarray*}
+Where we define the generator of holomorphic functions
 \begin{align*}
-    \ell_{n}=z^{n+1}\partial_{z} \\
-    \bar{\ell}_{n}=\bar{z}^{n+1}\partial_{\bar{z}}
+    \ell_{n}=-z^{n+1}\partial_{z} \\
+    \bar{\ell}_{n}=-\bar{z}^{n+1}\partial_{\bar{z}}
 \end{align*}
-
-
-One can easily observe that
+These operators form an infinite dimensional algebra called \textit{loop
+algebra}, where one can easily demonstrate the commutation relations
 \begin{align}
-    \left[\ell_{n},\ell_{m}\right]&=(n-m)\ell_{n+m}\\
-    \left[\bar{\ell}_{n},\bar{\ell}_{m}\right]&=(n-m)\bar{\ell}_{n+m}\\
+    \left[\ell_{n},\ell_{m}\right]&=(m-n)\ell_{n+m}\\
+    \left[\bar{\ell}_{n},\bar{\ell}_{m}\right]&=(m-n)\bar{\ell}_{n+m}\\
     \left[\ell_{n},\bar{\ell}_{m}\right]&=0
 \end{align}
+
+There is a closed subalgebra for $n\in\{-1, 0, 1\}$. This can be easily checked
+by noticing that $[\ell_0,\ell_{\pm 1}] = \pm\ell_{\pm 1}$ and $[\ell_1,
+\ell_{-1}] = -2\ell_0$. This subalgebra is the generator of \textit{projective
+conformal transformations}. One can prove that in $d\ge3$ this subalgebra
+is the whole group of conformal transformations.
+
+We now consider fields that transform covariantly according to projective
+conformal transformations, that is
+
+\begin{equation}
+    \phi\left(f\left(z\right),\bar{f}\left(\bar{z}\right)\right)=
+    (\partial_{z}f)^{h}(\partial_{\bar{z}}\bar{f})^{\bar{h}}\phi\left(z,\bar{z}\right)
+\end{equation}
+
+Fields that obey this relation are called \textit{quasi-primary fields}.
