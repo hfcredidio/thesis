@@ -1,6 +1,6 @@
 default: main
 
-main: main.tex 
+main: main.tex capitulos/*/main.tex
 	latexmk main
 	dvipdf main.dvi
 	evince main.pdf &
