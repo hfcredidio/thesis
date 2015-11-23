@@ -1,6 +1,14 @@
 \chapter{Conformal Invariance and Critical Phenomena}
 \label{ch:conf}
 
+\newcommand{\G}{
+    \left\langle
+        \phi_{1}\left(z_{1},\bar{z}_{1}\right)
+        \phi_{2}\left(z_{2},\bar{z}_{2}\right)\ldots
+    \right\rangle
+}
+
+
 \begin{eqnarray*}
     \phi\left(z'\right) & = & \phi\left(z\right)+
                               \epsilon\left(z\right)\partial\phi\left(z\right)\\
@@ -37,5 +45,66 @@ conformal transformations, that is
     \phi\left(f\left(z\right),\bar{f}\left(\bar{z}\right)\right)=
     (\partial_{z}f)^{h}(\partial_{\bar{z}}\bar{f})^{\bar{h}}\phi\left(z,\bar{z}\right)
 \end{equation}
-
 Fields that obey this relation are called \textit{quasi-primary fields}.
+The exponents $h$ and $\bar{h}$ are called \textit{conformal weights}.
+The correlation functions therefore obey the relation
+\begin{equation}
+    \left\langle
+        \phi_{1}\left(z_{1},\bar{z}_{1}\right)
+        \phi_{2}\left(z_{2},\bar{z}_{2}\right)\ldots
+    \right\rangle =
+    \left(
+        \prod_{i}\left( \partial_{z_{i}}f_{i}\right)^{h_{i}}
+        \left(\bar{\partial}_{\bar{z}_{i}}\bar{f}_{i}\right)^{\bar{h}_{i}}
+    \right)
+    \left\langle
+        \phi'_{1}\left(f_{1},\bar{f}_{1}\right)
+        \phi'_{2}\left(f_{2},\bar{f}_{2}\right)\ldots
+    \right\rangle 
+\end{equation}
+In the case of a change of scale $f(z)=z/b$ and $\bar{f}(\bar{z})=\bar{z}/b$
+with $b$ real we have
+\begin{equation}
+    \phi'_{j}\left(f,\bar{f}\right)=
+    b^{h_{j}+\bar{h}_{j}}\phi\left(z,\bar{z}\right)
+\end{equation}
+In the case of a rotation $f(z)=e^{i\theta z}$ and
+$\bar{f}(\bar{z})=e^{-i\theta \bar{z}}$, which leads to
+\begin{equation}
+    \phi'_{j}\left(f,\bar{f}\right)=
+    e^{-i\left(h_{j}-\bar{h}_{j}\right)\theta}\phi\left(z,\bar{z}\right).
+\end{equation}
+These relations allow us to identify the conformal weights with the
+scaling dimensions of the field $x_i=h_i+\bar{h}_i$ and
+their spin $s_i=h_i-\bar{h}_i$.
+
+Suppose now we apply an infinitesimal conformal map $z=z+\epsilon(z)$
+and $\bar{z}=\bar{z}+\epsilon(\bar{z})$.
+We then have
+\begin{equation}
+    \delta_{\epsilon\bar{\epsilon}}\left(\phi\right)=
+    \left(
+        \epsilon\partial+\bar{\epsilon}\bar{\partial}+
+        h\partial\epsilon+\bar{h}\bar{\partial}\bar{\epsilon}
+    \right)\phi
+\end{equation}
+We take the condition of conformal invariance that
+the n-point correlation function is invariant to conformal
+transformations, that is
+\begin{multline}
+    \delta_{\epsilon\bar{\epsilon}} \G = 0 \\
+    = \sum_{i}\left(
+        \epsilon_{i}\partial_{i}+
+        \bar{\epsilon}_{i}\bar{\partial}_{i}+
+        h_{i}\partial_{i}\epsilon_{i}+
+        \bar{h}_{i}\bar{\partial}_{i}\bar{\epsilon}_{i}
+    \right) \G
+\end{multline}
+
+Taking only the elements -1, 0 and 1
+\begin{eqnarray}
+    \sum_{i}\partial_{i} \G& = & 0 \\
+    \sum_{i}\left(z_{i}\partial_{i}+h_{i}\right) \G& = & 0 \\
+    \sum_{i}\left(z_{i}^{2}\partial_{i}+2h_{i}z_{i}\right) \G& = & 0
+\end{eqnarray}
+which are called \textit{projective Ward identities}.
