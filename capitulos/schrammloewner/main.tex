@@ -4,4 +4,41 @@
 \section{Numerical Methods}
 \label{sec:numsle}
 
-Simulating Schramm-Loewner Evolutions is cool, I guess.
+Analyzing numerically SLEs to solving Lowener's equation
+
+\begin{equation}
+    \partial_t g_t = \frac{2}{g_t - U_t}
+\end{equation}
+
+The main objective is to find the trace $\gamma_t = g_t^{-1}(U_t)$. The most
+straightforward way to do this is to use a simple Euler Scheme. In first order
+it consists in iterating the following formula
+\begin{equation}
+    g_{t+\Delta t} = g_t + \Delta t \frac{2}{g_t - U_t}
+\end{equation}
+
+As shown in Eq. XX, as time passes, the imaginary part of the function $g_t(z)$
+approaches zeros, that is, it approaches the real line. Therefore we can color
+the sign of the real part of the map, getting an image like the one show in
+Fig. XX. The border between the regions is the resulting SLE trace of the
+process. We observe the line presents the properties. The smooth tail observed
+happens because there was not enough time to the points in the vicinity to be
+mapped to the real line.
+
+This methods have the advantages of being very simple to program and fairly
+quick to run. However this method behaves badly enough that for large $\kappa$ 
+one cannot obtain a discernible trace. Even a bad one.
+
+Another, much better method is the zipper algorithm. The main idea behind it is
+breaking the SLE process into shorter processes during which the driving function
+takes a smooth form. 
+
+We start by taking a set of $N$ discretized timesteps $0=t_0 < t_1 < t_2 <
+\ldots < t_N$ where the driving function takes the value of $U_{t_i}$.
+
+The discretizing function can be chosen at will, but it's desirable that
+it have an analytical solution. Two common choices are the vertical slit and
+the tilted slit. The first one considers that for $t\in[t_i, t_{i+1}]$ the
+driving function take the (in other words, it is a zero order interpolation).
+The vertical slit makes it have the form
+
