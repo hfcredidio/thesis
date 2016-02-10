@@ -6,7 +6,7 @@ endif
 
 default: main
 
-main: main.tex capitulos/*/main.tex
+main: main.tex chapters/*/main.tex
 	latexmk main
 	dvipdf main.dvi
 	$(PDF) main.pdf &

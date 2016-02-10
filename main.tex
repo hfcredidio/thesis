@@ -1,7 +1,7 @@
 \documentclass[
 	12pt,			% tamanho da fonte
-	openright,		% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,		% para impressão em verso e anverso. Oposto a oneside
+	openright,		% capitulos começam em pag impar (insere pagina vazia caso preciso)
+	twoside,		% para impressao em verso e anverso. Oposto a oneside
 	a4paper,		% tamanho do papel. 
 	brazil,			% idioma adicional para hifenização
 	english,		% o último idioma é o principal do documento
@@ -13,8 +13,8 @@
 \usepackage{amssymb}
 \usepackage{lmodern}		% Usa a fonte Latin Modern			
 \usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
-\usepackage{lastpage}		% Usado pela Ficha catalográfica
+\usepackage[utf8]{inputenc}	% Codificacao do documento
+\usepackage{lastpage}		% Usado pela Ficha catalografica
 \usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}			% Controle das cores
 \usepackage{graphicx}		% Inclusão de gráficos
@@ -43,20 +43,20 @@
     \imprimircapa{}
     \imprimirfolhaderosto{}
 
-    \input{folha-de-aprovacao}
-    \input{resumos}
+    \input{approval}
+    \input{abstract}
 
     \pdfbookmark[0]{\contentsname}{toc}
     \tableofcontents*
     \cleardoublepage{}
     \textual{}
 
-    \input{capitulos/introduction/main.tex}
-    \input{capitulos/criticality/main.tex}
-    \input{capitulos/conformal/main.tex}
-    \input{capitulos/schrammloewner/main.tex}
-    \input{capitulos/anisotropic/main.tex}
-    \input{capitulos/results/main.tex}
+    \input{chapters/ch1-intr/main.tex}
+    \input{chapters/ch2-crit/main.tex}
+    \input{chapters/ch3-conf/main.tex}
+    \input{chapters/ch4-sle/main.tex}
+    \input{chapters/ch5-anis/main.tex}
+    \input{chapters/ch6-asle/main.tex}
 
     %\bibliography{main}
 

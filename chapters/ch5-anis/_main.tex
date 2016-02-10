@@ -1,0 +1,62 @@
+\chapter{Strongly Anisotropic Systems}
+\label{ch:anis}
+
+So far we introduced the important notion of scale invariance and how it can be
+used to better understand critical systems. This kind of symmetry emerges in
+static (as in no temporal dependences in the thermodynamical quantities) and
+isotropic.
+
+Compared to isotropic scaling.
+
+\begin{equation}
+    C(a\vec{r}, a^\theta t) = a^{2x} C(\vec{r}, t)
+\end{equation}
+where $t$ can stand for any preferential direction of the
+system, not necessarily time. If $\theta \neq 1$.
+
+As conformal invariance is a generalization of scale invariance it that
+it supposes that systems are scale invariant only locally, a subset
+of strongly anisotropic systems have been show to have a similar properties.
+These systems are calle Schrodinger invariant systems, and are characterized by
+having dynamic exponent $\theta = 2$. Some models have been shown to obbey
+this paradigm, but most of them do not display phase transitions in 2D.
+
+
+\section{Directed Percolation}
+\label{sec:dp}
+
+Directed percolation is one of the many variants of the percolation model
+described earlier. In general, percolation can be seen as a spreading process,
+in which each site is blocked with probability $p$. Bellow the percolation
+threshold the systems is macroscopically permeable, that is, any flow of
+fluid can run from one side of the lattice to another. 
+
+In the context of strong anisotropy the most important universality class is
+that of \textit{Directed Percolation}, in which water can only flow along a
+preferred direction.
+
+The most important class of absorbing phase transition. By that we mean phase
+transitions that are allowed to enter states that they cannot leave. These
+states are called absorbing states. 
+
+Directed percolation is best described as a spreading process. In it, a lattice
+row starts with a given initial condition of occupied and unoccupied sites. At
+the next time step, each occupied site can spread with probability $p$ to any
+of it's neighbors \textit{along a predetermined direction}. One can easily
+observe that at any given time the system can enter a completely unoccupied
+state, from which it cannot leave.
+
+
+\section{Multi-Layered Percolation}
+\label{sec:mlp}
+
+Another variation of the percolation model that displays strong anisotropy
+is the \textit{multi-layered percolation}, introduced by Dayan et Al. [..].
+In it, the ...
+
+This model preserves a lot of important properties of isotropic percolation,
+most notably the locality property. This property is easily observed by the
+fact that the border line of the percolating cluster depends only on the
+sites that immediately neighbors the border itself. Because of this, the
+same algorithm described in Section [..] can be used to simulate multi-layered
+percolation with minimal changes to account for the layered structure.
