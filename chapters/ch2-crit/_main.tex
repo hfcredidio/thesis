@@ -16,10 +16,12 @@ consider two pieces as neighbors if are in adjacent tiles along the vertical or
 horizontal directions, but not in the diagonal. Here are the rules of the bet.
 If by the end of the coin-throwing process you can trace a path from the bottom
 of the board all the way through the top passing only through neighboring
-pieces you get, say, double your money. If there's no such path you lose all
-you've bet. There's a twist though, we'll be playing in a gigantic 1,000,000 by
-1,000,000 tiles checkerboard, instead of the more traditional 8 by 8. How much
-money would you be willing to bet in this game?
+pieces you get, say, double your money. In other words, you win if it exists a
+continuous cluster that connect the bottom and the top row of the board. If
+there's no such cluster you lose all you've bet. There's a twist though, we'll
+be playing in a gigantic $1,000,000$ by $1,000,000$ tiles checkerboard, instead of
+the more traditional 8 by 8. How much money would you be willing to bet in this
+game?
 
 To answer this question let's take a step back and imagine we're playing the
 game on a board with only a single tile. In this case your probability of

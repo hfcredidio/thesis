@@ -1,9 +1,19 @@
 \chapter{Introduction}
 \label{ch1-intr}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Let's make a bet. I'll take a checkerboard and throw a coin. If the coin falls
+on heads I'll put a checkers piece in the first tile of the board, if it falls
+on tails I'll leave it empty. The process is repeated for every tile of the
+board successively until we end up with something the like board shown in
+Fig.~??. Naturally the pieces are randomly distributed along the board, but due
+to random chance some of them form dense clusters of neighboring pieces. We
+consider two pieces as neighbors if are in adjacent tiles along the vertical or
+horizontal directions, but not in the diagonal. Here are the rules of the bet.
+If by the end of the coin-throwing process you can trace a path from the bottom
+of the board all the way through the top passing only through neighboring
+pieces you get, say, double your money. In other words, you win if it exists a
+continuous cluster that connect the bottom and the top row of the board. If
+there's no such cluster you lose all you've bet. There's a twist though, we'll
+be playing in a gigantic $1,000,000$ by $1,000,000$ tiles checkerboard, instead
+of the more traditional 8 by 8. How much money would you be willing to bet in
+this game?
