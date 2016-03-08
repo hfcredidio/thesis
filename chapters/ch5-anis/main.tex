@@ -2,28 +2,49 @@
 \label{ch5-anis}
 
 By now it should be clear that the notion of scale invariance is a central
-tenet of the modern narrative of critical phenomena. This principle show
-its true power in the context of conformal invariance, that rely in the
-assumption that a scale free system should be invariant under 
+tenet of the modern narrative of critical phenomena. This principle show its
+true power in the context of conformal invariance. Several critical systems
+however are explicitly not scale invariant in its strictest sense. These are
+systems out of equilibrium and Theses systems are called strongly anisotropic
+systems.
 
-Several critical systems however are explicitly not scale invariant in its
-strictest sense. These are systems out of equilibrium and 
-Theses systems are called strongly anisotropic systems.
+Strongly anisotropic systems are characterized by an \textit{anisotropy
+exponent} $\theta$ defined by the relation
+\begin{equation}
+    C(x, y) = b^{-2x}C(bx, b^\theta y).
+\end{equation}
+In the case $\theta=1$, isotropy is recovered.
+
+It has been determined that if $\theta = 2/N$, where $N$ is a positive integer,
+the systems if invariant under local scale invariance [???], which is the same
+principle that motivated the introduction of conformal invariance (which is in
+fact the case $N=2$). This observation have been used to successfully study
+some anisotropic systems, like the Liftshitz point in the ANNNI [???] and
+spherical models [???].
 
 
 \section{Directed Percolation}
 \label{sec:dp}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+The percolation model, as described in Section XX, is arguably one of the most
+important models for second-order phase transitions, second only to the regal
+Ising model. Not surprisingly, several variations of this model have been
+proposed in order to explore other other facets of phase transition, like CSA
+[???], explosive percolation [???] and invasive percolation [???].
+
+Here we shall describe a variation of the percolation model that is of
+particular interest to the study of strongly anisotropic systems. One variant
+that is particularly important to the study of anisotropic phase transition is
+called \textit{Directed percolation}. It can be seen as a spreading process,
+where the flow 
 
 Most recently, experiments and simulations on fluid dynamics indicate
 that the transition from laminar to turbulent flow belongs to the
 universality class of directed percolation [???].
+
+Owczarek et al.\ found that the hull of a directed percolation cluster
+scale as
+
 
 \begin{figure}
 \begin{center}
@@ -53,10 +74,10 @@ universality class of directed percolation [???].
 \begin{center}
     \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
 \end{center}
-\caption{Expected population of directed percolation as a function of time for
-    various values of $p$. The critical point ($p_c\approx0.6447$) is the
+\caption{Expected population of bond directed percolation as a function of time
+    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
     lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
-        N(t)\right\rangle>0$.}
+    N(t)\right\rangle>0$.}
 \label{fig:dperco_nt}
 \end{figure}
 
