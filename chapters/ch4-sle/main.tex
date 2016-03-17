@@ -19,7 +19,10 @@ culpa qui officia deserunt mollit anim id est laborum.
 \section{Stochastic Loewner Evolutions}
 \label{sec:le}
 
-\textbf{Coformal Invariance.} In the context of measure theory, conformal
+\textbf{Coformal Invariance.}
+We talked extensively in Chapter~\ref{ch3-conf} about conformal invariance and
+its importance to the study of critical systems. There we used a field
+theoretical approach, but in the context of measure theory, conformal
 invariance is stated as
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
@@ -31,17 +34,53 @@ is invariant under a conformal transformation $f$. In simpler words, it means
 that if you have a certain (continuum) model $M$ and use it to generate a set
 of curves in $D$ and then conformally map the curves to $f(D)$, these
 curves would have the same statistical properties as if you simply generated the
-curves by applying $M$ to $f(D)$ directly.
+curves by applying $M$ to $f(D)$ directly. An illustration can be seen in
+Figure~\ref{fig:confinv}.
+
 
 \textbf{Domain Markov Property.}
+In his work, Schramm identified another fundamental property that conformally
+invariant lattice models tend to obbey called domain Markov property. It
+stated as
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
-    \mu_D\pp{\gamma_1|\gamma_0} = \mu_{D\setminus\gamma_0}\pp{\gamma_1}
+    \mu_D\pp{\gamma_2|\gamma_1} = \mu_{D\setminus\gamma_1}\pp{\gamma_2}.
 \end{equation}
-Putting it more simply, if you have a model M and use it to generate
-a set of curves in $D$ that all have the same start $\gamma_0$, the
-curves $\gamma_1$ obtained would have the exact same properties as if you
-generated the curves bt applying M to $D\setminus\gamma_0$.
+That is, the conditional measure of family of curves $\gamma_2$ that have the
+same start $\gamma_1$ in a domain $D$ is the same as that of $\gamma_2$ in
+a domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.
+In the same line of conformal invariance, domain Markov property can be
+understood in the following way: if you have a model M and use it to generate a
+set of curves in $D$ that all have the same start $\gamma_0$, the curves
+$\gamma_1$ obtained would have the exact same properties as if you generated
+the curves by applying M to $D\setminus\gamma_0$. An illustration can be
+seen in Figure~\ref{fig:dmp}.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.8]{chapters/ch4-sle/figs/confinv}
+\end{center}
+\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.}
+\label{fig:confinv}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
+\end{center}
+\caption{The domain Markov property states that the conditional measure of
+    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
+    in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
+\label{fig:dmp}
+\end{figure}
+
 
 \section{Numerical Methods}
 \label{sec:num}
