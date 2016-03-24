@@ -18,38 +18,149 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
+The many components of a physical system can oftentimes take different patterns
+of organization, dependent on the adjustment of some external parameters. We
+call these arrangements \textit{phases}, and they can display wildly different
+physical properties despite having the same composition.
+
+The three ``standard'' phases of matter, normally taught in elementary school:
+solid, liquid and gaseous.
+
+Below we present two important models in the study of phase transition
+Figure~\ref{fig:water} 
 
 \begin{figure}
 \begin{center}
     \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
 \end{center}
 \caption{Phase diagram of water (a). Here, the three usual phases are
-    distinguished, each separated from the other by a critical line. The
-    phase transition that happens when the system traverse a line is
-    characterized by a discontinuous jump in the density, as shown in (b) for
-    the liquid-gas transition at $P=1$ atm. For $P=217.7$ atm however the same
-    transition is continuous, as shown in (c). In the vicinity of this phase
-    transition, at $T\approx374.4^\circ$C, the two phases become
-    indistinguishable, and display a number of peculiarities. Such systems are
-    called critical systems. Reproduced from [???].}
+    distinguished, each separated from the other by a critical line. The phase
+    transition that happens when the system traverse a line is characterized by
+    a discontinuous jump in the density, as shown in (b) for the liquid-gas
+    transition at $P=1$ atm. For $P=217.7$ atm however the same transition is
+    continuous, as shown in (c). In the vicinity of this phase transition, at
+    $T\approx374.4^\circ$C, the two phases become indistinguishable, and
+    display a number of peculiarities. Systems in such state are called
+    critical systems. Reproduced from [???].}
 % taken from Sole - page 7
-\label{fig:bacteria}
+\label{fig:water}
 \end{figure}
+
+
+\section{Ising Model}
+\label{sec:ising}
+
+The Ising model represents the golden standard of phase transition models
+because it unites a quite simple physical description with the fact it can be
+exactly solved in both one and two dimensions, a claim very few models can
+make.
+
+The system is composed of a number of classical spins $\{s_i\}$ that can take
+one of two values $1$ or $-1$. The are arranged in a lattice and are allowed to
+interact with its first nearest neighbors. The Hamiltonian of the systems is
+given by
+\begin{equation}
+    \label{eq:ising}
+    H\left(\left\{s_{i}\right\}\right) = 
+        -J\sum_{\left\langle i,j\right\rangle}s_{i}s_{j}
+        -h\sum_{i}s_{i}.
+\end{equation}
+Where $\sum_{\left\langle i,j\right\rangle}$ means a summation over all pairs
+of nearest neighbors. If we assume $J>0$, then the first term of the
+Hamiltonian favors the alignment of the spins, while the second one 
+favors the alignment with an external magnetic field.
+
+Just like the water example, the phase diagram of the Ising model is dependent
+on two variables: the external magnetic field $h$ and the temperature $T$.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch2-crit/figs/ising}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising_phase2}
 \end{center}
-\caption{Examples of three realizations of the Ising model with three different
+\caption{The phase space of the Ising model (left). The color represents the
+    spontaneous magnetization $M$ as a function of the external magnetic field
+    $h$ and temperature $T$. The black line represents the critical line where
+    the phase transition is of first order, which means the magnetization
+    changes discontinuously like it's shown in the blue line. In the critical
+    point the change is continuous and a second order phase transition takes
+    place. Above the critical point no phase transition takes place.}
+\label{fig:ising_phase2}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising}
+\end{center}
+\caption{Realizations of the Ising model with three different
     temperatures. The clusters of adjacent spin-up sites are colored according
     to how many sites belong to it. The subcritical regime is dominated by the
-    large clusters. On the other side, above the critical point, the system is
+    large clusters. On the other hand, above the critical point, the system is
     dominated by thermal fluctuations, undermining cluster formation. At the
     critical point however, the clusters lack a characteristic length scale.
     One can observe that the image has a certain ``depth'' to it. This happens
     because clusters of all sizes are present, a mark of scale invariance,
     the most important property of critical systems.}
-\label{fig:bacteria}
+\label{fig:ising}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising_phase}
+\end{center}
+\caption{Spontaneous magnetization as a function of temperature for the Ising
+    model. The simulations were performed in a $128\times128$ square lattice.
+    As temperature rises, thermal fluctuations dominate the spin dynamics
+    destroying the correlations. Above the critical temperature of
+    $T_c=2/\log(1+\sqrt{2})\approx 2.269$ the value of $M$ should reaches zero,
+    although due to finite size effects we still observe some magnetization
+    beyond this point. The red line shows the illustrious solution
+    developed by Onsager, where $M=[1-(\sinh{2/T})^{-4}]^{1/8}$.}
+\label{fig:ising_phase}
+\end{figure}
+
+
+\section{Percolation}
+\label{sec:perc}
+
+While the Ising model certainly wins in terms of popularity, very few models
+match the simplicity of percolation. Introduced in 1957 by Broadbent and
+Hammersley, the passing decades saw its rise in prominence due to it's high
+applicability ranging from transport in porous media to the propagation of
+infectious diseases, with pretty much everything in between.
+
+The original question Broadbent and Hammersley posed when coming up with
+percolation was as fallows: if we submerge a large porous rock in water, will
+the water penetrate the rock all the way to its center? In order to answer this
+question they proposed the following model. We take a square lattice in any
+number of dimensions wanted; this will be our rock.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/isoperco}
+\end{center}
+\caption{Realizations of the percolation model in a square lattice with three
+    different occupation probabilities $p$. Black sites are unoccupied, blue
+    ones are occupied, and the largest cluster is painted yellow. For small
+    values of $p$, there is no cluster that connects opposite sides of the
+    systems. Above the critical point however, the largest cluster promotes a
+    global connectivity, or, in terms of transport, the system becomes
+    permeable.}
+\label{fig:isoperco}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/isoperco2}
+\end{center}
+\caption{The order parameter of the percolation model as a function of the
+    occupation probability for various system sizes. The order parameter here
+    is defined as the fraction of the system occupied by the largest cluster.
+    In the thermodynamical limit, the largest cluster have a finite size for
+    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
+    system. Above the critical point the largest cluster is infinite and occupies
+    a finite fraction.}
+\label{fig:isoperco2}
 \end{figure}
 
 %\begin{figure}
