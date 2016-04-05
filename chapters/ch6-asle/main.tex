@@ -8,6 +8,132 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
+\section{Generating Large Percolation Traces}
+\label{sec:hulls}
+
+Simulating the percolation process and extracting the percolating cluster
+perimeter is very straightforward and a number of good algorithms are
+available. However, because of the spotty behavior of the zipper algorithm
+(see Fig.~\ref{fig:euzip}) in the high $\kappa$ ($>4$) domain, we need very
+large traces in order to obtain reliable results.
+
+The usual algorithms are normally very memory hungry because you need to store
+the state of all sites in the lattice. Since we are only interested in
+obtaining the perimeter of the percolating cluster, which consists of only a
+small portion of the lattice, one might imagine if there's a more efficient way
+of simulating these curves. Luckily there is, thanks to the locality property
+of the percolation model. The method is called the \textit{percolation
+exploration process}.
+
+The exploration process is easier to define in the triangular lattice, because
+at any given time the walker is always facing a single site, unlike the square
+lattice, in which it faces two sites at once, complicating things a little (it
+doesn't make it impossible, though). In the exploration process, a walker is
+put in an initial position at the bottom of the lattice. The walker observes
+the state of the site right in front of him. If it is unoccupied, the walker
+turns clockwise, otherwise it turns clockwise. Then the walker takes a step in
+the direction it is facing. The algorithm guarantees that the curve will not
+self-intersect and will not get trapped.
+
+It's pretty clear the advantage of this method, you only need to store the
+information about the sites directly adjacent to the perimeter, which can be
+stored in your container of preference, like a hash-table.
+
+Because we restrict ourselves to chordal SLE, the walker can never leave the
+upper-half plane. To assure this, we impose closed boundary conditions in which
+the left side of the bottom row of the lattice is always unoccupied and the
+right side is always occupied.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/explore}
+\end{center}
+\caption{The first few steps of a percolation exploration process with closed
+    boundary conditions in a triangular lattice, which means the left side of
+    the bottom row is always unoccupied (yellow) and the right side is always
+    occupied (blue). At each step, the walker checks the status of the site
+    right in front of it. If it is yellow, the walker turns clockwise and takes
+    a step. If it is blue it turns counter-clockwise before taking a step. This
+    method is superior because you only need to store the information about the
+    sites adjacent to the curve, saving RAM and allowing for simulations of
+    very large traces.}
+\label{fig:explore}
+\end{figure}
+
+
+\section{Detrended Fluctuation Analysis}
+\label{sec:dfa}
+
+We want to test whether or not the driving functions present long range
+correlations. Other works have shown that some form of anisotropy can be
+observed in SLE traces driven by L\'evy Flights. We have good reasons to
+believe this is not the case for multi-layered and directed percolation,
+because L'evy flights do not show subdiffusion and they generate discontinuous
+traces.
+
+In order to close the issue we perform one last test: check for the presence of
+long range correlations. To do that we employ a method called Detrended
+Fluctuation Analysis (DFA for short), which is an adaptation of an older
+algorithm called simply Fluctuation Analysis. It is specially designed for the
+analysis of non stationary series.%~\cite{Peng1994,Hardstone2012}.
+
+Given a time series of $N$ data points $\{x_i\}$, we first generate a random walk
+out of it by making the cumulative profile of the series
+\begin{equation}
+    X_i = \sum_{i=1}^{N} \left({x_i - \left\langle x \right\rangle}\right).
+\end{equation}
+The accumulated series is then divided in $m$ non overlapping partitions, each with
+$s = N/m$ elements. In case $N$ is not divisible by $m$ we can still make use
+of the last elements of the series by taking $s=\left\lfloor N/m\right\rfloor$
+and reflecting it in the end the following way
+\begin{equation}
+    X\rightarrow\left\{X_1, \ldots, X_{ms},
+                       X_{N}, X_{N - 1}, \ldots,
+                       X_{N - ms}\right\}.
+\end{equation}
+In this case we actually changed the series size to $N\rightarrow2ms$ and the
+number of intervals to $m\rightarrow2m$, so this should be taken in account in
+later equations. This step is optional, but useful in order to use all the
+information embedded in the time series.
+
+We then determined the trend of each partition by fitting them separately using
+a polynomial of degree $v$. Usually a first or second degree polynomial is
+chosen. The series is detrended by taking the difference of the signal value and
+the trend 
+\begin{equation}
+    Y_i = \sum_{i=1}^{N} X_i - f_v(i),
+\end{equation}
+where $f_v(i)$ is the value of the trend in the point $i$. We define the fluctuation
+function as the standard deviation of the detrended signal, which is a function
+of the number of points $s$ in each partition of the time series
+\begin{equation}
+    F(s) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}Y_i}.
+\end{equation}
+
+A plot of $F(s)$ vs. $s$ in a log-log scale should show a straight line
+for well a behaved series. %(see Fig.~\ref{fig:dfa}).
+The Hurst exponent of the series can be determined by fitting the fluctuation
+function with a power law
+\begin{equation}
+    F(s)\sim s^h.
+\end{equation}
+
+\begin{figure*}[t]
+    \begin{center}
+        \includegraphics[scale=0.25]{chapters/ch6-asle/figs/dfa}
+    \end{center}
+    \caption{The Detrended Fluctuation Analysis (DFA) of a time series of
+        $N=16,384$ data points. First we divided the series in $m$ partitions with
+        $s$ points each (top-left), then fitted each separately with a first order
+        polynomial $f_1(i)$ (red lines), obtaining the detrended series by subtracting
+        the signal by the trend (top-right).  The fluctuation function (the standard
+        deviation of the detrended signal) is computed for various values of $s$
+        (bottom).  The Hurst exponent is then determined by fitting the fluctuation
+        function with a power law $F(s)\sim s^h$.}
+\label{fig:dfa}
+\end{figure*}
+
+
 \section{Generating Fractional Browninan Motions}
 \label{sec:fbm}
 
