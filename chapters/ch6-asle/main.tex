@@ -1,12 +1,31 @@
 \chapter{Loewner Evolutions of Anisotropic Systems}
 \label{ch6-asle}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+In this work we take the effort to relate the Stochastic Loewner Evolution with
+strongly anisotropic systems. Because such systems are not conformally
+invariant, the driving process of these models must not be a simple Brownian
+motion.
+
+\section{Lévy Flights and Schramm-Loewner Evolutions}
+
+One possible source of anisotropy in the context of SLE is the presence of
+anomalous diffusion in the driving process. A stochastic process $X_t$ is
+said to display anomalous diffusion if the mean squared displacement
+behaves asymptotically as
+\begin{equation}
+    \left\langle X_t^2 \right\rangle \sim bt^\alpha
+\end{equation}
+with $\alpha\neq 1$. Processes that have $\alpha < 1$ are called subdiffusive
+models and those with $\alpha > 1$ are called superdiffusive.
+
+There are several models that present anomalous diffusion. Rushkin et Al [..]
+proposed using L\'evy-flights as a driving process. L\'evy-flights are defined as
+processes that have jump size distributed as a power law, that is
+\begin{equation}
+    P(X_{t+dt} - X_t \in [x, x+dx]) \propto \frac{1}{|x|^{1+\mu}}dxdt
+\end{equation}
+They've shown that Loewner Evolutions drive by such processes behave
+
 
 \section{Generating Large Percolation Traces}
 \label{sec:hulls}
@@ -35,14 +54,18 @@ turns clockwise, otherwise it turns clockwise. Then the walker takes a step in
 the direction it is facing. The algorithm guarantees that the curve will not
 self-intersect and will not get trapped.
 
-It's pretty clear the advantage of this method, you only need to store the
-information about the sites directly adjacent to the perimeter, which can be
-stored in your container of preference, like a hash-table.
-
 Because we restrict ourselves to chordal SLE, the walker can never leave the
 upper-half plane. To assure this, we impose closed boundary conditions in which
 the left side of the bottom row of the lattice is always unoccupied and the
-right side is always occupied.
+right side is always occupied. This way the trace will always turn away from
+the real line.
+
+It's pretty clear the advantage of this method, you only need to store the
+information about the sites directly adjacent to the perimeter, which can be
+cached in your container of preference, like a hash table (also known as maps
+or dictionaries). This allow us to simulate traces with up to million points.
+In fact we could easily go above that, the limiting factor being the time the
+zipper algorithm takes to compute the driving function.
 
 \begin{figure}
 \begin{center}
@@ -132,6 +155,23 @@ function with a power law
         function with a power law $F(s)\sim s^h$.}
 \label{fig:dfa}
 \end{figure*}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/dfaresults}
+\end{center}
+\caption{Results of detrended fluctuation analysis (DFA) of the driving
+    functions of percolation models. As expected, the driving function of the
+    isotropic percolation (top left) is a Brownian motion, therefore have
+    $H=0.5$. For comparison the DFA of L\'evy flights with several $\alpha$ is
+    shown (top right). Despite displaying anomalous diffusion, it still have
+    $H=0.5$. Multi-layered percolation however shows a very distinct exponent
+    $H=0.814$, which is consistent with the diffusion exponent shown inf
+    Figure~[???]. The fluctuation function of directed percolation does not
+    have a power-law behavior, which indicates that the series is.}
+\label{fig:dfaresults}
+\end{figure}
+
 
 
 \section{Generating Fractional Browninan Motions}
