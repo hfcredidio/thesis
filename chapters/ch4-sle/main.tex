@@ -176,12 +176,82 @@ with the other drawbacks.
 \subsection{Zipper Algorithm}
 \label{ss:zipper}
 
-Let $0<s<t$. The map $g_{s+t}$ takes $\HH\setminus\gamma_{[0,s+t]}$ to $\HH$.
-If we try to do it in two steps, we may take $g_s$ to map 
-$\HH\setminus\gamma_{[0,s]}$ to $\HH\setminus\gamma_{[s, s+t]}$ and 
-$\bar{g}_{t}$ to map $\HH\setminus\gamma_{[s, s+t]}$ to $\HH$. The
-map $\bar{g}_t$ is evidently not the same as $g_t$, but the 
-$\bar{g}_t(z-U_s)+U_t$ 
+Our objective here is to compute the trace 
+
+%Let $0<s<t$. The map $g_{s+t}$ takes $\HH\setminus\gamma_{[0,s+t]}$ to $\HH$.
+%If we try to do it in two steps, we may take $g_s$ to map 
+%$\HH\setminus\gamma_{[0,s]}$ to $\HH\setminus\gamma_{[s, s+t]}$ and 
+%$\bar{g}_{t}$ to map $\HH\setminus\gamma_{[s, s+t]}$ to $\HH$. The
+%map $\bar{g}_t$ is evidently not the same as $g_t$, but the 
+%$\bar{g}_t(z-U_s)+U_t$ 
+
+\begin{equation}
+    G_{k}=g_{t_{k}}\circ g_{t_{k-1}}^{-1}
+\end{equation}
+\begin{equation}
+    g_{t_{k}}=G_{k}\circ G_{k-1}\circ\cdots\circ G_{2}\circ G_{1}
+\end{equation}
+\begin{equation}
+    h_{k}=G_{k}^{-1}\left(z+U_{t_{k}}\right)-U_{t_{k-1}}
+\end{equation}
+\begin{equation}
+    g_{k}=G_{k}\left(z+U_{t_{k-1}}\right)-U_{t_{k-1}}
+\end{equation}
+\begin{equation}
+    f_{k}=G_{k}^{-1}\left(z+U_{t_{k-1}}\right)-U_{t_{k-1}}
+\end{equation}
+\begin{equation}
+    h_{k}=f_{k}\left(z+\Delta U_{k}\right)
+\end{equation}
+
+
+This way each $\gamma_t$ can be compute by applying the relation
+\begin{equation}
+    \gamma_{k}=h_{0}\circ h_{1}\circ\ldots h_{k}\left(0\right)
+\end{equation}
+
+Tilted slit
+\begin{equation}
+    h_{k}(z)= {\left(
+        z+2\frac{\sqrt{\Delta t(1-\alpha)}}{\alpha}
+    \right)}^{1-\alpha}
+    {\left(
+        z-2\frac{\sqrt{\Delta t\alpha}}{1-\alpha}
+    \right)}^{\alpha}
+\end{equation}
+where
+\begin{equation}
+    \alpha=\frac{1}{2}-
+    \mbox{sign}\left(\Delta U\right)\frac{1}{2}\sqrt{\frac{v}{16+v}}
+    \,\,\,\,\,\,\,\,\,\,\,\,\,\,
+    v=\frac{\Delta U^{2}}{\Delta t}
+\end{equation}
+
+Vertical slit
+\begin{equation}
+    h_{k}(z)=i\sqrt{4\Delta t-z^{2}}+\Delta U
+\end{equation}
+
+\begin{equation}
+    \omega_{k}=f_{k-1}\circ f_{k-2}\circ
+        \ldots\circ f_{1}\left(\gamma_{k}\right)
+\end{equation}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.34]{chapters/ch4-sle/figs/zipperdiag}
+\end{center}
+\caption{Schematic representation of the zipper algorithm. At the top, we have
+    the full trace up to time $t_5$, which we want to reach starting from the
+    empty upper half plane (right most panel on the third row). To compute the
+    trace from a given discretized driving function, one must take the red path
+    inverted. This is achieved by using the interpolating maps $g_i$ that are
+    the solution of the Loewner equation with driving function $\tilde{U}_0=0$
+    and $\tilde{U}_{\Delta t}=\Delta U$. The choice of interpolation function
+    $\tilde{U}$ is arbitrary, but usually taken from the few options that
+    have an analytical solution.}
+\label{fig:zipperdiag}
+\end{figure}
 
 \begin{figure}
 \begin{center}
