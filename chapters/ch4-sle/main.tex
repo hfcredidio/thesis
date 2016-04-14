@@ -8,21 +8,108 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-\section{Loewner Evolutions}
+\section{Loewner Equation}
 \label{sec:le}
 
-Loewner were proposed by Charles Loewner in the context of Bierbach
-conjecture (today called de Branges's theorem) in the 1920's.
+Loewner were proposed by Charles Loewner in the context of Bierbach conjecture
+(proposed in 1916 and eventually proved by de Branges in 1985) in the 1920's.
 
-In Section [???] we described how the perimeter of percolation cluster can be
-generated using an exploration process. Loewner evolutions represent the
-continuum limit of such processes.
+%In Section [???] we described how the perimeter of percolation cluster can be
+%generated using an exploration process. Loewner evolutions represent the
+%continuum limit of such processes.
 
+The starting point of the Loewner process is the Riemann mapping theorem. This
+theorem essentially guarantees that it exists at least one conformal mapping
+between any two simply connected domains (that is, domains with no holes in it)
+as long as they are embedded in a two-dimensional plane. In the majority of
+cases there is no simple form for the map, but there are methods to obtain such
+maps at least numerically, like Schwartz-Christoffel maps. There is no
+restriction for the form of the domains involved, they can be as simple or
+complicated as desired, as long as they do not have any holes in it.
+
+Take a domain which will serve as a standard domain. Now imagine a crack in
+this domain. This crack has no width, it's one-dimensional, and it grows from a
+point in the border of the domain. Now, the Riemann mapping theorem assure us
+that we can ``fix'' this crack by finding the conformal transformation
+$g$ that maps the cracked domain into the uncracked standard domain. Imagine
+now we have a crack that grows with time. This complicates thing a little, we
+now need a different map each time instant in order to fix the crack.
+Is there a way to compute the uniformizing map.
+
+Loewner's idea to construct such a process was to not look directly at the
+crack itself, which we will call \textit{trace} from now on. You see, at any
+given time, the tip of the trace is mapped to a point in the border of the
+standard domain. If we follow this point where the tip is mapped along time, we
+get a function  $U_t:R\rightarrow\partial D$. This is called the
+\textit{driving function} of the trace in question. Loewner showed
+that the trace, the uniformization map, and the driving function are connected
+by a differential equation.
+
+Before we can write down this equation we need to make a series of assumptions.
+One of them is determine the standard domain in which the trace will grow. In
+his original work, Loewner chose the unit disc $D=\{z||z|\leq1\}$, with
+$\gamma_0=1$ and $\gamma_\infty=0$. This is called the radial form of the
+Loewner chain. Another commonly used domain is the upper half plane
+$\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$.
+This is called the chordal version. In physical applications it is much more
+common to use the chordal version, and it is the version we'll focus here.
+
+In order to determine the chordal Loewner equation we need first to impose some
+conditions on the conformal map $g_t$, because otherwise there are an infinity
+of maps that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce
+uniqueness, we impose what is called a \textit{hydrodynamic
+normalization}\footnote{The reason for this name completely eludes the
+author.}. This means that far from the origin, the uniformization maps
+behave as
 \begin{equation}
-    \partial_t g_t(z) = \frac{2}{g_t(z) - U_t}
-    \label{eq:loew}
+    \label{eq:hydro}
+    g_{t}\left(z\right)\approx
+    z+\frac{a\left(t\right)}{z}+O\left(z^{-2}\right)
+    ,\,\,\,\,\,\,\,\,\,\,\,
+    z\rightarrow\infty.
 \end{equation}
+This way points at infinity get mapped into themselves. The coefficient $a(t)$
+is called the half plane capacity, and can take any form as long as it obeys a
+number of properties, including positivity, monotonicity and continuity. The
+most common choice is $a(t)=2t$.
 
+With all these properties laid out, the chordal Loewner equation takes the
+(deceptively) simple form
+\begin{equation}
+    \label{eq:loew}
+    \partial_t g_t(z) = \frac{2}{g_t(z) - U_t}
+    ,\,\,\,\,\,\,\,\,\,\,
+    g_0(z)=z.
+\end{equation}
+Working only on the upper half plane seems restrictive, but remember that any
+two domains can be mapped into one another through conformal transformations.
+So to get the trace in a domain $D$ that connects two points $r_1, r_2 \in
+\partial D$, all you have to do is to find the function $f:\HH\rightarrow D$,
+where $f(0)=r_1$ and $f(\infty)=r_2$.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=1.0]{chapters/ch4-sle/figs/scmap}
+\end{center}
+\caption{The Riemann mapping theorem guarantees the existence of at least one
+    conformal mapping $f$ that maps any two simply connected two-dimensional
+    domains. In $2D$ any conformal map is invertible.}
+\label{fig:scmap}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
+\end{center}
+\caption{Radial versus chordal Loewner traces generated using the same driving
+    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
+    $\exp(iU_t)$). Radial curves are contained inside the unit circle
+    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
+    Chordal traces are contained in the upper half plane
+    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
+    infinity.}
+\label{fig:radchord}
+\end{figure}
 
 \begin{figure}
 \begin{center}
@@ -37,6 +124,18 @@ continuum limit of such processes.
     called driving function, in mathematical terms
     $U_t=g_t\left(\gamma_t\right)$.}
 \label{fig:loewexplain}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/leexample}
+\end{center}
+\caption{Example of a Loewner trace generated by the driving function
+    $U_t=\sin(\pi t)\sin(\frac{\pi t}{10})t^{3/4}$. The trace $\gamma$ is
+    defined by the relation $\gamma_t = g_t^{-1}(U_t)$, there $g_t$ is the
+    solution of the Loewner differential equation (Eq.~\ref{eq:loew}).}
+\label{fig:leexample}
 \end{figure}
 
 
