@@ -1,91 +1,60 @@
 \chapter{Introduction}
 \label{ch1-intr}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
-
 %Sources:
     %Nishimoto - preface
     %Christensen - preface
     %Sole - preface
     %Cardy - intro
 
-%Mr. Broadbent used to live in a nice rustic cabin by a lake. One day, during a
-%walk through his property he found a single little frog. This was unusual, Mr.
-%Broadbent knew that there was a frog breeding spot on the other side of the
-%lake, but he had never seen a frog on this side. This little one must have
-%gotten lost. It's worth mentioning that Mr. Broadbent was not a big fan of
-%frogs, one might say he's terrified of them, but he has a heart after all and
-%wanted to help this little fellow to get back to its family and friends,
-%although he couldn't suffer to take it the other side himself. Luckily he had a
-%sizable stock of lily pad seeds. He could throw some at the lake, and with
-%enough luck the lily pads that grow would form a bridge that the frog would be
-%able to cross. Mr. Broadbent knew that wherever he throws the seeds, they might
-%grow anywhere in the lake because of some water currents that happened there.
-%But how many lily pads should he plant? If he throws too few seeds in the lake,
-%the likelihood that a lily pad bridge will form is very small. This could be
-%solved be simply throwing enough seeds to cover the whole surface area of the
-%lake (as said, he has a \textit{lot} of lily pad seeds, something to do with an
-%inheritance from an eccentric uncle), but this would ruin the delicate
-%ecosystem of the lake, not to mention significantly lower the value of his
-%property. Mr. Broadbent needed to know what is the smallest number of seeds, or
-%in other words, what's the smallest area of the lake that he needed to cover so
-%that he's sure to form a lily pad bridge for the lonely frog to cross.
+The idea that a substance can radically change its physical properties without
+changing its composition has always captivated the curious mind of scientist
+throughout the centuries.
+Phase transitions and critical phenomena (two terms that, albeit not strictly
+the same, are commonly used interchangeably).
 
-%Mr. Broadbent so happens to be a computational physicist and can easily write a
-%computer program to compute the smallest area needed to cover the lake in order
-%to form a bridge that the frog can cross. He uses the information that each
-%lily pad can have a maximum of 6 neighbors, since they're pretty circular and
-%have basically the same size. After some days running calculations (his
-%computer is really old), he finally comes to an answer. Mr. Broadbent needs to
-%cover exactly 50\% of the lake surface. Below that point he can be almost sure
-%there will not be a bridge formed, and above that he can be certain that a
-%bridge will be there.
+Although the phenomenon of phase transitions is known since immemorial time,
+the first scientific observation that can be linked to the modern theory of
+critical phenomena was made by Cagniard de La Tour in 1822~\cite{delaTour1822},
+who observed that under certain conditions of temperature and pressure the
+surface tension between the liquid and gas phases of several substances
+disappears, thus discovering what we call today a supercritical fluid phase. In
+1869, Thomas Andrews coined the term \textit{critical point} for the point in
+phase space where the liquid and gas phases become indistinguishable
+\cite{Andrews1869}. He also noted the
 
-%Mr. Broadbent wasted no time and threw enough seeds to cover half of the lake
-%area and lo and behold, in the following days a bridge was formed and his little
-%green friend crossed it going back to his homeland. That night Mr. Broadbent
-%went to bed feeling proud, he helped another living being, and he used math and
-%computers to do so! To his terror however, he woke up the next day to an
-%infestation of frogs in his yard. It happens that if one frog can cross the
-%bridge one way, many others can cross it the other way around. I didn't took
-%too long for the frogs to make another breeding ground on this side of the lake
-%making the infestation even worse.
+Pierre Curie discovered the ferromagnetic transition in 1895, when a material
+lose its magnetic properties when subject to a high enough temperature
+\cite{Curie1895}. More importantly, he was the first to notice universal
+characteristics in the critical behavior of different systems. This property
+would eventually be considered one of the pillars of critical phenomena
+theory~\cite{Stanley1999}.
 
-%One might think Mr. Broadbent was desperate, but he is a scientist, and more
-%than anything he is intrigued. There was always lily pads in the lake, and they
-%could keep growing and as long as the fraction of area they cover remained
-%below 50\%, nothing would have changed, because no bridge between the sides
-%would have been formed. But as soon as the lily pads cover more than half of
-%the lake surface area all hell broke loose, you have frogs everywhere!
-%Strangely nothing actually changed, lily pads are still lily pads, the frogs
-%are still the same frogs and the lake is still the same lake, but the overall
-%``behavior'' of the lake changes drastically, it goes from an essentially
-%frogless states to a froful one.
-%Mr. Broadbent is not an uninitiated physicist, he know what he just witnessed.
-%He have observed first hand a \textit{phase transition}.
+At the same time as these discoveries were being made, a new area of physics
+was flourishing: statistical mechanics. After Gibb's foundational work
+\cite{Gibbs1906} it was pretty clear that this new formalism was the perfect
+fit for exploring critical phenomena. The first half of the 20th century saw
+great advances including the introduction of the ubiquitous Ising model in 1925
+\cite{Ising1925} and its celebrated solution in 2D by Onsager in 1944
+\cite{Onsager1944}. The 50's saw the introduction of percolation theory by
+Broadbent and Hammersley~\cite{Broadbent1957}.
 
-%Phase transition have been for more than a century a constant object of
-%study in statistical physics.
+What is considered the modern era of phase transitions started in the 60's when
+several theoreticians (including Heller, Benek, Jacrot, Domb, and many others)
+came to the realization that the critical point exponents were entities that
+deserved special attention~\cite{Stanley1999, Stanley1971}. This was followed
+by another major advance in the form of renormalization group theory, led by
+Leo Kadanoff~\cite{Kadanoff1966}.
 
-%The first work that presented what could be considered a modern view of phase
-%transitions was done by Charles Cagniard de la Tour in 1838 [..] where he
-%reported a unusual phenomenon, that when subject to a substance specific value
-%of pressure and temperature, several compounds started showing a milky aspect,
-%which means that light was being strongly scattered. Above this point, liquid
-%and gaseous phases of matter become indistinguishable. In 1869 Thomas Andrews
-%measured to high precision the point at which several substances showed this
-%phenomenon, coining the term \textit{critical point} as the point in phase
-%space where this \textit{critical opalescence} is observed.
+The 80's saw the application of conformal invariance as an extension of scaling
+invariance, which, along with with a well developed field theoretical
+apparatus, allowed for the computation of the critical exponents of various
+models.
 
-%On of the most astonishing aspect of critical phenomena was first observed by
-%Pierre Curie in 1895[..], who noticed the similarities between the liquid-gas
-%phase transition discovered by de la Tour and the ferromagnetic transition
-%(where a metal lose its ferromagnetic properties beyond some critical
-%temperature). This universal behavior, that is independent of the detail of the
-%systems was only started to be well understood in the 60's and 70's with 
-%the works of...
+In the last two decades the scope of applications for the concepts of scale
+invariance and criticality extended well beyond the physics realm, reaching
+areas as distinct as biology, economics and social sciences.
+
+The last big theoretical step in phase transitions is SLE\@.
+
+[We want to extend a liitle]  this century-old theory in the making.

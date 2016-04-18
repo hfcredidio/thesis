@@ -1,7 +1,10 @@
 *.aux
 main.dvi
 *.fdb_latexmk
+*.blg
+*.brf
 *.fls
+*.bbl
 *.idx
 *.ilg
 *.ind
