@@ -17,11 +17,11 @@ depends on the context, they can be elementary particles when studying high
 energy physics, atoms and molecules when studying the electronic properties of
 a material, living cells when observing the growing pattern of a colony of
 bacteria, or even people when trying to design buildings with safe exit routes.
-More often than not, these objects interact in a very complicated manner,
-motivating great efforts to create realistic models to capture the essential
-physical properties of these systems. Some phenomena however, have properties
-that seem to depend not on the details of the interactions, but on the ways the
-parts of a system can organize themselves in the border of a phase transition.
+More often than not, these objects interact in a very complicated manner, which
+propelled scientists to try and create realistic models to capture the
+essential physical properties of these systems. Some phenomena however, seems
+not to depend not on the details of the interactions. This means that some
+types.
 
 Let's take a step back and look again at the components that make up a physical
 system. Usually they can take many different patterns of organization, and each
@@ -72,6 +72,7 @@ the temperature rises. At the exact point where the two phases meet they become
 indistinguishable from one another. This type of phase transition is radically
 different from the one described before, because they present a series of
 
+
 \begin{figure}[h]
 \begin{center}
     \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
@@ -86,6 +87,22 @@ different from the one described before, because they present a series of
     display a number of peculiarities. Systems in such state are called
     critical systems. Reproduced from~\cite{Sole2011}.}
 \label{fig:water}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
+\end{center}
+\caption{How a system of particles behave in the three phases of matter. Here a
+    simulation of 100 particles was done, but the trajectory of only one is
+    shown. In the solid stated the particles are confined to small region by
+    the interactions of its neighbors. In the liquid state the particle is
+    unconfined, but still interacts strongly with the other particles. In the
+    gas state the kinetic energy of the particles is large enough that they
+    barely interact with one another, making a ballistic trajectory until
+    they make a head-on collision with another particle.}
+\label{fig:phases}
 \end{figure}
 
 
@@ -212,3 +229,70 @@ number of dimensions wanted; this will be our rock.
 %\caption{Images taken from [???] and [???].}
 %\label{fig:bacteria}
 %\end{figure}
+
+
+\section{Critical Exponents and Scaling Invariance}
+\label{sec:scaling}
+
+Let's illustrate using spin systems, composed by a collection of spins $\{s\}$
+arranged in a lattice and interacting with one another and with an
+external magnetic field $h$ according to a Hamiltonian
+\begin{equation}
+    \mathcal{H} \left(\{s\}\right)=
+    \mathcal{H}_{int}\left(\{s\}\right) - h\sum_i s_i.
+\end{equation}
+
+The partition function is defined as 
+\begin{equation}
+    \mathcal{Z}=
+    \sum_{\left\{ s_{i}\right\} }\exp\left(-\frac{\mathcal{H}}{T}\right)
+\end{equation}
+which is related to the free energy
+\begin{equation}
+    F=-T\log\mathcal{Z},
+\end{equation}
+from which we obtain the traditional relations used statistical mechanics
+\begin{equation}
+    C=-\frac{T}{\mathcal{N}}\frac{\partial^{2}F}{\partial T^{2}},
+    \,\,\,\,\,\,
+    M=-\frac{1}{\mathcal{N}}\frac{\partial F}{\partial h},
+    \,\,\,\,\,\,
+    \chi=\frac{\partial M}{\partial h}
+\end{equation}
+
+\begin{equation}
+    G\left(r\right)=
+    G\left(\left|\mathbf{r}_{j}-\mathbf{r}_{i}\right|\right)=
+    \left\langle s_{i}s_{j}\right\rangle -
+    \left\langle s_{i}\right\rangle \left\langle s_{j}\right\rangle 
+\end{equation}
+Here we suppose the system have translation invariance, so that the correlation
+function depends only on the distance $r$ between two sites, and not on the
+specific sites being analyzed.
+
+\begin{equation}
+    G\left(r\right)\sim r^{-\tau}e^{-r/\xi}
+\end{equation}
+where $\xi$ is called the \textit{correlation length}.
+
+\begin{equation}
+    \xi\sim\left|t\right|^{-\nu}\mbox{, where }h=0
+\end{equation}
+
+\begin{equation}
+    \begin{array}{cccccc}
+        C & \sim & \left|t\right|^{-\alpha} & \mbox{where } & h=0\\
+        M & \sim & {\left(-t\right)}^{\beta} & \mbox{where } & t<0, & h=0\\
+        \chi & \sim & \left|t\right|^{-\gamma} & \mbox{where } & h=0\\
+        M & \sim & h^{1/\delta} & \mbox{where } & t=0
+    \end{array}
+\end{equation}
+
+\section{Universality}
+\label{sec:universality}
+
+One of the most remarkable properties of complex system was first put forth by
+Kadanoff in 1970~\cite{Kadanoff1971}.
+
+Two systems that share the same set of critical exponents are said to belong to
+the same universality class.
