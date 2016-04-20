@@ -1,0 +1,92 @@
+\chapter{Deriving Loewner's Equation}
+\label{sub:proof}
+
+Let's to this~\cite{Kager2004, delMonaco2013}.
+
+We use the fact that a conformal map $f(z)$ is completely defined by its value
+on the boundary (which in the case of the upper half plane is the real line).
+The value of the function on the whole domain can be recovered by using the
+Schwartz integral formula
+\begin{equation}
+    f\left(z\right)=
+    \frac{1}{\pi}\int_{-\infty}^{\infty}
+    \frac{\mbox{Im }f\left(\xi\right)}{\xi-z}d\xi.
+\end{equation}
+Since $\mbox{Im }(\xi - f(z))=-f(z)$ for $\xi$ real we can rewrite the
+map $\tilde{g}_{t,dt}$ as
+\begin{equation}
+    z-\tilde{g}_{t,dt}^{-1}\left(z\right)=
+    \frac{1}{\pi}\int_{a}^{b}
+    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}{z-\xi}d\xi.
+\end{equation}
+Where the (assumed finite) interval $[a,b]$ is the region where
+$\tilde{g}_{t,dt}^{-1}(z)>0$. Making the substitution $z\rightarrow\tilde{g}_{t,dt}(z)$
+we obtain
+\begin{equation}
+    \label{eq:proof1}
+    \tilde{g}_{t,dt}\left(z\right)-z=
+    \frac{1}{\pi}\int_{a}^{b}
+    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}
+    {\tilde{g}_{t,dt}\left(z\right)-\xi}d\xi.
+\end{equation}
+Multiplying this equation and taking the limit $z\rightarrow\infty$ we
+obtain a formula for the half plane capacity
+\begin{equation}
+    a_{t,dt}=\frac{1}{\pi}\int_{a}^{b}
+    \mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi.
+\end{equation}
+As mentioned in [\ldots], the choice of capacity is arbitrary, but a common
+choice is
+\begin{equation}
+    a_t = 2t,
+\end{equation}
+which, based on the additivity property
+\begin{equation}
+    a_t = a_{t-dt} + a_{t,dt},
+\end{equation}
+yields the relation
+\begin{equation}
+    \label{eq:proof2}
+    \int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi=2\pi dt.
+\end{equation}
+
+We can now tackle the time derivative of the uniformizing map $g_t$
+\begin{equation}
+    \frac{\partial g_{t}\left(z\right)}{\partial t}=
+    \lim_{dt\rightarrow0}\frac{g_{t}\left(z\right)-g_{t-dt}\left(z\right)}{dt}.
+\end{equation}
+Using the fact that $g_{t}=\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)$,
+and Eqs.~\ref{eq:proof1} and~\ref{eq:proof2} we obtain
+\begin{equation}
+    \frac{\partial g_{t}\left(z\right)}{\partial t}=
+    \lim_{dt\rightarrow0}\frac{2}
+    {\int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}
+    \int_{a}^{b}
+    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}
+    {\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)-\xi}d\xi.
+    \label{eq:proof4}
+\end{equation}
+
+The second mean value theorem for definite integrals states that
+it exists a $c\in(a,b]$ such that
+\begin{equation}
+    \int_{a}^{b}G\left(\xi\right)f\left(\xi\right)d\xi=
+    \lim_{y\rightarrow a^+}G\left(y\right)\int_{a}^{c}f\left(\xi\right)d\xi.
+\end{equation}
+Applying that to Eq.~\ref{eq:proof4} leaves us with
+\begin{equation}
+    \label{eq:proof3}
+     \frac{\partial g_{t}\left(z\right)}{\partial t}=
+     \lim_{dt\rightarrow0}
+     \frac{2}{\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)-a}
+     \frac{\int_{a}^{c}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}
+          {\int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}.
+\end{equation}
+Since in the limit of $dt\rightarrow0$, $\mbox{Im }\tilde{g}_{t,dt}^{-1}(z)$ is
+zero except for $z=U_t$, in other words, $a=b=U_t$. This means that the two
+integrals in Eq.~\ref{eq:proof3} take the same value and cancel each other. Add
+the fact that $\lim_{dt\rightarrow 0}\tilde{g}_{t,dt}$ is the identity map, and
+this leaves us with Loewner's equation
+\begin{equation}
+    \frac{\partial g_t(z)}{\partial t} = \frac{2}{g_t(z) - U_t}.
+\end{equation}
