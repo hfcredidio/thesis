@@ -1,0 +1,535 @@
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
+\end{center}
+\caption{Phase diagram of water (a). Here, the three usual phases are
+    distinguished, each separated from the other by a critical line. The phase
+    transition that happens when the system traverse a line is characterized by
+    a discontinuous jump in the density, as shown in (b) for the liquid-gas
+    transition at $P=1$ atm. For $P=217.7$ atm however the same transition is
+    continuous, as shown in (c). In the vicinity of this phase transition, at
+    $T\approx374.4^\circ$C, the two phases become indistinguishable, and
+    display a number of peculiarities. Systems in such state are called
+    critical systems. Reproduced from~\cite{Sole2011}.}
+\label{fig:water}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
+\end{center}
+\caption{How a system of particles behave in the three phases of matter. Here a
+    simulation of 100 particles was done, but the trajectory of only one is
+    shown. In the solid state the particles are confined to small region by
+    the interactions of its neighbors. In the liquid state the particle is
+    unconfined, but still interacts strongly with the other particles. In the
+    gas state the kinetic energy of the particles is large enough that they
+    barely interact with one another, making a ballistic trajectory until
+    they make a head-on collision with another particle.}
+\label{fig:phases}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch2-crit/figs/suscep}
+\end{center}
+\caption{Example of a ferromagnetic transition in dupeyredioxyl. The graph
+    shows a distinctive divergence in the magnetic susceptibility in the
+    vicinity of the critical point $T_c\approx1.48$K. Reproduced
+    from~\cite{Chiarelli1993}.}
+\label{fig:suscep}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising_phase2}
+\end{center}
+\caption{The phase space of the Ising model (left). The color represents the
+    spontaneous magnetization $M$ as a function of the external magnetic field
+    $h$ and temperature $T$. The black line represents the critical line where
+    the phase transition is of first order, which means the magnetization
+    changes discontinuously like it's shown in the blue line. In the critical
+    point the change is continuous and a second order phase transition takes
+    place. Above the critical point no phase transition takes place.}
+\label{fig:ising_phase2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising}
+\end{center}
+\caption{Realizations of the Ising model with three different
+    temperatures. The clusters of adjacent spin-up sites are colored according
+    to how many sites belong to it. The subcritical regime is dominated by the
+    large clusters. On the other hand, above the critical point, the system is
+    dominated by thermal fluctuations, undermining cluster formation. At the
+    critical point however, the clusters lack a characteristic length scale.
+    One can observe that the image has a certain ``depth'' to it. This happens
+    because clusters of all sizes are present, a mark of scale invariance,
+    the most important property of critical systems.}
+\label{fig:ising}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/ising_phase}
+\end{center}
+\caption{Spontaneous magnetization as a function of temperature for the Ising
+    model. The simulations were performed in a $128\times128$ square lattice.
+    As temperature rises, thermal fluctuations dominate the spin dynamics
+    destroying the correlations. Above the critical temperature of
+    $T_c=2/\log(1+\sqrt{2})\approx 2.269$ the value of $M$ should reaches zero,
+    although due to finite size effects we still observe some magnetization
+    beyond this point. The red line shows the illustrious solution
+    developed by Onsager, where $M={[1-{(\sinh{2/T})}^{-4}]}^{1/8}$.}
+\label{fig:ising_phase}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/isoperco}
+\end{center}
+\caption{Realizations of the percolation model in a square lattice with three
+    different occupation probabilities $p$. Black sites are unoccupied, blue
+    ones are occupied, and the largest cluster is painted yellow. For small
+    values of $p$, there is no cluster that connects opposite sides of the
+    systems. Above the critical point however, the largest cluster promotes a
+    global connectivity, or, in terms of transport, the system becomes
+    permeable.}
+\label{fig:isoperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/isoperco2}
+\end{center}
+\caption{The order parameter of the percolation model as a function of the
+    occupation probability for various system sizes. The order parameter here
+    is defined as the fraction of the system occupied by the largest cluster.
+    In the thermodynamical limit, the largest cluster have a finite size for
+    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
+    system. Above the critical point the largest cluster is infinite and occupies
+    a finite fraction.}
+\label{fig:isoperco2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch3-conf/figs/isingcm}
+\end{center}
+\caption{Illustration of the Ising model at the critical point when transformed
+    under a conformal map $f(z)=z/(2-z)$. The deformed image still looks
+    statistically similar to the original, which is a consequence of conformal
+    invariance.}
+\label{fig:isingcm}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch3-conf/figs/isingcm2}
+\end{center}
+\caption{Illustration of the Ising model above the critical point when
+    transformed under a conformal map $f(z)=z/(2-z)$. In the deformed image,
+    the spin configuration is no longer homogeneous, because outside the
+    critical point the system is no longer conformally invariant.}
+\label{fig:isingcm2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=1.0]{chapters/ch4-sle/figs/scmap}
+\end{center}
+\caption{The Riemann mapping theorem guarantees the existence of at least one
+    conformal mapping $f$ that maps any two simply connected two-dimensional
+    domains. In $2D$ any conformal map is invertible.}
+\label{fig:scmap}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
+\end{center}
+\caption{Radial versus chordal Loewner traces generated using the same driving
+    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
+    $\exp(iU_t)$). Radial curves are contained inside the unit circle
+    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
+    Chordal traces are contained in the upper half plane
+    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
+    infinity.}
+\label{fig:radchord}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/loewexplain}
+\end{center}
+\caption{How the chordal Loewner evolution works. We define the trace $\gamma$
+    parametrized by a time $t$. At each time instant there is a conformal map
+    $g_t$ that maps the upper half plane minus the trace up to time $t$ to the
+    upper half plane itself, that is, $g_t:\HH\setminus\gamma_{[0,t]}
+    \rightarrow\HH$. The tip of the trace always get mapped to the real line.
+    If we track the point where the tip is mapped, we get a function $U_t$
+    called driving function, that is $U_t=g_t\left(\gamma_t\right)$.
+    The trace, driving function and uniformizing maps are all related through
+    Loewner's equation (Eq.~\ref{eq:loew}).}
+\label{fig:loewexplain}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/leexample}
+\end{center}
+\caption{Example of a Loewner trace generated by the driving function
+    $U_t=\sin(\pi t)\sin(\frac{\pi t}{10})t^{3/4}$. The trace $\gamma$ is
+    defined by the relation $\gamma_t = g_t^{-1}(U_t)$, where $g_t$ is the
+    solution of the Loewner differential equation (Eq.~\ref{eq:loew}).}
+\label{fig:leexample}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.8]{chapters/ch4-sle/figs/confinv}
+\end{center}
+\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.}
+\label{fig:confinv}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
+\end{center}
+\caption{The domain Markov property states that the conditional measure of
+    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
+    in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
+\label{fig:dmp}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/slefracdim}
+\end{center}
+\caption{Examples of several SLE traces generated using the same underlying
+    Brownian motion, but with different $\kappa$. The fractal dimension is
+    given by $d_f=\min(1+\kappa/8, 2)$.}
+\label{fig:slefracdim}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch4-sle/figs/euler1}
+\end{center}
+\caption{Simulation of an SLE process with $\kappa=2$ using the Euler method
+    with $\Delta t = 10^{-5}$ in a grid of resolution $(1024, 1024)$. Because
+    at time $t$ $g_t(\gamma_t)-U_t=0$, if we color the upper half plane
+    according to which side of the real line each point is mapped, the border
+    between the regions should indicate the position of the trace $\gamma_t$.
+    The red points are the points where the method failed and were mapped
+    outside the upper half plane. The smooth ``tail'' of the trace happens
+    because these points have not yet been mapped to the real line.}
+\label{fig:euler1}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch4-sle/figs/euler2}
+\end{center}
+\caption{Simulation of an SLE process with $\kappa=6$ using the Euler method
+    with $\Delta t = 10^{-5}$ in a grid of resolution $(1024, 1024)$.
+    The red points are the points where the method failed and were mapped
+    outside the upper half plane. The algorithm performed much worse than
+    the case $\kappa=2$.}
+\label{fig:euler2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.34]{chapters/ch4-sle/figs/zipperdiag}
+\end{center}
+\caption{Schematic representation of how the zipper algorithm fits in the
+    Loewner evolution framework. At the top, we have the full trace up to time
+    $t_5$, which we want to reach starting from the empty upper half plane
+    (right most panel on the fourth row). To compute the trace from a given
+    discretized driving function, one must take the red path. This is achieved
+    by using the interpolating maps $g_i$ that are the solution of the Loewner
+    equation with driving function $\tilde{U}_0=0$ and $\tilde{U}_{\Delta
+    t}=\Delta U$. The choice of interpolation function $\tilde{U}$ is
+    arbitrary, but usually taken from the few options that have an analytical
+    solution.}
+\label{fig:zipperdiag}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/eulerzip}
+\end{center}
+\caption{Comparison of the traces obtained by using the zipper algorithm (red
+    line) and Euler's method. Although it presents large jumps in the trace due
+    to large displacements in the driving function, zipper it still performs
+    better than the Euler's.}
+\label{fig:eulerzip}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/zipper}
+\end{center}
+\caption{Result of applying the first three iterations of the zipper algorithm
+    with the tilted slit approximation. In the limit $\Delta t\rightarrow 0$
+    the red line converges to an SLE trace.}
+\label{fig:zipper}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
+\end{center}
+\caption{Simple representation of bond directed percolation in a square
+    lattice. Here, the time flows upwards (although the time direction can be
+    chosen arbitrarily). A previously occupied bond has a probability $p$ of
+    occupying any of its two neighbors along the time direction.}
+\label{fig:dperco_scheme}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
+\end{center}
+\caption{Three realizations of site directed percolation on a square lattice
+    (here the time flows downwards). Being a absorbing phase transition model,
+    the system have a probability of entering a state that it cannot leave, in
+    this case a fully unoccupied state, like it happens in the left panel.
+    Above the critical point however the probability of reaching an absorbing
+    state becomes vanishing.}
+\label{fig:dperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
+\end{center}
+\caption{Expected population of bond directed percolation as a function of time
+    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
+    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
+    N(t)\right\rangle>0$.}
+\label{fig:dperco_nt}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlperco_explain}
+\end{center}
+\caption{Schematic representation of the multi-layered percolation model. Each
+    layer (numbered $0$ through $9$ here) gets one of two probabilities of
+    occupation ($\bar{p}\pm\Delta$), chosen randomly with equal probabilities.
+    Otherwise, the percolation process goes as usual, occupying each site
+    according to the probabilities of each layer.}
+\label{fig:mlperco_explain}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlp_cluster}
+\end{center}
+\caption{A comparison of clusters of occupied sites in both isotropic and
+    multi-layered percolation at their critical points. They were generated
+    using the self-organized percolation algorithm [???] (the dense ``core''
+    found on both clusters is an artifact of this method). The stratified
+    nature of the multi-layered percolation makes itself evident even for the
+    relatively low value of $\Delta$ used here.}
+\label{fig:mlp_cluster}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlperco}
+\end{center}
+\caption{Three realizations of the multi-layered percolation model in the
+    square lattice. Black sites are unoccupied, dark cyan sites are occupied
+    and yellow sites are represent the largest cluster of the system. All
+    three realizations are in the critical point. The larger the value of
+    $\Delta$, the more anisotropic is the system, and the multi-layered
+    structure of the system becomes more evident.}
+\label{fig:mlperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
+\end{center}
+\caption{Phase space of the multi-layered percolation model for both square and
+    triangular lattices. They were computed using the cluster perimeter method.
+    The square lattice result follow the results by Dayan et al.\ [???].
+    Somewhat surprisingly we found that in the triangular lattice
+    $\bar{p}_c=0.5$ for every value of $\Delta$.}
+\label{fig:mlp_ps}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/explore}
+\end{center}
+\caption{The first few steps of a percolation exploration process with closed
+    boundary conditions in a triangular lattice, which means the left side of
+    the bottom row is always unoccupied (yellow) and the right side is always
+    occupied (blue). At each step, the walker checks the status of the site
+    right in front of it. If it is yellow, the walker turns clockwise and takes
+    a step. If it is blue it turns counter-clockwise before taking a step. This
+    method is superior because you only need to store the information about the
+    sites adjacent to the curve, saving RAM and allowing for simulations of
+    very large traces.}
+\label{fig:explore}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[t]
+    \begin{center}
+        \includegraphics[scale=0.25]{chapters/ch6-asle/figs/dfa}
+    \end{center}
+    \caption{The Detrended Fluctuation Analysis (DFA) of a time series of
+        $N=16,384$ data points. First we divided the series in $m$ partitions with
+        $s$ points each (top-left), then fitted each separately with a first order
+        polynomial $f_1(i)$ (red lines), obtaining the detrended series by subtracting
+        the signal by the trend (top-right).  The fluctuation function (the standard
+        deviation of the detrended signal) is computed for various values of $s$
+        (bottom).  The Hurst exponent is then determined by fitting the fluctuation
+        function with a power law $F(s)\sim s^h$.}
+\label{fig:dfa}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/dfaresults}
+\end{center}
+\caption{Results of detrended fluctuation analysis (DFA) of the driving
+    functions of percolation models. As expected, the driving function of the
+    isotropic percolation (top left) is a Brownian motion, therefore have
+    $H=0.5$. For comparison the DFA of L\'evy flights with several $\alpha$ is
+    shown (top right). Despite displaying anomalous diffusion, it still have
+    $H=0.5$. Multi-layered percolation however shows a very distinct exponent
+    $H=0.814$, which is consistent with the diffusion exponent shown inf
+    Figure~[???]. The fluctuation function of directed percolation does not
+    have a power-law behavior, which indicates that the series is.}
+\label{fig:dfaresults}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/fbm}
+\end{center}
+\caption{Example of three fractional Brownian motions generated using the
+    Davies-Harte algorithm (left). They all have $b=1.0$ and different values
+    of $H$. We also show the behavior of the mean square displacement of the
+    scaling properties of the curves. We found that the mean square displacement
+    scales as $\sqrt{\left\langle B_t^2\right\rangle}=\sqrt{b}t^H$ with
+    parameters very similar to the input given.}
+\label{fig:fbm}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/timescaling}
+\end{center}
+\caption{Scaling analysis of the percolation models and their SLE equivalents.
+    Here we observe how the total width, $X(t)$, and and height, $Y(t)$, of the
+    traces evolve in time. According to the SLE time.}
+\label{fig:timescaling}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/asle_traces}
+\end{center}
+\caption{Examples of $SLE(b,H)$ generate using the three sets of parameters
+    that we drew from the diffusion analysis (Figure~[???]). For the correlated
+    ($H>0.5$) and uncorrelated ($H=0.5$) we show one example of each. In the
+    anticorrelated we show several instances. We used the zipper algorithm with
+    $10^6$ points equally spaced in the interval $t\in[0, t_f]$, where the
+    values of $t_f$ used can be found in Table~[???].}
+\label{fig:asle_traces}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ip_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the isotropic percolation model in
+    the triangular lattice with a detail shown. The bottom graph is the driving
+    function obtained by applying the zipper algorithm to this trace.}
+\label{fig:ip_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ml_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the multi-layered percolation model
+    in the triangular lattice ($\Delta=0.2$) with a detail shown. The bottom
+    graph is the driving function obtained by applying the zipper algorithm to
+    this trace.}
+\label{fig:ml_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/dp_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the bond directed percolation model
+    in the square lattice with a detail shown. The bottom graph is the driving
+    function obtained by applying the zipper algorithm to this trace.}
+\label{fig:dp_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch7-apdx/figs/proofscheme}
+\end{center}
+\caption{Construction of the transition map $\tilde{g}_{t,dt}=g_t\circ
+    g_{t-dt}^{-1}$. The interval $[a,b]$ is the region where
+    $\mbox{Im }\tilde{g}_{t,dt}(z)>0$.}
+\label{fig:proofscheme}
+\end{figure}
+\efloatseparator
+ 

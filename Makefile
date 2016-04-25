@@ -8,7 +8,7 @@ default: main
 
 main: main.tex chapters/*/main.tex main.bib
 	latexmk -pdf main
-	$(PDF) main.pdf &
+	$(PDF) main.pdf 2> /dev/null &
 
 clean:
 	latexmk -C

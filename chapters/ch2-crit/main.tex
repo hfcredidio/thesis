@@ -96,7 +96,7 @@ different from the one described before, because they present a series of
 \end{center}
 \caption{How a system of particles behave in the three phases of matter. Here a
     simulation of 100 particles was done, but the trajectory of only one is
-    shown. In the solid stated the particles are confined to small region by
+    shown. In the solid state the particles are confined to small region by
     the interactions of its neighbors. In the liquid state the particle is
     unconfined, but still interacts strongly with the other particles. In the
     gas state the kinetic energy of the particles is large enough that they
@@ -117,14 +117,34 @@ different from the one described before, because they present a series of
 \label{fig:suscep}
 \end{figure}
 
+\section{Classification of Phase Transitions}
+\label{sec:classification}
+
+In the literature, phase transitions usually fall in two categories: first
+order and second order. But before we define each type it is good to do a
+little thermodynamics refresher.
+
+When we have a system defined by it's temperature $T$, pressure $P$ and
+volume $V$, the thermodynamic properties of this system are determined
+by a potential called \textit{free energy}.
+
 
 \section{Ising Model}
 \label{sec:ising}
 
-The Ising model represents the golden standard of phase transition models
-because it unites a quite simple physical description with the fact it can be
-exactly solved in both one and two dimensions, a claim very few models can
-make.
+For most of the first half of the 20th century, it was unclear whether the
+formalism developed in statistical physics was enough to completely describe
+phase transitions. That's because equations [\ldots] seems to behave neatly as
+function of temperature. It wasn't until the work of Onsager in
+1944~\cite{Onsager1944} that it became clear that the singularities appear only
+in the limit of infinite particles, the thermodynamic limit.
+
+It's impossible to understate the impact of the Ising model in the study of
+phase transitions. It represents a golden standard because it unites an
+elegantly simple setup with the fact it can be exactly solved in both one and
+two dimensions, a claim very few models can make. Two of the most important
+models, $O(n)$ and Pott's model, were constructed as generalizations of the
+Ising model.
 
 The system is composed of a number of classical spins $\{s_i\}$ that can take
 one of two values $1$ or $-1$. The are arranged in a lattice and are allowed to
@@ -190,6 +210,11 @@ on two variables: the external magnetic field $h$ and the temperature $T$.
 \label{fig:ising_phase}
 \end{figure}
 
+Simulating the Ising model is particularly simple using the Metropolis-Hastings
+algorithm. At each time step chose a random spin of the lattice and compute the
+change in energy $\Delta E$ that would occur if you were to flip the spin. You
+actually perform the flip if $\Delta E < 0$. If not, you should still accept
+the flip randomly with probability $\exp(-\Delta E / T)$.
 
 \section{Percolation}
 \label{sec:perc}
