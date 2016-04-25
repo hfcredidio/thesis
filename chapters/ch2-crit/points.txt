@@ -1,0 +1,10 @@
+- what's a phase
+    - systems are composed of interacting parts
+        - examples
+        - the more parts the harder it gets
+    - these parts can organize themselve in different ways
+    - each state of organization is called a phase
+    - the phase depends on some external parameters
+    - water
+    - phase diagram
+    - phase transition
