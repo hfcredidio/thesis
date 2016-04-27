@@ -31,6 +31,50 @@
 \end{figure}
 \efloatseparator
  
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs1}
+\end{center}
+\caption{Why first order transitions happen. The left graph shows three points
+    on the phase space of water. The red one is in the liquid phase, the blue
+    is in the gaseous state and the green right on the boundary. The right
+    graph shows a heuristic construction of the Gibbs free energy in each of
+    the three points (matched by color). The equilibrium state is the one of
+    minimal free energy. Although $G$ changes continuously with the
+    temperature, the global minimum shifts abruptly once the phase boundary is
+    crossed, thus occurring a first order phase transition. When the system is
+    exactly on the boundary, the minima are equivalent, and the two phases
+    coexist.}
+\label{fig:gibbs1}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs2}
+\end{center}
+\caption{If we follow the (heuristic) Gibbs free energy along the liquid-gas
+    line, we observe that at some critical point $T_c$ the two minima (related
+    to the liquid and gas phases) coalesce into one. At this point the two
+    phases are indistinguishable, which characterizes a second order phase
+    transition. Systems close to the critical point are called critical
+    systems.}
+\label{fig:gibbs2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch2-crit/figs/suscep}
+\end{center}
+\caption{Example of a ferromagnetic transition in dupeyredioxyl. The graph
+    shows a distinctive divergence in the magnetic susceptibility in the
+    vicinity of the critical point $T_c\approx1.48$K. Reproduced
+    from~\cite{Chiarelli1993}.}
+\label{fig:suscep}
+\end{figure}
+\efloatseparator
+ 
 \begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch3-conf/figs/isingcm}
