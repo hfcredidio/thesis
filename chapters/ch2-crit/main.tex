@@ -22,7 +22,7 @@ people when trying to design buildings with safe exit routes. What is more
 important to us is the fact that these building blocks can organize themselves
 in several different ways. Each pattern of organization is called a
 \textit{phase}, and in which phase the systems finds itself depends on the
-value of some external parameter, like energy density, temperature, nutrient
+value of some external parameters, like energy density, temperature, nutrient
 concentration or whether or not there's a fire in the building. Not only that
 but different phases of a same system display wildly different macroscopic
 behavior, despite no change taking place in their composition.
@@ -35,10 +35,9 @@ $100^\circ$C, the molecules acquire enough kinetic energy to be able to move
 through one another. They still interact strongly enough to be bound together
 but it is not sufficient to keep them fixed. This is the liquid phase. When the
 temperature is above $100^\circ$C, water is now in the gaseous state, where
-thermal movement dominates the dynamics of the system. The molecules
-now move mostly unimpeded, interacting only when colliding directly. See
-Fig.~\ref{fig:phases} for an illustration of how a molecule moves in the three
-phases.
+thermal movement dominates and the molecules move mostly unimpeded, interacting
+only when colliding directly. See Figure~\ref{fig:phases} for an illustration of
+how a molecule moves in the three phases.
 
 Not all phases concern the states of matter, however. Some are related to
 magnetic or electric properties. This is the case of ferromagnetic materials,
@@ -109,7 +108,7 @@ density or, equivalently, the volume. For ferromagnetic transitions we use the
 spontaneous magnetization.
 
 Following the example of water, where the temperature and pressure are the
-control variables, the thermodynamic properties are determined by it's Gibbs
+control variables, the thermodynamic properties are determined by its Gibbs
 free energy
 \begin{equation}
     G=E-TS+pV.
@@ -120,7 +119,7 @@ from which we can obtain the volume by taking its derivative
 \end{equation}
 If we now make an experimental apparatus to try and observe the behavior of the
 density of an amount of water during a phase transition, say the liquid-gas
-transition, what we see is show in Figure~\ref{fig:water}b. The density (and
+transition, what we see is shown in Figure~\ref{fig:water}b. The density (and
 therefore the volume) makes a discontinuous jump. Less evident, but no less
 true, is that the entropy, another derivative of $G$,
 \begin{equation}
@@ -132,9 +131,13 @@ transition are of \textit{first order}. This sudden changes happens because the
 equilibrium state of the system (the minimum of the free energy) shifts from
 one part of the phase space to another~\cite{Callen1985} as illustrated in
 Figure~\ref{fig:gibbs1}. When the system is exactly at the boundary of the
-phase transition, both phases have the same free energy, allowing them both to
-coexist in different regions of the system. Because of this, the transition
-lines are also called coexistence lines.
+phase transition, the two phases have the same free energy, allowing them both
+to coexist in different regions of the system. Because of this, the transition
+lines are also called coexistence lines. On the point labeled triple point, the
+free energy has \textit{three} equal minima, so all three phases (solid, liquid
+and gas) exist on the same system. Because the triple point is uniquely
+defined, it is the basis used to define the Kelvin temperature
+scale~\cite{Fermi1956}.
 
 \begin{figure}[h]
 \begin{center}
@@ -157,26 +160,28 @@ lines are also called coexistence lines.
 First order transitions are characterized by the presence of latent heat, an
 amount of energy that the system releases or absorbs during a phase transition,
 which is a constant of the substance, and is independent on the temperature,
-pressure or other control parameter~\cite{Callen1985}. This means that when
+pressure or other control parameters~\cite{Callen1985}. This means that when
 boiling a volume of water, the temperature of the liquid phase does not rise
 because the extra heat being added is being absorbed in form of latent heat.
 
-Looking again at Figure~\ref{fig:water}a one might ask why the liquid-gas
+Now, looking again at Figure~\ref{fig:water}a one might ask why the liquid-gas
 transition line does not extend for all values of temperature. This is where
 things start to get interesting. We've established that the free energy have
 two equivalent minima when the system is over the coexistence line. Now, if we
 walk along this line following the behavior of the free energy, what we observe
-is something similar to what is shown in Figure~\ref{fig:gibbs2}. At a
-temperature of approximately $374^\circ$C and pressure of $217.7$atm, the two
-minima join into one. At this point it is not that the two phases coexist, they
-are indistinguishable.
+is that the ``dividing wall'' between  the two minima gets shorter and shorter,
+similar to what is shown in Figure~\ref{fig:gibbs2}. At a critical temperature
+of approximately $374^\circ$C and pressure of $217.7$atm, the two minima merge.
+At this point it is not that the two phases coexist, they are
+indistinguishable from one another.
 
-If we look at the order parameter of the systems when it goes through the
-critical point, we see that the transition is no longer discontinuous, as it's
-shown in Figure~\ref{fig:water}c. If we set the pressure to the same as the
-critical point and heat an amount of liquid water, the volume will rise
-continuously until it reaches the gaseous state. We can observe the behavior of
-other thermodynamic quantities near the critical point, like the specific heat
+If we look at the order parameter when the system pass through the critical
+point, we see that it is no longer discontinuous, as it's shown in
+Figure~\ref{fig:water}c. If we set the pressure to the same as the critical
+point and heat an amount of liquid water, the volume will rise continuously
+until it reaches the gaseous state. Not all quantities are well behaved though.
+The ones that do display discontinuities on the critical point, are the second
+derivatives of the free energy, like the specific heat
 \begin{equation}
     c_p=T{\left(\frac{\partial S}{\partial T}\right)}_{p}=
     T{\left(\frac{\partial^{2}G}{\partial T^{2}}\right)}_{p},
@@ -186,27 +191,26 @@ or the isothermal compressibility
     \kappa_T=-\frac{1}{V}{\left(\frac{\partial V}{\partial p}\right)}_{T}=
     -\frac{1}{V}{\left(\frac{\partial^{2}G}{\partial p^{2}}\right)}_{T},
 \end{equation}
-What we see is a very clear divergence near the critical point. Because these
-diverging quantities are second derivatives of the free energy, we say this is
-a \textit{second order} phase transition, and systems close to the critical
-point are called \textit{critical systems}.
+This why going through a critical point is know as a \textit{second order}
+phase transition, and systems close to it are called \textit{critical systems}.
 
 Second order transitions have a whole range of peculiar behavior associated
 with it. The most notorious is the presence of large fluctuations. In
 Chapter~\ref{ch:intr} we mentioned the work of Thomas
 Andrews~\cite{Andrews1869}, who noticed that some substances become opaque at
-the critical point. This happens because of the huge fluctuations in the
-density of the systems, which are present in all size scales, scattering most
-visible light.
+the critical point. This happens because the huge fluctuations in the
+spacial distribution of mass, which happens in all size scales, scatter most
+of the visible light.
 
-The ferromagnetic transition described in the previous section is probably the
-most studied kind of second order phase transition. In it the free energy is
-given by
+Although we focused a lot on the example of water, the ferromagnetic transition
+described in the previous section is probably the most studied kind of second
+order phase transition. In it the free energy is given by
 \begin{equation}
     F = -SdT-Mdh
 \end{equation}
-where $M$ is the spontaneous magnetization and $h$ is an external magnetic
-field. It is characterized by a diverging magnetic susceptibility
+where $M$ is the spontaneous magnetization (the order parameter in this case)
+and $h$ is an external magnetic field. It is characterized by a diverging
+magnetic susceptibility
 \begin{equation}
     \chi_{M}=
     {\left(\frac{\partial M}{\partial h}\right)}_{T}=
@@ -242,45 +246,105 @@ Not all phase transitions fall neatly into these two categories, however. The
 Kosterlitz-Thouless transition of the XY-Model (related to some superconducting
 transitions~\cite{Resnick1981}) could be considered of infinite order, because
 the free energy is infinitely differentiable~\cite{Kosterlitz1973}, although it
-shares a lot of similarities with second order transitions.
+shares some of similarities with second order transitions.
 
 
 \section{Critical Exponents and Universality}
 \label{sec:universality}
 
-The discussion of phase transitions presented in the last section, rooted on
-the postulates of thermodynamics and in the analyticity of the free energy, is
-due to Landau~\cite{Landau1969}. While this theory menages to capture a few
-properties 
-
 We noted that several thermodynamical quantities diverge on the critical point.
 Not only that, that
 
-There are four basic thermodynamical critical exponents, defined as follows.
+We will use $\Phi$ for the order parameter (the density for water, the
+magnetization for ferromagnets) and $J$ for the source field (pressure for
+water, the external magnetic field for ferromagnets).
 
 The heat capacity exponent $\alpha$
 \begin{equation}
-    C \sim \left|T-T_c\right|^{-\alpha}.
-\end{equation}
-The generalized susceptibility exponent $\gamma$
-\begin{equation}
-    \chi \sim \left|T-T_c\right|^{-\gamma}.
+    \begin{array}{ccccc}
+        C & \sim & {\left(T-T_c\right)}^{-\alpha}  & \mbox{for} & T > T_c \\
+        C & \sim & {\left(T_c-T\right)}^{-\alpha'} & \mbox{for} & T < T_c
+    \end{array}
 \end{equation}
 The order parameter exponent $\beta$, when taken along the coexistence curve 
 \begin{equation}
-    \Phi \sim {\left|T-T_c\right|}^{\beta}.
+    \begin{array}{ccccc}
+        \Phi  & \sim & {\left(T_c-T\right)}^{\beta} & \mbox{for} & T < T_c
+    \end{array}
+\end{equation}
+The generalized susceptibility exponent $\gamma$
+\begin{equation}
+    \begin{array}{ccccc}
+        \chi  & \sim & {\left(T-T_c\right)}^{-\gamma}  & \mbox{for} & T > T_c \\
+        \chi  & \sim & {\left(T_c-T\right)}^{-\gamma'} & \mbox{for} & T < T_c
+    \end{array}
 \end{equation}
 The order parameter exponent $\delta$, when taken at constant temperature
 $T=T_c$
 \begin{equation}
-    \Phi \sim \left|J-J_c\right|^{1/\delta}.
+    \begin{array}{ccccc}
+        \Phi  & \sim & {\left(J-J_c\right)}^{1/\delta} & \mbox{for} & J > J_c
+    \end{array}
 \end{equation}
 These exponents may have different values if you take the limit from above or
 bellow the critical point, but it should be enough for us to assume they are
 the same.
 
 There are many other critical exponents outside the realm of thermodynamics and
-well into the statistical mechanics domain.
+well into the statistical mechanics domain. The most notorious one is related
+to the correlations of the system. According to the fluctuation-dissipation
+theorem
+\begin{equation}
+    \label{eq:flucdiss}
+    \chi\sim
+    \int\left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle dr,
+\end{equation}
+where the term $\left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle$
+is called a correlation function. Here we are assuming translation invariance,
+so $\left\langle \Phi\left(r_1\right)\Phi\left(r_2\right)\right\rangle$ depends
+only on the distance $|r_1-r_2|$.
+
+Because most systems studied do not have long range interactions, this means
+the state of the components are determined by the ones closest to it. This means
+that 
+\begin{equation}
+    \left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle \sim e^{-r/\xi}
+\end{equation}
+where $\xi$ is called the \textit{correlation length}. As the temperature
+rises, one would expect that the correlation length would get shorter, for the
+thermal fluctuations but since the integral~\ref{eq:flucdiss} must diverge, the
+correlation length must not stay finite. In fact it diverges with an exponent
+$\nu$
+\begin{equation}
+    \xi\sim{\left|T-T_c\right|}^{-\nu}.
+\end{equation}
+and exactly above the critical point 
+\begin{equation}
+    \left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle
+    \sim r^{-d+2-\eta}
+\end{equation}
+where $d$ is the number of dimensions of the model. In order for the susceptibility
+diverge, the condition $d+\eta\leq5$
+
+The discussion of phase transitions presented (very superficially) so far,
+rooted on the postulates of thermodynamics and in the analyticity of the free
+energy, is due to Landau~\cite{Landau1969}. While this theory menages to
+capture a few properties of critical systems, it fails catastrophically when it
+comes to determine the values of the critical exponents. The source of this
+discrepancy is due to some basic assumptions of statistical mechanics. You see,
+the maximum entropy postulate is derived from the fact that the probability of
+finding a system in any given state is distributed very narrowly around a
+value, this way we can assume the expected (average) energy of the system is
+the same as the most probable one. On the critical point however, because
+the minimum of the free energy is so shallow, the probability distribution
+significantly broadens, so much that the difference between most probable and
+average cannot be ignored~\cite{Callen1985}.
+
+One notable consequence of the dominance of long range correlations is that the
+value of the critical exponents does not depend on the details of the material,
+only by the much more general properties of the fluctuations. This means that
+systems apparently unrelated, like superfluid helium or superconducting mercury,
+will often have the same exponents ($\alpha\approx-0.0127$
 
 
 \section{Models of Critical Systems}
