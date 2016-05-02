@@ -1,0 +1,24 @@
+\begin{table}[t]
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\begin{centering}
+\begin{tabular}{L{3cm}L{1.5cm}L{1.5cm}L{1.5cm}L{1.5cm}L{1.5cm}L{1.5cm}}
+\bottomrule[0.1mm]
+\toprule[0.1mm]
+                   & $H$    & $b$    & $t_{f}$         & $N$      & $M$      & $\ell_{max}$    \\
+\bottomrule[0.1mm]
+Ensemble 1         & $0.5$  & $6.0$  & $2\times10^{5}$ & $10^{6}$ & $10^{5}$ & $2\times10^{4}$ \\
+Ensemble 2         & $0.8$  & $16.0$ & $3\times10^{4}$ & $10^{6}$ & $10^{5}$ & $8\times10^{4}$ \\
+Ensemble 3         & $0.33$ & $3.8$  & $5\times10^{7}$ & $10^{6}$ & $10^{5}$ & $2\times10^{4}$ \\
+\bottomrule[0.1mm]
+\toprule[0.1mm]
+\end{tabular}
+\end{centering}
+\caption{Simulation parameters used to generate the SLE traces. $H$ is the
+    Hurst exponent and $b$ is the diffusion coefficient of the fractional Brownian
+    motion used as driving function. The curves were computed for $N$ times $t_i$
+    equally spaced in the interval $[0, t_f]$. The resulting trace is
+    reparametrized as a function of its length and interpolated in $M$ points
+    equally spaced in the interval $[0,\ell_{max}]$.}
+\label{tab:param}
+\end{table}
+

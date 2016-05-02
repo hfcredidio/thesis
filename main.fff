@@ -1,4 +1,4 @@
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
 \end{center}
@@ -14,7 +14,7 @@
 \end{figure}
 \efloatseparator
  
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
 \end{center}
@@ -31,7 +31,7 @@
 \end{figure}
 \efloatseparator
  
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs1}
 \end{center}
@@ -49,7 +49,7 @@
 \end{figure}
 \efloatseparator
  
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs2}
 \end{center}
@@ -63,14 +63,16 @@
 \end{figure}
 \efloatseparator
  
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[scale=0.16]{chapters/ch2-crit/figs/suscep}
 \end{center}
-\caption{Example of a ferromagnetic transition in dupeyredioxyl. The graph
-    shows a distinctive divergence in the magnetic susceptibility in the
-    vicinity of the critical point $T_c\approx1.48$K. Reproduced
-    from~\cite{Chiarelli1993}.}
+\caption{Examples of thermodynamical quantities in the vicinity of a second
+    order phase transitions. The left graph shows the diverging magnetic
+    susceptibility on the ferromagnetic transition of
+    dupeyredioxyl~\cite{Chiarelli1993}. The graph on the right shows the
+    diverging specific heat of the lambda transition of superfluid
+    helium-4~\cite{Keesom1935}.}
 \label{fig:suscep}
 \end{figure}
 \efloatseparator

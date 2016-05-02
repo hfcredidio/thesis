@@ -60,7 +60,7 @@ between the phases. Crossing any of these lines is followed by a sharp change
 on the properties of the system, as described previously. This is know as a
 \textit{phase transition}.
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
 \end{center}
@@ -76,7 +76,7 @@ on the properties of the system, as described previously. This is know as a
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
 \end{center}
@@ -105,7 +105,8 @@ system. This is done by defining an \textit{order parameter}, a quantity that
 take very distinct values in different phases (usually normalized to be zero in
 the high temperature phase). In the case of water, the order parameter is the
 density or, equivalently, the volume. For ferromagnetic transitions we use the
-spontaneous magnetization.
+spontaneous magnetization. Other examples of order parameter can be seen in
+Table~\ref{tab:ptex}.
 
 Following the example of water, where the temperature and pressure are the
 control variables, the thermodynamic properties are determined by its Gibbs
@@ -139,7 +140,7 @@ and gas) exist on the same system. Because the triple point is uniquely
 defined, it is the basis used to define the Kelvin temperature
 scale~\cite{Fermi1956}.
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs1}
 \end{center}
@@ -217,7 +218,7 @@ magnetic susceptibility
     -{\left(\frac{\partial^{2}F}{\partial h^{2}}\right)}_{T}.
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs2}
 \end{center}
@@ -231,14 +232,16 @@ magnetic susceptibility
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[scale=0.16]{chapters/ch2-crit/figs/suscep}
 \end{center}
-\caption{Example of a ferromagnetic transition in dupeyredioxyl. The graph
-    shows a distinctive divergence in the magnetic susceptibility in the
-    vicinity of the critical point $T_c\approx1.48$K. Reproduced
-    from~\cite{Chiarelli1993}.}
+\caption{Examples of thermodynamical quantities in the vicinity of a second
+    order phase transitions. The left graph shows the diverging magnetic
+    susceptibility on the ferromagnetic transition of
+    dupeyredioxyl~\cite{Chiarelli1993}. The graph on the right shows the
+    diverging specific heat of the lambda transition of superfluid
+    helium-4~\cite{Keesom1935}.}
 \label{fig:suscep}
 \end{figure}
 
@@ -247,6 +250,8 @@ Kosterlitz-Thouless transition of the XY-Model (related to some superconducting
 transitions~\cite{Resnick1981}) could be considered of infinite order, because
 the free energy is infinitely differentiable~\cite{Kosterlitz1973}, although it
 shares some of similarities with second order transitions.
+
+\input{chapters/ch2-crit/table.tex}
 
 
 \section{Critical Exponents and Universality}
@@ -344,18 +349,14 @@ One notable consequence of the dominance of long range correlations is that the
 value of the critical exponents does not depend on the details of the material,
 only by the much more general properties of the fluctuations. This means that
 systems apparently unrelated, like superfluid helium or superconducting mercury,
-will often have the same exponents ($\alpha\approx-0.0127$
+will often have the same exponents ($\alpha\approx-0.0127$ for example).
 
+\input{chapters/ch2-crit/table2.tex}
 
 \section{Models of Critical Systems}
 \label{sec:models}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Here we will show and discuss two of the most popular models of critical systems.
 
 \subsection{Ising Model}
 \label{sec:ising}
