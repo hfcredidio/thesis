@@ -1,6 +1,6 @@
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/phases}
 \end{center}
 \caption{How a system of particles behave in the three phases of matter. Here a
     simulation of 100 particles was done, but the trajectory of only one is
@@ -16,24 +16,24 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/water}
 \end{center}
 \caption{Phase diagram of water (a). Here, the three usual phases are
-    distinguished, each separated from the other by a critical line. The phase
-    transition that happens when the system traverse a line is characterized by
-    a discontinuous jump in the density, as shown in (b) for the liquid-gas
-    transition at $P=1$ atm. For $P=217.7$ atm however the same transition is
-    continuous, as shown in (c). In the vicinity of this phase transition, at
-    $T\approx374.4^\circ$C, the two phases become indistinguishable, and
-    display a number of peculiarities. Systems in such state are called
-    critical systems. Reproduced from~\cite{Sole2011}.}
+    distinguished, each separated from the other by a coexistence line. The
+    phase transition that happens when the system traverse a line is
+    characterized by a discontinuous jump in the density, as shown in (b) for
+    the liquid-gas transition at $P=1$ atm. For $P=217.7$ atm however the same
+    transition is continuous, as shown in (c). In the vicinity of this phase
+    transition, at $T\approx374.4^\circ$C, the two phases become
+    indistinguishable, and display a number of peculiarities. Systems in such
+    state are called critical systems. Reproduced from~\cite{Sole2011}.}
 \label{fig:water}
 \end{figure}
 \efloatseparator
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs1}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs1}
 \end{center}
 \caption{Why first order transitions happen. The left graph shows three points
     on the phase space of water. The red one is in the liquid phase, the blue
@@ -51,7 +51,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs2}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs2}
 \end{center}
 \caption{If we follow the (heuristic) Gibbs free energy along the liquid-gas
     line, we observe that at some critical point $T_c$ the two minima (related
@@ -65,7 +65,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.16]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/suscep}
 \end{center}
 \caption{Examples of thermodynamical quantities in the vicinity of a second
     order phase transitions. The left graph shows the diverging magnetic
@@ -79,7 +79,126 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch3-conf/figs/isingcm}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_phase2}
+\end{center}
+\caption{The phase space of the Ising model (left). The color represents the
+    spontaneous magnetization $M$ as a function of the external magnetic field
+    $h$ and temperature $T$. The black line represents the coexistence line
+    where the phase transition is of first order, which means the magnetization
+    changes discontinuously like it's shown in the blue line. In the critical
+    point the change is continuous and a second order phase transition takes
+    place.}
+\label{fig:ising_phase2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising}
+\end{center}
+\caption{Realizations of the Ising model with three different
+    temperatures. The clusters of adjacent spin-up sites are colored according
+    to how many sites belong to it. The subcritical regime is dominated by the
+    large clusters. On the other hand, above the critical point, the system is
+    dominated by thermal fluctuations, undermining cluster formation. At the
+    critical point however, the clusters lack a characteristic length scale.
+    One can observe that the image has a certain ``depth'' to it. This happens
+    because clusters of all sizes are present, a mark of scale invariance,
+    the most important property of critical systems.}
+\label{fig:ising}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/ising_phase}
+\end{center}
+\caption{Spontaneous magnetization as a function of temperature for the Ising
+    model. The simulations were performed in a $128\times128$ square lattice.
+    As temperature rises, thermal fluctuations dominate the spin dynamics
+    destroying the correlations. Above the critical temperature of
+    $T_c=2/\log(1+\sqrt{2})\approx 2.269$ the value of $M$ should reach zero,
+    although due to finite size effects we still observe some magnetization
+    beyond this point. The red line shows the illustrious solution
+    developed by Onsager~\cite{Onsager1944}, where
+    $M={[1-{(\sinh{2/T})}^{-4}]}^{1/8}$.}
+\label{fig:ising_phase}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
+\end{center}
+\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.}
+\label{fig:ising_cx}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
+\end{center}
+\caption{Exmaples of site and bond percolation in a square lattice.
+    In site percolation each site is occupied with probability $p$, while
+    in bond percolation any two neighboring sites are connected with a bond
+    with probability $p$.}
+\label{fig:sitebond}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/isoperco}
+\end{center}
+\caption{Realizations of the percolation model in a square lattice with three
+    different occupation probabilities $p$. Black sites are unoccupied, blue
+    ones are occupied, and the largest cluster is painted yellow. For small
+    values of $p$, there is no cluster that connects opposite sides of the
+    systems. Above the critical point however, the largest cluster promotes a
+    global connectivity, or, in terms of transport, the system becomes
+    permeable.}
+\label{fig:isoperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{chapters/ch2-crit/figs/isoperco2}
+\end{center}
+\caption{The order parameter of the percolation model as a function of the
+    occupation probability for various system sizes. The order parameter here
+    is defined as the fraction of the system occupied by the largest cluster.
+    In the thermodynamical limit, the largest cluster have a finite size for
+    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
+    system. Above the critical point the largest cluster is infinite and occupies
+    a finite fraction.}
+\label{fig:isoperco2}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch3-conf/figs/cmapex}
+\end{center}
+\caption{Coordinates transformations in the complex plane can be divided into
+    conformal and non-conformal. Conformal transformations preserve the
+    intersection angles between lines, unlike the non-conformal. The
+    transformation from the square lattice in (a) into (b) is conformal
+    ($f(z)=z^2$), while the one from (a) to (c) ($f(z)=z|z|$) is not.}
+\label{fig:cmapex}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch3-conf/figs/isingcm}
 \end{center}
 \caption{Illustration of the Ising model at the critical point when transformed
     under a conformal map $f(z)=z/(2-z)$. The deformed image still looks
@@ -91,7 +210,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch3-conf/figs/isingcm2}
+    \includegraphics[width=0.8\textwidth]{chapters/ch3-conf/figs/isingcm2}
 \end{center}
 \caption{Illustration of the Ising model above the critical point when
     transformed under a conformal map $f(z)=z/(2-z)$. In the deformed image,

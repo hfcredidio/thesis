@@ -62,7 +62,7 @@ on the properties of the system, as described previously. This is know as a
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/phases}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/phases}
 \end{center}
 \caption{How a system of particles behave in the three phases of matter. Here a
     simulation of 100 particles was done, but the trajectory of only one is
@@ -78,17 +78,17 @@ on the properties of the system, as described previously. This is know as a
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=1.0]{chapters/ch2-crit/figs/water}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/water}
 \end{center}
 \caption{Phase diagram of water (a). Here, the three usual phases are
-    distinguished, each separated from the other by a critical line. The phase
-    transition that happens when the system traverse a line is characterized by
-    a discontinuous jump in the density, as shown in (b) for the liquid-gas
-    transition at $P=1$ atm. For $P=217.7$ atm however the same transition is
-    continuous, as shown in (c). In the vicinity of this phase transition, at
-    $T\approx374.4^\circ$C, the two phases become indistinguishable, and
-    display a number of peculiarities. Systems in such state are called
-    critical systems. Reproduced from~\cite{Sole2011}.}
+    distinguished, each separated from the other by a coexistence line. The
+    phase transition that happens when the system traverse a line is
+    characterized by a discontinuous jump in the density, as shown in (b) for
+    the liquid-gas transition at $P=1$ atm. For $P=217.7$ atm however the same
+    transition is continuous, as shown in (c). In the vicinity of this phase
+    transition, at $T\approx374.4^\circ$C, the two phases become
+    indistinguishable, and display a number of peculiarities. Systems in such
+    state are called critical systems. Reproduced from~\cite{Sole2011}.}
 \label{fig:water}
 \end{figure}
 
@@ -142,7 +142,7 @@ scale~\cite{Fermi1956}.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs1}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs1}
 \end{center}
 \caption{Why first order transitions happen. The left graph shows three points
     on the phase space of water. The red one is in the liquid phase, the blue
@@ -220,7 +220,7 @@ magnetic susceptibility
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch2-crit/figs/gibbs2}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs2}
 \end{center}
 \caption{If we follow the (heuristic) Gibbs free energy along the liquid-gas
     line, we observe that at some critical point $T_c$ the two minima (related
@@ -234,7 +234,7 @@ magnetic susceptibility
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.16]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/suscep}
 \end{center}
 \caption{Examples of thermodynamical quantities in the vicinity of a second
     order phase transitions. The left graph shows the diverging magnetic
@@ -251,86 +251,6 @@ transitions~\cite{Resnick1981}) could be considered of infinite order, because
 the free energy is infinitely differentiable~\cite{Kosterlitz1973}, although it
 shares some of similarities with second order transitions.
 
-\input{chapters/ch2-crit/table.tex}
-
-
-\section{Critical Exponents and Universality}
-\label{sec:universality}
-
-We noted that several thermodynamical quantities diverge on the critical point.
-Not only that, that
-
-We will use $\Phi$ for the order parameter (the density for water, the
-magnetization for ferromagnets) and $J$ for the source field (pressure for
-water, the external magnetic field for ferromagnets).
-
-The heat capacity exponent $\alpha$
-\begin{equation}
-    \begin{array}{ccccc}
-        C & \sim & {\left(T-T_c\right)}^{-\alpha}  & \mbox{for} & T > T_c \\
-        C & \sim & {\left(T_c-T\right)}^{-\alpha'} & \mbox{for} & T < T_c
-    \end{array}
-\end{equation}
-The order parameter exponent $\beta$, when taken along the coexistence curve 
-\begin{equation}
-    \begin{array}{ccccc}
-        \Phi  & \sim & {\left(T_c-T\right)}^{\beta} & \mbox{for} & T < T_c
-    \end{array}
-\end{equation}
-The generalized susceptibility exponent $\gamma$
-\begin{equation}
-    \begin{array}{ccccc}
-        \chi  & \sim & {\left(T-T_c\right)}^{-\gamma}  & \mbox{for} & T > T_c \\
-        \chi  & \sim & {\left(T_c-T\right)}^{-\gamma'} & \mbox{for} & T < T_c
-    \end{array}
-\end{equation}
-The order parameter exponent $\delta$, when taken at constant temperature
-$T=T_c$
-\begin{equation}
-    \begin{array}{ccccc}
-        \Phi  & \sim & {\left(J-J_c\right)}^{1/\delta} & \mbox{for} & J > J_c
-    \end{array}
-\end{equation}
-These exponents may have different values if you take the limit from above or
-bellow the critical point, but it should be enough for us to assume they are
-the same.
-
-There are many other critical exponents outside the realm of thermodynamics and
-well into the statistical mechanics domain. The most notorious one is related
-to the correlations of the system. According to the fluctuation-dissipation
-theorem
-\begin{equation}
-    \label{eq:flucdiss}
-    \chi\sim
-    \int\left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle dr,
-\end{equation}
-where the term $\left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle$
-is called a correlation function. Here we are assuming translation invariance,
-so $\left\langle \Phi\left(r_1\right)\Phi\left(r_2\right)\right\rangle$ depends
-only on the distance $|r_1-r_2|$.
-
-Because most systems studied do not have long range interactions, this means
-the state of the components are determined by the ones closest to it. This means
-that 
-\begin{equation}
-    \left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle \sim e^{-r/\xi}
-\end{equation}
-where $\xi$ is called the \textit{correlation length}. As the temperature
-rises, one would expect that the correlation length would get shorter, for the
-thermal fluctuations but since the integral~\ref{eq:flucdiss} must diverge, the
-correlation length must not stay finite. In fact it diverges with an exponent
-$\nu$
-\begin{equation}
-    \xi\sim{\left|T-T_c\right|}^{-\nu}.
-\end{equation}
-and exactly above the critical point 
-\begin{equation}
-    \left\langle \Phi\left(0\right)\Phi\left(r\right)\right\rangle
-    \sim r^{-d+2-\eta}
-\end{equation}
-where $d$ is the number of dimensions of the model. In order for the susceptibility
-diverge, the condition $d+\eta\leq5$
-
 The discussion of phase transitions presented (very superficially) so far,
 rooted on the postulates of thermodynamics and in the analyticity of the free
 energy, is due to Landau~\cite{Landau1969}. While this theory menages to
@@ -345,13 +265,331 @@ the minimum of the free energy is so shallow, the probability distribution
 significantly broadens, so much that the difference between most probable and
 average cannot be ignored~\cite{Callen1985}.
 
-One notable consequence of the dominance of long range correlations is that the
-value of the critical exponents does not depend on the details of the material,
-only by the much more general properties of the fluctuations. This means that
-systems apparently unrelated, like superfluid helium or superconducting mercury,
-will often have the same exponents ($\alpha\approx-0.0127$ for example).
+\input{chapters/ch2-crit/table.tex}
+
+\section{Critical Exponents and Universality}
+\label{sec:universality}
+\newcommand{\op}{\sigma}
+\newcommand{\sfi}{J}
+
+We noted that several thermodynamical quantities diverge on the critical point.
+More important than that is \textit{how} they diverge. This motivates the
+definition of a set of indices called \textit{critical exponents} that
+characterize the behavior of the system near the critical point. We will use
+$\op$ for the order parameter (the density for water, the magnetization for
+ferromagnets) and $\sfi$ for the source field (pressure for water, the external
+magnetic field for ferromagnets). This way we define the generalized
+susceptibility $\chi=\partial\op/\partial \sfi$.
+
+In the thermodynamics domain there are four main critical exponents, each
+associated with a different quantity. We have the heat capacity exponent
+$\alpha$
+\begin{equation}
+    \label{eq:heatc}
+    \begin{array}{ccccc}
+        c & \sim & {\left(T-T_c\right)}^{-\alpha}  & \mbox{for} & T > T_c \\
+        c & \sim & {\left(T_c-T\right)}^{-\alpha'} & \mbox{for} & T < T_c,
+    \end{array}
+\end{equation}
+the order parameter exponent $\beta$, when taken along the coexistence curve 
+\begin{equation}
+    \begin{array}{ccccc}
+        \op  & \sim & {\left(T_c-T\right)}^{\beta} & \mbox{for} & T < T_c,
+    \end{array}
+\end{equation}
+the generalized susceptibility exponent $\gamma$
+\begin{equation}
+    \begin{array}{ccccc}
+        \chi  & \sim & {\left(T-T_c\right)}^{-\gamma}  & \mbox{for} & T > T_c \\
+        \chi  & \sim & {\left(T_c-T\right)}^{-\gamma'} & \mbox{for} & T < T_c,
+    \end{array}
+\end{equation}
+and the order parameter exponent $\delta$, when taken at constant temperature
+$T=T_c$
+\begin{equation}
+    \begin{array}{ccccc}
+        \op  & \sim & {\left(\sfi-\sfi_c\right)}^{1/\delta} & \mbox{for} & \sfi > \sfi_c.
+    \end{array}
+\end{equation}
+These exponents may have different values if you take the limit from above or
+bellow the critical point (unprimed and primed symbols respectively), but
+unless explicitly noted, we'll assume that they're the same, which happens
+often.
+
+There are many other critical exponents outside the realm of thermodynamics.
+These exponents can only be studied by a full statistical mechanical framework.
+Two of the most important ones are related to the correlations of the system.
+
+Take the ferromagnetic transition, for instance. The influence of an individual
+spin is usually restricted over a finite region around it. That is to say,
+there is a length scale $\xi$ that if we take two spins separated by a distance
+$r\ll\xi$ and flip one of the spins, the other is very likely to also flip. In
+the unordered (paramagnetic) phase, $\xi$ is small because the thermal
+fluctuations inhibit long range correlations. On the ordered (ferromagnetic)
+phase, the influence of large clusters of aligned spins is stronger than that
+of a single one, also hindering the range of correlations. We see that too
+much order, as well as too much disorder, have the effect of restricting the
+influence of the spins over each another. Therefore, it makes sense to think
+that somewhere in between there is a sweet spot where the balance between order
+and disorder makes the correlation length as large as possible.
+
+We can formalize this thought by defining the correlation function of a system,
+\begin{equation}
+    \label{eq:corr}
+    C\left(x_{1},x_{2}\right)=
+    C\left(\left|x_{1}-x_{2}\right|\right)=
+    \left\langle \op\left(x_{1}\right)\op\left(x_{2}\right)\right\rangle 
+    -\left\langle \op\left(x_{1}\right)\right\rangle
+    \left\langle \op\left(x_{2}\right)\right\rangle,
+\end{equation}
+where $\op(x)$ is the local value of the order parameter. The macroscopic
+value can be recovered from its expected value $\op=V^{-1}\int\op(x)d^d x$.
+The assumption that
+$C\left(x_{1},x_{2}\right)=C\left(\left|x_{1}-x_{2}\right|\right)$ comes from
+translation invariance, which takes no specific point of the system as special.
+It is natural to expect that the correlations would decay exponentially, with a
+decay constant $\xi$
+\begin{equation}
+    \label{eq:corr}
+    C\left(r\right)\sim e^{-r/\xi}.
+\end{equation}
+
+The relation between thermodynamics and the correlation function is governed
+by the fluctuation-dissipation theorem
+\begin{equation}
+    \chi=\frac{\partial\op}{\partial \sfi}=\frac{1}{T}\int C\left(r\right)dr.
+\end{equation}
+We know that on the critical point $\chi$ diverges, but  the integral on the
+right-hand side cannot diverge for finite $\xi$, given Eq.~\ref{eq:corr}.
+The conclusion is simple, not only the correlation length is maximal at the
+critical point, it is infinite! This divergence also has a critical exponent
+$\nu$ associated with it,
+\begin{equation}
+    \label{eq:corlen}
+    \begin{array}{ccccc}
+        \xi & \sim & {\left(T-T_c\right)}^{-\nu}  & \mbox{for} & T > T_c \\
+        \xi & \sim & {\left(T_c-T\right)}^{-\nu'} & \mbox{for} & T < T_c.
+    \end{array}
+\end{equation}
+The correlation function also cannot decay as an exponential, and goes instead
+as a power law, with yet another critical exponent $\eta$,
+\begin{equation}
+    \label{eq:critcor}
+    \begin{array}{ccccc}
+        C(r) & \sim & r^{-d+2-\eta} & \mbox{for} & T = T_c.
+    \end{array}
+\end{equation}
+where $d$ is the number of spatial dimensions (usually 2 or 3, but it is often
+useful to leave it as a variable parameter~\cite{Wilson1972}). This is no minor
+fact, it means that near the critical point, all length scales contribute to
+the overall behavior of the system, making it that much more complicated to
+treat. Unlike, say, in fluid dynamics, where you don't need to know the details
+about the intermolecular interaction of water molecules to predict the ocean
+tides, in critical systems the large and small length scales are indissociable.
+Many authors consider this to be the defining characteristic of a second order
+phase transition.
+
+The most notable consequence of the dominance of long range correlations is
+that the critical behavior of the system is determined by the general
+properties of the fluctuations, which in turn is mainly determined by the
+dimensionality of the system and of the order parameter, and not by the details
+of the material that compose the system~\cite{Stanley1999}. As a consequence,
+all systems tend to group themselves into classes that share the same critical
+exponents. These are called \textit{universality classes}. For example, the
+liquid-gas transition falls in the same universality class as the ferromagnetic
+transition~\cite{Kim1984}. Table~\ref{tab:univ} show some examples of
+universality classes, systems that belong to it, and the values of their
+critical exponents.
 
 \input{chapters/ch2-crit/table2.tex}
+
+
+\section{Scaling Invariance}
+\label{sec:scaling}
+\renewcommand{\op}{\phi}
+
+The list of critical exponents shown on the last section is far from
+exhaustive. More exotic, but no less important, exponents include the fractal
+dimension, one-arm exponent and crossing exponent. It sure seems like a lot of
+work to completely describe a universality class, if one needs to compute
+dozens of exponents. Luckily with the very simple assumption of scaling
+invariance, we can greatly reduce the amount of work needed.
+
+We will take a look at the correlation functions of the observables, which
+we'll refer as \textit{scaling operators}. The main ones are the order
+parameter density $\op(\mathbf{r})$ and energy density
+$\varepsilon(\mathbf{r})$. The two-point correlation function of these fields is
+defined according to Eq.~\ref{eq:corr}
+\begin{eqnarray}
+    C_{\op}\left(\left|\mathbf{r_1}-\mathbf{r_2}\right|\right) & = &
+    \left\langle
+        \op\left(\mathbf{r_{1}}\right)
+        \op\left(\mathbf{r_{2}}\right)
+    \right\rangle -
+    \left\langle
+        \op\left(\mathbf{r_{1}}\right)
+    \right\rangle
+    \left\langle
+        \op\left(\mathbf{r_{2}}\right)
+    \right\rangle
+    \\
+    C_{\varepsilon}\left(\left|\mathbf{r_1}-\mathbf{r_2}\right|\right) & = &
+    \left\langle
+        \varepsilon\left(\mathbf{r_{1}}\right)
+        \varepsilon\left(\mathbf{r_{2}}\right)
+    \right\rangle-
+    \left\langle
+        \varepsilon\left(\mathbf{r_{1}}\right)
+    \right\rangle
+    \left\langle
+        \varepsilon\left(\mathbf{r_{2}}\right)
+    \right\rangle.
+\end{eqnarray}
+They are given in terms of the reduced temperature and source field
+\begin{equation}
+    t=\frac{T-T_c}{T_c},\;\;\;\;\;\;\;\;\;h=\frac{\sfi-\sfi_c}{\sfi_c},
+\end{equation}
+so the critical point is exactly at $t=0$ and $h=0$. These are also known
+as \textit{scaling fields}.
+
+The scaling hypothesis postulates that the correlation functions transform
+under a scaling transformation $\mathbf{r}\rightarrow\mathbf{r}/b$ in the
+following way
+\begin{eqnarray}
+    \label{eq:scal}
+    C_{\op}\left(\mathbf{r};t,h\right) & = &
+    b^{-2x_{\op}}C_{\op}\left(\mathbf{r}/b;tb^{y_{t}},hb^{y_{h}}\right)\\
+    C_{\varepsilon}\left(\mathbf{r};t,h\right) & = &
+    b^{-2x_{\varepsilon}}C_{\varepsilon}\left(\mathbf{r}/b;tb^{y_{t}},hb^{y_{h}}\right)
+\end{eqnarray}
+where $x_\op$ and $x_\varepsilon$ are the scaling dimension of the scaling
+operators $\op$ and $\varepsilon$, and $y_t$ and $y_\op$ are called the
+\textit{renormalization group eigenvalues} of their respective scaling fields.
+
+Following the fluctuation dissipation theorem, we can compute the susceptibility
+and the specific heat by integrating $C_\op$ and $C_\varepsilon$ respectively.
+This give us
+\begin{eqnarray}
+    \label{eq:chi2}
+    \chi\left(t,h\right) & = & b^{d-2x_{\op}}\chi\left(tb^{y_{t}},ht^{y_{h}}\right)\\
+    \label{eq:c2}
+    c\left(t,h\right) & = & b^{d-2x_{\varepsilon}}c\left(tb^{y_{t}},ht^{y_{h}}\right)
+\end{eqnarray}
+Recall that $\chi=-\partial^2 f/\partial h^2$ and $c=-\partial^2 f/\partial
+T^2$, therefore we can integrate Eq.~\ref{eq:chi2} and~\ref{eq:c2} twice,
+obtaining the free energy density $f=F/\mathcal{N}$
+\begin{equation}
+    f\left(t,h\right)=
+    b^{d-2x_{\op}-2y_{h}}f\left(tb^{y_{t}},ht^{y_{h}}\right)=
+    b^{d-2x_{\varepsilon}-2y_{t}}f\left(tb^{y_{t}},ht^{y_{h}}\right),
+\end{equation}
+from which we can deduce that $x_\op+y_h = x_\varepsilon+y_t$. As a matter of
+fact, the sum is constant for all pairs of scaling dimension and its conjugate
+renormalization group eigenvalue. Since this sum does not depend on the fields
+themselves, it is safe to assume they depend on the only other parameter, the
+number of spatial dimensions, that is
+\begin{equation}
+    \label{eq:scald}
+    x_\op+y_h = x_\varepsilon+y_t = d
+\end{equation}
+which leaves us with the neat relation
+\begin{equation}
+    f\left(t,h\right)=b^{-d}f\left(tb^{y_{t}},ht^{y_{h}}\right).
+\end{equation}
+It is worth noting that this is not really the free energy of the system. The
+actual free energy have a singular and a regular part, the one described so
+far is the singular part. Near the critical point, however, only the singular
+part makes significant contributions to the behavior of the system, so we can
+safely ignore the regular part.
+
+The next step is to make the scaling parameter $b$ a function of the
+temperature, in order to get rid of one of the arguments of the free energy.
+This can be done by making $b=t^{-1/y_t}$, which yields
+\begin{equation}
+    f\left(t,h\right)=
+    t^{d/y_{t}}f\left(1,ht^{-y_{h}/y_{t}}\right)=
+    t^{d/y_{t}}\Psi\left(ht^{-y_{h}/y_{t}}\right),
+\end{equation}
+where $\Psi$ is known as a scaling function, and it unique for a given
+universality class. We can re-obtain the heat capacity by taking
+the second derivative as usual
+\begin{equation}
+    c=-\left.\frac{\partial^2 f}{\partial t^2}\right|_{h=0}
+    \sim \left|t\right|^{d/y_h-2}.
+\end{equation}
+Which is the expected behavior, and from Eq.~\ref{eq:heatc} we have that
+$\alpha=2-d/y_t$. A similar process can be done to derive a similar relation
+for all four thermodynamical exponents
+\begin{eqnarray}
+    \label{eq:scal1}
+    \alpha & = & 2-d/y_{t}\\
+    \beta  & = & \left(d-y_{h}\right)/y_{t}\\
+    \gamma & = & \left(2y_{h}-d\right)/y_{t}\\
+    \label{eq:scal2}
+    \delta & = & y_{h}/\left(d-y_{h}\right).
+\end{eqnarray}
+This system of equations can be solved to single out the eigenvalues obtaining
+the relations
+\begin{eqnarray}
+    \alpha+2\beta+\gamma              & = & 2\\
+    \alpha+\beta\left(1+\delta\right) & = & 2,
+\end{eqnarray}
+These are known as the Rushbrooke equality~\cite{Rushbrooke1963} and Griffiths
+equality~\cite{Griffiths1967} respectively,  which are some of the greatest
+results of the scaling hypothesis, if you know the value of two of the
+thermodynamical exponents, you get the other two for free.
+
+How about the other two exponents, $\nu$ and $\eta$, related to the
+correlations of the order parameter, you might ask. We can also find a simple
+relation for them by takin Eq.~\ref{eq:scal} and again making $b=t^{-1/y_t}$
+\begin{equation}
+    G_{\op}\left(\mathbf{r};t,0\right)=
+    t^{2x_{\op}/y_{t}}G_{\op}
+    \left(\frac{\mathbf{r}}{{\left(1/t\right)}^{1/y_{t}}};1,0\right).
+\end{equation}
+We can assume that close to criticality (but not exactly on the critical point)
+the correlation function depends only on $r/\xi$, because of
+Eq.~\ref{eq:corr}. Because of this we can assume
+\begin{equation}
+    \xi\sim\left|t\right|^{-1/y_t},
+\end{equation}
+which, using Eq.~\ref{eq:corlen}, implies that
+\begin{equation}
+    \label{eq:nuscal}
+    \nu=\frac{1}{y_t}.
+\end{equation}
+Now we can repeat the process by making $b=r$ and $t=0$, which will give us
+\begin{equation}
+    C_{\op}\left(r;0,0\right)=r^{-2d+2y_{h}}.
+\end{equation}
+Comparing with Eqs.~\ref{eq:critcor} and~\ref{eq:scald}, gives the relation for
+$\eta$
+\begin{equation}
+    \label{eq:etascal}
+    \eta=d-2y_h+2.
+\end{equation}
+Finally we can find a relation between $\nu$ and $\eta$ using
+Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:nuscal} and~\ref{eq:etascal}.
+\begin{eqnarray}
+    \gamma & = & \nu\left(2-\eta\right)\\
+    \alpha & = & 2-d\nu.
+\end{eqnarray}
+These are known as \textit{hyperscaling relations}, and amazingly no new
+critical exponent is needed to determine them, that is, only two are necessary
+to completely describe the critical exponents of a second-order phase
+transition, how convenient. Sadly the hyperscaling relations are not as sturdy
+as the scaling relations and can break down under the presence of (the
+creatively named) dangerously irrelevant operators~\cite{Nishimori2011}.
+
+The arguments and assumptions used throughout this section were historically
+motivated through the study of renormalization group
+theory~\cite{Pelissetto2002}, which was an important advancement in critical
+phenomena when it was first developed, but it goes well beyond the scope of
+this work. However, some authors do prefer to look at scaling invariance
+through an axiomatic lens, as it was done here, comparing it to the
+introduction of conformal invariance (see
+Section~\ref{ch:conf})~\cite{Henkel2013}.
+
 
 \section{Models of Critical Systems}
 \label{sec:models}
@@ -361,9 +599,114 @@ Here we will show and discuss two of the most popular models of critical systems
 \subsection{Ising Model}
 \label{sec:ising}
 
-Although not directly relevant for the present work, we shall describe briefly
-the Ising model if only because of its importance in the field of critical
-phenomena.
+Although not directly relevant for the present work, we shall briefly describe
+the Ising model because of its importance in the field of critical phenomena.
+It's hard to understate the its impact in the study of phase transitions. It
+represents a golden standard because it unites an elegantly simple setup with
+the fact it can be exactly solved in both one and two dimensions, a claim very
+few models can make. Two of the most important models, $O(n)$ and Pott's model,
+were constructed as generalizations of the Ising model.
+
+The system is composed of a number of classical spins $\{s_i\}$ that can take
+one of two values $1$ or $-1$. The are arranged in a lattice and are allowed to
+interact with its first nearest neighbors. The Hamiltonian of the systems is
+given by
+\begin{equation}
+    \mathcal{H}=
+    -J\sum_{\left\langle i,j\right\rangle }s_{i}s_{j}
+    -h\sum_{i}s_{i},
+\end{equation}
+Where $\sum_{\left\langle i,j\right\rangle}$ means a summation over all pairs
+of nearest neighbors. If we assume $J>0$, then the first term of the
+Hamiltonian favors the alignment of the spins, while the second one 
+favors the alignment with an external magnetic field.
+
+Simulating the Ising model is particularly simple using the Metropolis-Hastings
+algorithm~\cite{Hastings1970}. At each step chose a random spin of the lattice
+and compute the change in energy $\Delta E$ that would occur if you were to
+flip the spin. In a square lattice this is given by
+\begin{equation}
+    \Delta E=2s\left(i,j\right)\left[s\left(i+1,j\right)+
+    s\left(i-1,j\right)+s\left(i,j+1\right)+s\left(i,j-1\right)\right],
+\end{equation}
+where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ with $a$ being the
+lattice constant. You actually perform the flip $s(i,j)\rightarrow -s(i,j)$ if
+$\Delta E < 0$. If not, you should still perform the flip randomly with
+probability $\exp(-\Delta E / T)$. Figures~\ref{fig:ising}
+and~\ref{fig:ising_phase}.
+
+The Ising model is particularly famous for being the first 2D model of second
+order phase transition to be analytically solved. You see, for most of the
+first half of the 20th century, it was unclear whether the formalism developed
+in statistical physics was enough to completely describe critical systems.
+That's because equations [\ldots] seems to behave neatly as function of
+temperature. It wasn't until the work of Onsager, a mathematical tour de force
+published in a in 1944~\cite{Onsager1944}, that it became clear that the
+singularities appear only in the limit of infinite particles, the thermodynamic
+limit.
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_phase2}
+\end{center}
+\caption{The phase space of the Ising model (left). The color represents the
+    spontaneous magnetization $M$ as a function of the external magnetic field
+    $h$ and temperature $T$. The black line represents the coexistence line
+    where the phase transition is of first order, which means the magnetization
+    changes discontinuously like it's shown in the blue line. In the critical
+    point the change is continuous and a second order phase transition takes
+    place.}
+\label{fig:ising_phase2}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising}
+\end{center}
+\caption{Realizations of the Ising model with three different
+    temperatures. The clusters of adjacent spin-up sites are colored according
+    to how many sites belong to it. The subcritical regime is dominated by the
+    large clusters. On the other hand, above the critical point, the system is
+    dominated by thermal fluctuations, undermining cluster formation. At the
+    critical point however, the clusters lack a characteristic length scale.
+    One can observe that the image has a certain ``depth'' to it. This happens
+    because clusters of all sizes are present, a mark of scale invariance,
+    the most important property of critical systems.}
+\label{fig:ising}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/ising_phase}
+\end{center}
+\caption{Spontaneous magnetization as a function of temperature for the Ising
+    model. The simulations were performed in a $128\times128$ square lattice.
+    As temperature rises, thermal fluctuations dominate the spin dynamics
+    destroying the correlations. Above the critical temperature of
+    $T_c=2/\log(1+\sqrt{2})\approx 2.269$ the value of $M$ should reach zero,
+    although due to finite size effects we still observe some magnetization
+    beyond this point. The red line shows the illustrious solution
+    developed by Onsager~\cite{Onsager1944}, where
+    $M={[1-{(\sinh{2/T})}^{-4}]}^{1/8}$.}
+\label{fig:ising_phase}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
+\end{center}
+\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.}
+\label{fig:ising_cx}
+\end{figure}
+
 
 
 \subsection{Percolation}
@@ -373,4 +716,107 @@ While the Ising model certainly wins in terms of popularity, very few models
 match the simplicity of percolation. Introduced in 1957 by Broadbent and
 Hammersley, the passing decades saw its rise in prominence due to it's high
 applicability ranging from transport in porous media to the propagation of
-infectious diseases, with pretty much everything in between~\cite{Araujo2013}.
+infectious diseases, with pretty much everything in between~\cite{Stauffer1994}.
+
+The order parameter is the fraction $P$ of sites that belong to the infinite
+spanning cluster.
+
+\begin{equation}
+    n_s\sim s^{-\tau}e^{-cs}
+\end{equation}
+where $\tau$ is called the \textit{Fischer exponent}, and can be used to
+in determining the other critical exponents.
+
+\begin{equation}
+    c\sim\left|p-p_c\right|^{-1/\sigma}
+\end{equation}
+
+\begin{equation}
+    P\sim\left|p-p_c\right|^{-\beta}
+\end{equation}
+
+ 
+\begin{eqnarray*}
+P & \sim & \int\left[n_{s}\left(p_{c}\right)-n_{s}\left(p\right)\right]sds\\
+ & \sim & \int s^{1-\tau}\left[1-e^{-cs}\right]ds
+\end{eqnarray*}
+Integrating by parts and making the transformation $s\rightarrow z/c$ yields
+\begin{eqnarray*}
+P & \sim & c^{\tau-2}\int z^{2-\tau}e^{-z}dz\\
+ & \propto & c^{\tau-2}\\
+ & \propto & \left|p-p_{c}\right|^{\left(\tau-2\right)/\sigma}
+\end{eqnarray*}
+\begin{equation}
+    \beta=\frac{\tau-2}{\sigma}
+\end{equation}
+    
+
+\begin{eqnarray}
+S & = & \int s^{2}n_{s}ds\\
+ & = & \int s^{2-\tau}e^{-cs}ds\\
+ & = & c^{\tau-3}\int z^{2-\tau}e^{-z}dz
+ \label{eq:susperco}
+\end{eqnarray}
+Since the integral term in Eq.~\ref{eq:susperco} is a constant, we have
+\begin{eqnarray}
+ S & \propto & c^{\tau-3}\\
+ & \propto & \left|p-p_{c}\right|^{-\left(3-\tau\right)/\sigma}.
+\end{eqnarray}
+which leads, following the definition of the $\gamma$ exponent
+\begin{equation}
+    \gamma=\frac{3-\tau}{\sigma}
+\end{equation}
+
+With $\beta$ and $\gamma$ determined as a function of $\tau$ and $\sigma$, all
+other critical exponents can be derived using Eq.~[\ldots].
+Here are all of them
+\begin{eqnarray}
+    \alpha & = & 1-\frac{\tau-1}{\sigma}\\
+    \beta  & = & \frac{\tau-2}{\sigma}\\
+    \gamma & = & \frac{3-\tau}{\sigma}\\
+    \delta & = & \frac{1}{\tau-2}\\
+    \nu    & = & \frac{\tau-1}{\sigma d}\\
+    \eta   & = & 2-d\frac{3-\tau}{\tau-1}
+\end{eqnarray}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
+\end{center}
+\caption{Exmaples of site and bond percolation in a square lattice.
+    In site percolation each site is occupied with probability $p$, while
+    in bond percolation any two neighboring sites are connected with a bond
+    with probability $p$.}
+\label{fig:sitebond}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/isoperco}
+\end{center}
+\caption{Realizations of the percolation model in a square lattice with three
+    different occupation probabilities $p$. Black sites are unoccupied, blue
+    ones are occupied, and the largest cluster is painted yellow. For small
+    values of $p$, there is no cluster that connects opposite sides of the
+    systems. Above the critical point however, the largest cluster promotes a
+    global connectivity, or, in terms of transport, the system becomes
+    permeable.}
+\label{fig:isoperco}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{chapters/ch2-crit/figs/isoperco2}
+\end{center}
+\caption{The order parameter of the percolation model as a function of the
+    occupation probability for various system sizes. The order parameter here
+    is defined as the fraction of the system occupied by the largest cluster.
+    In the thermodynamical limit, the largest cluster have a finite size for
+    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
+    system. Above the critical point the largest cluster is infinite and occupies
+    a finite fraction.}
+\label{fig:isoperco2}
+\end{figure}
+
+
+\input{chapters/ch2-crit/table3.tex}
