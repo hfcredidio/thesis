@@ -185,6 +185,98 @@
  
 \begin{figure}
 \begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
+\end{center}
+\caption{Simple representation of bond directed percolation in a square
+    lattice. Here, the time flows upwards (although the time direction can be
+    chosen arbitrarily). A previously occupied bond has a probability $p$ of
+    occupying any of its two neighbors along the time direction.}
+\label{fig:dperco_scheme}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
+\end{center}
+\caption{Three realizations of site directed percolation on a square lattice
+    (here the time flows downwards). Being a absorbing phase transition model,
+    the system have a probability of entering a state that it cannot leave, in
+    this case a fully unoccupied state, like it happens in the left panel.
+    Above the critical point however the probability of reaching an absorbing
+    state becomes vanishing.}
+\label{fig:dperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
+\end{center}
+\caption{Expected population of bond directed percolation as a function of time
+    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
+    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
+    N(t)\right\rangle>0$.}
+\label{fig:dperco_nt}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlperco_explain}
+\end{center}
+\caption{Schematic representation of the multi-layered percolation model. Each
+    layer (numbered $0$ through $9$ here) gets one of two probabilities of
+    occupation ($\bar{p}\pm\Delta$), chosen randomly with equal probabilities.
+    Otherwise, the percolation process goes as usual, occupying each site
+    according to the probabilities of each layer.}
+\label{fig:mlperco_explain}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlp_cluster}
+\end{center}
+\caption{A comparison of clusters of occupied sites in both isotropic and
+    multi-layered percolation at their critical points. They were generated
+    using the self-organized percolation algorithm [???] (the dense ``core''
+    found on both clusters is an artifact of this method). The stratified
+    nature of the multi-layered percolation makes itself evident even for the
+    relatively low value of $\Delta$ used here.}
+\label{fig:mlp_cluster}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlperco}
+\end{center}
+\caption{Three realizations of the multi-layered percolation model in the
+    square lattice. Black sites are unoccupied, dark cyan sites are occupied
+    and yellow sites are represent the largest cluster of the system. All
+    three realizations are in the critical point. The larger the value of
+    $\Delta$, the more anisotropic is the system, and the multi-layered
+    structure of the system becomes more evident.}
+\label{fig:mlperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
+\end{center}
+\caption{Phase space of the multi-layered percolation model for both square and
+    triangular lattices. They were computed using the cluster perimeter method.
+    The square lattice result follow the results by Dayan et al.\ [???].
+    Somewhat surprisingly we found that in the triangular lattice
+    $\bar{p}_c=0.5$ for every value of $\Delta$.}
+\label{fig:mlp_ps}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
     \includegraphics[width=\textwidth]{chapters/ch3-conf/figs/cmapex}
 \end{center}
 \caption{Coordinates transformations in the complex plane can be divided into
@@ -392,98 +484,6 @@
     with the tilted slit approximation. In the limit $\Delta t\rightarrow 0$
     the red line converges to an SLE trace.}
 \label{fig:zipper}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
-\end{center}
-\caption{Simple representation of bond directed percolation in a square
-    lattice. Here, the time flows upwards (although the time direction can be
-    chosen arbitrarily). A previously occupied bond has a probability $p$ of
-    occupying any of its two neighbors along the time direction.}
-\label{fig:dperco_scheme}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
-\end{center}
-\caption{Three realizations of site directed percolation on a square lattice
-    (here the time flows downwards). Being a absorbing phase transition model,
-    the system have a probability of entering a state that it cannot leave, in
-    this case a fully unoccupied state, like it happens in the left panel.
-    Above the critical point however the probability of reaching an absorbing
-    state becomes vanishing.}
-\label{fig:dperco}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
-\end{center}
-\caption{Expected population of bond directed percolation as a function of time
-    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
-    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
-    N(t)\right\rangle>0$.}
-\label{fig:dperco_nt}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlperco_explain}
-\end{center}
-\caption{Schematic representation of the multi-layered percolation model. Each
-    layer (numbered $0$ through $9$ here) gets one of two probabilities of
-    occupation ($\bar{p}\pm\Delta$), chosen randomly with equal probabilities.
-    Otherwise, the percolation process goes as usual, occupying each site
-    according to the probabilities of each layer.}
-\label{fig:mlperco_explain}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlp_cluster}
-\end{center}
-\caption{A comparison of clusters of occupied sites in both isotropic and
-    multi-layered percolation at their critical points. They were generated
-    using the self-organized percolation algorithm [???] (the dense ``core''
-    found on both clusters is an artifact of this method). The stratified
-    nature of the multi-layered percolation makes itself evident even for the
-    relatively low value of $\Delta$ used here.}
-\label{fig:mlp_cluster}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlperco}
-\end{center}
-\caption{Three realizations of the multi-layered percolation model in the
-    square lattice. Black sites are unoccupied, dark cyan sites are occupied
-    and yellow sites are represent the largest cluster of the system. All
-    three realizations are in the critical point. The larger the value of
-    $\Delta$, the more anisotropic is the system, and the multi-layered
-    structure of the system becomes more evident.}
-\label{fig:mlperco}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
-\end{center}
-\caption{Phase space of the multi-layered percolation model for both square and
-    triangular lattices. They were computed using the cluster perimeter method.
-    The square lattice result follow the results by Dayan et al.\ [???].
-    Somewhat surprisingly we found that in the triangular lattice
-    $\bar{p}_c=0.5$ for every value of $\Delta$.}
-\label{fig:mlp_ps}
 \end{figure}
 \efloatseparator
  
