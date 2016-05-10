@@ -198,6 +198,19 @@
  
 \begin{figure}
 \begin{center}
+    \includegraphics[width=0.66\textwidth]{chapters/ch3-conf/figs/lenna}
+\end{center}
+\caption{Two identical images, one large (in grayscale) and the other small (in
+    red, shown in the zoom), are transformed from (a) to (b) using a conformal
+    map $f(z)=z/(200-z)$. While the large one is heavily deformed, the smaller
+    one was only translated and shrunk. This illustrates the fact that conformal
+    maps behave locally as a scale transformation.}
+\label{fig:lenna}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
     \includegraphics[width=0.8\textwidth]{chapters/ch3-conf/figs/isingcm}
 \end{center}
 \caption{Illustration of the Ising model at the critical point when transformed
