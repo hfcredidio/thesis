@@ -574,7 +574,9 @@ $\eta$
 Finally we can find a relation between $\nu$ and $\eta$ using
 Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:nuscal} and~\ref{eq:etascal}.
 \begin{eqnarray}
+    \label{eq:hs1}
     \gamma & = & \nu\left(2-\eta\right)\\
+    \label{eq:hs2}
     \alpha & = & 2-d\nu.
 \end{eqnarray}
 These are known as \textit{hyperscaling relations}, and amazingly no new
@@ -597,6 +599,7 @@ Section~\ref{ch:conf})~\cite{Henkel2013}.
 \section{Models of Critical Systems}
 \label{sec:models}
 
+To illustrate 
 Here we will show and discuss two of the most popular models of critical systems.
 
 \subsection{Ising Model}
@@ -624,6 +627,12 @@ of nearest neighbors. If we assume $J>0$, then the first term of the
 Hamiltonian favors the alignment of the spins, while the second one 
 favors the alignment with an external magnetic field.
 
+The order parameter here is the spontaneous magnetization $M=\sum_i s_i / N$.
+If the temperature is too the spins will tend to align themselves, giving rise
+to an ordered state where $M>0$, while if the temperature is too high, thermal
+fluctuations will misalign the spins and the resulting state is unordered
+with $M=0$. Figure~\ref{fig:ising_phase2} shows the phase space.
+
 Simulating the Ising model is particularly simple using the Metropolis-Hastings
 algorithm~\cite{Hastings1970}. At each step chose a random spin of the lattice
 and compute the change in energy $\Delta E$ that would occur if you were to
@@ -644,7 +653,7 @@ first half of the 20th century, it was unclear whether the formalism developed
 in statistical physics was enough to completely describe critical systems.
 That's because equations [\ldots] seems to behave neatly as function of
 temperature. It wasn't until the work of Onsager, a mathematical tour de force
-published in a in 1944~\cite{Onsager1944}, that it became clear that the
+published in 1944~\cite{Onsager1944}, that it became clear that the
 singularities appear only in the limit of infinite particles, the thermodynamic
 limit.
 
@@ -715,50 +724,118 @@ limit.
 \subsection{Percolation}
 \label{sec:perc}
 
-While the Ising model certainly wins in terms of popularity, very few models
-match the simplicity of percolation. Introduced in 1957 by Broadbent and
-Hammersley, the passing decades saw its rise in prominence due to it's high
-applicability ranging from transport in porous media to the propagation of
-infectious diseases, with pretty much everything in between~\cite{Stauffer1994}.
+While fiercely competing with the Ising model for the title of most popular
+criticality model, percolation certainly wins in term of simplicity. Introduced
+in 1957 by Broadbent and Hammersley~\cite{Broadbent1957}, the question they
+were trying to answer was very humble: say we block a water pipe with a rock,
+how porous should the rock be for the water to be able to flow, even if at a
+very low flow rate? To find an answer, they modeled the rock as a square
+lattice where each site can be either occupied by the rocky substrate or a
+hole. The measure of the porosity is the ratio between the number of holes and
+the total number of sites in the lattice. Of course, the more porous is a rock,
+the more holes it has. Assuming these holes are randomly and uniformly
+distributed on the substrate, they will often, by pure chance, fall into
+clusters of neighboring holes, which are simply bigger holes. Water will be
+able to flow through the rock only if we have a cluster that traverse the
+system from one side to the other. This cluster is called the
+\textit{percolating} (or spanning) cluster. So we can reframe the initial
+question as follows: whats the smallest value of porosity where a percolating
+cluster will always be present in the system. A 0\% porous rock would obviously
+always be impermeable, and a 100\% porous rock is just no rock at all (how
+zen!). But how about 50\%, or 40\%, or 60\%? The answer naturally depends on
+the size of the lattice, but for a very large one we observe the existence of a
+critical porosity $p_c$ below which we never observe a percolating cluster,
+while above $p_c$ one is away present. See Figure~\ref{fig:isoperco} for some
+realizations of the percolation process in each state: subcritical, critical
+and supercritical.
 
-The order parameter is the fraction $P$ of sites that belong to the infinite
-spanning cluster.
+This is the core of percolation theory, initially motivated by a transport
+problem. From a more generic perspective, Stauffer summarizes it
+better~\cite{Stauffer1994}: ``Each site of a lattice is occupied randomly with
+probability $p$ independent of its neighbors. Percolation theory deals with the
+clusters of neighboring occupied sites thus formed''. At this point it's clear
+the system goes through a phase transition, each phase defined by the presence
+or not of a spanning cluster, which promotes a global connectivity of the
+system. We can study its properties by defining an order parameter $P$ as the
+fraction of the system occupied by the largest cluster, that is $P=N_\ell/N$.
+For small values of $p$, the largest cluster occupies a finite area of the
+system, which is basically a null fraction for a large enough system. As $p$
+approaches a critical probability $p_c$, the largest cluster grows to the order
+of the system size. Figure~\ref{fig:isoperco2} shows how the order parameter
+behaves for various sizes of a square lattice. It shows that as the system
+reaches the thermodynamical limit, the order parameter closely behaves as a
+second order phase transition.
 
+Despite the initial motivation coming from transport theory, the percolation
+model is much more general than that, it can be used to study.
+
+The type of percolation described here, where we occupy the sites of a lattice
+is called \textit{site percolation}. Alternatively we could instead occupy the
+bonds. It is as if we had an empty isolating substrate with a potential
+difference $V$ put along it. We then randomly insert resistors between the
+sites with probability $p$. The system will be percolated when the it has a
+bridge of resistors traversing it, along which electrical current can flow,
+thus passing from an isolating phase to a conductive one.
+Figure~\ref{fig:sitebond} illustrate the difference between site and bond
+percolation.
+
+The exact value of the critical point is non universal and depends on whether
+it's site or bond percolation and on the lattice choice. The two more notorious
+examples are square lattice site percolation, that has a critical point at
+$p_c\approx0.592746$ and the triangular site percolation at $p_c=0.5$. Values
+of the critical point for various other lattices are shown in
+Table~\ref{tab:perc}.
+
+The critical behavior of the percolation model is usually given by two critical
+exponents. The first is the \textit{Fisher exponent} $\tau$, related to
+the distribution of the cluster sizes at criticality
 \begin{equation}
-    n_s\sim s^{-\tau}e^{-cs}
+    \label{eq:ns1}
+    n_s\sim s^{-\tau},\;\;\;\;\;\;p=p_c,
 \end{equation}
-where $\tau$ is called the \textit{Fischer exponent}, and can be used to
-in determining the other critical exponents.
-
+where $s$ is the size of a cluster and $n_s$ is the number of clusters with
+size $s$ in the system. Below the critical point, the distribution has an
+exponential cutoff
 \begin{equation}
-    c\sim\left|p-p_c\right|^{-1/\sigma}
+    \label{eq:ns2}
+    n_s\sim s^{-\tau}e^{-cs},\;\;\;\;\;\;p<p_c,
 \end{equation}
-
+where we define the other important critical exponent $\sigma$, related
+to the scaling of the cutoff parameter $c$
 \begin{equation}
-    P\sim\left|p-p_c\right|^{-\beta}
+    c\sim \left|p-p_c\right|^{-1/\sigma}.
 \end{equation}
-
- 
-\begin{eqnarray*}
-P & \sim & \int\left[n_{s}\left(p_{c}\right)-n_{s}\left(p\right)\right]sds\\
- & \sim & \int s^{1-\tau}\left[1-e^{-cs}\right]ds
-\end{eqnarray*}
+From these two exponents, $\tau$ and $\sigma$, we can determine all others.
+For instance take the order parameter as defined before. From
+Section~\ref{sec:universality} we know it scales as
+\begin{equation}
+    P\sim\left|p-p_c\right|^{-\beta}.
+\end{equation}
+We defined $P$ as the expected size of the largest cluster, which
+we can assume should be distributed like $n_s(p_c)-n_s(p)$ for
+$p < p_c$. Therefore, using Eqs.~\ref{eq:ns1} and~\ref{eq:ns2}
+\begin{eqnarray}
+    P & \sim & \int\left[n_{s}\left(p_{c}\right)-n_{s}\left(p\right)\right]sds\\
+      & \sim & \int s^{1-\tau}\left[1-e^{-cs}\right]ds
+\end{eqnarray}
 Integrating by parts and making the transformation $s\rightarrow z/c$ yields
-\begin{eqnarray*}
+\begin{eqnarray}
 P & \sim & c^{\tau-2}\int z^{2-\tau}e^{-z}dz\\
  & \propto & c^{\tau-2}\\
  & \propto & \left|p-p_{c}\right|^{\left(\tau-2\right)/\sigma}
-\end{eqnarray*}
+\end{eqnarray}
+which gives us the relation for $\beta$ as a function of $\tau$ and $\sigma$
 \begin{equation}
-    \beta=\frac{\tau-2}{\sigma}
+    \beta=\frac{\tau-2}{\sigma}.
 \end{equation}
     
-
+In a similar way, we can find $\gamma$ by using the susceptibility, defined in
+the percolation context as the second moment of the cluster size distribution
 \begin{eqnarray}
-S & = & \int s^{2}n_{s}ds\\
- & = & \int s^{2-\tau}e^{-cs}ds\\
- & = & c^{\tau-3}\int z^{2-\tau}e^{-z}dz
- \label{eq:susperco}
+    S & = & \int s^{2}n_{s}ds\\
+      & = & \int s^{2-\tau}e^{-cs}ds\\
+      & = & c^{\tau-3}\int z^{2-\tau}e^{-z}dz
+    \label{eq:susperco}
 \end{eqnarray}
 Since the integral term in Eq.~\ref{eq:susperco} is a constant, we have
 \begin{eqnarray}
@@ -770,9 +847,10 @@ which leads, following the definition of the $\gamma$ exponent
     \gamma=\frac{3-\tau}{\sigma}
 \end{equation}
 
-With $\beta$ and $\gamma$ determined as a function of $\tau$ and $\sigma$, all
-other critical exponents can be derived using Eq.~[\ldots].
-Here are all of them
+Once $\beta$ and $\gamma$ have been determined as a function of $\tau$ and
+$\sigma$, all other critical exponents can be derived using
+Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:hs1}, and~\ref{eq:hs2}. Here
+are all of them (with $\beta$ and $\gamma$ repeated for completeness)
 \begin{eqnarray}
     \alpha & = & 1-\frac{\tau-1}{\sigma}\\
     \beta  & = & \frac{\tau-2}{\sigma}\\
@@ -782,16 +860,21 @@ Here are all of them
     \eta   & = & 2-d\frac{3-\tau}{\tau-1}
 \end{eqnarray}
 
-\begin{figure}
-\begin{center}
-    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
-\end{center}
-\caption{Exmaples of site and bond percolation in a square lattice.
-    In site percolation each site is occupied with probability $p$, while
-    in bond percolation any two neighboring sites are connected with a bond
-    with probability $p$.}
-\label{fig:sitebond}
-\end{figure}
+From a numerical standpoint, percolation does not pose too much problem, as
+there are many algorithms around that allow for the simulation of very large
+lattices, basically limited only by the memory of the
+computer~\cite{Newman2000}.
+
+The critical exponents of site percolation lattice have been exactly computed
+in the triangular lattice using Schramm Loewner Evolutions~\cite{Smirnov2001}
+(we'll get there in Chapter~\ref{ch:sle}). The values found are $\tau=187/91$
+and $\sigma=36/91$. The other exponents can be found in Table~\ref{tab:univ}.
+
+Just like the Ising model, the simplicity of percolation is ripe for the
+development of derivative models, aiming to elucidate other aspects of phase
+transitions. These include cooperative sequential adsorption~\cite{Araujo2013},
+explosive percolation~\cite{Achlioptas2009} and invasive
+percolation~\cite{Wilkinson1983}, to name just a few.
 
 \begin{figure}
 \begin{center}
@@ -819,6 +902,17 @@ Here are all of them
     system. Above the critical point the largest cluster is infinite and occupies
     a finite fraction.}
 \label{fig:isoperco2}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
+\end{center}
+\caption{Examples of site and bond percolation in a square lattice.
+    In site percolation each site is occupied with probability $p$, while
+    in bond percolation any two neighboring sites are connected with a bond
+    with probability $p$.}
+\label{fig:sitebond}
 \end{figure}
 
 

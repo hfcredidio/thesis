@@ -74,7 +74,7 @@ FCC              & 0.198         & 0.119    \\[0.2cm]
 \par\end{centering}
 \caption{Percolation threshold for site and bond percolation in several 2D and
     3D regular lattices. Reproduced from~\cite{Stauffer1994}.}
-\label{tab:univ}
+\label{tab:perc}
 \end{table}
 \efloatseparator
  
