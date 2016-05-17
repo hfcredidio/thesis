@@ -4,50 +4,61 @@
 When trying to analyze a physical system, a big part of a physicist effort is
 dedicated to identifying the parts that compose the system and how they
 interact with each other. It is usually a daunting task to find an interaction
-model that captures all the expected properties of a system. That's because the
+model that captures all the relevant properties of a system. That's because the
 macroscopic (i.e.\ collective) behavior does not follow trivially from the
 microscopic forces in place. In no area of physics this is more clear than in
-that of phase transitions and critical phenomena. Not surprisingly the
-relationship between criticality and complexity has been applied to areas well
-beyond the domain of atoms and molecules, like cognitive
-sciences~\cite{Kello2010}, social scieces~\cite{Kron2009} and
-ecology~\cite{Sole1999}, to name just a few.
+that of phase transitions and critical phenomena. What's so special about the
+critical point, that allows a set of simple building blocks, which contain no
+global information about the system, display such a distinct and complex large
+scale behavior? This is the question scientists have been trying to solve in
+the last century or so, with each generation providing significant
+contributions to this end.
 
-But let's take a step back and look at the components themselves. We can get
-away with making very little assumptions about their actual identities. They
-can be elementary particles when studying high energy physics, atoms and
-molecules when determining the electronic properties of a material, living
-cells when observing the growing pattern of a colony of bacteria, or even
-people when trying to design buildings with safe exit routes. What is more
+%Not surprisingly the
+%relationship between criticality and complexity has been applied to areas well
+%beyond the domain of atoms and molecules, like cognitive
+%sciences~\cite{Kello2010}, social scieces~\cite{Kron2009} and
+%ecology~\cite{Sole1999}, to name just a few.
+
+To start, let's take a step back and look at the constituent parts of a system.
+We can get away with making very little assumptions about their actual
+identities. They can be elementary particles when studying high energy physics,
+atoms and molecules when determining the electronic properties of a material,
+living cells when observing the growing pattern of a colony of bacteria, or
+even people when trying to design buildings with safe exit routes. What is more
 important to us is the fact that these building blocks can organize themselves
 in several different ways. Each pattern of organization is called a
 \textit{phase}, and in which phase the systems finds itself depends on the
 value of some external parameters, like energy density, temperature, nutrient
 concentration or whether or not there's a fire in the building. Not only that
-but different phases of a same system display wildly different macroscopic
-behavior, despite no change taking place in their composition.
+but different phases of a same system display very different macroscopic
+behavior, despite no change taking place in their actual composition.
 
-The most familiar example is water. At sea level, water is in its solid phase
-for temperatures lower than $0^\circ$C. That happens because the water
+The most elementary example here is water. At sea level, water is in its solid
+phase for temperatures lower than $0^\circ$C. That happens because the water
 molecules are locked in place by the cohesive forces that its neighbors exert
-on each other. When the temperature is higher than $0^\circ$C but lower than
-$100^\circ$C, the molecules acquire enough kinetic energy to be able to move
-through one another. They still interact strongly enough to be bound together
-but it is not sufficient to keep them fixed. This is the liquid phase. When the
-temperature is above $100^\circ$C, water is now in the gaseous state, where
-thermal movement dominates and the molecules move mostly unimpeded, interacting
-only when colliding directly. See Figure~\ref{fig:phases} for an illustration of
-how a molecule moves in the three phases.
+on each other, forming a crystalline structure. When the temperature is higher
+than $0^\circ$C but lower than $100^\circ$C, the molecules acquire enough
+kinetic energy to be able to move through one another. They still interact
+strongly enough to be bound together but it is not sufficient to keep them
+fixed. This is the liquid phase. When the temperature is above $100^\circ$C,
+water is now in the gaseous state, where thermal movement dominates and the
+molecules move mostly unimpeded, interacting only when colliding directly. See
+Figure~\ref{fig:phases} for an illustration of how a molecule moves in the
+three phases.
 
 Not all phases concern the states of matter, however. Some are related to
 magnetic or electric properties. This is the case of ferromagnetic materials,
 materials that exhibit a persistent magnetization after being subject to a
-strong magnetic field, like your everyday fridge magnet. In contrast,
-paramagnetic materials show no permanent magnetization. Ferromagnetism is a
-result of the alignment of the magnetic spins of the atoms that compose the
-material. If you turn off the external field and raise the temperature,
-eventually the thermal fluctuations will misalign the spins, zeroing out the
-magnetization and turning a ferromagnetic material into a paramagnetic one.
+strong magnetic field, like your everyday fridge magnet. This phenomenon is a
+result of the alignment of the magnetic spins of the atoms or molecules that
+compose the material. In contrast, paramagnetic materials show no permanent
+magnetization. If you take a magnet and raise its temperature, eventually the
+thermal fluctuations will misalign the spins, zeroing out the magnetization and
+turning the ferromagnetic material into a paramagnetic one. Other examples of
+phase transitions also include the transition of a material into a
+superconductive state~\cite{Fisher1991} or when helium turns into into a
+superfluid~\cite{Campostrini2006}, both happening at very low temperatures.
 
 To better visualize the different phases of systems, it is common to make use
 of a \textit{phase diagram}. Simply put, a phase diagram is a graph where each
@@ -103,13 +114,13 @@ used definition was proposed by Ehrenfest~\cite{Jaeger1998}. But, before we get
 into that, we have to find a quantitative way of describing the phase of a
 system. This is done by defining an \textit{order parameter}, a quantity that
 take very distinct values in different phases (usually normalized to be zero in
-the high temperature phase). In the case of water, the order parameter is the
-density or, equivalently, the volume. For ferromagnetic transitions we use the
-spontaneous magnetization. Other examples of order parameter can be seen in
-Table~\ref{tab:ptex}.
+the most disordered phase). In the case of water, the order parameter is the
+density (which is just the inverse of the volume). For ferromagnetic
+transitions we use the spontaneous magnetization. The choice of order parameter
+for several systems can be seen in Table~\ref{tab:ptex}.
 
 Following the example of water, where the temperature and pressure are the
-control variables, the thermodynamic properties are determined by its Gibbs
+control variables, the thermodynamic properties are determined by the Gibbs
 free energy
 \begin{equation}
     G=E-TS+pV.
@@ -129,16 +140,16 @@ true, is that the entropy, another derivative of $G$,
 is also discontinuous at the boundary of a phase transition. Because the first
 derivatives of the free energy display a singularity, we say these phase
 transition are of \textit{first order}. This sudden changes happens because the
-equilibrium state of the system (the minimum of the free energy) shifts from
-one part of the phase space to another~\cite{Callen1985} as illustrated in
-Figure~\ref{fig:gibbs1}. When the system is exactly at the boundary of the
-phase transition, the two phases have the same free energy, allowing them both
-to coexist in different regions of the system. Because of this, the transition
-lines are also called coexistence lines. On the point labeled triple point, the
-free energy has \textit{three} equal minima, so all three phases (solid, liquid
-and gas) exist on the same system. Because the triple point is uniquely
-defined, it is the basis used to define the Kelvin temperature
-scale~\cite{Fermi1956}.
+equilibrium state of the system (determined by the minimum of the free energy)
+shifts from one part of the phase space to another~\cite{Callen1985}, as
+illustrated in Figure~\ref{fig:gibbs1}. When the system is exactly at the
+boundary of the phase transition, the two phases have the same free energy,
+allowing them both to coexist in different regions of the system. Because of
+this, the transition lines are also called coexistence lines. On the point
+labeled triple point, the free energy has \textit{three} equal minima, so all
+three phases (solid, liquid and gas) exist on the same system. Because the
+triple point is uniquely defined, it is the basis used to define the Kelvin
+temperature scale~\cite{Fermi1956}.
 
 \begin{figure}
 \begin{center}
@@ -166,23 +177,24 @@ boiling a volume of water, the temperature of the liquid phase does not rise
 because the extra heat being added is being absorbed in form of latent heat.
 
 Now, looking again at Figure~\ref{fig:water}a one might ask why the liquid-gas
-transition line does not extend for all values of temperature. This is where
-things start to get interesting. We've established that the free energy have
-two equivalent minima when the system is over the coexistence line. Now, if we
-walk along this line following the behavior of the free energy, what we observe
-is that the ``dividing wall'' between  the two minima gets shorter and shorter,
-similar to what is shown in Figure~\ref{fig:gibbs2}. At a critical temperature
-of approximately $374^\circ$C and pressure of $217.7$atm, the two minima merge.
-At this point it is not that the two phases coexist, they are
+transition line does not extend all the way through the phase diagram. This
+is where things start to get interesting. We've established that the free
+energy have two equivalent minima when the system is over the coexistence line.
+Now, if we walk along this line following the behavior of the free energy, what
+we observe is that the ``dividing barrier'' between  the two minima gets shorter
+and shorter, similar to what is shown in Figure~\ref{fig:gibbs2}. At a critical
+temperature of approximately $374^\circ$C and pressure of $217.7$atm, the two
+minima merge. At this point it is not that the two phases coexist, they are
 indistinguishable from one another.
 
 If we look at the order parameter when the system pass through the critical
 point, we see that it is no longer discontinuous, as it's shown in
 Figure~\ref{fig:water}c. If we set the pressure to the same as the critical
 point and heat an amount of liquid water, the volume will rise continuously
-until it reaches the gaseous state. Not all quantities are well behaved though.
-The ones that do display discontinuities on the critical point, are the second
-derivatives of the free energy, like the specific heat
+(although not necessarily smoothly) until it reaches the gaseous state. Not all
+quantities are well behaved though. The ones that do display discontinuities on
+the critical point, are the second derivatives of the free energy, like the
+specific heat
 \begin{equation}
     c_p=T{\left(\frac{\partial S}{\partial T}\right)}_{p}=
     T{\left(\frac{\partial^{2}G}{\partial T^{2}}\right)}_{p},
@@ -199,9 +211,9 @@ Second order transitions have a whole range of peculiar behavior associated
 with it. The most notorious is the presence of large fluctuations. In
 Chapter~\ref{ch:intr} we mentioned the work of Thomas
 Andrews~\cite{Andrews1869}, who noticed that some substances become opaque at
-the critical point. This happens because the huge fluctuations in the
-spacial distribution of mass, which happens in all size scales, scatter most
-of the visible light.
+the critical point. This happens because the huge fluctuations in the spacial
+distribution of mass, forming ``blobs'' of water of all sizes, including the
+sizes that scatter most visible light, giving the system a milky aspect.
 
 Although we focused a lot on the example of water, the ferromagnetic transition
 described in the previous section is probably the most studied kind of second
@@ -210,8 +222,8 @@ order phase transition. In it the free energy is given by
     F = -SdT-Mdh
 \end{equation}
 where $M$ is the spontaneous magnetization (the order parameter in this case)
-and $h$ is an external magnetic field. It is characterized by a diverging
-magnetic susceptibility
+and $h$ is an uniform external magnetic field. It is characterized by a
+diverging magnetic susceptibility
 \begin{equation}
     \chi_{M}=
     {\left(\frac{\partial M}{\partial h}\right)}_{T}=
@@ -253,17 +265,17 @@ shares some of similarities with second order transitions.
 
 The discussion of phase transitions presented (very superficially) so far,
 rooted on the postulates of thermodynamics and in the analyticity of the free
-energy, is due to Landau~\cite{Landau1969}. While this theory menages to
-capture a few properties of critical systems, it fails catastrophically when it
-comes to determine the values of the critical exponents. The source of this
-discrepancy is due to some basic assumptions of statistical mechanics. You see,
-the maximum entropy postulate is derived from the fact that the probability of
-finding a system in any given state is distributed very narrowly around a
-value, this way we can assume the expected (average) energy of the system is
-the same as the most probable one. On the critical point however, because
-the minimum of the free energy is so shallow, the probability distribution
-significantly broadens, so much that the difference between most probable and
-average cannot be ignored~\cite{Callen1985}.
+energy, is due to Landau~\cite{Landau1969}. While this theory manages to
+capture a few properties of critical systems, it fails catastrophically from a
+quantitative standpoint. The source of this discrepancy comes from some basic
+assumptions of statistical mechanics. You see, the maximum entropy postulate is
+derived from the fact that the probability of finding a system in any given
+state is distributed very narrowly around a value, this way we can assume the
+expected (average) energy of the system is the same as the most probable one.
+On the critical point however, because the minimum of the free energy is so
+shallow, the probability distribution significantly broadens, so much that the
+difference between most probable and average cannot be
+ignored~\cite{Callen1985}.
 
 \input{chapters/ch2-crit/table.tex}
 
@@ -273,12 +285,12 @@ average cannot be ignored~\cite{Callen1985}.
 \newcommand{\sfi}{J}
 
 We noted that several thermodynamical quantities diverge on the critical point.
-More important than that is \textit{how} they diverge. This motivates the
-definition of a set of indices called \textit{critical exponents} that
-characterize the behavior of the system near the critical point. We will use
-$\op$ for the order parameter (the density for water, the magnetization for
+More important than that is to know \textit{how} they diverge. This motivates
+the definition of a set of indices called \textit{critical exponents} that
+characterize the behavior of the system near the critical point. Here we will
+use $\op$ for the order parameter (the density for water, the magnetization for
 ferromagnets) and $\sfi$ for the source field (pressure for water, the external
-magnetic field for ferromagnets). This way we define the generalized
+magnetic field for ferromagnets). This way we can define a generalized
 susceptibility $\chi=\partial\op/\partial \sfi$.
 
 In the thermodynamics domain there are four main critical exponents, each
@@ -342,9 +354,9 @@ We can formalize this thought by defining the correlation function of a system,
     -\left\langle \op\left(x_{1}\right)\right\rangle
     \left\langle \op\left(x_{2}\right)\right\rangle,
 \end{equation}
-where $\op(x)$ is the local value of the order parameter. The macroscopic
-value can be recovered from its expected value $\op=V^{-1}\int\op(x)d^d x$.
-The assumption that
+where $\op(x)$ is the local value of the order parameter at any given point of
+the system. The macroscopic value can be recovered from its expected value
+$\op=V^{-1}\int\op(x)d^d x$. The assumption that
 $C\left(x_{1},x_{2}\right)=C\left(\left|x_{1}-x_{2}\right|\right)$ comes from
 translation invariance, which takes no specific point of the system as special.
 It is natural to expect that the correlations would decay exponentially, with a
@@ -371,8 +383,8 @@ $\nu$ associated with it,
         \xi & \sim & {\left(T_c-T\right)}^{-\nu'} & \mbox{for} & T < T_c.
     \end{array}
 \end{equation}
-The correlation function also cannot decay as an exponential, and goes instead
-as a power law, with yet another critical exponent $\eta$,
+The correlation function itself also cannot decay as an exponential, and goes
+instead as a power law, with yet another critical exponent $\eta$,
 \begin{equation}
     \label{eq:critcor}
     \begin{array}{ccccc}
@@ -409,11 +421,11 @@ critical exponents.
 \renewcommand{\op}{\phi}
 
 The list of critical exponents shown on the last section is far from
-exhaustive. More exotic, but no less important, exponents include the fractal
-dimension, one-arm exponent and crossing exponent. It sure seems like a lot of
-work to completely describe a universality class, if one needs to compute
-dozens of exponents. Luckily with the very simple assumption of scaling
-invariance, we can greatly reduce the amount of work needed.
+exhaustive. More exotic, but no less important exponents include the fractal
+dimension, one-arm exponent and the crossing exponent, among others. It sure
+seems like a lot of work to completely describe a universality class, if one
+needs to compute dozens of exponents. Luckily with the very simple assumption
+of scaling invariance, we can greatly reduce the amount of work needed.
 
 We will take a look at the correlation functions of the observables, which
 we'll refer as \textit{scaling operators}. The main ones are the order
@@ -466,7 +478,7 @@ following way
     b^{-2x_{\varepsilon}}C_{\varepsilon}\left(\mathbf{r}/b;tb^{y_{t}},hb^{y_{h}}\right)
 \end{eqnarray}
 where $x_\op$ and $x_\varepsilon$ are the scaling dimension of the scaling
-operators $\op$ and $\varepsilon$, and $y_t$ and $y_\op$ are called the
+operators $\op$ and $\varepsilon$, and $y_t$ and $y_h$ are called the
 \textit{renormalization group eigenvalues} of their respective scaling fields.
 
 Following the fluctuation dissipation theorem, we can compute the susceptibility
@@ -544,15 +556,15 @@ thermodynamical exponents, you get the other two for free.
 
 How about the other two exponents, $\nu$ and $\eta$, related to the
 correlations of the order parameter, you might ask. We can also find a simple
-relation for them by takin Eq.~\ref{eq:scal} and again making $b=t^{-1/y_t}$
+relation for them by taking Eq.~\ref{eq:scal} and again making $b=t^{-1/y_t}$
 \begin{equation}
-    G_{\op}\left(\mathbf{r};t,0\right)=
-    t^{2x_{\op}/y_{t}}G_{\op}
+    C_{\op}\left(\mathbf{r};t,0\right)=
+    t^{2x_{\op}/y_{t}}C_{\op}
     \left(\frac{\mathbf{r}}{{\left(1/t\right)}^{1/y_{t}}};1,0\right).
 \end{equation}
 We can assume that close to criticality (but not exactly on the critical point)
 the correlation function depends only on $r/\xi$, because of
-Eq.~\ref{eq:corr}. Because of this we can assume
+Eq.~\ref{eq:corr}. From this follows that
 \begin{equation}
     \xi\sim\left|t\right|^{-1/y_t},
 \end{equation}
@@ -591,7 +603,7 @@ motivated through the study of renormalization group
 theory~\cite{Pelissetto2002}, which was an important advancement in critical
 phenomena when it was first developed, but it goes well beyond the scope of
 this work. However, some authors do prefer to look at scaling invariance
-through an axiomatic lens, as it was done here, comparing it to the
+through an axiomatic lens, as it was done here, forming a parallel with the
 introduction of conformal invariance (see
 Section~\ref{ch:conf})~\cite{Henkel2013}.
 
@@ -599,23 +611,37 @@ Section~\ref{ch:conf})~\cite{Henkel2013}.
 \section{Models of Critical Systems}
 \label{sec:models}
 
-To illustrate 
-Here we will show and discuss two of the most popular models of critical systems.
+Beyond the phenomenological approach shown up to this point, another way to
+advance the knowledge of statistical physics is through model building, where
+we look for simple models capable of providing useful insight into practical
+situations. Coming up with a fruitful model however can be a very tiresome and
+sometimes arcane task, with a lot of trial and error involved. Over decades of
+study, a select group of models have gained a significant status in the canon
+of phase transitions. Two that stand out due to their simplicity and historical
+significance are the Ising and percolation models.
+
 
 \subsection{Ising Model}
 \label{sec:ising}
+
+Of all phase transition models, Ising's is definitely the most famous of all.
+Its importance come not only from its simplicity, but from the fact that it's
+one of the 
+
+Today the Ising model forms the basis of our understanding of phase transitions
+to the point that many latter important models, like the $O(n)$ and Potts
+models~\cite{Wu1982}, can be traced back to it.
 
 Although not directly relevant for the present work, we shall briefly describe
 the Ising model because of its importance in the field of critical phenomena.
 It's hard to understate the its impact in the study of phase transitions. It
 represents a golden standard because it unites an elegantly simple setup with
 the fact it can be exactly solved in both one and two dimensions, a claim very
-few models can make. Two of the most important models, $O(n)$ and Pott's model,
-were constructed as generalizations of the Ising model.
+few models can make. Some of the most important models,
 
 The system is composed of a number of classical spins $\{s_i\}$ that can take
-one of two values $1$ or $-1$. The are arranged in a lattice and are allowed to
-interact with its first nearest neighbors. The Hamiltonian of the systems is
+one of two values $1$ or $-1$. They are arranged in a lattice and are allowed
+to interact with its first nearest neighbors. The Hamiltonian of the systems is
 given by
 \begin{equation}
     \mathcal{H}=
@@ -631,7 +657,18 @@ The order parameter here is the spontaneous magnetization $M=\sum_i s_i / N$.
 If the temperature is too the spins will tend to align themselves, giving rise
 to an ordered state where $M>0$, while if the temperature is too high, thermal
 fluctuations will misalign the spins and the resulting state is unordered
-with $M=0$. Figure~\ref{fig:ising_phase2} shows the phase space.
+with $M=0$.
+
+In his original workç~\cite{Ising1925}, Ising solved the model in one
+dimension, showing that it does not display a phase transition at finite
+temperature. From this result, he  incorrectly assumed the same would happen in
+higher dimensions.
+
+Figure~\ref{fig:ising_phase2} shows the phase space.
+
+To this day no solution for three dimensions have been present, with some
+authors arguing that this accomplishment is not even
+possible~\cite{Istrail2000}.
 
 Simulating the Ising model is particularly simple using the Metropolis-Hastings
 algorithm~\cite{Hastings1970}. At each step chose a random spin of the lattice
@@ -651,11 +688,11 @@ The Ising model is particularly famous for being the first 2D model of second
 order phase transition to be analytically solved. You see, for most of the
 first half of the 20th century, it was unclear whether the formalism developed
 in statistical physics was enough to completely describe critical systems.
-That's because equations [\ldots] seems to behave neatly as function of
-temperature. It wasn't until the work of Onsager, a mathematical tour de force
-published in 1944~\cite{Onsager1944}, that it became clear that the
-singularities appear only in the limit of infinite particles, the thermodynamic
-limit.
+That's because the partition function, from which all statistical properties of
+the system can be derived, seems to behave neatly as function of temperature.
+It wasn't until the work of Onsager, a mathematical tour de force published in
+1944~\cite{Onsager1944}, that it became clear that the singularities appear
+only in the limit of infinite particles.
 
 
 \begin{figure}
