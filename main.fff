@@ -130,13 +130,13 @@
 \begin{center}
     \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
 \end{center}
-\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.}
+\caption{Specific heat and susceptibility computed from a simulation of the
+    Ising model in a $64\times 64$ square lattice. They are computed from the
+    fluctuation-dissipation theorem, where $c=T^{-2}\left(\left\langle
+    E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\right)$ and
+    $\chi=T^{-1}\left(\left\langle M^{2}\right\rangle -\left\langle
+    M\right\rangle ^{2}\right)$. Both quantities show the characteristic
+    diverging behavior near the critical point at $T_c\approx 2.27$.}
 \label{fig:ising_cx}
 \end{figure}
 \efloatseparator

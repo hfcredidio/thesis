@@ -625,16 +625,17 @@ significance are the Ising and percolation models.
 \label{sec:ising}
 
 Of all phase transition models, Ising's is definitely the most famous, because,
-despite its simplicity, it is capable to capture all of the main features of
-ferromagnetic materials near the critical point. Today the Ising model forms
-the basis of our understanding of phase transitions to the point that many
-latter important models, like the $O(n)$ and Potts models~\cite{Wu1982}, can be
-traced back to it.
+despite its simplicity, it is capable of capturing all of the main features of
+ferromagnetic materials near the critical point. I was also the first model
+with a second order phase transition to be analytically solved, and because of
+that today it forms the basis of our understanding of phase transitions to
+the point that many latter important models, like the $O(n)$ and Potts
+models~\cite{Wu1982}, can be traced back to it.
 
-The model consists in a set of classical spins $\{s_i\}$ that can take
-one of two values $1$ or $-1$. They are arranged in a lattice and are allowed
-to interact with their nearest neighbors. The Hamiltonian of the systems is
-given by
+Simply put, the model consists of a set of classical spins $\{s_i\}$ that can
+take one of two values $1$ or $-1$. They are arranged in a lattice and are
+allowed to interact with their nearest neighbors. The Hamiltonian of the
+systems is given by
 \begin{equation}
     \mathcal{H}=
     -J\sum_{\left\langle i,j\right\rangle }s_{i}s_{j}
@@ -647,10 +648,10 @@ alignment with an external magnetic field. See Figure~\ref{fig:ising} for some
 examples of the Ising model in two dimensions in a square lattice.
 
 The order parameter here is the spontaneous magnetization $M=\sum_i s_i / N$.
-If the temperature is too the spins will tend to align themselves, giving rise
-to an ordered state where $M>0$, while if the temperature is too high, thermal
-fluctuations will misalign the spins and the resulting state is unordered
-with $M=0$.
+If the temperature is too low the spins will tend to align themselves, giving
+rise to an ordered state where $M>0$, while if the temperature is too high,
+thermal fluctuations will misalign the spins, resulting in a highly disordered
+state with $M=0$.
 
 In his original work~\cite{Ising1925}, Ising solved the model in one dimension,
 showing that it does not undergoes a phase transition at finite temperature.
@@ -659,14 +660,14 @@ dimensions. The argument is apparently sound: any configuration of the system
 with magnetization $M$ have the same energy as the one where all the spins are
 flipped and the magnetization is opposite $-M$. Both configurations have
 therefore the same probability $\exp(-E/k_b T)$. The system should then spend
-as many times on a positive magnetization as in a negative one, so the average
+as much time on a positive magnetization as in a negative one, so the average
 magnetization should be zero.
 
 On the other hand, Peierls presented an argument for the presence of phase
-transitions in $d>1$~\cite{Peierls1936}, showing that in infinite systems
+transitions in $d>1$~\cite{Peierls1936}, showing that in large enough systems
 (that is, in the thermodynamic limit) the thermal fluctuations at low
-temperature are not enough to bring the system from a positive magnetization
-state to a negative one (and vice-versa), so the system should be ``stuck''
+temperatures are not enough to bring the system from a positive magnetization
+state to a negative one (and vice-versa), so the system would be ``stuck''
 with non-zero magnetization.
 
 The fact that both of these contradictory arguments seemed correct, led some to
@@ -675,7 +676,7 @@ systems. The solution for this conundrum came from Onsager in
 1944~\cite{Onsager1944} who solved the Ising model in a 2D square lattice. The
 solution, albeit very complex, demanded no further assumptions than that of
 standard statistical physics, a truly remarkable and well celebrated result.
-The mistake in Ising's argument likes on the partition function,
+The mistake in Ising's argument lies on the partition function,
 \begin{equation}
     \mathcal{Z}=
     \sum_{\left\{ s_{i}\right\} }
@@ -685,26 +686,31 @@ The mistake in Ising's argument likes on the partition function,
 \end{equation}
 from which follow all thermodynamic properties~\cite{Pathria1996}. The
 partition function is certainly analytical in $T$ for a finite system, because
-the number of possible configurations $\{s_i\}$ is finite, and a finite sum of
-exponentials is an analytical function. However, if the number of configurations is
-infinite, which should happen in the thermodynamic limit, the analyticity
-cannot be guaranteed.
+the number of different configurations $\{s_i\}$ is finite, and a finite sum of
+exponentials is an analytical function. However, if the number of
+configurations is infinite, which should happen in the thermodynamic limit, the
+analyticity cannot be guaranteed, and the singularities typical of a second
+order phase transition are allowed to flourish.
 
-Figure~\ref{fig:ising_phase2} shows the phase space of the 2D Ising model. We
-observe a first-order phase transition when we flip the direction of the
-external field $h$ for $T<T_c$. At $T=T_c$ the transition is continuous at
-$h=0$. The value of the critical point is given by
+Let's take a look at the phase diagram of the Ising model.
+Figure~\ref{fig:ising_phase2} shows the 2D square lattice version. We observe a
+first order phase transition at $h=0$ and $T<T_c$, where the magnetization
+discontinuously flips direction. At $T=T_c$ the transition becomes continuous
+The value of the critical point is given by
 \begin{equation}
     T_{c}=
     \frac{2J}{k_{b}\log\left(1+\sqrt{2}\right)}
     \approx2.27\frac{J}{k_{b}},
 \end{equation}
-and the magnetization for $T<T_c$~\cite{Yang1952}
+and the magnetization along the coexistence line is~\cite{Yang1952}
 \begin{equation}
     M={\left[1-\sinh^{-4}\left(\frac{2J}{k_{b}T}\right)\right]}^{1/8},
 \end{equation}
-from which we can determine that $\beta=1/8$. The values of the other
-exponents of the Ising universality class can be seen in Table~\ref{tab:univ}.
+from which we can determine that $\beta=1/8$. The values of the other exponents
+of the Ising universality class can be seen in Table~\ref{tab:univ}. The Ising
+universality class encompass more than just the ferromagnetic transition. For
+instance, the liquid-vapor critical point (like the one found in the water
+phase diagram) also falls in the same class.
 
 To this day no solution for three dimensions have been presented, with some
 authors arguing that such an accomplishment is not even
@@ -714,16 +720,26 @@ From a computational perspective, simulating the Ising model is particularly
 simple using the Metropolis-Hastings algorithm~\cite{Hastings1970}. At each
 step chose a random spin of the lattice and compute the change in energy
 $\Delta E$ that would occur if you were to flip the spin. In a square lattice
-this is given by
+this is given by (assuming $h=0$ and $J/k_b=1$)
 \begin{equation}
     \Delta E=2s\left(i,j\right)\left[s\left(i+1,j\right)+
     s\left(i-1,j\right)+s\left(i,j+1\right)+s\left(i,j-1\right)\right],
 \end{equation}
-where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ with $a$ being the
+where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ and $a$ is the
 lattice constant. You actually perform the flip $s(i,j)\rightarrow -s(i,j)$ if
-$\Delta E < 0$. If not, you should still perform the flip randomly with
-probability $\exp(-\Delta E / T)$ (assuming normalized unities, where $J/k_b =
-1$). Figure~\ref{fig:ising_phase}.
+$\Delta E\leq 0$. If not, you should still perform the flip randomly with
+probability $\exp(-\Delta E / T)$. Thermodynamical properties can be computed from
+the fluctuation-dissipation theorem~\cite{Nishimori2011}, that 
+\begin{equation}
+    c=\frac{\left\langle E^{2}\right\rangle -\left\langle E\right\rangle ^{2}}{T^2},
+    \,\,\,\,\,\,\,\,
+    \chi=\frac{\left\langle M^{2}\right\rangle -\left\langle M\right\rangle ^{2}}{T}
+\end{equation}
+Figure~\ref{fig:ising_phase} shows the magnetization as a function of
+temperature compared to Onsager's solution, and Figure~\ref{fig:ising_cx} shows the
+specific heat and susceptibility, along with their characteristic divergence
+near the theoretical critical point.
+
 
 \begin{figure}
 \begin{center}
@@ -776,13 +792,13 @@ probability $\exp(-\Delta E / T)$ (assuming normalized unities, where $J/k_b =
 \begin{center}
     \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
 \end{center}
-\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.}
+\caption{Specific heat and susceptibility computed from a simulation of the
+    Ising model in a $64\times 64$ square lattice. They are computed from the
+    fluctuation-dissipation theorem, where $c=T^{-2}\left(\left\langle
+    E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\right)$ and
+    $\chi=T^{-1}\left(\left\langle M^{2}\right\rangle -\left\langle
+    M\right\rangle ^{2}\right)$. Both quantities show the characteristic
+    diverging behavior near the critical point at $T_c\approx 2.27$.}
 \label{fig:ising_cx}
 \end{figure}
 
@@ -791,30 +807,29 @@ probability $\exp(-\Delta E / T)$ (assuming normalized unities, where $J/k_b =
 \subsection{Percolation}
 \label{sec:perc}
 
-While fiercely competing with the Ising model for the title of most popular
-criticality model, percolation certainly wins in term of simplicity. Introduced
-in 1957 by Broadbent and Hammersley~\cite{Broadbent1957}, the question they
-were trying to answer was very humble: say we block a water pipe with a rock,
-how porous should the rock be for the water to be able to flow, even if at a
-very low flow rate? To find an answer, they modeled the rock as a square
-lattice where each site can be either occupied by the rocky substrate or a
-hole. The measure of the porosity is the ratio between the number of holes and
-the total number of sites in the lattice. Of course, the more porous is a rock,
-the more holes it has. Assuming these holes are randomly and uniformly
-distributed on the substrate, they will often, by pure chance, fall into
-clusters of neighboring holes, which are simply bigger holes. Water will be
-able to flow through the rock only if we have a cluster that traverse the
-system from one side to the other. This cluster is called the
-\textit{percolating} (or spanning) cluster. So we can reframe the initial
-question as follows: whats the smallest value of porosity where a percolating
-cluster will always be present in the system. A 0\% porous rock would obviously
-always be impermeable, and a 100\% porous rock is just no rock at all (how
-zen!). But how about 50\%, or 40\%, or 60\%? The answer naturally depends on
-the size of the lattice, but for a very large one we observe the existence of a
-critical porosity $p_c$ below which we never observe a percolating cluster,
-while above $p_c$ one is away present. See Figure~\ref{fig:isoperco} for some
-realizations of the percolation process in each state: subcritical, critical
-and supercritical.
+While losing to the Ising model in terms of popularity, percolation certainly
+wins in term of simplicity. Introduced in 1957 by Broadbent and
+Hammersley~\cite{Broadbent1957}, the question they were trying to answer was
+very humble: say we block a water pipe with a rock, how porous should the rock
+be for the water to be able to flow, even if at a very low flow rate? To find
+an answer, they modeled the rock as a square lattice where each site can be
+either occupied by the rocky substrate or a hole. The measure of the porosity
+is the ratio between the number of holes and the total number of sites in the
+lattice. Of course, the more porous is a rock, the more holes it has. Assuming
+these holes are randomly and uniformly distributed on the substrate, they will
+often, by pure chance, fall into clusters of neighboring holes, which are in
+fact just bigger holes. Water will be able to flow through the rock only if we
+have a cluster that traverse the system from one side to the other. This
+cluster is called the \textit{percolating} (or spanning) cluster. So we can
+reframe the initial question as follows: whats the smallest value of porosity
+where a percolating cluster will always be present in the system. A 0\% porous
+rock would obviously always be impermeable, and a 100\% porous rock is just no
+rock at all (how zen!). But how about 50\%, or 40\%, or 60\%? The answer
+naturally depends on the size of the lattice, but for a very large one we
+observe the existence of a critical porosity $p_c$ below which we never observe
+a percolating cluster, while above $p_c$ one is away present. See
+Figure~\ref{fig:isoperco} for some realizations of the percolation process
+in two dimensions in each state: subcritical, critical and supercritical.
 
 This is the core of percolation theory, initially motivated by a transport
 problem. From a more generic perspective, Stauffer summarizes it
@@ -833,14 +848,11 @@ behaves for various sizes of a square lattice. It shows that as the system
 reaches the thermodynamical limit, the order parameter closely behaves as a
 second order phase transition.
 
-Despite the initial motivation coming from transport theory, the percolation
-model is much more general than that, it can be used to study.
-
-The type of percolation described here, where we occupy the sites of a lattice
+The type of percolation described so far, where we occupy the sites of a lattice
 is called \textit{site percolation}. Alternatively we could instead occupy the
 bonds. It is as if we had an empty isolating substrate with a potential
 difference $V$ put along it. We then randomly insert resistors between the
-sites with probability $p$. The system will be percolated when the it has a
+sites with probability $p$. The system will have percolated when it has a
 bridge of resistors traversing it, along which electrical current can flow,
 thus passing from an isolating phase to a conductive one.
 Figure~\ref{fig:sitebond} illustrate the difference between site and bond
@@ -848,9 +860,9 @@ percolation.
 
 The exact value of the critical point is non universal and depends on whether
 it's site or bond percolation and on the lattice choice. The two more notorious
-examples are square lattice site percolation, that has a critical point at
-$p_c\approx0.592746$ and the triangular site percolation at $p_c=0.5$. Values
-of the critical point for various other lattices are shown in
+examples are site percolation on a square lattice, that has a critical point at
+$p_c\approx0.592746$ and site percolation on a triangular lattice at $p_c=0.5$.
+Values of the critical point for various other lattices are shown in
 Table~\ref{tab:perc}.
 
 The critical behavior of the percolation model is usually given by two critical
@@ -932,16 +944,26 @@ there are many algorithms around that allow for the simulation of very large
 lattices, basically limited only by the memory of the
 computer~\cite{Newman2000}.
 
-The critical exponents of site percolation lattice have been exactly computed
-in the triangular lattice using Schramm Loewner Evolutions~\cite{Smirnov2001}
-(we'll get there in Chapter~\ref{ch:sle}). The values found are $\tau=187/91$
-and $\sigma=36/91$. The other exponents can be found in Table~\ref{tab:univ}.
+The critical exponents of two dimensional site percolation lattice have been
+exactly computed in the triangular lattice using Schramm Loewner
+Evolutions~\cite{Smirnov2001} (we'll get there in Chapter~\ref{ch:sle}). The
+values found are $\tau=187/91$ and $\sigma=36/91$. The other exponents can be
+found in Table~\ref{tab:univ}. Other lattices have not been solved neither
+proved to be in the same universality class, although the numerical evidence
+that this is the fact is overwhelming.
+
+Despite the initial motivation coming from transport theory, the percolation
+model is much more general than that, being applied to various other areas like
+the study of gelation of polymers~\cite{DeCandia2005}, conductivity in
+semiconductors~\cite{Ambegaokar1971}, and the dynamics of the immune
+system~\cite{Stewart1991}, among others~\cite{Sahimi1994}.
 
 Just like the Ising model, the simplicity of percolation is ripe for the
 development of derivative models, aiming to elucidate other aspects of phase
 transitions. These include cooperative sequential adsorption~\cite{Araujo2013},
 explosive percolation~\cite{Achlioptas2009} and invasive
 percolation~\cite{Wilkinson1983}, to name just a few.
+
 
 \begin{figure}
 \begin{center}
