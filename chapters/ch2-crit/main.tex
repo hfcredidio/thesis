@@ -624,24 +624,16 @@ significance are the Ising and percolation models.
 \subsection{Ising Model}
 \label{sec:ising}
 
-Of all phase transition models, Ising's is definitely the most famous of all.
-Its importance come not only from its simplicity, but from the fact that it's
-one of the 
+Of all phase transition models, Ising's is definitely the most famous, because,
+despite its simplicity, it is capable to capture all of the main features of
+ferromagnetic materials near the critical point. Today the Ising model forms
+the basis of our understanding of phase transitions to the point that many
+latter important models, like the $O(n)$ and Potts models~\cite{Wu1982}, can be
+traced back to it.
 
-Today the Ising model forms the basis of our understanding of phase transitions
-to the point that many latter important models, like the $O(n)$ and Potts
-models~\cite{Wu1982}, can be traced back to it.
-
-Although not directly relevant for the present work, we shall briefly describe
-the Ising model because of its importance in the field of critical phenomena.
-It's hard to understate the its impact in the study of phase transitions. It
-represents a golden standard because it unites an elegantly simple setup with
-the fact it can be exactly solved in both one and two dimensions, a claim very
-few models can make. Some of the most important models,
-
-The system is composed of a number of classical spins $\{s_i\}$ that can take
+The model consists in a set of classical spins $\{s_i\}$ that can take
 one of two values $1$ or $-1$. They are arranged in a lattice and are allowed
-to interact with its first nearest neighbors. The Hamiltonian of the systems is
+to interact with their nearest neighbors. The Hamiltonian of the systems is
 given by
 \begin{equation}
     \mathcal{H}=
@@ -650,8 +642,9 @@ given by
 \end{equation}
 Where $\sum_{\left\langle i,j\right\rangle}$ means a summation over all pairs
 of nearest neighbors. If we assume $J>0$, then the first term of the
-Hamiltonian favors the alignment of the spins, while the second one 
-favors the alignment with an external magnetic field.
+Hamiltonian favors the alignment of the spins, while the second one favors the
+alignment with an external magnetic field. See Figure~\ref{fig:ising} for some
+examples of the Ising model in two dimensions in a square lattice.
 
 The order parameter here is the spontaneous magnetization $M=\sum_i s_i / N$.
 If the temperature is too the spins will tend to align themselves, giving rise
@@ -659,21 +652,69 @@ to an ordered state where $M>0$, while if the temperature is too high, thermal
 fluctuations will misalign the spins and the resulting state is unordered
 with $M=0$.
 
-In his original workç~\cite{Ising1925}, Ising solved the model in one
-dimension, showing that it does not display a phase transition at finite
-temperature. From this result, he  incorrectly assumed the same would happen in
-higher dimensions.
+In his original work~\cite{Ising1925}, Ising solved the model in one dimension,
+showing that it does not undergoes a phase transition at finite temperature.
+From this result, he mistakenly assumed the same would happen in higher
+dimensions. The argument is apparently sound: any configuration of the system
+with magnetization $M$ have the same energy as the one where all the spins are
+flipped and the magnetization is opposite $-M$. Both configurations have
+therefore the same probability $\exp(-E/k_b T)$. The system should then spend
+as many times on a positive magnetization as in a negative one, so the average
+magnetization should be zero.
 
-Figure~\ref{fig:ising_phase2} shows the phase space.
+On the other hand, Peierls presented an argument for the presence of phase
+transitions in $d>1$~\cite{Peierls1936}, showing that in infinite systems
+(that is, in the thermodynamic limit) the thermal fluctuations at low
+temperature are not enough to bring the system from a positive magnetization
+state to a negative one (and vice-versa), so the system should be ``stuck''
+with non-zero magnetization.
 
-To this day no solution for three dimensions have been present, with some
-authors arguing that this accomplishment is not even
+The fact that both of these contradictory arguments seemed correct, led some to
+believe that statistical mechanics was inadequate to deal with critical
+systems. The solution for this conundrum came from Onsager in
+1944~\cite{Onsager1944} who solved the Ising model in a 2D square lattice. The
+solution, albeit very complex, demanded no further assumptions than that of
+standard statistical physics, a truly remarkable and well celebrated result.
+The mistake in Ising's argument likes on the partition function,
+\begin{equation}
+    \mathcal{Z}=
+    \sum_{\left\{ s_{i}\right\} }
+    \exp\left[
+        -\frac{\mathcal{H}\left(\left\{ s_{i}\right\} \right)}{k_{b}T}
+    \right],
+\end{equation}
+from which follow all thermodynamic properties~\cite{Pathria1996}. The
+partition function is certainly analytical in $T$ for a finite system, because
+the number of possible configurations $\{s_i\}$ is finite, and a finite sum of
+exponentials is an analytical function. However, if the number of configurations is
+infinite, which should happen in the thermodynamic limit, the analyticity
+cannot be guaranteed.
+
+Figure~\ref{fig:ising_phase2} shows the phase space of the 2D Ising model. We
+observe a first-order phase transition when we flip the direction of the
+external field $h$ for $T<T_c$. At $T=T_c$ the transition is continuous at
+$h=0$. The value of the critical point is given by
+\begin{equation}
+    T_{c}=
+    \frac{2J}{k_{b}\log\left(1+\sqrt{2}\right)}
+    \approx2.27\frac{J}{k_{b}},
+\end{equation}
+and the magnetization for $T<T_c$~\cite{Yang1952}
+\begin{equation}
+    M={\left[1-\sinh^{-4}\left(\frac{2J}{k_{b}T}\right)\right]}^{1/8},
+\end{equation}
+from which we can determine that $\beta=1/8$. The values of the other
+exponents of the Ising universality class can be seen in Table~\ref{tab:univ}.
+
+To this day no solution for three dimensions have been presented, with some
+authors arguing that such an accomplishment is not even
 possible~\cite{Istrail2000}.
 
-Simulating the Ising model is particularly simple using the Metropolis-Hastings
-algorithm~\cite{Hastings1970}. At each step chose a random spin of the lattice
-and compute the change in energy $\Delta E$ that would occur if you were to
-flip the spin. In a square lattice this is given by
+From a computational perspective, simulating the Ising model is particularly
+simple using the Metropolis-Hastings algorithm~\cite{Hastings1970}. At each
+step chose a random spin of the lattice and compute the change in energy
+$\Delta E$ that would occur if you were to flip the spin. In a square lattice
+this is given by
 \begin{equation}
     \Delta E=2s\left(i,j\right)\left[s\left(i+1,j\right)+
     s\left(i-1,j\right)+s\left(i,j+1\right)+s\left(i,j-1\right)\right],
@@ -681,19 +722,8 @@ flip the spin. In a square lattice this is given by
 where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ with $a$ being the
 lattice constant. You actually perform the flip $s(i,j)\rightarrow -s(i,j)$ if
 $\Delta E < 0$. If not, you should still perform the flip randomly with
-probability $\exp(-\Delta E / T)$. Figures~\ref{fig:ising}
-and~\ref{fig:ising_phase}.
-
-The Ising model is particularly famous for being the first 2D model of second
-order phase transition to be analytically solved. You see, for most of the
-first half of the 20th century, it was unclear whether the formalism developed
-in statistical physics was enough to completely describe critical systems.
-That's because the partition function, from which all statistical properties of
-the system can be derived, seems to behave neatly as function of temperature.
-It wasn't until the work of Onsager, a mathematical tour de force published in
-1944~\cite{Onsager1944}, that it became clear that the singularities appear
-only in the limit of infinite particles.
-
+probability $\exp(-\Delta E / T)$ (assuming normalized unities, where $J/k_b =
+1$). Figure~\ref{fig:ising_phase}.
 
 \begin{figure}
 \begin{center}
