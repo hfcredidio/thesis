@@ -12,4 +12,4 @@ main: main.tex chapters/*/main.tex main.bib
 
 clean:
 	latexmk -C
-	rm main.bbl
+	rm main.bbl main.ttt main.fff

@@ -236,7 +236,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlp_cluster}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
 \end{center}
 \caption{A comparison of clusters of occupied sites in both isotropic and
     multi-layered percolation at their critical points. They were generated
@@ -250,7 +250,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlperco}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlperco}
 \end{center}
 \caption{Three realizations of the multi-layered percolation model in the
     square lattice. Black sites are unoccupied, dark cyan sites are occupied
@@ -259,6 +259,20 @@
     $\Delta$, the more anisotropic is the system, and the multi-layered
     structure of the system becomes more evident.}
 \label{fig:mlperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps0}
+\end{center}
+\caption{Phase diagram of the multi-layered percolation model on a square
+    lattice showing the critical line separating the two phases computed in
+    three different occasions by Dayan~\cite{Dayan1991},
+    J\'acome~\cite{Samyr2009}, and Parteli~\cite{Parteli2010}. We observe that
+    $p_c\approx0.592$ for for $\Delta=0$, which is the expected value for
+    isotropic percolation.}
+\label{fig:mlp_ps0}
 \end{figure}
 \efloatseparator
  

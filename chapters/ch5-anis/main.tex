@@ -131,41 +131,51 @@ scale as
 The percolation model as presented in Section~\ref{sec:perc} was initally
 motivated by transport in disordered media, like porous rocks. However, the
 morphology of earth's crust is highly non-uniform and
-anisotropic~\cite{Englman1986}, as is the case .
-
-
-This model is due to Dayan~\cite{Dayan1991}.
-Contributions by Parteli~\cite{Parteli2010}.
-
-Another universality class of strongly anisotropic phase transition is yet
-another variation of the percolation model. Its aim is to model the structure
-of stratified media, like layered porous rocks. Introduced by Dayan et al.\,
-they suggested a percolation model for anisotropic multi-layered porous media
-in which different layers may have different physical properties such as
-density and porosity. Disordered systems such as layered fractured rocks are in
-general anisotropic, i.e.\ physical properties such as density or porosity may
-vary over the different layers.
+anisotropic~\cite{Englman1986}, like in stratified rocks formed by the layered
+deposition of different types of sediment, each with have different physical
+properties such as density and porosity. This anisotropy have important
+influence
+Aiming to model the structure of these
+kind of media, Dayan \textit{et al.}~\cite{Dayan1991} introduced yet another
+variant of the percolation model, called multi-layered percolation. 
 
 In this model we take a $d$-dimensional lattice composed of several
 $(d-1)$-dimensional sub-lattices (or layers) arranged in sequence, as if
 they're stacked one over the other. Following convention, we'll call the axis
 perpendicular to the layers the $y$-axis. We then perform the usual percolation
 process by randomly occupying the lattice sites. The key difference here is
-that each layer has its own occupation probability $p(y)$.
-For simplicity, it is common to take a two-probability approach, where
-each layer can have one of two values $p_1$ and $p_2$. These are
-the control parameters of the model, where the line $p_1=p_2$ represent
-the regular isotropic percolation. The larger the difference between
-$p_1$ and $p_2$ the more accentuated if the anisotropy of the systems.
-To this effect it is common to reparametrize the control parameter
-by defining
+that each layer has its own occupation probability $p(y)$. For simplicity, it
+is common to take a two-probability approach, where each layer can have one of
+two values $p_1$ and $p_2$. These are the control parameters of the model,
+where the line $p_1=p_2$ represent the regular isotropic percolation. The
+larger the difference between $p_1$ and $p_2$ the more accentuated if the
+anisotropy of the systems. To this effect it is common to reparametrize the
+control parameter by defining
 \begin{equation}
     \bar{p}=\frac{p_1 + p_2}{2}\;\;\;\;\;\;\;\Delta=\frac{p_1 - p_2}{2}
 \end{equation}
-such that $p_1 = \bar{p} + \Delta$ and $p_2 = \bar{p} - \Delta$. 
-The parameter $\Delta$ can take any value in the interval $[0.0,0.5]$,
-and represents the degree of anisotropy of the system, where $\Delta=0$
-is the isotropic case.
+such that $p_1 = \bar{p} + \Delta$ and $p_2 = \bar{p} - \Delta$. The parameter
+$\Delta$ can take any value in the interval $[0.0,0.5]$, and represents the
+degree of anisotropy of the system, where the system falls back to the
+isotropic case when $\Delta=0$. See Figure~\ref{fig:mlperco_explain} for an
+illustration of the multi-layered percolation process.
+
+%This model is due to Dayan~\cite{Dayan1991}.
+%Contributions by Parteli~\cite{Parteli2010}.
+
+%Another universality class of strongly anisotropic phase transitions is yet
+%another variation of the percolation model.
+
+Just like isotropic percolation, the multi-layered version also undergoes a
+second-order phase transition from a non-percolated to a percolated phase. In
+this case we have two control parameters $p$ and $\Delta$, although the order
+parameter (the relative size of the largest cluster) remains the same. In the
+phase diagram of the square lattice, shown in Figure~\ref{fig:mlp_ps0}, we
+observe a critical line separating the two phases. In the case $\Delta=0$ the
+value of $p_c$ found is around $0.592$ which is the same as isotropic
+percolation as expected, but it falls to $0.5$ as $\Delta\rightarrow 0.5$.
+
+Test~\cite{Samyr2009}.
 
 %As is expected, this model presents a second-order phase transition.
 %To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
@@ -198,7 +208,7 @@ is the isotropic case.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlp_cluster}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
 \end{center}
 \caption{A comparison of clusters of occupied sites in both isotropic and
     multi-layered percolation at their critical points. They were generated
@@ -211,7 +221,7 @@ is the isotropic case.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.6]{chapters/ch5-anis/figs/mlperco}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlperco}
 \end{center}
 \caption{Three realizations of the multi-layered percolation model in the
     square lattice. Black sites are unoccupied, dark cyan sites are occupied
@@ -222,14 +232,15 @@ is the isotropic case.
 \label{fig:mlperco}
 \end{figure}
 
-%\begin{figure}
-%\begin{center}
-    %\includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
-%\end{center}
-%\caption{Phase space of the multi-layered percolation model for both square and
-    %triangular lattices. They were computed using the cluster perimeter method.
-    %The square lattice result follow the results by Dayan et al.\ [???].
-    %Somewhat surprisingly we found that in the triangular lattice
-    %$\bar{p}_c=0.5$ for every value of $\Delta$.}
-%\label{fig:mlp_ps}
-%\end{figure}
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps0}
+\end{center}
+\caption{Phase diagram of the multi-layered percolation model on a square
+    lattice showing the critical line separating the two phases computed in
+    three different occasions by Dayan~\cite{Dayan1991},
+    J\'acome~\cite{Samyr2009}, and Parteli~\cite{Parteli2010}. We observe that
+    $p_c\approx0.592$ for for $\Delta=0$, which is the expected value for
+    isotropic percolation.}
+\label{fig:mlp_ps0}
+\end{figure}
