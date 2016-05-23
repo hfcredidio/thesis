@@ -2,25 +2,70 @@
 \label{ch:anis}
 
 By now it should be clear that the notion of scale invariance is a central
-tenet of the modern narrative of critical phenomena. This principle show its
-true power in the context of conformal invariance. Several critical systems
-however are explicitly not scale invariant in its strictest sense. These are
-systems out of equilibrium and Theses systems are called strongly anisotropic
-systems.
+tenet of the modern critical phenomena narrative. Several critical systems
+however are explicitly not scale invariant in its strictest sense, systems that
+have different properties depending on the direction in which you're looking,
+that is, they're \textit{anisotropic}. Anisotropy can arise due to the presence
+competing interactions, stratified structures or simply due to the system being
+out of equilibrium.
 
-Strongly anisotropic systems are characterized by an \textit{anisotropy
-exponent} $\theta$ defined by the relation
+One can easily induce anisotropy in a model by introducing asymmetric
+interactions, for example you could take the Ising model with different
+coupling parameters $J_\parallel$ and $J_\perp$ for different directions. These
+types of anisotropy however can be removed by the rescaling of one of the axes.
+Such systems are called weakly anisotropic. On the other hand, there are
+systems that cannot have their anisotropy removed by rescaling of the axes, in
+fact rescaling only exacerbates the anisotropy. These are called
+\textit{strongly anisotropic} systems, and they present a significant, and
+often overlooked, challenge to those studying critical systems. That's because
+these systems are not scale invariant \textit{per se}, so most of the results
+shown in Section~\ref{sec:scaling} do not translate well into these systems.
+We can, however, assume that they are invariant under an \textit{anisotropic}
+scale transformation. This means that the correlation functions transform like
 \begin{equation}
-    C(x, y) = b^{-2x}C(bx, b^\theta y).
+    C\left(\mathbf{r}\right)=
+    C\left(\mathbf{r}_{\parallel},\mathbf{r}_{\perp}\right)=
+    b^{2x}C\left(b\mathbf{^{\theta}r}_{\parallel},b\mathbf{r}_{\perp}\right)
 \end{equation}
-In the case $\theta=1$, isotropy is recovered.
+where $\mathbf{r}=\mathbf{r}_{\parallel}+\mathbf{r}_{\perp}$ and the vector
+$\mathbf{r}_{\parallel}$ and $\mathbf{r}_{\perp}$
+is a preferential direction (normally assumed to be the time, but it could be a
+spatial coordinate without loss of generality). The exponent $\theta$ is
+universal and called \textit{anisotropic exponent}, and it basically quantifies
+the asymmetry between the directions.
 
-It has been determined that if $\theta = 2/N$, where $N$ is a positive integer,
-the systems if invariant under local scale invariance [???], which is the same
-principle that motivated the introduction of conformal invariance (which is in
-fact the case $N=2$). This observation have been used to successfully study
-some anisotropic systems, like the Liftshitz point in the ANNNI [???] and
-spherical models [???].
+Because the correlation functions are asymmetric, the critical exponents
+associated with it also have two different values $\eta_\parallel$,
+$\eta_\perp$. The anisotropic exponent relate to them through the relation
+\begin{equation}
+    \theta = \frac{\eta_\parallel}{\eta_\perp}.
+\end{equation}
+The correlation length also scales differently in each direction
+\begin{equation}
+    \xi_{\parallel}=
+    \left|T-T_{c}\right|^{-\nu_{\parallel}},
+    \,\,\,\,\,\,\,
+    \xi_{\perp}=\left|T-T_{c}\right|^{-\nu_{\perp}}
+\end{equation}
+In dynamical phase transitions, where $\mathbf{r}_\parallel$ plays the role of
+time $t$, we also find the new scaling law
+\begin{equation}
+    \xi_{\perp}\left(t\right)=t^{1/z},
+\end{equation}
+where
+\begin{equation}
+    z = \frac{\nu_\parallel}{\nu_\perp},
+\end{equation}
+which is called as the \textit{dynamical exponent}.
+
+Some effort has been put in order to study.
+
+%It has been determined that if $\theta = 2/N$, where $N$ is a positive integer,
+%the systems if invariant under local scale invariance [???], which is the same
+%principle that motivated the introduction of conformal invariance (which is in
+%fact the case $N=2$). This observation have been used to successfully study
+%some anisotropic systems, like the Liftshitz point in the ANNNI [???] and
+%spherical models [???].
 
 
 \subsection{Directed Percolation}
@@ -83,6 +128,15 @@ scale as
 \subsection{Multi-Layered Percolation}
 \label{sec:mlp}
 
+The percolation model as presented in Section~\ref{sec:perc} was initally
+motivated by transport in disordered media, like porous rocks. However, the
+morphology of earth's crust is highly non-uniform and
+anisotropic~\cite{Englman1986}, as is the case .
+
+
+This model is due to Dayan~\cite{Dayan1991}.
+Contributions by Parteli~\cite{Parteli2010}.
+
 Another universality class of strongly anisotropic phase transition is yet
 another variation of the percolation model. Its aim is to model the structure
 of stratified media, like layered porous rocks. Introduced by Dayan et al.\,
@@ -110,25 +164,25 @@ by defining
 \end{equation}
 such that $p_1 = \bar{p} + \Delta$ and $p_2 = \bar{p} - \Delta$. 
 The parameter $\Delta$ can take any value in the interval $[0.0,0.5]$,
-and represents the degree of anisotropy of the system, which $\Delta=0$
-is the isotropic case. 
+and represents the degree of anisotropy of the system, where $\Delta=0$
+is the isotropic case.
 
-As is expected, this model presents a second-order phase transition.
-To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
-cluster perimeter method.
+%As is expected, this model presents a second-order phase transition.
+%To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
+%cluster perimeter method.
 
-We generate various cluster perimeters using the exploration method described
-in Sec.~[???]. Making use of the fact that at the critical point a cluster
-perimeter have equal chances of being an external or an internal border. We
-generate several cluster perimeter and count the ration $R(\bar{p}, \Delta)$
-between the number of realizations where the path was an internal perimeter and
-the number of realizations where it was an external perimeter. The critical
-point is such that $R(\bar{p}_c, \Delta_c)=1$. In the case of a square lattice
-(the one studied by Dayan), we observe that there is a function
-$\bar{p}_c(\Delta)$ that defines the border between the percolating and
-non-percolating phases. This result can be seen in Fig.~[???]. Somewhat
-surprisingly the same method was performed for the triangular lattice, and we
-observed that $\bar{p}_c=0.5$ independent of the value of $\Delta$.
+%We generate various cluster perimeters using the exploration method described
+%in Sec.~[???]. Making use of the fact that at the critical point a cluster
+%perimeter have equal chances of being an external or an internal border. We
+%generate several cluster perimeter and count the ration $R(\bar{p}, \Delta)$
+%between the number of realizations where the path was an internal perimeter and
+%the number of realizations where it was an external perimeter. The critical
+%point is such that $R(\bar{p}_c, \Delta_c)=1$. In the case of a square lattice
+%(the one studied by Dayan), we observe that there is a function
+%$\bar{p}_c(\Delta)$ that defines the border between the percolating and
+%non-percolating phases. This result can be seen in Fig.~[???]. Somewhat
+%surprisingly the same method was performed for the triangular lattice, and we
+%observed that $\bar{p}_c=0.5$ independent of the value of $\Delta$.
 
 \begin{figure}
 \begin{center}
@@ -168,14 +222,14 @@ observed that $\bar{p}_c=0.5$ independent of the value of $\Delta$.
 \label{fig:mlperco}
 \end{figure}
 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
-\end{center}
-\caption{Phase space of the multi-layered percolation model for both square and
-    triangular lattices. They were computed using the cluster perimeter method.
-    The square lattice result follow the results by Dayan et al.\ [???].
-    Somewhat surprisingly we found that in the triangular lattice
-    $\bar{p}_c=0.5$ for every value of $\Delta$.}
-\label{fig:mlp_ps}
-\end{figure}
+%\begin{figure}
+%\begin{center}
+    %\includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps}
+%\end{center}
+%\caption{Phase space of the multi-layered percolation model for both square and
+    %triangular lattices. They were computed using the cluster perimeter method.
+    %The square lattice result follow the results by Dayan et al.\ [???].
+    %Somewhat surprisingly we found that in the triangular lattice
+    %$\bar{p}_c=0.5$ for every value of $\Delta$.}
+%\label{fig:mlp_ps}
+%\end{figure}
