@@ -131,13 +131,13 @@ scale as
 The percolation model as presented in Section~\ref{sec:perc} was initally
 motivated by transport in disordered media, like porous rocks. However, the
 morphology of earth's crust is highly non-uniform and
-anisotropic~\cite{Englman1986}, like in stratified rocks formed by the layered
-deposition of different types of sediment, each with have different physical
-properties such as density and porosity. This anisotropy have important
-influence
-Aiming to model the structure of these
-kind of media, Dayan \textit{et al.}~\cite{Dayan1991} introduced yet another
-variant of the percolation model, called multi-layered percolation. 
+anisotropic~\cite{Englman1986}, such as the case of stratified rocks formed by
+the layered deposition of different types of sediment, each with have different
+physical properties such as density and porosity. This layered structure have a
+significant influence in the transport properties of these rocks. Aiming to
+model the structure of these kind of media, Dayan \textit{et
+al.}~\cite{Dayan1991} introduced yet another variant of the percolation
+model, called multi-layered percolation. 
 
 In this model we take a $d$-dimensional lattice composed of several
 $(d-1)$-dimensional sub-lattices (or layers) arranged in sequence, as if
@@ -147,35 +147,57 @@ process by randomly occupying the lattice sites. The key difference here is
 that each layer has its own occupation probability $p(y)$. For simplicity, it
 is common to take a two-probability approach, where each layer can have one of
 two values $p_1$ and $p_2$. These are the control parameters of the model,
-where the line $p_1=p_2$ represent the regular isotropic percolation. The
-larger the difference between $p_1$ and $p_2$ the more accentuated if the
-anisotropy of the systems. To this effect it is common to reparametrize the
-control parameter by defining
+where the line $p_1=p_2$ represents the regular isotropic percolation. The
+larger the difference between $p_1$ and $p_2$ the more accentuated is the
+anisotropy of the systems. To this effect it is common to redefine the
+control parameters by taking
 \begin{equation}
-    \bar{p}=\frac{p_1 + p_2}{2}\;\;\;\;\;\;\;\Delta=\frac{p_1 - p_2}{2}
+    \bar{p}=\frac{p_1 + p_2}{2},\;\;\;\;\;\;\;\Delta=\frac{p_1 - p_2}{2}
 \end{equation}
 such that $p_1 = \bar{p} + \Delta$ and $p_2 = \bar{p} - \Delta$. The parameter
 $\Delta$ can take any value in the interval $[0.0,0.5]$, and represents the
 degree of anisotropy of the system, where the system falls back to the
 isotropic case when $\Delta=0$. See Figure~\ref{fig:mlperco_explain} for an
-illustration of the multi-layered percolation process.
-
-%This model is due to Dayan~\cite{Dayan1991}.
-%Contributions by Parteli~\cite{Parteli2010}.
-
-%Another universality class of strongly anisotropic phase transitions is yet
-%another variation of the percolation model.
+illustration of the multi-layered percolation process. Figure~\ref{fig:mlperco}
+shows three realizations of the model for three different values of $\Delta$.
+The anisotropy can get very extreme, to the point where it's difficult to
+visualize the clusters. In Figure~\ref{fig:mlp_cluster} we used the
+self-organized percolation algorithm~\cite{Parteli2010} to generate individual
+clusters of multi-layered percolation.
 
 Just like isotropic percolation, the multi-layered version also undergoes a
-second-order phase transition from a non-percolated to a percolated phase. In
-this case we have two control parameters $p$ and $\Delta$, although the order
-parameter (the relative size of the largest cluster) remains the same. In the
-phase diagram of the square lattice, shown in Figure~\ref{fig:mlp_ps0}, we
-observe a critical line separating the two phases. In the case $\Delta=0$ the
-value of $p_c$ found is around $0.592$ which is the same as isotropic
-percolation as expected, but it falls to $0.5$ as $\Delta\rightarrow 0.5$.
+second-order phase transition from a non-percolated to a percolated phase. The
+order parameter  remains the same (the relative size of the largest cluster),
+but now we have two control parameters, $p$ and $\Delta$, so instead of a
+critical point we have a critical line separating the two phases, as you can
+see in the phase diagram show in Figure~\ref{fig:mlp_ps0}. In the case
+$\Delta=0$ the value of $p_c$ found is around $0.592$ which is the same as
+isotropic percolation as expected, but it falls continuously to $p_c=0.5$ as
+$\Delta\rightarrow 0.5$.
 
-Test~\cite{Samyr2009}.
+The critical properties of multi-layered percolation were determined
+numerically through a study of the cluster perimeters~\cite{Dayan1991,
+Samyr2009}. The root means square of the cluster perimeter in each direction
+\begin{equation}
+    F_{X}\left(n\right)=
+    \sqrt{\frac{1}{N-n}\sum_{i}{\left(X_{i+n-1}-X_{i}\right)}^{2}},
+\end{equation}
+(and analogously for $Y$) scale like
+\begin{equation}
+    F_{X}\left(n\right)\sim n^{-\bar{\nu}_{x}},
+    \,\,\,\,\,\,\,\,\,
+    F_{Y}\left(n\right)\sim n^{-\bar{\nu}_{y}}.
+\end{equation}
+The exponents $\bar{\nu}_i$ relate to the actual $\nu_i$ though the relation
+\begin{equation}
+    \bar{\nu}_i = \nu_i \sigma_H
+\end{equation}
+where $\sigma_H$ is defined similarly as the $\sigma$ given in
+Eq.~\ref{eq:sig}, but for perimeter lengths instead of cluster sizes.
+What was found is that as $n\rightarrow\infty$, the $\bar{\nu}_i$ are
+independent of $\Delta$ (as long as it is larger that zero).
+This means that all the $\Delta$ belong to the same universality class
+with $\bar{\nu}_x=0.94\pm0.01$ and $\bar{\nu}_y=0.21\pm0.01$.
 
 %As is expected, this model presents a second-order phase transition.
 %To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
@@ -208,19 +230,6 @@ Test~\cite{Samyr2009}.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
-\end{center}
-\caption{A comparison of clusters of occupied sites in both isotropic and
-    multi-layered percolation at their critical points. They were generated
-    using the self-organized percolation algorithm [???] (the dense ``core''
-    found on both clusters is an artifact of this method). The stratified
-    nature of the multi-layered percolation makes itself evident even for the
-    relatively low value of $\Delta$ used here.}
-\label{fig:mlp_cluster}
-\end{figure}
-
-\begin{figure}
-\begin{center}
     \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlperco}
 \end{center}
 \caption{Three realizations of the multi-layered percolation model in the
@@ -230,6 +239,20 @@ Test~\cite{Samyr2009}.
     $\Delta$, the more anisotropic is the system, and the multi-layered
     structure of the system becomes more evident.}
 \label{fig:mlperco}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
+\end{center}
+\caption{A comparison of clusters of occupied sites in both isotropic and
+    multi-layered percolation at their critical points. They were generated
+    using the self-organized percolation algorithm~\cite{Parteli2010} (the
+    dense ``core'' found on both clusters is an artifact of this method). The
+    stratified nature of the multi-layered percolation makes itself evident
+    even for the relatively low value of $\Delta$ used here.}
+\label{fig:mlp_cluster}
 \end{figure}
 
 \begin{figure}

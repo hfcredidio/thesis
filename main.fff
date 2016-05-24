@@ -236,20 +236,6 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
-\end{center}
-\caption{A comparison of clusters of occupied sites in both isotropic and
-    multi-layered percolation at their critical points. They were generated
-    using the self-organized percolation algorithm [???] (the dense ``core''
-    found on both clusters is an artifact of this method). The stratified
-    nature of the multi-layered percolation makes itself evident even for the
-    relatively low value of $\Delta$ used here.}
-\label{fig:mlp_cluster}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
     \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlperco}
 \end{center}
 \caption{Three realizations of the multi-layered percolation model in the
@@ -259,6 +245,20 @@
     $\Delta$, the more anisotropic is the system, and the multi-layered
     structure of the system becomes more evident.}
 \label{fig:mlperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
+\end{center}
+\caption{A comparison of clusters of occupied sites in both isotropic and
+    multi-layered percolation at their critical points. They were generated
+    using the self-organized percolation algorithm~\cite{Parteli2010} (the
+    dense ``core'' found on both clusters is an artifact of this method). The
+    stratified nature of the multi-layered percolation makes itself evident
+    even for the relatively low value of $\Delta$ used here.}
+\label{fig:mlp_cluster}
 \end{figure}
 \efloatseparator
  
