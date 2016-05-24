@@ -185,44 +185,6 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
-\end{center}
-\caption{Simple representation of bond directed percolation in a square
-    lattice. Here, the time flows upwards (although the time direction can be
-    chosen arbitrarily). A previously occupied bond has a probability $p$ of
-    occupying any of its two neighbors along the time direction.}
-\label{fig:dperco_scheme}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
-\end{center}
-\caption{Three realizations of site directed percolation on a square lattice
-    (here the time flows downwards). Being a absorbing phase transition model,
-    the system have a probability of entering a state that it cannot leave, in
-    this case a fully unoccupied state, like it happens in the left panel.
-    Above the critical point however the probability of reaching an absorbing
-    state becomes vanishing.}
-\label{fig:dperco}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
-\end{center}
-\caption{Expected population of bond directed percolation as a function of time
-    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
-    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
-    N(t)\right\rangle>0$.}
-\label{fig:dperco_nt}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
     \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlperco_explain}
 \end{center}
 \caption{Schematic representation of the multi-layered percolation model. Each
@@ -273,6 +235,44 @@
     $p_c\approx0.592$ for for $\Delta=0$, which is the expected value for
     isotropic percolation.}
 \label{fig:mlp_ps0}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
+\end{center}
+\caption{Simple representation of bond directed percolation in a square
+    lattice. Here, the time flows upwards (although the time direction can be
+    chosen arbitrarily). A previously occupied bond has a probability $p$ of
+    occupying any of its two neighbors along the time direction.}
+\label{fig:dperco_scheme}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
+\end{center}
+\caption{Three realizations of site directed percolation on a square lattice
+    (here the time flows downwards). Being a absorbing phase transition model,
+    the system have a probability of entering a state that it cannot leave, in
+    this case a fully unoccupied state, like it happens in the left panel.
+    Above the critical point however the probability of reaching an absorbing
+    state becomes vanishing.}
+\label{fig:dperco}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
+\end{center}
+\caption{Expected population of bond directed percolation as a function of time
+    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
+    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
+    N(t)\right\rangle>0$.}
+\label{fig:dperco_nt}
 \end{figure}
 \efloatseparator
  

@@ -58,7 +58,7 @@ where
 \end{equation}
 which is called as the \textit{dynamical exponent}.
 
-Some effort has been put in order to study.
+Some effort has been put in order to study.~\cite{Henkel1994}.
 
 %It has been determined that if $\theta = 2/N$, where $N$ is a positive integer,
 %the systems if invariant under local scale invariance [???], which is the same
@@ -68,80 +68,23 @@ Some effort has been put in order to study.
 %spherical models [???].
 
 
-\subsection{Directed Percolation}
-\label{sec:dp}
-
-The percolation model, as described in Section XX, is arguably one of the most
-important models for second-order phase transitions, second only to the regal
-Ising model. Not surprisingly, several variations of this model have been
-
-Here we shall describe a variation of the percolation model that is of
-particular interest to the study of strongly anisotropic systems. One variant
-that is particularly important to the study of anisotropic phase transition is
-called \textit{Directed percolation}. It can be seen as a spreading process,
-where the flow 
-
-Most recently, experiments and simulations on fluid dynamics indicate
-that the transition from laminar to turbulent flow belongs to the
-universality class of directed percolation [???].
-
-Owczarek et al.\ found that the hull of a directed percolation cluster
-scale as
-
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
-\end{center}
-\caption{Simple representation of bond directed percolation in a square
-    lattice. Here, the time flows upwards (although the time direction can be
-    chosen arbitrarily). A previously occupied bond has a probability $p$ of
-    occupying any of its two neighbors along the time direction.}
-\label{fig:dperco_scheme}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
-\end{center}
-\caption{Three realizations of site directed percolation on a square lattice
-    (here the time flows downwards). Being a absorbing phase transition model,
-    the system have a probability of entering a state that it cannot leave, in
-    this case a fully unoccupied state, like it happens in the left panel.
-    Above the critical point however the probability of reaching an absorbing
-    state becomes vanishing.}
-\label{fig:dperco}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
-\end{center}
-\caption{Expected population of bond directed percolation as a function of time
-    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
-    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
-    N(t)\right\rangle>0$.}
-\label{fig:dperco_nt}
-\end{figure}
-
-
 \subsection{Multi-Layered Percolation}
 \label{sec:mlp}
 
-The percolation model as presented in Section~\ref{sec:perc} was initally
+The percolation model as presented in Section~\ref{sec:perc} was initially
 motivated by transport in disordered media, like porous rocks. However, the
 morphology of earth's crust is highly non-uniform and
 anisotropic~\cite{Englman1986}, such as the case of stratified rocks formed by
 the layered deposition of different types of sediment, each with have different
-physical properties such as density and porosity. This layered structure have a
-significant influence in the transport properties of these rocks. Aiming to
+physical properties such as density and porosity. This layered arrangement have
+a significant influence in the transport properties of these rocks. Aiming to
 model the structure of these kind of media, Dayan \textit{et
 al.}~\cite{Dayan1991} introduced yet another variant of the percolation
 model, called multi-layered percolation. 
 
 In this model we take a $d$-dimensional lattice composed of several
-$(d-1)$-dimensional sub-lattices (or layers) arranged in sequence, as if
-they're stacked one over the other. Following convention, we'll call the axis
+$(d-1)$-dimensional sub-lattices (or layers) arranged in sequence as if they're
+stacked one over the other. Following convention, we'll call the axis
 perpendicular to the layers the $y$-axis. We then perform the usual percolation
 process by randomly occupying the lattice sites. The key difference here is
 that each layer has its own occupation probability $p(y)$. For simplicity, it
@@ -149,8 +92,8 @@ is common to take a two-probability approach, where each layer can have one of
 two values $p_1$ and $p_2$. These are the control parameters of the model,
 where the line $p_1=p_2$ represents the regular isotropic percolation. The
 larger the difference between $p_1$ and $p_2$ the more accentuated is the
-anisotropy of the systems. To this effect it is common to redefine the
-control parameters by taking
+anisotropy of the systems. To make this more evident it is common to redefine
+the control parameters by taking
 \begin{equation}
     \bar{p}=\frac{p_1 + p_2}{2},\;\;\;\;\;\;\;\Delta=\frac{p_1 - p_2}{2}
 \end{equation}
@@ -175,14 +118,18 @@ $\Delta=0$ the value of $p_c$ found is around $0.592$ which is the same as
 isotropic percolation as expected, but it falls continuously to $p_c=0.5$ as
 $\Delta\rightarrow 0.5$.
 
-The critical properties of multi-layered percolation were determined
-numerically through a study of the cluster perimeters~\cite{Dayan1991,
-Samyr2009}. The root means square of the cluster perimeter in each direction
+Because actually generating clusters of multi-layered percolation can be a
+complicated matter and the model has no analytical solution, the critical
+properties of multi-layered percolation were determined numerically through
+analysis of the cluster perimeters~\cite{Dayan1991, Samyr2009}. This is done by
+generating cluster perimeters in a finite lattice, each perimeter defined by
+sequence of $N$ points at positions $\mathbf{r}_i=X_i\mathbf{x}+Y_i\mathbf{y}$.
+The root means square of the displacement in each direction
 \begin{equation}
     F_{X}\left(n\right)=
     \sqrt{\frac{1}{N-n}\sum_{i}{\left(X_{i+n-1}-X_{i}\right)}^{2}},
 \end{equation}
-(and analogously for $Y$) scale like
+(and analogously for $Y$) scales like
 \begin{equation}
     F_{X}\left(n\right)\sim n^{-\bar{\nu}_{x}},
     \,\,\,\,\,\,\,\,\,
@@ -190,14 +137,15 @@ Samyr2009}. The root means square of the cluster perimeter in each direction
 \end{equation}
 The exponents $\bar{\nu}_i$ relate to the actual $\nu_i$ though the relation
 \begin{equation}
-    \bar{\nu}_i = \nu_i \sigma_H
+    \bar{\nu}_i = \nu_i \bar{\sigma}
 \end{equation}
-where $\sigma_H$ is defined similarly as the $\sigma$ given in
+where $\bar{\sigma}$ is defined similarly as the $\sigma$ given in
 Eq.~\ref{eq:sig}, but for perimeter lengths instead of cluster sizes.
 What was found is that as $n\rightarrow\infty$, the $\bar{\nu}_i$ are
 independent of $\Delta$ (as long as it is larger that zero).
 This means that all the $\Delta$ belong to the same universality class
-with $\bar{\nu}_x=0.94\pm0.01$ and $\bar{\nu}_y=0.21\pm0.01$.
+with $\bar{\nu}_x=0.94\pm0.01$ and $\bar{\nu}_y=0.21\pm0.01$, and
+indicates that $\nu_x=13/6$ and $\nu_y=1/2$.
 
 %As is expected, this model presents a second-order phase transition.
 %To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
@@ -266,4 +214,92 @@ with $\bar{\nu}_x=0.94\pm0.01$ and $\bar{\nu}_y=0.21\pm0.01$.
     $p_c\approx0.592$ for for $\Delta=0$, which is the expected value for
     isotropic percolation.}
 \label{fig:mlp_ps0}
+\end{figure}
+
+
+\subsection{Directed Percolation}
+\label{sec:dp}
+
+Another very important universality class of strongly anisotropic systems is
+yet another variation of the percolation model. Called \textit{directed
+percolation}, this model can be seen as a spreading process. Starting from
+some initial condition, any occupied site can spread and occupy an adjacent
+site along a preferential direction with probability $p$; spread is prohibited
+in all other directions. Figure~\ref{fig:dperco_scheme} illustrate the process,
+and Figure~\ref{fig:dperco} shows the process in the three regimes:
+subcritical, critical and supercritical.
+
+Directed percolation is part of a larger group called dynamical phase
+transitions, where there is a strict order of cause and effect which allows one
+to interpret the preferred direction as a temporal coordinate. In the case of
+directed percolation, the configuration of occupied sites in each row is
+strictly determined by the state of the previous row alone. Because of this,
+directed percolation is also an absorbing phase transitions, where the system
+can reach a state from which it cannot leave, as is happens when a row is left
+completely unoccupied. Systems below the critical point are expected to always
+reach the absorbing state. This can be seen by looking at the average
+occupation at time $t$, namely $\left\langle N(t)\right\rangle$, which can be
+seen in Figure~\ref{fig:dperco_nt}. For $p<p_c$ we have that
+$\lim_{t\rightarrow\infty}\left\langle N(t)\right\rangle=0$. At the critical
+point however, we find the scaling relation
+\begin{equation}
+    \left\langle N\left(t\right)\right\rangle \sim t^{\Theta},
+    \,\,\,\,\,\,\,\,\,
+    p=p_c
+\end{equation}
+with the universal exponent $\Theta\approx0.302$~\cite{Henkel2008}. So we can
+define the order parameter as the probability that the system never reaches the
+absorbing state. This probability is null for $p\leq p_c$ but grows
+continuously towards unity, just like a second-order phase transition should.
+
+Unlike isotropic percolation, directed percolation is not an exactly solved
+model. Its critical exponents can only be determined through numerical methods
+and field theoretical expansions. In the $(1+1)$-dimensional case the values
+found were $\nu_\perp=26/15$ and $\nu_\parallel=79/72$~\cite{Hinrichsen2000}
+(the rational forms are conjectured, but experimental values are very close
+with errors in the order of $10^{-4}$). Furthermore Owczarek \textit{et
+al.}~\cite{Owczarek1997} analyzed the cluster perimeters in a similar way
+done with multi-layered percolation, finding consistent values of exponents,
+including $\bar{\nu}_\perp\approx0.557(5)$ and
+$\bar{\nu}_\parallel\approx0.879(4)$.
+
+Experimental realizations of directed percolation are hard to come by as
+critical exponents are notoriously difficult to measure. A illustrious success
+was found in turbulent liquid crystal transitions. More recently, experiments
+and simulations on fluid dynamics indicate that the transition from laminar to
+turbulent flow also belongs to the same universality class~\cite{Lemoult2016}.
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
+\end{center}
+\caption{Simple representation of bond directed percolation in a square
+    lattice. Here, the time flows upwards (although the time direction can be
+    chosen arbitrarily). A previously occupied bond has a probability $p$ of
+    occupying any of its two neighbors along the time direction.}
+\label{fig:dperco_scheme}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
+\end{center}
+\caption{Three realizations of site directed percolation on a square lattice
+    (here the time flows downwards). Being a absorbing phase transition model,
+    the system have a probability of entering a state that it cannot leave, in
+    this case a fully unoccupied state, like it happens in the left panel.
+    Above the critical point however the probability of reaching an absorbing
+    state becomes vanishing.}
+\label{fig:dperco}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
+\end{center}
+\caption{Expected population of bond directed percolation as a function of time
+    for various values of $p$. The critical point ($p_c\approx0.6447$) is the
+    lowest value of $p$ such that $\lim_{t\rightarrow\infty}\left\langle
+    N(t)\right\rangle>0$.}
+\label{fig:dperco_nt}
 \end{figure}
