@@ -3,7 +3,7 @@
 
 By now it should be clear that the notion of scale invariance is a central
 tenet of the modern critical phenomena narrative. Several critical systems
-however are explicitly not scale invariant in its strictest sense, systems that
+however are explicitly not scale invariant in its strictest sense, systems they
 have different properties depending on the direction in which you're looking,
 that is, they're \textit{anisotropic}. Anisotropy can arise due to the presence
 competing interactions, stratified structures or simply due to the system being
@@ -27,45 +27,38 @@ scale transformation. This means that the correlation functions transform like
     C\left(\mathbf{r}_{\parallel},\mathbf{r}_{\perp}\right)=
     b^{2x}C\left(b\mathbf{^{\theta}r}_{\parallel},b\mathbf{r}_{\perp}\right)
 \end{equation}
-where $\mathbf{r}=\mathbf{r}_{\parallel}+\mathbf{r}_{\perp}$ and the vector
-$\mathbf{r}_{\parallel}$ and $\mathbf{r}_{\perp}$
-is a preferential direction (normally assumed to be the time, but it could be a
-spatial coordinate without loss of generality). The exponent $\theta$ is
-universal and called \textit{anisotropic exponent}, and it basically quantifies
-the asymmetry between the directions.
+where $\mathbf{r}=\mathbf{r}_{\parallel}+\mathbf{r}_{\perp}$ and the vectors
+$\mathbf{r}_{\parallel}$ and $\mathbf{r}_{\perp}$ represent preferential
+directions along which the critical properties of the system are different. The
+exponent $\theta$ is universal and called \textit{anisotropic exponent}, it
+basically quantifies the asymmetry between the directions.
 
 Because the correlation functions are asymmetric, the critical exponents
 associated with it also have two different values $\eta_\parallel$,
-$\eta_\perp$. The anisotropic exponent relate to them through the relation
-\begin{equation}
-    \theta = \frac{\eta_\parallel}{\eta_\perp}.
-\end{equation}
-The correlation length also scales differently in each direction
+$\eta_\perp$. The correlation length also scales differently in each direction
 \begin{equation}
     \xi_{\parallel}=
     \left|T-T_{c}\right|^{-\nu_{\parallel}},
     \,\,\,\,\,\,\,
     \xi_{\perp}=\left|T-T_{c}\right|^{-\nu_{\perp}}
 \end{equation}
+The anisotropic exponent relate to them through the relation
+\begin{equation}
+    \theta = \frac{\nu_\parallel}{\nu_\perp}.
+\end{equation}
 In dynamical phase transitions, where $\mathbf{r}_\parallel$ plays the role of
-time $t$, we also find the new scaling law
-\begin{equation}
-    \xi_{\perp}\left(t\right)=t^{1/z},
-\end{equation}
-where
-\begin{equation}
-    z = \frac{\nu_\parallel}{\nu_\perp},
-\end{equation}
-which is called as the \textit{dynamical exponent}.
+time $t$, it is common to refer to the anisotropic exponent by the name
+dynamical exponent $z$, but all its properties remain the
+same~\cite{Henkel1994}.
 
-Some effort has been put in order to study.~\cite{Henkel1994}.
-
-%It has been determined that if $\theta = 2/N$, where $N$ is a positive integer,
-%the systems if invariant under local scale invariance [???], which is the same
-%principle that motivated the introduction of conformal invariance (which is in
-%fact the case $N=2$). This observation have been used to successfully study
-%some anisotropic systems, like the Liftshitz point in the ANNNI [???] and
-%spherical models [???].
+It has been determined that if $z = 2/N$, where $N$ is a positive integer,
+these systems are invariant under local scale invariance~\cite{Henkel2003},
+which is the same principle that motivated the introduction of conformal
+invariance (which is in fact the case $N=2$). In the particular case of $z=2$
+correspond to systems invariant under the Schr\"odinger
+group~\cite{Henkel1992}. This observation have been used to successfully study
+some equilibrium anisotropic systems, like the Liftshitz point in the ANNNI and
+spherical models~\cite{Henkel2010}.
 
 
 \subsection{Multi-Layered Percolation}
@@ -255,13 +248,13 @@ continuously towards unity, just like a second-order phase transition should.
 Unlike isotropic percolation, directed percolation is not an exactly solved
 model. Its critical exponents can only be determined through numerical methods
 and field theoretical expansions. In the $(1+1)$-dimensional case the values
-found were $\nu_\perp=26/15$ and $\nu_\parallel=79/72$~\cite{Hinrichsen2000}
+found were $\nu_\parallel=26/15$ and $\nu_\perp=79/72$~\cite{Hinrichsen2000}
 (the rational forms are conjectured, but experimental values are very close
 with errors in the order of $10^{-4}$). Furthermore Owczarek \textit{et
 al.}~\cite{Owczarek1997} analyzed the cluster perimeters in a similar way
 done with multi-layered percolation, finding consistent values of exponents,
 including $\bar{\nu}_\perp\approx0.557(5)$ and
-$\bar{\nu}_\parallel\approx0.879(4)$.
+$\bar{\nu}_\parallel\approx0.879(4)$, which implies $\bar{\sigma}\approx0.507$.
 
 Experimental realizations of directed percolation are hard to come by as
 critical exponents are notoriously difficult to measure. A illustrious success
