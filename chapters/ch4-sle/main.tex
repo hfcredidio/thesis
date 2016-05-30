@@ -1,95 +1,113 @@
 \chapter{Schramm-Loewner Evolutions}
 \label{ch:sle}
 
-The most exciting advances in physics and mathematics happen when a new theory
-achieve the unification of previously unrelated (or loosely related) fields of
-study, as Einstein did with his theory of gravity that applied the (then
-esoteric) mathematics of non-Euclidian geometry to the physical world.
+The most exciting advances in natural sciences happen when two previously
+unrelated or loosely related fields are brought together to give new insight
+into old problems. That's what happened when Descartes and Fermat joined
+algebra (which had just recently reached Europe) and geometry to form analytic
+geometry~\cite{Stillwell2010}, an indispensable part of the modern science and
+engineering mathematical toolbox. Or when Einstein applied the abstract and
+esoteric non-Euclidian geometry to the physical world with his theory of
+gravity.
 
-Another example is critical phenomena and conformal field theory, which
-was initially developed by~\cite{Nahm2000}.
+The area of critical phenomena is fortunate enough to see this happen twice.
+The first was the introduction of conformal invariance and conformal field
+theory, which were first developed in the 50's as a means of creating exactly
+solvable quantum field theories~\cite{Thirring1958}, but in the 80's were very
+successfully used to compute the critical properties of several two-dimensional
+systems~\cite{Nahm2000}. Conformal field theory, however, was not free of
+criticism, specially from mathematicians. Notions like renormalization and
+field operators are not well defined and often behave, as Cardy puts it,
+``according to rules that seem to be a matter of cultural convention rather
+than rigorous logic''~\cite{Cardy2005}. That and the inability of answering
+some very important questions~\cite{Langlands1994} led mathematicians to search
+for other theories.
 
-The application of conformal field theory, initially developed by string
-theorists, into critical phenomena, as described in Section~\ref{ch:conf},
-constitutes another example. This theory was not free of criticism however.
-Most came from mathematician, unsatisfied by the 
-
-One could say that from a mathematical point of view, the way physicists study
-critical phenomena is ``ugly''. They're are based on methods from quantum field
-theory, a theory that even today is full 
-
-How come percolation is not understood in terms of probability theory, given
-that the statement of the problem so heavily implies that it should?
-
-This time the breakthrough came from pure mathematicians.
+The long sought alternative finally came in 2000, when Oded Schramm published
+his theory which he called Stochastic Loewner Evolutions~\cite{Schramm2000}
+(henceforth referred simply by SLE). Combining ideas from complex analysis and
+measure theory, SLE looks not at the fields themselves, but at the random
+curves that the form the boundary of clusters. This theory was an astounding
+success, not only rigorously reproducing previously established results, but
+also answering long standing unsolved problems, like Mandelbrot's conjecture
+that the boundary of a 2D Brownian motion has fractal dimension of
+$4/3$~\cite{Lawler2001}.
 
 
 \section{Loewner Equation}
 \label{sec:le}
 
-%Loewner were proposed by Charles Loewner in the context of Bierbach conjecture
-%(proposed in 1916 and eventually proved by de Branges in 1985) in the 1920's.
+The ``Loewner Evolution'' part of SLE was proposed in 1923 by Charles Loewner
+in the context of Bierbach conjecture~\cite{Loewner1923} (proposed in 1916 and
+eventually proved by de Branges in 1985). 
 
-The starting point of the Loewner process is the Riemann mapping theorem. This
-theorem guarantees that there exists at least one conformal map between any two
-simply connected domains (that is, domains with no holes in it) as long as they
-are embedded in a two-dimensional plane. In the majority of cases there is no
-simple form for the map, but there are methods to obtain such maps at least
+The starting point of the Loewner process is the Riemann mapping
+theorem~\cite{Ahlfors1979}. This theorem guarantees the existence of a
+conformal map (as defined in Secion~\ref{ch:conf}) between any two regions of
+the complex plane, as long as these regions are simply connected, that is, they
+have no holes in them. The theorem also assures that the boundary of one region
+gets mapped onto the boundary of the other. In other words, we can transform a
+region of the complex plane into any shape we want by using a suitable
+conformal map. Luckily conformal maps are also bijective, so the inverse
+process is always possible too. In the majority of cases there is no simple
+form for the map, but there are methods to obtain such maps at least
 numerically, like Schwartz-Christoffel maps. There is no restriction for the
 form of the domains involved, they can be as simple or complicated as desired,
-as long as they do not have any holes in it.
+as long as they do not have any holes in it, and their boundary has more than
+one point.
 
-Firstly, we take a simply connected domain $D$ which will serve as a standard
-domain. Now imagine we have a crack in this domain, which starts at some point
-$r_1$ at the boundary $\partial D$ and ends at a point $r_2$ which may be an
-interior or boundary point. This crack has no width, it is a curve denoted by
-$\gamma$. As long as $\gamma$ does not touch itself, the cracked domain
-$D\setminus\gamma$ is also simply connected. Because of that, the Riemann
-mapping theorem assure us that we can ``fix'' this crack by finding the
-conformal transformation $g$ that maps the cracked domain into the uncracked
-standard domain, or putting it in math lingo $g:D\setminus\gamma\rightarrow D$.
-This is called a \textit{uniformizing map}, and the crack  $\gamma$ goes by the
-more formal name \textit{trace}. We distinguish two types of traces. If $r_2$
-is an interior point of $D$, the trace is said to be \textit{radial}, and if it
-belongs to the boundary $\partial D$ it is called \textit{chordal}.
+To define the Loewner process, we firstly take any simply connected domain $D$
+which will serve as a standard domain. Now we imagine making a crack in this
+domain. This crack has no width, so it can be described as a curve $\gamma$
+which starts at some point $r_1$ at the boundary $\partial D$ and ends at a
+point $r_2$ which may be an interior or boundary point. As long as $\gamma$
+does not touch itself, the cracked domain $D\setminus\gamma$ is also simply
+connected. Because of that, the Riemann mapping theorem assure us that we can
+``fix'' this crack by finding the conformal transformation $g$ that maps the
+cracked domain into the uncracked standard domain, or in math lingo
+$g:D\setminus\gamma\rightarrow D$. This is called a \textit{uniformizing map},
+and the crack  $\gamma$ goes by the more formal name \textit{trace}. We
+distinguish two types of traces. If $r_2$ is an interior point of $D$, the
+trace is said to be \textit{radial}, and if it belongs to the boundary
+$\partial D$ it is called \textit{chordal}.
 
 Let's parametrize the trace using a positive real parameter $t$ such that
 $\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we'll leave the
 parametrization choice free. We denote $\gamma_{[0,t]}$ the whole extent of the
-trace up to the point $\gamma_t$. Therefore, for every value of $t$ we have a
-different uniformizing map $g_t:D\setminus\gamma_{[0,t]}\rightarrow D$. We can
-imagine $t$ as a sort of time, along which the trace grows.
+trace from $\gamma_0$ up to the point $\gamma_t$. Therefore, for every value of
+$t$ we have a different uniformizing map
+$g_t:D\setminus\gamma_{[0,t]}\rightarrow D$. We can imagine $t$ as a sort of
+time, and the evolution of the tip $\gamma_t$ as a growth process.
 
 An immediate question one might make is, what is the relation between $D$,
-$\gamma$ and the $g_t$? Is there a kind of equation that relates these objects?
-Charles Loewner's answer is ``yes'', as long as you're willing to make a few
-compromises.
+$\gamma$ and the $g_t$? Are they uniquely defined? Is there a kind of equation
+that relates these objects? Loewner's answer is ``yes'', as long as you're
+willing to make a few compromises.
 
-Loewner constructed such an equation by to not look directly at the trace
-itself. You see, at any given time, the tip of the trace $\gamma_t$ is mapped
-to a point in the border of the standard domain. If we follow this point where
-the tip is mapped along time, we get a function
-$U_t:\mathbb{R}^+\rightarrow\partial D$. This is called the \textit{driving
-function} of the trace in question. Loewner showed that the trace, the
-uniformizing on map, and the driving function are connected by a differential
-equation.
+We can construct an equation for $g_t$ by shifting our attention from the trace
+itself. You see, since the tip of the trace $\gamma_t$ is part of the boundary
+of $D\setminus\gamma_{[0,t]}$, it will necessarily get mapped to a point $U_t$
+in the border of the standard domain $D$. If we follow the time evolution of
+this point, we get a function $U_t:\mathbb{R}^+\rightarrow\partial D$. This is
+called the \textit{driving function} of the trace in question. In his work,
+Loewner showed that the trace, the uniformizing on map, and the driving
+function are connected by a differential equation.
 
 Before we can write down this equation we need to make a series of assumptions.
-One of them is determine the standard domain in which the trace will grow. In
-his original work, Loewner chose the unit disc $\mathbb{D}=\{z||z|\leq1\}$,
-with $\gamma_0=1$ and $\gamma_\infty=0$. This is called the radial form of the
-Loewner chain. Another commonly used domain is the upper half plane
+One of them is to decide if we want to deal with radial or chordal traces.
+Other is to determine the standard domain in which the trace will grow. In his
+original work, Loewner chose the unit disc $\mathbb{D}=\{z||z|\leq1\}$, with
+$\gamma_0=1$ and $\gamma_\infty=0$ for the radial case. For the chordal case,
+the most commonly used domain is the upper half plane
 $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$.
-This is called the chordal version. In physical applications it is much more
-common to use the chordal version, and it is the version we'll focus here.
+In physical applications it is much more common to use the chordal version, and
+is the version we'll focus here.
 
 In order to determine the chordal Loewner equation we need first to impose some
 conditions on the conformal map $g_t$, because otherwise there are an infinity
 of maps that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce
-uniqueness, we impose what is called a \textit{hydrodynamic
-normalization}\footnote{The reason for this name completely eludes the
-author.}. This means that far from the origin, the uniformizing on maps
-behave as
+uniqueness, we impose what is called a \textit{hydrodynamic normalization}.
+This means that far from the origin, the uniformizing on maps behave as
 \begin{equation}
     \label{eq:hydro}
     g_{t}\left(z\right)\approx
@@ -101,8 +119,8 @@ This way points at infinity get mapped into themselves. The coefficient $a(t)$
 is called the half plane capacity, and can take any form as long as it obeys a
 number of properties, including positivity, monotonicity and continuity. The
 capacity is intrinsically connected with the parametrization of the trace, and
-a lot of research have gone in that area. Here, we'll go with the most common
-choice $a(t)=2t$.
+a lot of research have gone in that area~\cite{Lawler2011}. Here, we'll go with
+the most common choice $a(t)=2t$.
 
 With all these properties laid out, the chordal Loewner equation takes the
 (deceptively) simple form
@@ -110,13 +128,28 @@ With all these properties laid out, the chordal Loewner equation takes the
     \label{eq:loew}
     \partial_t g_t(z) = \frac{2}{g_t(z) - U_t}
     ,\,\,\,\,\,\,\,\,\,\,
+    g_0(z)=z,
+\end{equation}
+and the trace can thus be obtained by taking the limit
+\begin{equation}
+    \gamma_t = \lim_{z\rightarrow 0}g_t^{-1}\left(U_t + z\right),
+\end{equation}
+since the Loewner equation is not well defined for $g_t(z)=U_t$.
+Furthermore, working only on the upper half plane seems restrictive, but
+remember that any two domains can be mapped into one another through conformal
+transformations. So to get the trace in a domain $D$ that connects two points
+$r_1, r_2 \in \partial D$, all you have to do is to find the function
+$f:\HH\rightarrow D$, where $f(0)=r_1$ and $f(\infty)=r_2$. Under similar
+assumptions, the radial Loewner equation in the unit disc is
+\begin{equation}
+    \partial_{t}g_{t}\left(z\right)=
+    g_{t}\left(z\right)
+    \frac{e^{iU_{t}}+g_{t}\left(z\right)}
+         {e^{iU_{t}}-g_{t}\left(z\right)},
+    ,\,\,\,\,\,\,\,\,\,\,
     g_0(z)=z.
 \end{equation}
-Working only on the upper half plane seems restrictive, but remember that any
-two domains can be mapped into one another through conformal transformations.
-So to get the trace in a domain $D$ that connects two points $r_1, r_2 \in
-\partial D$, all you have to do is to find the function $f:\HH\rightarrow D$,
-where $f(0)=r_1$ and $f(\infty)=r_2$.
+with $U_t\in\mathbb{R}$.
 
 \begin{figure}
 \begin{center}
