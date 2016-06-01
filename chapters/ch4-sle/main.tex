@@ -12,16 +12,16 @@ gravity.
 
 The area of critical phenomena is fortunate enough to see this happen twice.
 The first was the introduction of conformal invariance and conformal field
-theory, which were first developed in the 50's as a means of creating exactly
-solvable quantum field theories~\cite{Thirring1958}, but in the 80's were very
-successfully used to compute the critical properties of several two-dimensional
-systems~\cite{Nahm2000}. Conformal field theory, however, was not free of
-criticism, specially from mathematicians. Notions like renormalization and
-field operators are not well defined and often behave, as Cardy puts it,
-``according to rules that seem to be a matter of cultural convention rather
-than rigorous logic''~\cite{Cardy2005}. That and the inability of answering
-some very important questions~\cite{Langlands1994} led mathematicians to search
-for other theories.
+eheory, which were first developed in the 50's by field theorists as a means of
+creating exactly solvable toy models~\cite{Thirring1958}, but in the 80's were
+very successfully used to compute the critical properties of several
+two-dimensional systems~\cite{Nahm2000}. Conformal field theory, however, was
+not free of criticism, specially from mathematicians. Notions like
+renormalization and field operators are not well defined and often behave, as
+Cardy puts it, ``according to rules that seem to be a matter of cultural
+convention rather than rigorous logic''~\cite{Cardy2005}. That and the
+inability of answering some very important questions~\cite{Langlands1994} led
+mathematicians to search for other theories.
 
 The long sought alternative finally came in 2000, when Oded Schramm published
 his theory which he called Stochastic Loewner Evolutions~\cite{Schramm2000}
@@ -39,37 +39,36 @@ $4/3$~\cite{Lawler2001}.
 
 The ``Loewner Evolution'' part of SLE was proposed in 1923 by Charles Loewner
 in the context of Bierbach conjecture~\cite{Loewner1923} (proposed in 1916 and
-eventually proved by de Branges in 1985). 
-
-The starting point of the Loewner process is the Riemann mapping
-theorem~\cite{Ahlfors1979}. This theorem guarantees the existence of a
-conformal map (as defined in Secion~\ref{ch:conf}) between any two regions of
-the complex plane, as long as these regions are simply connected, that is, they
+eventually proved by de Branges in 1985). The starting point of the process
+described by Loewner is the Riemann mapping theorem~\cite{Ahlfors1979}. This
+theorem guarantees the existence of a conformal transformation (as defined in
+Section~\ref{ch:conf}) that maps any two regions of the complex plane into one
+another, as long as these regions are simply connected, that is, they should
 have no holes in them. The theorem also assures that the boundary of one region
 gets mapped onto the boundary of the other. In other words, we can transform a
 region of the complex plane into any shape we want by using a suitable
-conformal map. Luckily conformal maps are also bijective, so the inverse
-process is always possible too. In the majority of cases there is no simple
-form for the map, but there are methods to obtain such maps at least
-numerically, like Schwartz-Christoffel maps. There is no restriction for the
-form of the domains involved, they can be as simple or complicated as desired,
-as long as they do not have any holes in it, and their boundary has more than
-one point.
+conformal map, as illustrated in Figure~\ref{fig:scmap}. Luckily conformal maps
+are also bijective, so the inverse process is always possible too. In the
+majority of cases there is no simple form for the map, but they can be
+constructed at least numerically using Schwartz-Christoffel
+maps~\cite{Driscoll2002}. There is no restriction for the form of the domains
+involved, they can be as simple or complicated as desired, as long as they do
+not have any holes in it, and their boundary has more than one point.
 
 To define the Loewner process, we firstly take any simply connected domain $D$
 which will serve as a standard domain. Now we imagine making a crack in this
-domain. This crack has no width, so it can be described as a curve $\gamma$
-which starts at some point $r_1$ at the boundary $\partial D$ and ends at a
-point $r_2$ which may be an interior or boundary point. As long as $\gamma$
-does not touch itself, the cracked domain $D\setminus\gamma$ is also simply
-connected. Because of that, the Riemann mapping theorem assure us that we can
-``fix'' this crack by finding the conformal transformation $g$ that maps the
-cracked domain into the uncracked standard domain, or in math lingo
-$g:D\setminus\gamma\rightarrow D$. This is called a \textit{uniformizing map},
-and the crack  $\gamma$ goes by the more formal name \textit{trace}. We
-distinguish two types of traces. If $r_2$ is an interior point of $D$, the
-trace is said to be \textit{radial}, and if it belongs to the boundary
-$\partial D$ it is called \textit{chordal}.
+domain, like shown in Figure~\ref{fig:diskfix}. This crack has no width, so it
+can be described as a curve $\gamma$ which starts at some point $r_1$ at the
+boundary $\partial D$ and ends at a point $r_2$ which may be an interior or
+boundary point. As long as $\gamma$ does not touch itself, the cracked domain
+$D\setminus\gamma$ is also simply connected. Because of that, the Riemann
+mapping theorem assure us that we can ``fix'' this crack by finding the
+conformal transformation $g$ that maps the cracked domain into the uncracked
+standard domain, or in math lingo $g:D\setminus\gamma\rightarrow D$. This is
+called a \textit{uniformizing map}, and the crack  $\gamma$ goes by the more
+formal name \textit{trace}. We distinguish two types of traces. If $r_2$ is an
+interior point of $D$, the trace is said to be \textit{radial}, and if it
+belongs to the boundary $\partial D$ it is called \textit{chordal}.
 
 Let's parametrize the trace using a positive real parameter $t$ such that
 $\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we'll leave the
@@ -78,7 +77,6 @@ trace from $\gamma_0$ up to the point $\gamma_t$. Therefore, for every value of
 $t$ we have a different uniformizing map
 $g_t:D\setminus\gamma_{[0,t]}\rightarrow D$. We can imagine $t$ as a sort of
 time, and the evolution of the tip $\gamma_t$ as a growth process.
-
 An immediate question one might make is, what is the relation between $D$,
 $\gamma$ and the $g_t$? Are they uniquely defined? Is there a kind of equation
 that relates these objects? Loewner's answer is ``yes'', as long as you're
@@ -88,10 +86,10 @@ We can construct an equation for $g_t$ by shifting our attention from the trace
 itself. You see, since the tip of the trace $\gamma_t$ is part of the boundary
 of $D\setminus\gamma_{[0,t]}$, it will necessarily get mapped to a point $U_t$
 in the border of the standard domain $D$. If we follow the time evolution of
-this point, we get a function $U_t:\mathbb{R}^+\rightarrow\partial D$. This is
-called the \textit{driving function} of the trace in question. In his work,
-Loewner showed that the trace, the uniformizing on map, and the driving
-function are connected by a differential equation.
+this point, we get a function $U_t:\mathbb{R}^+\rightarrow\partial D$ and
+$g_t(\gamma_t)=U_t$. This is called the \textit{driving function} of the trace
+in question. In his work, Loewner showed that the trace, the uniformizing on
+map, and the driving function are connected by a differential equation.
 
 Before we can write down this equation we need to make a series of assumptions.
 One of them is to decide if we want to deal with radial or chordal traces.
@@ -100,11 +98,11 @@ original work, Loewner chose the unit disc $\mathbb{D}=\{z||z|\leq1\}$, with
 $\gamma_0=1$ and $\gamma_\infty=0$ for the radial case. For the chordal case,
 the most commonly used domain is the upper half plane
 $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$.
-In physical applications it is much more common to use the chordal version, and
+In physical applications, it is much more common to use the chordal version, and
 is the version we'll focus here.
 
 In order to determine the chordal Loewner equation we need first to impose some
-conditions on the conformal map $g_t$, because otherwise there are an infinity
+conditions on the conformal map $g_t$, otherwise there are an infinity
 of maps that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce
 uniqueness, we impose what is called a \textit{hydrodynamic normalization}.
 This means that far from the origin, the uniformizing on maps behave as
@@ -117,10 +115,12 @@ This means that far from the origin, the uniformizing on maps behave as
 \end{equation}
 This way points at infinity get mapped into themselves. The coefficient $a(t)$
 is called the half plane capacity, and can take any form as long as it obeys a
-number of properties, including positivity, monotonicity and continuity. The
-capacity is intrinsically connected with the parametrization of the trace, and
-a lot of research have gone in that area~\cite{Lawler2011}. Here, we'll go with
-the most common choice $a(t)=2t$.
+number of properties, including positivity, monotonicity and
+continuity~\cite{Kager2004}. The choice capacity is intrinsically connected
+with the parametrization of the trace (the SLE time $t$) and it is far from a
+trivial point, which has drawn some attention from
+mathematicians~\cite{Lawler2011}. Here, we'll go with the most common choice
+$a(t)=2t$.
 
 With all these properties laid out, the chordal Loewner equation takes the
 (deceptively) simple form
@@ -130,7 +130,7 @@ With all these properties laid out, the chordal Loewner equation takes the
     ,\,\,\,\,\,\,\,\,\,\,
     g_0(z)=z,
 \end{equation}
-and the trace can thus be obtained by taking the limit
+where $U_t\in\mathbb{R}$ and the trace can be obtained by taking the limit
 \begin{equation}
     \gamma_t = \lim_{z\rightarrow 0}g_t^{-1}\left(U_t + z\right),
 \end{equation}
@@ -145,11 +145,47 @@ assumptions, the radial Loewner equation in the unit disc is
     \partial_{t}g_{t}\left(z\right)=
     g_{t}\left(z\right)
     \frac{e^{iU_{t}}+g_{t}\left(z\right)}
-         {e^{iU_{t}}-g_{t}\left(z\right)},
+         {e^{iU_{t}}-g_{t}\left(z\right)}
     ,\,\,\,\,\,\,\,\,\,\,
     g_0(z)=z.
 \end{equation}
-with $U_t\in\mathbb{R}$.
+with $U_t\in\mathbb{R}$. Figure~\ref{fig:radchord} shows an example of 
+
+Not surprisingly, the topological and geometric properties of the trace
+$\gamma_t$ are intimately connected with the analytical properties of the
+driving function $U_t$. Some properties include:
+\begin{enumerate}
+    \item if $U_t$ is smooth, with a derivative well defined, then $\gamma_t$
+        never intersects itself;
+    \item if $U_t$ is periodic, $\gamma_t$ is self-similar;
+    \item if $U_t$ is H\"older continuous with exponent $1/2$ with constant
+        larger than 4, meaning that there is a finite constant $C$ such that
+        \begin{equation}
+            4<\lim_{s\rightarrow0^{+}}\left|
+                \frac{U_{t-s}-U_{t}}{s^{1/2}}\right|
+            <C,
+        \end{equation}
+        then the trace does touch itself.
+\end{enumerate}
+This last one might require some clarification. We established that the Riemann
+mapping theorem is valid only for simply connected domains. If the trace touches
+itself at an instant $\tau$, then $D\setminus\gamma_{[0,t\geq\tau]}$ is not
+simply connected, and the existence of $g_t$ cannot be guaranteed. This is
+confusion is because of an innocent omission made at the beginning of this
+section (made to keep things simple). The uniformizing map that satisfy the
+Loewner equation does not in fact map $D\setminus\gamma_{[0,t]}$ to $D$. It
+actually maps $D\setminus K_t$ to $D$, where the \textit{hull} $K_t$ is the set
+comprising the trace $\gamma_{[0,t]}$ \textit{and} all the space trapped inside
+the loops formed when the trace touches itself. One can easily see that $K_t$
+is always simply connected and if the trace is simple $K_t = \gamma_{[0,t]}$.
+
+The overall behavior of the trace follows that of the driving function, so a
+very complicated $U_t$ tend to generate very intricate traces. One could
+imagine a driving function that has a discontinuous jump, for example. In this
+case, the trace will have also display a break, starting a new branch coming
+out of the real line or from the old segment depending on the size of the
+discontinuity, giving the trace a tree-like aspect.
+
 
 \begin{figure}
 \begin{center}
@@ -157,9 +193,23 @@ with $U_t\in\mathbb{R}$.
 \end{center}
 \caption{The Riemann mapping theorem guarantees the existence of at least one
     conformal mapping $f$ that maps any two simply connected two-dimensional
-    domains. In $2D$ any conformal map is invertible.}
+    domains. In $2D$ any conformal map is invertible. Generated using th
+    Schwarz-Christoffel toolbox for MATLAB~\cite{Driscoll2005}.}
 \label{fig:scmap}
 \end{figure}
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/diskfix}
+\end{center}
+\caption{Using a suitable conformal transformation it is possible to remove
+    a slit in the domain, mapping it to the circular boundary. Points close
+    to each other in the slitted domain (B and D) get mapped far apart in
+    the one without the slit.}
+\label{fig:diskfix}
+\end{figure}
+
 
 \begin{figure}
 \begin{center}
@@ -193,7 +243,7 @@ with $U_t\in\mathbb{R}$.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/leexample}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/leexample}
 \end{center}
 \caption{Example of a Loewner trace generated by the driving function
     $U_t=\sin(\pi t)\sin(\frac{\pi t}{10})t^{3/4}$. The trace $\gamma$ is
@@ -201,6 +251,18 @@ with $U_t\in\mathbb{R}$.
     solution of the Loewner differential equation (Eq.~\ref{eq:loew}).}
 \label{fig:leexample}
 \end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/discle}
+\end{center}
+\caption{The Loewner trace driven by discontinuous functions with several sizes
+    of discontinuity. The resulting trace is also discontinuous taking a
+    tree-like structure, where new branches can start at real line or at the
+    older branches depending on the size of the discontinuity.}
+\label{fig:dissle}
+\end{figure}
+
 
 \section{Stochastic Loewner Evolutions}
 \label{sec:le}
@@ -525,7 +587,6 @@ The $h_k^{-1}$ can be easily determined by inverting Eq.~\ref{eq:vslit}
            -{\left(z-\mbox{Re}\left\{ \omega_{k}\right\} \right)}^{2}}.
 \end{equation}
 
-
 \begin{figure}
 \begin{center}
     \includegraphics[scale=0.34]{chapters/ch4-sle/figs/zipperdiag}
@@ -563,3 +624,4 @@ The $h_k^{-1}$ can be easily determined by inverting Eq.~\ref{eq:vslit}
     the red line converges to an SLE trace.}
 \label{fig:zipper}
 \end{figure}
+
