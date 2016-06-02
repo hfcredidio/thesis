@@ -38,8 +38,9 @@ $4/3$~\cite{Lawler2001}.
 \label{sec:le}
 
 The ``Loewner Evolution'' part of SLE was proposed in 1923 by Charles Loewner
-in the context of Bierbach conjecture~\cite{Loewner1923} (proposed in 1916 and
-eventually proved by de Branges in 1985). The starting point of the process
+in the context of the Bieberbach conjecture~\cite{Loewner1923}, concerning some
+properties of Taylor expansions of analytical function, completely proved by de
+Branges in 1985~\cite{DeBranges1985}. The starting point of the process
 described by Loewner is the Riemann mapping theorem~\cite{Ahlfors1979}. This
 theorem guarantees the existence of a conformal transformation (as defined in
 Section~\ref{ch:conf}) that maps any two regions of the complex plane into one
@@ -61,14 +62,15 @@ domain, like shown in Figure~\ref{fig:diskfix}. This crack has no width, so it
 can be described as a curve $\gamma$ which starts at some point $r_1$ at the
 boundary $\partial D$ and ends at a point $r_2$ which may be an interior or
 boundary point. As long as $\gamma$ does not touch itself, the cracked domain
-$D\setminus\gamma$ is also simply connected. Because of that, the Riemann
-mapping theorem assure us that we can ``fix'' this crack by finding the
-conformal transformation $g$ that maps the cracked domain into the uncracked
-standard domain, or in math lingo $g:D\setminus\gamma\rightarrow D$. This is
-called a \textit{uniformizing map}, and the crack  $\gamma$ goes by the more
-formal name \textit{trace}. We distinguish two types of traces. If $r_2$ is an
-interior point of $D$, the trace is said to be \textit{radial}, and if it
-belongs to the boundary $\partial D$ it is called \textit{chordal}.
+$D\setminus\gamma$\footnote{$\cdot\setminus\cdot$ being the set-minus
+    operator.} is also simply connected. Because of that, the Riemann mapping
+theorem assure us that we can ``fix'' this crack by finding the conformal
+transformation $g$ that maps the cracked domain into the uncracked standard
+domain, or in math lingo $g:D\setminus\gamma\rightarrow D$. This is called a
+\textit{uniformizing map}, and the crack  $\gamma$ goes by the more formal name
+\textit{trace}. We distinguish two types of traces. If $r_2$ is an interior
+point of $D$, the trace is said to be \textit{radial}, and if it belongs to the
+boundary $\partial D$ it is called \textit{chordal}.
 
 Let's parametrize the trace using a positive real parameter $t$ such that
 $\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we'll leave the
@@ -84,12 +86,13 @@ willing to make a few compromises.
 
 We can construct an equation for $g_t$ by shifting our attention from the trace
 itself. You see, since the tip of the trace $\gamma_t$ is part of the boundary
-of $D\setminus\gamma_{[0,t]}$, it will necessarily get mapped to a point $U_t$
-in the border of the standard domain $D$. If we follow the time evolution of
-this point, we get a function $U_t:\mathbb{R}^+\rightarrow\partial D$ and
-$g_t(\gamma_t)=U_t$. This is called the \textit{driving function} of the trace
-in question. In his work, Loewner showed that the trace, the uniformizing on
-map, and the driving function are connected by a differential equation.
+of $D\setminus\gamma_{[0,t]}$, it will necessarily get mapped to a point
+$U_t=g_t(\gamma_t)$ in the border of the standard domain $D$. If we follow the
+time evolution of this point, we get a function
+$U_t:\mathbb{R}^+\rightarrow\partial D$. This is called the \textit{driving
+function} of the trace in question. In his work, Loewner showed that the
+trace, the uniformizing on map, and the driving function are connected by a
+differential equation.
 
 Before we can write down this equation we need to make a series of assumptions.
 One of them is to decide if we want to deal with radial or chordal traces.
@@ -97,15 +100,18 @@ Other is to determine the standard domain in which the trace will grow. In his
 original work, Loewner chose the unit disc $\mathbb{D}=\{z||z|\leq1\}$, with
 $\gamma_0=1$ and $\gamma_\infty=0$ for the radial case. For the chordal case,
 the most commonly used domain is the upper half plane
-$\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$.
-In physical applications, it is much more common to use the chordal version, and
-is the version we'll focus here.
+$\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$,
+which offers the practicality that $\partial\HH=\mathbb{R}$, so the driving
+function is real valued. In physical applications, it is much more common to
+use the chordal version, and it's the version we'll focus here.
+Figure~\ref{fig:radchord} show two examples of radial and chordal traces in
+these domains.
 
 In order to determine the chordal Loewner equation we need first to impose some
 conditions on the conformal map $g_t$, otherwise there are an infinity
 of maps that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce
 uniqueness, we impose what is called a \textit{hydrodynamic normalization}.
-This means that far from the origin, the uniformizing on maps behave as
+This means that far from the origin, the uniformizing maps behave as
 \begin{equation}
     \label{eq:hydro}
     g_{t}\left(z\right)\approx
@@ -113,13 +119,13 @@ This means that far from the origin, the uniformizing on maps behave as
     ,\,\,\,\,\,\,\,\,\,\,\,
     z\rightarrow\infty.
 \end{equation}
-This way points at infinity get mapped into themselves. The coefficient $a(t)$
+This way, points at infinity get mapped into themselves. The coefficient $a(t)$
 is called the half plane capacity, and can take any form as long as it obeys a
 number of properties, including positivity, monotonicity and
-continuity~\cite{Kager2004}. The choice capacity is intrinsically connected
+continuity~\cite{Kager2004}. The choice of capacity is intrinsically connected
 with the parametrization of the trace (the SLE time $t$) and it is far from a
 trivial point, which has drawn some attention from
-mathematicians~\cite{Lawler2011}. Here, we'll go with the most common choice
+mathematicians~\cite{Lawler2011}. Here, we'll go with the most common choice of
 $a(t)=2t$.
 
 With all these properties laid out, the chordal Loewner equation takes the
@@ -134,13 +140,15 @@ where $U_t\in\mathbb{R}$ and the trace can be obtained by taking the limit
 \begin{equation}
     \gamma_t = \lim_{z\rightarrow 0}g_t^{-1}\left(U_t + z\right),
 \end{equation}
-since the Loewner equation is not well defined for $g_t(z)=U_t$.
-Furthermore, working only on the upper half plane seems restrictive, but
-remember that any two domains can be mapped into one another through conformal
-transformations. So to get the trace in a domain $D$ that connects two points
-$r_1, r_2 \in \partial D$, all you have to do is to find the function
-$f:\HH\rightarrow D$, where $f(0)=r_1$ and $f(\infty)=r_2$. Under similar
-assumptions, the radial Loewner equation in the unit disc is
+since the Loewner equation is not well defined for $g_t(z)=U_t$. You can see a
+schematic representation of the Loewner process in Figure~\ref{fig:loewexplain}
+and an example of a chordal trace obtained from it in
+Figure~\ref{fig:leexample}. Furthermore, working only on the upper half plane
+seems restrictive, but remember that any two domains can be mapped into one
+another through conformal transformations. So to get the trace in a domain $D$
+that connects two points $r_1, r_2 \in \partial D$, all you have to do is to
+find the function $f:\HH\rightarrow D$, where $f(0)=r_1$ and $f(\infty)=r_2$.
+Under similar assumptions, the radial Loewner equation in the unit disc is
 \begin{equation}
     \partial_{t}g_{t}\left(z\right)=
     g_{t}\left(z\right)
@@ -149,7 +157,8 @@ assumptions, the radial Loewner equation in the unit disc is
     ,\,\,\,\,\,\,\,\,\,\,
     g_0(z)=z.
 \end{equation}
-with $U_t\in\mathbb{R}$. Figure~\ref{fig:radchord} shows an example of 
+with $U_t\in\mathbb{R}$. Figure~\ref{fig:radchord} shows the trace
+obtained in both cases for a simple driving function.
 
 Not surprisingly, the topological and geometric properties of the trace
 $\gamma_t$ are intimately connected with the analytical properties of the
@@ -170,7 +179,7 @@ driving function $U_t$. Some properties include:
 This last one might require some clarification. We established that the Riemann
 mapping theorem is valid only for simply connected domains. If the trace touches
 itself at an instant $\tau$, then $D\setminus\gamma_{[0,t\geq\tau]}$ is not
-simply connected, and the existence of $g_t$ cannot be guaranteed. This is
+simply connected, and the existence of $g_t$ cannot be guaranteed. This
 confusion is because of an innocent omission made at the beginning of this
 section (made to keep things simple). The uniformizing map that satisfy the
 Loewner equation does not in fact map $D\setminus\gamma_{[0,t]}$ to $D$. It
@@ -184,7 +193,8 @@ very complicated $U_t$ tend to generate very intricate traces. One could
 imagine a driving function that has a discontinuous jump, for example. In this
 case, the trace will have also display a break, starting a new branch coming
 out of the real line or from the old segment depending on the size of the
-discontinuity, giving the trace a tree-like aspect.
+discontinuity, giving the trace a tree-like aspect, like shown in
+Figure~\ref{fig:discle}.
 
 
 \begin{figure}
@@ -260,36 +270,47 @@ discontinuity, giving the trace a tree-like aspect.
     of discontinuity. The resulting trace is also discontinuous taking a
     tree-like structure, where new branches can start at real line or at the
     older branches depending on the size of the discontinuity.}
-\label{fig:dissle}
+\label{fig:discle}
 \end{figure}
 
 
 \section{Stochastic Loewner Evolutions}
 \label{sec:le}
 
-\textbf{Coformal Invariance.}
-We talked extensively in Chapter~\ref{ch3-conf} about conformal invariance and
-its importance to the study of critical systems. There we used a field
-theoretical approach, but in the context of measure theory, conformal
-invariance is stated as
+A big breakthrough in the area of critical phenomena happened when Oded Schramm
+used Loewner evolutions to study the interfaces that form in critical systems,
+like the perimeter of a percolation cluster. He did that by showing that all
+properties of conformally invariant models are codified in a family of Loewner
+evolutions driven by a fairly simple driving function.
+
+If we want to describe conformally invariant critical systems using Loewner
+processes, we need to redefine conformal invariance. The definition given in
+terms of the covariance of field operators (Eq.~\ref{eq:cinv}) does not
+translate well into this framework because there's no way to incorporate the
+notion of field. Instead we need to define it in terms of the curves that form
+the boundaries of clusters. To do that we look at measure theory (the more
+general mathematical theory of probability)~\cite{Ash2000}. In this context, we
+define conformal invariance as follows: let $f$ be a conformal map between two
+domain $D$ and $D'$ such that $D'=f(D)$, then the measure over the set of traces
+that connect two points $z,w\in\partial D$ should behave like
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
     f\circ\mu_D\pp{z,w} = \mu_{f(D)}\pp{f\pp{z}, f\pp{w}}.
 \end{equation}
-This is to say, given a domain $D$ and a set of curves $\gamma$ that connect
-the points $z$ and $w\in\partial D$, the measure $\mu$ of this family of curves
-is invariant under a conformal transformation $f$. In simpler words, it means
-that if you have a certain (continuum) model $M$ and use it to generate a set
-of curves in $D$ and then conformally map the curves to $f(D)$, these
-curves would have the same statistical properties as if you simply generated the
-curves by applying $M$ to $f(D)$ directly. An illustration can be seen in
-Figure~\ref{fig:confinv}.
+That is to say, suppose you want to generate a curve in a, say, triangular
+region. You can do this in two ways, one by simply applying you lattice model
+to the triangular domain, or you can apply the lattice model in a square domain
+and then conformally map the resulting trace to a triangular domain. Conformal
+invariance states that, in the \textit{continuum limit}, these two processes
+are statistically identical, as illustrated in Figure~\ref{fig:confinv}. Here
+we used the term \textit{measure} instead of probability distribution, because
+the latter cannot be actually be defined for traces in the continuum limit, but
+the more general concept of measure can.
 
-
-\textbf{Domain Markov Property.}
-In his work, Schramm identified another fundamental property that conformally
-invariant lattice models tend to obbey called domain Markov property. It
-stated as
+Conformal invariance, however, is not enough to pinpoint a general driving
+function for critical systems. In his work, Schramm identified another
+fundamental property lattice models must have, and indeed tend to obey.
+It is called \textit{domain Markov property}.
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
     \mu_D\pp{\gamma_2|\gamma_1} = \mu_{D\setminus\gamma_1}\pp{\gamma_2}.
@@ -304,31 +325,48 @@ $\gamma_1$ obtained would have the exact same properties as if you generated
 the curves by applying M to $D\setminus\gamma_0$. An illustration can be
 seen in Figure~\ref{fig:dmp}.
 
+
+The point of contact between statistical physics and SLE happen at the
+central charge of a conformal field theory. Bauer and Bernard~\cite{Bauer2002}
+shoewd that $\kappa$ and $c$ are connected by the relation
+\begin{equation}
+    c=\frac{1}{2}\left(3\kappa-8\right)\left(\frac{6}{\kappa}-1\right).
+\end{equation}
+
+
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.8]{chapters/ch4-sle/figs/confinv}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sle_confinv}
 \end{center}
-\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.}
+\caption{In the context of SLE, conformal invariance is defined in terms of the
+    distribution of traces. For example, let $f$ be a conformal map from the
+    unit disk $\mathbb{D}$ to a square domain $f(\mathbb{D})$, then the
+    distribution $f\circ\mu_\mathbb{D}$ of the traces generated in $\mathbb{D}$
+    and mapped to $f(\mathbb{D})$ should be the same as the distribution
+    $\mu_{f(\mathbb{D})}$ of the traces generated directly in the square
+    domain, in the continuum limit.}
 \label{fig:confinv}
 \end{figure}
-
 
 \begin{figure}
 \begin{center}
     \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
 \end{center}
-\caption{The domain Markov property states that the conditional measure of
+\caption{The domain Markov property states that the conditional distribution of
     $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
     in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
 \label{fig:dmp}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sleexample}
+\end{center}
+\caption{Example of a Schramm-Loewner evolution, which is a Loewner evolution
+    driven by a Browninan motion, in this case with diffusion coefficient
+    $\kappa=2$.}
+\label{fig:sleexample}
+\end{figure}
 
 \begin{figure}
 \begin{center}

@@ -402,21 +402,21 @@
     of discontinuity. The resulting trace is also discontinuous taking a
     tree-like structure, where new branches can start at real line or at the
     older branches depending on the size of the discontinuity.}
-\label{fig:dissle}
+\label{fig:discle}
 \end{figure}
 \efloatseparator
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.8]{chapters/ch4-sle/figs/confinv}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sle_confinv}
 \end{center}
-\caption{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.}
+\caption{In the context of SLE, conformal invariance is defined in terms of the
+    distribution of traces. For example, let $f$ be a conformal map from the
+    unit disk $\mathbb{D}$ to a square domain $f(\mathbb{D})$, then the
+    distribution $f\circ\mu_\mathbb{D}$ of the traces generated in $\mathbb{D}$
+    and mapped to $f(\mathbb{D})$ should be the same as the distribution
+    $\mu_{f(\mathbb{D})}$ of the traces generated directly in the square
+    domain, in the continuum limit.}
 \label{fig:confinv}
 \end{figure}
 \efloatseparator
@@ -425,10 +425,21 @@
 \begin{center}
     \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
 \end{center}
-\caption{The domain Markov property states that the conditional measure of
+\caption{The domain Markov property states that the conditional distribution of
     $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
     in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
 \label{fig:dmp}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sleexample}
+\end{center}
+\caption{Example of a Schramm-Loewner evolution, which is a Loewner evolution
+    driven by a Browninan motion, in this case with diffusion coefficient
+    $\kappa=2$.}
+\label{fig:sleexample}
 \end{figure}
 \efloatseparator
  
