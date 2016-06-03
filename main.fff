@@ -423,11 +423,12 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sle_dmp}
 \end{center}
 \caption{The domain Markov property states that the conditional distribution of
-    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
-    in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
+    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$,
+    $\mu_D(\gamma_2|\gamma_1)$, is the same of $\gamma_2$ in the same domain
+    with $\gamma_1$ removed, that is, $\mu_{D\setminus\gamma_1}(\gamma_2)$.}
 \label{fig:dmp}
 \end{figure}
 \efloatseparator
@@ -440,6 +441,18 @@
     driven by a Browninan motion, in this case with diffusion coefficient
     $\kappa=2$.}
 \label{fig:sleexample}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/kappa}
+\end{center}
+\caption{The SLE trace display three different behaviors depending on the value
+    of $\kappa$. For $\kappa\leq4$ the trace is simple, so it does not touch
+    itself. For $4<\kappa<8$ the trace touches itself. And for $\kappa\geq8$
+    the trace is space filling.}
+\label{fig:kappa}
 \end{figure}
 \efloatseparator
  
@@ -485,7 +498,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.34]{chapters/ch4-sle/figs/zipperdiag}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/zipperdiag}
 \end{center}
 \caption{Schematic representation of how the zipper algorithm fits in the
     Loewner evolution framework. At the top, we have the full trace up to time

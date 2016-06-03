@@ -170,6 +170,7 @@ driving function $U_t$. Some properties include:
     \item if $U_t$ is H\"older continuous with exponent $1/2$ with constant
         larger than 4, meaning that there is a finite constant $C$ such that
         \begin{equation}
+            \label{eq:holder}
             4<\lim_{s\rightarrow0^{+}}\left|
                 \frac{U_{t-s}-U_{t}}{s^{1/2}}\right|
             <C,
@@ -283,7 +284,7 @@ like the perimeter of a percolation cluster. He did that by showing that all
 properties of conformally invariant models are codified in a family of Loewner
 evolutions driven by a fairly simple driving function.
 
-If we want to describe conformally invariant critical systems using Loewner
+Now, if we want to describe conformally invariant critical systems using Loewner
 processes, we need to redefine conformal invariance. The definition given in
 terms of the covariance of field operators (Eq.~\ref{eq:cinv}) does not
 translate well into this framework because there's no way to incorporate the
@@ -291,7 +292,7 @@ notion of field. Instead we need to define it in terms of the curves that form
 the boundaries of clusters. To do that we look at measure theory (the more
 general mathematical theory of probability)~\cite{Ash2000}. In this context, we
 define conformal invariance as follows: let $f$ be a conformal map between two
-domain $D$ and $D'$ such that $D'=f(D)$, then the measure over the set of traces
+domains $D$ and $D'$ such that $D'=f(D)$, then the measure over the set of traces
 that connect two points $z,w\in\partial D$ should behave like
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
@@ -305,34 +306,142 @@ invariance states that, in the \textit{continuum limit}, these two processes
 are statistically identical, as illustrated in Figure~\ref{fig:confinv}. Here
 we used the term \textit{measure} instead of probability distribution, because
 the latter cannot be actually be defined for traces in the continuum limit, but
-the more general concept of measure can.
+the more general concept of measure can be applied.
 
 Conformal invariance, however, is not enough to pinpoint a general driving
 function for critical systems. In his work, Schramm identified another
-fundamental property lattice models must have, and indeed tend to obey.
-It is called \textit{domain Markov property}.
+fundamental property that lattice models must have in the continuum limit, and
+indeed tend to obey. It is called \textit{domain Markov property}, and refers
+to the measure of a trace segment $\gamma_2$ conditioned by a
+fixed initial segment $\gamma_1$,
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
     \mu_D\pp{\gamma_2|\gamma_1} = \mu_{D\setminus\gamma_1}\pp{\gamma_2}.
 \end{equation}
-That is, the conditional measure of family of curves $\gamma_2$ that have the
+It means that the conditional measure of family of curves $\gamma_2$ that have the
 same start $\gamma_1$ in a domain $D$ is the same as that of $\gamma_2$ in
-a domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.
+the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.
 In the same line of conformal invariance, domain Markov property can be
-understood in the following way: if you have a model M and use it to generate a
-set of curves in $D$ that all have the same start $\gamma_0$, the curves
-$\gamma_1$ obtained would have the exact same properties as if you generated
-the curves by applying M to $D\setminus\gamma_0$. An illustration can be
-seen in Figure~\ref{fig:dmp}.
+understood in the following way: if you use a model to generate a set of curves
+in $D$ that all have the same start $\gamma_1$, the curves $\gamma_2$ obtained
+would have the exact same properties as if you generated the curves by applying
+the model to $D\setminus\gamma_1$. And just like conformal invariance, this is
+only expected to hold in the continuum limit. A visual explanation can be seen
+in Figure~\ref{fig:dmp}.
 
+The interfaces present in critical systems are usually random curves, so it is
+only safe to assume that their driving functions should also be stochastic
+processes. The climax is Schramm's work was the proof that systems that obey
+conformal invariance and domain Markov property, as defined above, can only
+have the driving function
+\begin{equation}
+    U_{t}=\sqrt{\kappa}B_{t},
+\end{equation}
+where $B_t$ is a Brownian motion, also known as Wiener process.
+It is defined as having the following properties~\cite{Durrett1996}:
+\begin{itemize}
+    \item $B_0=0$;
+    \item The increments $B_t-B_s$ with any $t>s$ are always independent from
+        one another;
+    \item The increments $B_t-B_s$ with any $t>s$ are distributed according to
+        a normal distribution with zero mean and variance $\sigma^2=t-s$;
+    \item $B_t$ is almost surely continuous.
+\end{itemize}
+This is a striking result. Using only a family of driving functions with a
+single parameter, we're able to describe all properties of many criticality
+models. In the inaugural paper of SLE, Schramm showed that loop-erased random
+walks (random walks with the loops removed in chronological order) and uniform
+spanning trees converge to SLE with $\kappa=2$ and $\kappa=8$ respectively.
+Figure~\ref{fig:sleexample} shows a realization of SLE with $\kappa=2$.
+
+Mathematicians were quickly drawn to this new framework, unveiling various
+interesting properties. One that stands out is how the trace looks with
+different values of $\kappa$~\cite{Rohde2011}. You see, the Brownian motion is
+basically a function that varies randomly with time. This random variation
+gives the wiggly aspect of the trace, as seen in Figure~\ref{fig:sleexample}.
+This means that the higher the value of $\kappa$, the larger will be the
+variations of the Brownian motion, and the more wiggly the trace will be. When
+the value of $\kappa$ is less or equal than $4$ the trace won't wiggle so
+wildly to the point of touching itself. So in this case the trace is a simple
+curve, as we already suggested in the last section with Eq.~\ref{eq:holder}.
+When $\kappa>4$, however, the trace almost surely touch itself in all length
+scales, to the point that the hull (the trace plus the regions inside the loops
+it forms) eventually swallows the whole upper half plane. If $\kappa\geq8$ not
+only the trace touches itself, but it does so on \textit{every} point of the
+domain, so there is no point in $\HH$ that does not eventually belong to the
+trace, we say the curve is space filling. The general aspect of the tree phases
+can be seen in Figure~\ref{fig:kappa}.
+
+The behavior of the trace in each of the three distinct phases is closely
+related to its fractal dimension. The fractal dimension $d_f$ of a curve if
+usually defined by counting the number $N$ of circles of radius $\epsilon$
+needed to cover the whole curve. This should behave as
+\begin{equation}
+    N\sim \epsilon^{-d_f}.
+\end{equation}
+The relationship between $\kappa$ and the fractal dimension is due to
+Beffara~\cite{Beffara2008} and given by
+\begin{equation}
+    d_f=\min\left(1+\frac{\kappa}{8},2\right).
+\end{equation}
+We see that for $\kappa\geq 8$ implies that $d_f=2$, which is exactly what we
+would expect from a space filling curve. You can see several realizations of
+SLE for different values of $\kappa$ and how the trace and its fractal
+dimension behave in Figure~\ref{fig:slefracdim}.
+
+Some other properties are important to know if one is trying to determine if a
+model is an SLE, specially if the investigation is numerical. For example, 
+the probability that a point $z=|z|e^{i\theta}$ is to the left of the
+trace depends only on $\theta$ and is given by
+\begin{equation}
+    \label{eq:lpp}
+    P=\frac{1}{2}+
+    \frac{\Gamma\left(4/\kappa\right)}
+         {\sqrt{\pi}
+          \Gamma\left(\left(8-\kappa\right)/\left(2\kappa\right)\right)}
+    \cot\left(\theta\right)
+    {}_{2}F_{1}\left(\frac{1}{2},\frac{4}{\kappa},\frac{3}{2};
+        -\cot^{2}\theta\right),
+\end{equation}
+where ${}_2F_1$ is the Gaussian hypergeometric function. A common way of
+determining if a model can be described by SLE is to generate various traces
+and estimate the value of $\kappa$ using equation~\ref{eq:lpp}. This value
+should be consistent with the coefficient of diffusion of the computed driving
+function (see Section~\ref{sec:num} for how to compute the drive of a trace),
+which should behave as
+\begin{equation}
+    \left\langle U_{t}^{2}\right\rangle =\kappa t.
+\end{equation}
 
 The point of contact between statistical physics and SLE happen at the
 central charge of a conformal field theory. Bauer and Bernard~\cite{Bauer2002}
-shoewd that $\kappa$ and $c$ are connected by the relation
+showed that $\kappa$ and $c$ are connected by the relation
 \begin{equation}
-    c=\frac{1}{2}\left(3\kappa-8\right)\left(\frac{6}{\kappa}-1\right).
+    c=\frac{\left(3\kappa-8\right)\left(6-\kappa\right)}{2\kappa}.
 \end{equation}
+One might notice that each central charge value corresponds to two values of
+$\kappa$, namely $\kappa$ and $16/\kappa$. This is connected the notion of
+duality of SLE, first suggested by Duplantier~\cite{Duplantier2000} who noticed
+that if we remove the loops of an SLE trace with $\kappa>4$ we would be left
+with yet another SLE trace (at least locally) this time with
+$\tilde{\kappa}=16/\kappa$. This was eventually proved for that case
+$\kappa=6$~\cite{Beffara2004}, which has a dual $\tilde{\kappa}=8/3$, suspected
+to be the same as the self-avoiding walk.
 
+This
+\begin{itemize}
+    \item $\kappa=2$: loop-erased random walk~\cite{Schramm2000};
+    \item $\kappa=8/3$: suspected to be self-avoiding walk~\cite{Kennedy2002},
+        proved to be the border of a 2D random walk~\cite{Lawler2001};
+    \item $\kappa=3$: cluster boundaries of the Ising model~\cite{Chelkak2014};
+    \item $\kappa=4$: harmonic explorer~\cite{Schramm2005};
+    \item $\kappa=6$: boundaries of percolation clusters~\cite{Smirnov2001b};
+    \item $\kappa=8$: uniform spanning trees~\cite{Schramm2000}.
+\end{itemize}
+Furthermore, there's several models that have been proposed to be conformally
+invariant and have their own value of of $\kappa$ including 2D and 3D
+turbulence~\cite{Bernard2006, Thalabard2011}, shortest path of percolation
+clusters~\cite{Pose2014} and watersheds~\cite{Daryaei2012}.
 
 \begin{figure}
 \begin{center}
@@ -350,11 +459,12 @@ shoewd that $\kappa$ and $c$ are connected by the relation
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.9]{chapters/ch4-sle/figs/dmp}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/sle_dmp}
 \end{center}
 \caption{The domain Markov property states that the conditional distribution of
-    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$ is the same of $\gamma_2$
-    in the same domain with $\gamma_1$ removed, that is, $D\setminus\gamma_1$.}
+    $\gamma_2$ given a fixed $\gamma_1$ in a domain $D$,
+    $\mu_D(\gamma_2|\gamma_1)$, is the same of $\gamma_2$ in the same domain
+    with $\gamma_1$ removed, that is, $\mu_{D\setminus\gamma_1}(\gamma_2)$.}
 \label{fig:dmp}
 \end{figure}
 
@@ -366,6 +476,17 @@ shoewd that $\kappa$ and $c$ are connected by the relation
     driven by a Browninan motion, in this case with diffusion coefficient
     $\kappa=2$.}
 \label{fig:sleexample}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/kappa}
+\end{center}
+\caption{The SLE trace display three different behaviors depending on the value
+    of $\kappa$. For $\kappa\leq4$ the trace is simple, so it does not touch
+    itself. For $4<\kappa<8$ the trace touches itself. And for $\kappa\geq8$
+    the trace is space filling.}
+\label{fig:kappa}
 \end{figure}
 
 \begin{figure}
@@ -384,19 +505,14 @@ shoewd that $\kappa$ and $c$ are connected by the relation
 
 The crux of the Schramm Loewner Evolution problem is determining whether or not
 a given model converges to it in the continuum limit, and what is the value of
-$\kappa$ for this specific model. We mentioned several models that have been
-proven to asdasd, the most illustrious being Smirnov's demonstration that
-percolation in a triangular lattice converges to SLE with $\kappa=6$.
-
-Nonetheless, just like nobody would expect every critical system to have an
-exact solution similar to the Ising model, one may not expect to be able to
-prove the SLE convergence for every conceivable model. To be completely
-fair, we cannot there is no way to know this prove is impossible either, but
-
-This is where
-numerical analysis comes into the scene. By comparing the statistical behavior
-of the model with the expected SLE trace, we can infer Eq.~\ref{eq:prob} holds
-true.
+$\kappa$ for each specific model. We mentioned several models that have show
+such convergence, the most illustrious being Smirnov's demonstration that
+percolation in a triangular lattice is an SLE with $\kappa=6$. Nonetheless,
+just like nobody would expect every critical system to have an exact solution
+similar to the Ising model, one may not expect to be able to prove the SLE
+convergence for every conceivable model. This is where numerical analysis comes
+into the scene. By comparing the statistical behavior of the model with the
+expected SLE trace, we can infer Eq.~\ref{eq:prob} holds true.
 
 \subsection{Euler's Method}
 \label{ss:euler}
@@ -627,7 +743,7 @@ The $h_k^{-1}$ can be easily determined by inverting Eq.~\ref{eq:vslit}
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.34]{chapters/ch4-sle/figs/zipperdiag}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/zipperdiag}
 \end{center}
 \caption{Schematic representation of how the zipper algorithm fits in the
     Loewner evolution framework. At the top, we have the full trace up to time
