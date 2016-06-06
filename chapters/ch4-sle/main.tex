@@ -12,7 +12,7 @@ gravity.
 
 The area of critical phenomena is fortunate enough to see this happen twice.
 The first was the introduction of conformal invariance and conformal field
-eheory, which were first developed in the 50's by field theorists as a means of
+theory, which were first developed in the 50's by field theorists as a means of
 creating exactly solvable toy models~\cite{Thirring1958}, but in the 80's were
 very successfully used to compute the critical properties of several
 two-dimensional systems~\cite{Nahm2000}. Conformal field theory, however, was
@@ -23,26 +23,26 @@ convention rather than rigorous logic''~\cite{Cardy2005}. That and the
 inability of answering some very important questions~\cite{Langlands1994} led
 mathematicians to search for other theories.
 
-The long sought alternative finally came in 2000, when Oded Schramm published
-his theory which he called Stochastic Loewner Evolutions~\cite{Schramm2000}
-(henceforth referred simply by SLE). Combining ideas from complex analysis and
-measure theory, SLE looks not at the fields themselves, but at the random
-curves that the form the boundary of clusters. This theory was an astounding
-success, not only rigorously reproducing previously established results, but
-also answering long standing unsolved problems, like Mandelbrot's conjecture
-that the boundary of a 2D Brownian motion has fractal dimension of
-$4/3$~\cite{Lawler2001}.
+In 2000, a remarkable development happened when Oded Schramm published his
+theory of Stochastic Loewner Evolutions~\cite{Schramm2000} (SLE). Combining
+ideas from complex analysis and measure theory, SLE looks not at the fields
+themselves, but at the random curves that the form the boundary of clusters.
+This theory was an astounding success, not only rigorously reproducing
+previously established results, but also answering long standing unsolved
+problems, like Mandelbrot's conjecture that the boundary of a 2D Brownian
+motion has fractal dimension of $4/3$~\cite{Lawler2001}.
 
 
 \section{Loewner Equation}
 \label{sec:le}
 
-The ``Loewner Evolution'' part of SLE was proposed in 1923 by Charles Loewner
-in the context of the Bieberbach conjecture~\cite{Loewner1923}, concerning some
-properties of Taylor expansions of analytical function, completely proved by de
-Branges in 1985~\cite{DeBranges1985}. The starting point of the process
-described by Loewner is the Riemann mapping theorem~\cite{Ahlfors1979}. This
-theorem guarantees the existence of a conformal transformation (as defined in
+The ``Loewner Evolution'' part of SLE came much earlier, it was proposed in
+1923 by Charles Loewner in the context of the Bieberbach
+conjecture~\cite{Loewner1923}, which concerned some properties of Taylor
+expansions of analytical function, and completely proved by de Branges in
+1985~\cite{DeBranges1985}. The starting point of the process described by
+Loewner is the Riemann mapping theorem~\cite{Ahlfors1979}. This theorem
+guarantees the existence of a conformal transformation (as defined in
 Section~\ref{ch:conf}) that maps any two regions of the complex plane into one
 another, as long as these regions are simply connected, that is, they should
 have no holes in them. The theorem also assures that the boundary of one region
@@ -75,11 +75,11 @@ boundary $\partial D$ it is called \textit{chordal}.
 Let's parametrize the trace using a positive real parameter $t$ such that
 $\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we'll leave the
 parametrization choice free. We denote $\gamma_{[0,t]}$ the whole extent of the
-trace from $\gamma_0$ up to the point $\gamma_t$. Therefore, for every value of
+trace from $\gamma_0$ up to the tip $\gamma_t$. Therefore, for every value of
 $t$ we have a different uniformizing map
 $g_t:D\setminus\gamma_{[0,t]}\rightarrow D$. We can imagine $t$ as a sort of
 time, and the evolution of the tip $\gamma_t$ as a growth process.
-An immediate question one might make is, what is the relation between $D$,
+An immediate question one might ask is, what is the relation between $D$,
 $\gamma$ and the $g_t$? Are they uniquely defined? Is there a kind of equation
 that relates these objects? Loewner's answer is ``yes'', as long as you're
 willing to make a few compromises.
@@ -90,9 +90,10 @@ of $D\setminus\gamma_{[0,t]}$, it will necessarily get mapped to a point
 $U_t=g_t(\gamma_t)$ in the border of the standard domain $D$. If we follow the
 time evolution of this point, we get a function
 $U_t:\mathbb{R}^+\rightarrow\partial D$. This is called the \textit{driving
-function} of the trace in question. In his work, Loewner showed that the
-trace, the uniformizing on map, and the driving function are connected by a
-differential equation.
+    function} of the trace in question. An schematic representation of the
+whole process in shown Figure~\ref{fig:loewexplain}. In his work, Loewner
+showed that the trace, the uniformizing on map, and the driving function are
+connected by a differential equation.
 
 Before we can write down this equation we need to make a series of assumptions.
 One of them is to decide if we want to deal with radial or chordal traces.
@@ -108,10 +109,10 @@ Figure~\ref{fig:radchord} show two examples of radial and chordal traces in
 these domains.
 
 In order to determine the chordal Loewner equation we need first to impose some
-conditions on the conformal map $g_t$, otherwise there are an infinity
-of maps that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce
-uniqueness, we impose what is called a \textit{hydrodynamic normalization}.
-This means that far from the origin, the uniformizing maps behave as
+conditions on the conformal map $g_t$, otherwise there are an infinity of maps
+that connect $\HH\setminus\gamma_{[0,t]}$ to $\HH$. To induce uniqueness, we
+impose what is called a \textit{hydrodynamic normalization}. This means that
+far from the origin, the uniformizing maps behave as
 \begin{equation}
     \label{eq:hydro}
     g_{t}\left(z\right)\approx
@@ -129,7 +130,7 @@ mathematicians~\cite{Lawler2011}. Here, we'll go with the most common choice of
 $a(t)=2t$.
 
 With all these properties laid out, the chordal Loewner equation takes the
-(deceptively) simple form
+(deceptively) simple form 
 \begin{equation}
     \label{eq:loew}
     \partial_t g_t(z) = \frac{2}{g_t(z) - U_t}
@@ -140,15 +141,15 @@ where $U_t\in\mathbb{R}$ and the trace can be obtained by taking the limit
 \begin{equation}
     \gamma_t = \lim_{z\rightarrow 0}g_t^{-1}\left(U_t + z\right),
 \end{equation}
-since the Loewner equation is not well defined for $g_t(z)=U_t$. You can see a
-schematic representation of the Loewner process in Figure~\ref{fig:loewexplain}
-and an example of a chordal trace obtained from it in
-Figure~\ref{fig:leexample}. Furthermore, working only on the upper half plane
-seems restrictive, but remember that any two domains can be mapped into one
-another through conformal transformations. So to get the trace in a domain $D$
-that connects two points $r_1, r_2 \in \partial D$, all you have to do is to
-find the function $f:\HH\rightarrow D$, where $f(0)=r_1$ and $f(\infty)=r_2$.
-Under similar assumptions, the radial Loewner equation in the unit disc is
+since the Loewner equation is not well defined for $g_t(z)=U_t$. The derivation
+of Loewner's equation is outlined in Appendix~\ref{ch:proof} and a example of a
+chordal trace obtained from it in Figure~\ref{fig:leexample}. Furthermore,
+working only on the upper half plane seems restrictive, but remember that any
+two domains can be mapped into one another through conformal transformations.
+So to get the trace in a domain $D$ that connects two points $r_1, r_2 \in
+\partial D$, all you have to do is to find the function $f:\HH\rightarrow D$,
+where $f(0)=r_1$ and $f(\infty)=r_2$. Under similar assumptions, the radial
+Loewner equation in the unit disc is
 \begin{equation}
     \partial_{t}g_{t}\left(z\right)=
     g_{t}\left(z\right)
@@ -162,7 +163,7 @@ obtained in both cases for a simple driving function.
 
 Not surprisingly, the topological and geometric properties of the trace
 $\gamma_t$ are intimately connected with the analytical properties of the
-driving function $U_t$. Some properties include:
+driving function $U_t$. Some properties include~\cite{Gruzberg2004}:
 \begin{enumerate}
     \item if $U_t$ is smooth, with a derivative well defined, then $\gamma_t$
         never intersects itself;
@@ -181,7 +182,7 @@ This last one might require some clarification. We established that the Riemann
 mapping theorem is valid only for simply connected domains. If the trace touches
 itself at an instant $\tau$, then $D\setminus\gamma_{[0,t\geq\tau]}$ is not
 simply connected, and the existence of $g_t$ cannot be guaranteed. This
-confusion is because of an innocent omission made at the beginning of this
+confusion comes from an innocent omission made at the beginning of this
 section (made to keep things simple). The uniformizing map that satisfy the
 Loewner equation does not in fact map $D\setminus\gamma_{[0,t]}$ to $D$. It
 actually maps $D\setminus K_t$ to $D$, where the \textit{hull} $K_t$ is the set
@@ -221,21 +222,6 @@ Figure~\ref{fig:discle}.
 \label{fig:diskfix}
 \end{figure}
 
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
-\end{center}
-\caption{Radial versus chordal Loewner traces generated using the same driving
-    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
-    $\exp(iU_t)$). Radial curves are contained inside the unit circle
-    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
-    Chordal traces are contained in the upper half plane
-    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
-    infinity.}
-\label{fig:radchord}
-\end{figure}
-
 \begin{figure}
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch4-sle/figs/loewexplain}
@@ -250,6 +236,20 @@ Figure~\ref{fig:discle}.
     The trace, driving function and uniformizing maps are all related through
     Loewner's equation (Eq.~\ref{eq:loew}).}
 \label{fig:loewexplain}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
+\end{center}
+\caption{Radial versus chordal Loewner traces generated using the same driving
+    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
+    $\exp(iU_t)$). Radial curves are contained inside the unit circle
+    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
+    Chordal traces are contained in the upper half plane
+    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
+    infinity.}
+\label{fig:radchord}
 \end{figure}
 
 \begin{figure}
@@ -282,18 +282,22 @@ A big breakthrough in the area of critical phenomena happened when Oded Schramm
 used Loewner evolutions to study the interfaces that form in critical systems,
 like the perimeter of a percolation cluster. He did that by showing that all
 properties of conformally invariant models are codified in a family of Loewner
-evolutions driven by a fairly simple driving function.
+evolutions driven by a fairly simple driving function. In this section we'll
+give an outline of this theory, but there's an abundance of material for the
+reader interested in digging deeper~\cite{Cardy2005, Kager2004, Henkel2012}.
 
-Now, if we want to describe conformally invariant critical systems using Loewner
-processes, we need to redefine conformal invariance. The definition given in
-terms of the covariance of field operators (Eq.~\ref{eq:cinv}) does not
-translate well into this framework because there's no way to incorporate the
-notion of field. Instead we need to define it in terms of the curves that form
-the boundaries of clusters. To do that we look at measure theory (the more
-general mathematical theory of probability)~\cite{Ash2000}. In this context, we
-define conformal invariance as follows: let $f$ be a conformal map between two
-domains $D$ and $D'$ such that $D'=f(D)$, then the measure over the set of traces
-that connect two points $z,w\in\partial D$ should behave like
+If we want to describe conformally invariant critical systems using
+Loewner processes, we need to redefine the concept conformal invariance. The
+definition given in terms of the covariance of field operators
+(Eq.~\ref{eq:cinv}) does not translate well into the framework of Loewner
+evolutions because there's no way to incorporate the notion of field. Instead
+we need to define it in terms of the curves that form the boundaries of
+clusters, which are meant to be the traces. To do that we take a measure theory
+approach (the more general mathematical theory of probability)~\cite{Ash2000}.
+In this context, we define conformal invariance as follows: let $f$ be a
+conformal map between two domains $D$ and $D'$ such that $D'=f(D)$, then the
+measure over the set of traces that connect two points $z,w\in\partial D$
+should behave like~\cite{Cardy2005}
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
     f\circ\mu_D\pp{z,w} = \mu_{f(D)}\pp{f\pp{z}, f\pp{w}}.
@@ -333,7 +337,7 @@ The interfaces present in critical systems are usually random curves, so it is
 only safe to assume that their driving functions should also be stochastic
 processes. The climax is Schramm's work was the proof that systems that obey
 conformal invariance and domain Markov property, as defined above, can only
-have the driving function
+have as a driving function
 \begin{equation}
     U_{t}=\sqrt{\kappa}B_{t},
 \end{equation}
@@ -354,8 +358,8 @@ walks (random walks with the loops removed in chronological order) and uniform
 spanning trees converge to SLE with $\kappa=2$ and $\kappa=8$ respectively.
 Figure~\ref{fig:sleexample} shows a realization of SLE with $\kappa=2$.
 
-Mathematicians were quickly drawn to this new framework, unveiling various
-interesting properties. One that stands out is how the trace looks with
+Mathematicians and physicists were quickly drawn to this new theory, unveiling
+various interesting properties. One that stands out is how the trace looks with
 different values of $\kappa$~\cite{Rohde2011}. You see, the Brownian motion is
 basically a function that varies randomly with time. This random variation
 gives the wiggly aspect of the trace, as seen in Figure~\ref{fig:sleexample}.
@@ -375,11 +379,11 @@ can be seen in Figure~\ref{fig:kappa}.
 The behavior of the trace in each of the three distinct phases is closely
 related to its fractal dimension. The fractal dimension $d_f$ of a curve if
 usually defined by counting the number $N$ of circles of radius $\epsilon$
-needed to cover the whole curve. This should behave as
+needed to cover the whole curve. This should behave as~\cite{Mandelbrot1983}
 \begin{equation}
     N\sim \epsilon^{-d_f}.
 \end{equation}
-The relationship between $\kappa$ and the fractal dimension is due to
+The relationship between $\kappa$ and the fractal dimension was determined by
 Beffara~\cite{Beffara2008} and given by
 \begin{equation}
     d_f=\min\left(1+\frac{\kappa}{8},2\right).
@@ -389,10 +393,10 @@ would expect from a space filling curve. You can see several realizations of
 SLE for different values of $\kappa$ and how the trace and its fractal
 dimension behave in Figure~\ref{fig:slefracdim}.
 
-Some other properties are important to know if one is trying to determine if a
-model is an SLE, specially if the investigation is numerical. For example, 
-the probability that a point $z=|z|e^{i\theta}$ is to the left of the
-trace depends only on $\theta$ and is given by
+Some other properties are useful to know if one is trying to determine if a
+model can be represented by a SLE, specially if the investigation is numerical.
+The probability that a point $z=|z|e^{i\theta}$ is to the left of the trace,
+for instance, depends only on $\theta$ and is given by
 \begin{equation}
     \label{eq:lpp}
     P=\frac{1}{2}+
@@ -403,12 +407,12 @@ trace depends only on $\theta$ and is given by
     {}_{2}F_{1}\left(\frac{1}{2},\frac{4}{\kappa},\frac{3}{2};
         -\cot^{2}\theta\right),
 \end{equation}
-where ${}_2F_1$ is the Gaussian hypergeometric function. A common way of
-determining if a model can be described by SLE is to generate various traces
-and estimate the value of $\kappa$ using equation~\ref{eq:lpp}. This value
-should be consistent with the coefficient of diffusion of the computed driving
-function (see Section~\ref{sec:num} for how to compute the drive of a trace),
-which should behave as
+where ${}_2F_1$ is the Gaussian hypergeometric function. A good evidence that a
+model can be described by SLE is to generate various traces and estimate the
+value of $\kappa$ using equation~\ref{eq:lpp}. This value should be consistent
+with the coefficient of diffusion of the computed driving function (see
+Section~\ref{sec:num} for how to compute the drive of a trace), which should
+behave as
 \begin{equation}
     \left\langle U_{t}^{2}\right\rangle =\kappa t.
 \end{equation}
@@ -428,7 +432,9 @@ $\tilde{\kappa}=16/\kappa$. This was eventually proved for that case
 $\kappa=6$~\cite{Beffara2004}, which has a dual $\tilde{\kappa}=8/3$, suspected
 to be the same as the self-avoiding walk.
 
-This
+Since Schramm's first publication, various lattice models have been shown to
+converge to SLE, which is a testament to the success of the theory. Some of the
+values of $\kappa$ identified include
 \begin{itemize}
     \item $\kappa=2$: loop-erased random walk~\cite{Schramm2000};
     \item $\kappa=8/3$: suspected to be self-avoiding walk~\cite{Kennedy2002},
@@ -438,10 +444,11 @@ This
     \item $\kappa=6$: boundaries of percolation clusters~\cite{Smirnov2001b};
     \item $\kappa=8$: uniform spanning trees~\cite{Schramm2000}.
 \end{itemize}
-Furthermore, there's several models that have been proposed to be conformally
-invariant and have their own value of of $\kappa$ including 2D and 3D
-turbulence~\cite{Bernard2006, Thalabard2011}, shortest path of percolation
-clusters~\cite{Pose2014} and watersheds~\cite{Daryaei2012}.
+Furthermore, there's several models that have been conjectured to be
+conformally invariant and have their own value of of $\kappa$ estimated
+numerically. These include 2D and 3D turbulence~\cite{Bernard2006,
+Thalabard2011}, shortest path of percolation clusters~\cite{Pose2014} and
+watersheds~\cite{Daryaei2012}.
 
 \begin{figure}
 \begin{center}
@@ -491,7 +498,7 @@ clusters~\cite{Pose2014} and watersheds~\cite{Daryaei2012}.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/slefracdim}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/slefracdim}
 \end{center}
 \caption{Examples of several SLE traces generated using the same underlying
     Brownian motion, but with different $\kappa$. The fractal dimension is
@@ -503,32 +510,40 @@ clusters~\cite{Pose2014} and watersheds~\cite{Daryaei2012}.
 \section{Numerical Methods}
 \label{sec:num}
 
-The crux of the Schramm Loewner Evolution problem is determining whether or not
-a given model converges to it in the continuum limit, and what is the value of
-$\kappa$ for each specific model. We mentioned several models that have show
-such convergence, the most illustrious being Smirnov's demonstration that
-percolation in a triangular lattice is an SLE with $\kappa=6$. Nonetheless,
-just like nobody would expect every critical system to have an exact solution
-similar to the Ising model, one may not expect to be able to prove the SLE
-convergence for every conceivable model. This is where numerical analysis comes
-into the scene. By comparing the statistical behavior of the model with the
-expected SLE trace, we can infer Eq.~\ref{eq:prob} holds true.
+The crux of the Schramm Loewner Evolution problem (at least from a physicist's
+standpoint) is determining whether or not a given model converges to it in the
+continuum limit, and what is the value of $\kappa$ for each specific model. We
+mentioned several models that have show such convergence, the most illustrious
+being Smirnov's demonstration that percolation in a triangular lattice is an
+SLE with $\kappa=6$~\cite{Smirnov2001b}. Nonetheless, just like nobody would
+expect every critical system to have an exact solution similar to the Ising
+model, one may not expect to be able to prove the SLE convergence for every
+conceivable model. This is where numerical analysis comes into the scene. By
+comparing the statistical behavior of the model with the expected SLE trace, we
+can infer if the hypothesis holds true.
+
+In this section we will present some algorithms for computing Loewner
+evolutions out of any given driving function, as well as the opposite task,
+computing the driving function from any given trace.
+
 
 \subsection{Euler's Method}
 \label{ss:euler}
 
 Euler's method for solving ordinary differential equations is arguably the
-simplest. It is used to solve equation of the type $y'(t) = f(y, t)$ and it
-basically consists in taking a first order approximation of the solution
+simplest~\cite{Press2007}. It is used to solve equation of the type $y'(t) =
+f(y, t)$ and it basically consists in taking a first order approximation of the
+solution
 \begin{equation}
     \newcommand{\y}[1]{y\left(#1\right)}
     \newcommand{\f}[1]{f\left(#1\right)}
     \y{t} = \y{t_0} + \int_{t_0}^t \f{\y{\tau}, \tau} d\tau \approx
-            \y{t_0} + \left(t - t_0\right)\f{\y{t_0}, t_0}.
+            \y{t_0} + \left(t - t_0\right)\f{\y{t_0}, t_0},
 \end{equation}
-This way, the equation can be solved recursivelly by providing a discretized
-driving function $U_{t_i}$ with $t_0 = 0 < t_{1}<\cdots<t_N$ and. Applying it
-to Loewner's equation (Eq.~\ref{eq:loew}) we have
+as long as $t - t_0$ is small enough. This way, the equation can be solved
+recursively by providing a discretized driving function $U_{t_i}$ with $t_0 =
+0 < t_{1}<\cdots<t_N$ and. Applying it to Loewner's equation
+(Eq.~\ref{eq:loew}) we have
 \begin{equation}
     g_{t_{i+1}}(z) = g_{t_i}(z) + (t_{i+1} - t_i) \frac{2}{g_t(z) - U_{t_i}}.
 \end{equation}
@@ -539,15 +554,14 @@ In order to obtain the trace from $g_t$ we take the fact that
     \label{eq:root}
 \end{equation}
 You can use your favorite method of root finding to solve Eq.~\ref{eq:root} for
-$\gamma_t$. In Figure~\ref{fig:euler1} you can see a realization for
-$\kappa=2$. In it we colored the grid according to the sign of
-$Re\{g_t(z)-U_t\}$. The border between the positive and negative sides should
-be around the region where the trace is. We also observe the most blatant
-drawback of the method: it fails in several points, where they get mapped
-outside the upper half plane, which is not allowed in chordal Loewner's
-evolutions. This problem accentuates quickly as the value of $\kappa$ rises,
-to the point where the case $\kappa=6$ (Figure~\ref{fig:euler2}) has barely
-any discernible trace.
+$\gamma_t$. Figure~\ref{fig:euler1} shows a realization for $\kappa=2$. In it
+we colored the grid according to the sign of $Re\{g_t(z)-U_t\}$. The border
+between the positive and negative sides should be around the region where the
+trace is. We also observe the most blatant drawback of the method: it fails in
+several points, where they get mapped outside the upper half plane, which is
+not allowed in chordal Loewner's evolutions. This problem accentuates quickly
+as the value of $\kappa$ rises, to the point where the case $\kappa=6$
+(Figure~\ref{fig:euler2}) has barely any discernible trace.
 
 Other problem with Euler's method in the context of Loewner evolutions is
 computational complexity. It requires $O(N)$ for each point of the space where
@@ -592,9 +606,8 @@ with the other drawbacks.
 Since the Euler's method perform so poorly in the task of computing the SLE
 trace, a better method is needed. The one described here is called the
 \textit{zipper algorithm}, and it's used throughout this work. It is based on
-the idea of discreet Loewner evolutions [???], basically consisting in breaking
-the Loewner evolution of the full trace in a series of smaller simpler Loewner
-evolutions.
+the idea of discrete Loewner evolutions~\cite{Bauer2003, Kennedy2009}, series
+of smaller simpler Loewner evolutions.
 
 For starters, we take a driving function $U_t$ sampled in a set of $N+1$ time
 instants $0=t_0<t_1<\cdots<t_N$. As we already established, the solution of the
@@ -616,12 +629,12 @@ $U_{t_{k-1}}$
 \begin{equation}
     g_{k}=G_{k}\left(z+U_{t_{k-1}}\right)-U_{t_{k-1}}.
 \end{equation}
-Note that in the notation adopted (taken from [???]) $g_{t_k}$ and $g_k$ are
-different functions. The $g_k$ are the solution of Loewner's equation with
-driving function $\tilde{U}_t$ such that $\tilde{U}_0=0$ and $\tilde{U}_{\Delta
-t_k} = \Delta U_k$, where $\Delta t_k = t_{k} - t_{k-1}$ and $\Delta U_{k}
-= U_{k} - U_{k-1}$. Since we are trying to construct the trace starting from
-the drive, we need to take the inverse of $g_k$
+Note that in the notation adopted (taken from~\cite{Kennedy2009}) $g_{t_k}$ and
+$g_k$ are different functions. The $g_k$ are the solution of Loewner's equation
+with driving function $\tilde{U}_t$ such that $\tilde{U}_0=0$ and
+$\tilde{U}_{\Delta t_k} = \Delta U_k$, where $\Delta t_k = t_{k} - t_{k-1}$ and
+$\Delta U_{k} = U_{k} - U_{k-1}$. Since we are trying to construct the trace
+starting from the drive, we need to take the inverse of $g_k$
 \begin{equation}
     f_{k}=G_{k}^{-1}\left(z+U_{t_{k-1}}\right)-U_{t_{k-1}}.
 \end{equation}
@@ -656,7 +669,7 @@ i2\sqrt{\Delta t}$. This isn't strictly a Loewner evolution because the trace
 does not start at the origin, but this is a numerical approximation where the
 actual trace is a composition of many vertical slits, and the limit $\Delta t
 \rightarrow 0$ converges to an actual SLE trace. The $h_k$ in this case is
-given by
+given by~\cite{Kager2004b}
 \begin{equation}
     \label{eq:vslit}
     h_{k}(z)=i\sqrt{4\Delta t-z^{2}}+\Delta U.
@@ -700,9 +713,11 @@ volatility of the driving function. Nevertheless, the result is still much
 better than the one obtained by using Euler's method, and the defects can be
 mitigated by simply adding more points to the discretized driving function.
 This is not so simple, however. Since each $k$-th point require $k$ application
-of the $h_i$, the algorithm scales as $O(N^2)$, which can get unwieldy
-for very large $N$. One possible solution is making use of parallelization,
-since each $\gamma_k$ can be computed independently from one another.
+of the $h_i$, the algorithm scales as $O(N^2)$, which can get unwieldy for very
+large $N$. One possible solution is making use of parallelization, since each
+$\gamma_k$ can be computed independently from one another. There's also more
+complex approximative algorithms with better time complexity, up to
+$O(N^{1.4})$~\cite{Kennedy2007}.
 
 The next challenge is to do the opposite task, obtaining a driving function
 from a given trace $\gamma_k$. This is much simpler when using a vertical slit.
@@ -760,17 +775,6 @@ The $h_k^{-1}$ can be easily determined by inverting Eq.~\ref{eq:vslit}
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/eulerzip}
-\end{center}
-\caption{Comparison of the traces obtained by using the zipper algorithm (red
-    line) and Euler's method. Although it presents large jumps in the trace due
-    to large displacements in the driving function, zipper it still performs
-    better than the Euler's.}
-\label{fig:eulerzip}
-\end{figure}
-
-\begin{figure}
-\begin{center}
     \includegraphics[scale=0.5]{chapters/ch4-sle/figs/zipper}
 \end{center}
 \caption{Result of applying the first three iterations of the zipper algorithm
@@ -779,3 +783,13 @@ The $h_k^{-1}$ can be easily determined by inverting Eq.~\ref{eq:vslit}
 \label{fig:zipper}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/eulerzip}
+\end{center}
+\caption{Comparison of the traces obtained by using the zipper algorithm (red
+    line) and Euler's method. Although it presents large jumps in the trace due
+    to large displacements in the driving function, zipper it still performs
+    better than the Euler's.}
+\label{fig:eulerzip}
+\end{figure}

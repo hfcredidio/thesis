@@ -352,21 +352,6 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
-\end{center}
-\caption{Radial versus chordal Loewner traces generated using the same driving
-    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
-    $\exp(iU_t)$). Radial curves are contained inside the unit circle
-    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
-    Chordal traces are contained in the upper half plane
-    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
-    infinity.}
-\label{fig:radchord}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
     \includegraphics[scale=0.4]{chapters/ch4-sle/figs/loewexplain}
 \end{center}
 \caption{How the chordal Loewner evolution works. We define the trace $\gamma$
@@ -379,6 +364,21 @@
     The trace, driving function and uniformizing maps are all related through
     Loewner's equation (Eq.~\ref{eq:loew}).}
 \label{fig:loewexplain}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.4]{chapters/ch4-sle/figs/radchord}
+\end{center}
+\caption{Radial versus chordal Loewner traces generated using the same driving
+    function $U_t=2\sin(2\pi t)$ (in the radial case you have to use
+    $\exp(iU_t)$). Radial curves are contained inside the unit circle
+    $\mathbb{D}=\{z||z|\leq1\}$ and start at $z=1$ growing towards the origin.
+    Chordal traces are contained in the upper half plane
+    $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ starting at the origin and growing towards
+    infinity.}
+\label{fig:radchord}
 \end{figure}
 \efloatseparator
  
@@ -458,7 +458,7 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/slefracdim}
+    \includegraphics[width=\textwidth]{chapters/ch4-sle/figs/slefracdim}
 \end{center}
 \caption{Examples of several SLE traces generated using the same underlying
     Brownian motion, but with different $\kappa$. The fractal dimension is
@@ -516,6 +516,17 @@
  
 \begin{figure}
 \begin{center}
+    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/zipper}
+\end{center}
+\caption{Result of applying the first three iterations of the zipper algorithm
+    with the tilted slit approximation. In the limit $\Delta t\rightarrow 0$
+    the red line converges to an SLE trace.}
+\label{fig:zipper}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
     \includegraphics[scale=0.5]{chapters/ch4-sle/figs/eulerzip}
 \end{center}
 \caption{Comparison of the traces obtained by using the zipper algorithm (red
@@ -523,17 +534,6 @@
     to large displacements in the driving function, zipper it still performs
     better than the Euler's.}
 \label{fig:eulerzip}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch4-sle/figs/zipper}
-\end{center}
-\caption{Result of applying the first three iterations of the zipper algorithm
-    with the tilted slit approximation. In the limit $\Delta t\rightarrow 0$
-    the red line converges to an SLE trace.}
-\label{fig:zipper}
 \end{figure}
 \efloatseparator
  
