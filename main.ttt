@@ -102,3 +102,38 @@ Ensemble 3         & $0.33$ & $3.8$  & $5\times10^{7}$ & $10^{6}$ & $10^{5}$ & $
 \end{table}
 \efloatseparator
  
+\begin{table}
+\begin{centering}
+\begin{tabular}{rclll}
+\bottomrule[0.1mm]
+\toprule[0.1mm]
+ &  & \textbf{Isotropic} & \textbf{Multi-Layered} & \textbf{Directed}\\
+\bottomrule[0.1mm]
+\multirow{2}{*}{\textbf{Literature}} & $\bar{\nu}_{x}$ & $0.571$ & $0.94\,\,\,\pm0.01$ & $0.557\pm0.001$\\
+ & $\bar{\nu}_{y}$ & $0.571$ & $0.21\,\,\,\pm0.01$ & $0.879\pm0.001$\\
+\bottomrule[0.1mm]
+\multirow{2}{*}{\textbf{MC Estimation}} & $\bar{\nu}_{x}$ & $0.573\pm0.001$ & $0.894\pm0.001$ & $0.559\pm0.004$\\
+ & $\bar{\nu}_{y}$ & $0.565\pm0.001$ & $0.289\pm0.005$ & $0.898\pm0.001$\\
+\bottomrule[0.1mm]
+\multirow{2}{*}{\textbf{SLE}$\left(b,H\right)$ \textbf{Estimation}} & $\bar{\nu}_{x}$ & $0.62\,\,\,\pm0.01$ & $0.863\pm0.003$ & $0.73\,\,\,\pm0.01$\\
+ & $\bar{\nu}_{y}$ & $0.55\,\,\,\pm0.01$ & $0.21\,\,\,\pm0.01$ & $1.000\pm0.001$\\
+\bottomrule[0.1mm]
+\toprule[0.1mm]
+\end{tabular}
+\par\end{centering}
+\caption{Critical exponents $\bar{\nu}_x$ and $\bar{\nu}_y$ relative to the
+    spatial scaling of the cluster perimeters in the three percolation models
+    studied here. Literature values were taken from~\cite{Ziff1986, Dayan1991,
+    Owczarek1997}. Isotropic percolation is the only one for which the
+    exact value is know, $\bar{\nu}_x= \bar{\nu}_y= 4/7\approx0.571$. We
+    estimated the exponents of each model using Monte Carlos methods, by
+    generating cluster perimeters and using Eq.~[??]. We also estimated the
+    exponents of their possible SLE$(b,H)$ (using the parameters given in
+    Table~\ref{tab:param}). There's reasonable accordance between the exponents
+    of multi-layered and isotropic percolation, considering the limitations of
+    the method. Directed percolation, however, is not a match, suggesting that
+    it may not be described by a SLE$(b,H)$.}
+\label{tab:nus}
+\end{table}
+\efloatseparator
+ 

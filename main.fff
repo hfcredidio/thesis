@@ -603,7 +603,48 @@
  
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/timescaling}
+    \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/diffusion}
+\end{center}
+\caption{Mean squared displacement of the driving functions for the three
+    percolation models studied. The curves are the results of the numerical
+    procedure described in the text applied to $10^4$ realizations of each type
+    of percolation model. As expected, in the case of isotropic percolation,
+    the displacement scales linearly with time, while it shows instead a
+    distinctive subdiffusive behavior for directed percolation, with an
+    exponent $\alpha\approx0.67$. In the case of multi-layered percolation, a
+    clear superdiffusive behavior, with an exponent $\alpha\approx1.79$, can be
+    observed for $\Delta=0.4$. The left graph shows this anomalous diffusion
+    regime is gradually achieved as we increase the degree of anisotropy
+    $\Delta$.}
+\label{fig:diffusion}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/spacescaling}
+\end{center}
+\caption{Root mean squared estimations of the displacements in the X and
+    Y-directions of SLE traces driven by long-range power-law correlated time
+    series (fractional Brownian motion). The simulation parameters (H, b and
+    tf) were chosen based on the results shown in Fig.~\ref{fig:diffusion} (see
+    Table~\ref{tab:param} for the numerical values). Good agreement is
+    observed between the uncorrelated result ($H=0.5$) and isotropic percolation,
+    as it is expected. The correlated trails ($H=0.8$) are also compatible with
+    multi-layered percolation (inset on the bottom). In the anti-correlated
+    case ($H=0.33$), the same kind of anisotropy present in the directed
+    percolation is observed, however the exponents are not an exact match.
+    These results support our hypothesis that long-term correlations in the
+    driving functions, i.e., the presence of anomalous diffusion, are
+    responsible for the anisotropic behavior of the traces. For the values of
+    the exponents found, see Table~\ref{tab:nus}.}
+\label{fig:spacescaling}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{chapters/ch6-asle/figs/timescaling}
 \end{center}
 \caption{Scaling analysis of the percolation models and their SLE equivalents.
     Here we observe how the total width, $X(t)$, and and height, $Y(t)$, of the
