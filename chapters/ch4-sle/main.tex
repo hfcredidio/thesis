@@ -276,7 +276,7 @@ Figure~\ref{fig:discle}.
 
 
 \section{Stochastic Loewner Evolutions}
-\label{sec:le}
+\label{sec:sle}
 
 A big breakthrough in the area of critical phenomena happened when Oded Schramm
 used Loewner evolutions to study the interfaces that form in critical systems,
@@ -505,6 +505,47 @@ watersheds~\cite{Daryaei2012}.
     given by $d_f=\min(1+\kappa/8, 2)$.}
 \label{fig:slefracdim}
 \end{figure}
+
+
+\section{Lévy Flights, Anomalous Diffusion, and SLE}
+
+As mentioned so far, SLE is a theory concerned with conformally invariant
+families of curves, which are always driven by a Brownian motion. In all other
+cases, however, the curves themselves are not required to be conformally
+invariant, even though the Loewner equation describes the time evolution of a
+conformal map~\cite{Henkel2012}. This opens space for the study of stochastic
+Loewner evolutions driven by processes that deviate from the Brownian motion.
+This is the case of the work of Rushkin \textit{et al.}~\cite{Rushkin2006,
+Oikonomou2008}, who studied SLE driven by L\'evy processes, $L_t$,
+which behave pretty much like the Brownian motion described in
+Section~\ref{sec:sle}, except the increments are distributed according to a
+power law in the limit of large $x$
+\begin{equation}
+    P(L_{t+dt} - L_t \in [x, x+dx]) \propto \frac{1}{|x|^{1+\mu}}dxdt,
+    \,\,\,\,\,\,\,\,\,\,
+    0<\mu<2.
+\end{equation}
+In general, stochastic processes can be classified according 
+to the behavior of the mean square displacement, which usually goes like
+\begin{equation}
+    \left\langle U_{t}^{2}\right\rangle \propto t^{\alpha}.
+\end{equation}
+For the Brownian motion, $\alpha=1$, which is referred as regular diffusion.
+L\'evy processes are called superdiffusive because $\alpha=2/\mu>1$. Some
+processes can also present the case $\alpha<1$, called subdiffusive. The exact
+effect of the value of the diffusion exponent $\alpha$ on the properties of the
+trace is yet unknown, but it was noted that the traces (which are not
+continuous, for $L_t$ is also not continuous), present an anisotropic scaling
+with time. This means the typical width and height of the hull, $X(t)$ and $Y(t)$
+respectively, scale with different exponents following the relations
+\begin{eqnarray}
+    \label{eq:aniscale}
+    X\left(t\right) & \sim & t^{1/\alpha},\,\,\,0<\alpha<2\\
+    Y\left(t\right) & \sim & \begin{cases}
+    A+Bt^{1-1/\alpha}, & \alpha\neq1\\
+    \log\left(t\right), & \alpha=1.
+    \end{cases}
+\end{eqnarray}
 
 
 \section{Numerical Methods}

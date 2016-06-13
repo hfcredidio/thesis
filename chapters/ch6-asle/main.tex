@@ -1,48 +1,55 @@
 \chapter{Loewner Evolutions of Anisotropic Systems}
-\label{ch6-asle}
+\label{ch:asle}
 
-In this work we take the effort to relate the Stochastic Loewner Evolution with
-strongly anisotropic systems. Because such systems are not conformally
-invariant, the driving process of these models must not be a simple Brownian
-motion.
-
-\section{Lévy Flights and Schramm-Loewner Evolutions}
-
-One possible source of anisotropy in the context of SLE is the presence of
-anomalous diffusion in the driving process. A stochastic process $X_t$ is
-said to display anomalous diffusion if the mean squared displacement
-behaves asymptotically as
+In this work we explore the possibility of using Loewner evolutions to study
+anisotropic fractal systems, i.e., systems with different critical exponents in
+each direction. These systems are not scale invariant, therefore not
+conformally invariant either. We are particularly interested in the two
+variants of the percolation model that show anisotropic behavior presented in
+Sections~\ref{sec:mlp} and~\ref{sec:dp}, namely, multi-layered percolation and
+directed percolation. Precisely,  we generate the border of percolating
+clusters (see Figure~\ref{fig:models}), numerically compute their corresponding
+driving function, and then analyze the diffusive properties of these numerical
+sequences. In the general case, we expect that the mean square displacement of
+$U_t$ behaves like,
 \begin{equation}
-    \left\langle X_t^2 \right\rangle \sim bt^\alpha
-\end{equation}
-with $\alpha\neq 1$. Processes that have $\alpha < 1$ are called subdiffusive
-models and those with $\alpha > 1$ are called superdiffusive.
+    \label{eq:diff}
+    \left\langle U_t^2 \right\rangle \rightarrow b t^\alpha
+\end{equation} 
+as $t\rightarrow\infty$. In the case of traditional SLE, $\alpha=1$ and
+$b=\kappa$.  The driving functions of anisotropic percolation models, we found,
+display very distinctive anomalous diffusive behavior ($\alpha\neq1$). We also
+look at the presence of long range correlations in the driving function using
+the detrended fluctuation analysis (DFA). Finally, we show that our approach is
+also valid in the opposite direction, that SLE consistently leads
+anomalously diffusive driving functions to traces that display clear
+anisotropic scaling. To test that, we generate Loewner traces driven by
+fractional Brownian motions with different values of $b$ and $H=\alpha/2$,
+which we'll refer as $SLE(b,H)$, and compare the scaling properties of the
+traces obtained with those of the lattice models.
 
-There are several models that present anomalous diffusion. Rushkin et Al [..]
-proposed using L\'evy-flights as a driving process. L\'evy-flights are defined as
-processes that have jump size distributed as a power law, that is
-\begin{equation}
-    P(X_{t+dt} - X_t \in [x, x+dx]) \propto \frac{1}{|x|^{1+\mu}}dxdt
-\end{equation}
-They've shown that Loewner Evolutions drive by such processes behave
 
+\section{Methods}
+\label{sec:methods}
 
-\section{Generating Large Percolation Traces}
+Before delving into our results, we shall give a brief overview of some of the
+most important methods used in the simulation and analysis of both traces
+and driving functions.
+
+\subsection{Generating Large Percolation Traces}
 \label{sec:hulls}
 
 Simulating the percolation process and extracting the percolating cluster
 perimeter is very straightforward and a number of good algorithms are
-available. However, because of the spotty behavior of the zipper algorithm
-(see Fig.~\ref{fig:euzip}) in the high $\kappa$ ($>4$) domain, we need very
-large traces in order to obtain reliable results.
-
-The usual algorithms are normally very memory hungry because you need to store
-the state of all sites in the lattice. Since we are only interested in
-obtaining the perimeter of the percolating cluster, which consists of only a
-small portion of the lattice, one might imagine if there's a more efficient way
-of simulating these curves. Luckily there is, thanks to the locality property
-of the percolation model. The method is called the \textit{percolation
-exploration process}.
+available. However, because of the spotty behavior of the zipper algorithm (see
+Fig.~\ref{fig:eulerzip}) in the high $\kappa$ ($>4$) domain, we need very large
+traces in order to obtain reliable results. The usual algorithms are normally
+very memory hungry because you need to store the state of all sites of the
+lattice. Since we are only interested in obtaining the perimeter of the
+percolating cluster, which consists of only a small portion of the lattice, one
+might imagine if there's a more efficient way of simulating these curves.
+Luckily there is, thanks to the locality property of the percolation model. The
+method is called the \textit{percolation exploration process}~\cite{Cardy2005}.
 
 The exploration process is easier to define in the triangular lattice, because
 at any given time the walker is always facing a single site, unlike the square
@@ -51,7 +58,8 @@ doesn't make it impossible, though). In the exploration process, a walker is
 put in an initial position at the bottom of the lattice. The walker observes
 the state of the site right in front of him. If it is unoccupied, the walker
 turns clockwise, otherwise it turns clockwise. Then the walker takes a step in
-the direction it is facing. The algorithm guarantees that the curve will not
+the direction it is facing. This process is then repeated until one obtain a
+curve long enough. The algorithm guarantees that the curve will not
 self-intersect and will not get trapped.
 
 Because we restrict ourselves to chordal SLE, the walker can never leave the
@@ -63,9 +71,31 @@ the real line.
 It's pretty clear the advantage of this method, you only need to store the
 information about the sites directly adjacent to the perimeter, which can be
 cached in your container of preference, like a hash table (also known as maps
-or dictionaries). This allow us to simulate traces with up to million points.
-In fact we could easily go above that, the limiting factor being the time the
-zipper algorithm takes to compute the driving function.
+or dictionaries), as illustrated in Figure~\ref{fig:explore}. This allow us to
+simulate traces with up to million points. In fact we could easily go above
+that, the limiting factor being the time the zipper algorithm takes to compute
+the driving function.
+
+We used the exploration process to generate the traces for isotropic and
+multi-layered percolation in a triangular lattice. However, the critical point
+of multi-layered percolation have not yet been determined in the triangular
+lattice. To compute $p_c(\Delta)$ we made use the cluster perimeter
+method~\cite{Ziff1986}. We basically use the exploration process with no
+boundary condition to generate curves until they form a loop. If the loop is
+formed clockwise, this means it represents the perimeter of a hole inside a
+cluster. If it is counterclockwise, it means the curve is the outside perimeter
+of cluster. On the critical point, the probability that a loop is internal or
+external is the same. We found, somewhat surprisingly, that in the triangular
+lattice, $p_c=0.5$ for every value of $\Delta$, unlike the square lattice, as
+shown in Figure~\ref{fig:mlp_ps}.
+
+This algorithm is not appropriate for the simulation of directed percolation
+traces, because the occupation probability of any given site is not independent
+from its neighbors. In this case we decided for a more standard approach,
+growing a cluster using a graph data structure to save memory, and finding the
+perimeter using a simple walker algorithm, where the trace is the trajectory of
+a particle that moves along the border of the cluster while keeping the cluster
+always at to right hand side.
 
 \begin{figure}
 \begin{center}
@@ -83,22 +113,51 @@ zipper algorithm takes to compute the driving function.
 \label{fig:explore}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/models}
+\end{center}
+\caption{Percolation models used to generate the SLE curves. Isotropic
+    percolation (left), where each site is occupied with the same probability
+    $p$. Multi-layered percolation (middle), where some rows are occupied with
+    probability $p+\Delta$ (dark gray rows) and others with $p-\Delta$ (light
+    gray rows). Directed percolation (right) is a spreading process which
+    starts at the bottom of the tilted lattice and can only advance upwards
+    with probability $p$. The trace is defined as the perimeter of the
+    percolating cluster.}
+\label{fig:models}
+\end{figure}
 
-\section{Detrended Fluctuation Analysis}
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{chapters/ch6-asle/figs/mlp_ps}
+\end{center}
+\caption{Critical point of multi-layered percolation as computed using the
+    cluster perimeter method. This is done by generating several percolation
+    perimeters without boundary conditions until they form a loop. In the
+    critical point the loop has equal probabilities of being a internal or
+    external perimeter. We found that in the triangular lattice, $p_c=0.5$
+    for every value of $\Delta$, unlike the square lattice.}
+\label{fig:mlp_ps}
+\end{figure}
+
+
+
+\subsection{Detrended Fluctuation Analysis}
 \label{sec:dfa}
 
 We want to test whether or not the driving functions present long range
 correlations. Other works have shown that some form of anisotropy can be
-observed in SLE traces driven by L\'evy Flights. We have good reasons to
+observed in SLE traces driven by L\'evy processes. We have good reasons to
 believe this is not the case for multi-layered and directed percolation,
-because L'evy flights do not show subdiffusion and they generate discontinuous
-traces.
+because L\'evy processes do not show subdiffusion and they generate
+discontinuous traces.
 
 In order to close the issue we perform one last test: check for the presence of
 long range correlations. To do that we employ a method called Detrended
 Fluctuation Analysis (DFA for short), which is an adaptation of an older
 algorithm called simply Fluctuation Analysis. It is specially designed for the
-analysis of non stationary series.%~\cite{Peng1994,Hardstone2012}.
+analysis of non stationary series~\cite{Peng1993, Hardstone2012}.
 
 Given a time series of $N$ data points $\{x_i\}$, we first generate a random walk
 out of it by making the cumulative profile of the series
@@ -133,12 +192,11 @@ of the number of points $s$ in each partition of the time series
     F(s) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}Y_i}.
 \end{equation}
 
-A plot of $F(s)$ vs. $s$ in a log-log scale should show a straight line
-for well a behaved series. %(see Fig.~\ref{fig:dfa}).
-The Hurst exponent of the series can be determined by fitting the fluctuation
-function with a power law
+A plot of $F(s)$ vs. $s$ in a log-log scale should show a straight line for
+well a behaved series (see Fig.~\ref{fig:dfa}). The Hurst exponent of the
+series can be determined by fitting the fluctuation function with a power law
 \begin{equation}
-    F(s)\sim s^h.
+    F(s)\sim s^H.
 \end{equation}
 
 \begin{figure}[t]
@@ -168,13 +226,12 @@ function with a power law
     $H=0.5$. Multi-layered percolation however shows a very distinct exponent
     $H=0.814$, which is consistent with the diffusion exponent shown inf
     Figure~[???]. The fluctuation function of directed percolation does not
-    have a power-law behavior, which indicates that the series is.}
+    have a power-law behavior, [???].}
 \label{fig:dfaresults}
 \end{figure}
 
 
-
-\section{Generating Fractional Browninan Motions}
+\subsection{Generating Fractional Brownian Motions}
 \label{sec:fbm}
 
 We want to generate fractional Brownian motions $B_t$ such that
@@ -185,9 +242,9 @@ We want to generate fractional Brownian motions $B_t$ such that
 There are several methods to generate this process numerically, but not all of
 them give you ample control over the prefactor $b$, although most are very
 accurate in $H$. A method that adequately fulfills this criterion is the
-Davies-Harte algorithm. It can be used to generate any stationary Gaussian
-process for which the autocovariance sequence is known. In the case of
-the fractional Brownian motion, it takes the form
+Davies-Harte algorithm~\cite{Davies1987}. It can be used to generate any
+stationary Gaussian process for which the autocovariance sequence is known. In
+the case of the fractional Brownian motion, it takes the form
 \begin{equation}
     c_i = \frac{b}{2} \left(
             \left|i+1\right|^{2H} +
@@ -206,7 +263,7 @@ and compute its discrete Fourier transform, that is
     g_{i}=\sum_{j}s_{j}e^{-i\pi kj/N}.
 \end{equation}
 This operation can be done in $O(N\log N)$ operations using a fast Fourier
-transform. The $g_i$ are real valued, but a necessary condition for the
+transform~\cite{Frigo2002}. The $g_i$ are real valued, but a necessary condition for the
 Davies-Harte algorithm to work is that they also be nonnegative. It is
 important to check for this condition even if just for debugging purposes,
 as it catches a lot of small mistakes.
@@ -249,8 +306,16 @@ behaves as described by Eq.~\ref{eq:fbm}.
 \end{figure}
 
 
-\section{Scaling Analysis}
+\section{Results and Discussion}
 \label{sec:scaling}
+
+We started by generating an ensemble of $10^4$ percolation perimeters for each
+of the models studied. We then used the Zipper algorithm, parallelized on
+G
+
+To compute the traces we used a na\"\i{}ve parallelization of the Zipper algorithm
+described in Section [???], where each thread compute a single point of the trace.
+
 
 \begin{figure}
 \begin{center}
@@ -350,3 +415,4 @@ behaves as described by Eq.~\ref{eq:fbm}.
 
 \input{chapters/ch6-asle/table.tex}
 \input{chapters/ch6-asle/table2.tex}
+\input{chapters/ch6-asle/table3.tex}

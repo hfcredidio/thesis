@@ -554,6 +554,36 @@
 \end{figure}
 \efloatseparator
  
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/models}
+\end{center}
+\caption{Percolation models used to generate the SLE curves. Isotropic
+    percolation (left), where each site is occupied with the same probability
+    $p$. Multi-layered percolation (middle), where some rows are occupied with
+    probability $p+\Delta$ (dark gray rows) and others with $p-\Delta$ (light
+    gray rows). Directed percolation (right) is a spreading process which
+    starts at the bottom of the tilted lattice and can only advance upwards
+    with probability $p$. The trace is defined as the perimeter of the
+    percolating cluster.}
+\label{fig:models}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{chapters/ch6-asle/figs/mlp_ps}
+\end{center}
+\caption{Critical point of multi-layered percolation as computed using the
+    cluster perimeter method. This is done by generating several percolation
+    perimeters without boundary conditions until they form a loop. In the
+    critical point the loop has equal probabilities of being a internal or
+    external perimeter. We found that in the triangular lattice, $p_c=0.5$
+    for every value of $\Delta$, unlike the square lattice.}
+\label{fig:mlp_ps}
+\end{figure}
+\efloatseparator
+ 
 \begin{figure}[t]
     \begin{center}
         \includegraphics[scale=0.25]{chapters/ch6-asle/figs/dfa}
@@ -582,7 +612,7 @@
     $H=0.5$. Multi-layered percolation however shows a very distinct exponent
     $H=0.814$, which is consistent with the diffusion exponent shown inf
     Figure~[???]. The fluctuation function of directed percolation does not
-    have a power-law behavior, which indicates that the series is.}
+    have a power-law behavior, [???].}
 \label{fig:dfaresults}
 \end{figure}
 \efloatseparator
