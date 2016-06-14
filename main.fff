@@ -586,7 +586,7 @@
  
 \begin{figure}[t]
     \begin{center}
-        \includegraphics[scale=0.25]{chapters/ch6-asle/figs/dfa}
+        \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/dfa}
     \end{center}
     \caption{The Detrended Fluctuation Analysis (DFA) of a time series of
         $N=16,384$ data points. First we divided the series in $m$ partitions with
@@ -597,23 +597,6 @@
         (bottom).  The Hurst exponent is then determined by fitting the fluctuation
         function with a power law $F(s)\sim s^h$.}
 \label{fig:dfa}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/dfaresults}
-\end{center}
-\caption{Results of detrended fluctuation analysis (DFA) of the driving
-    functions of percolation models. As expected, the driving function of the
-    isotropic percolation (top left) is a Brownian motion, therefore have
-    $H=0.5$. For comparison the DFA of L\'evy flights with several $\alpha$ is
-    shown (top right). Despite displaying anomalous diffusion, it still have
-    $H=0.5$. Multi-layered percolation however shows a very distinct exponent
-    $H=0.814$, which is consistent with the diffusion exponent shown inf
-    Figure~[???]. The fluctuation function of directed percolation does not
-    have a power-law behavior, [???].}
-\label{fig:dfaresults}
 \end{figure}
 \efloatseparator
  
@@ -633,6 +616,40 @@
  
 \begin{figure}
 \begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ip_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the isotropic percolation model in
+    the triangular lattice with a detail shown. The bottom graph is the driving
+    function obtained by applying the zipper algorithm to this trace.}
+\label{fig:ip_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ml_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the multi-layered percolation model
+    in the triangular lattice ($\Delta=0.2$) with a detail shown. The bottom
+    graph is the driving function obtained by applying the zipper algorithm to
+    this trace.}
+\label{fig:ml_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/dp_trdr}
+\end{center}
+\caption{Example of a cluster perimeter of the bond directed percolation model
+    in the square lattice with a detail shown. The bottom graph is the driving
+    function obtained by applying the zipper algorithm to this trace.}
+\label{fig:dp_trdr}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
     \includegraphics[width=\textwidth]{chapters/ch6-asle/figs/diffusion}
 \end{center}
 \caption{Mean squared displacement of the driving functions for the three
@@ -647,6 +664,23 @@
     regime is gradually achieved as we increase the degree of anisotropy
     $\Delta$.}
 \label{fig:diffusion}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.45]{chapters/ch6-asle/figs/dfaresults}
+\end{center}
+\caption{Results of detrended fluctuation analysis (DFA) of the driving
+    functions of percolation models. As expected, the driving function of the
+    isotropic percolation (top left) is a Brownian motion, therefore have
+    $H=0.5$. For comparison the DFA of L\'evy flights with several $\alpha$ is
+    shown (top right). Despite displaying anomalous diffusion, it still have
+    $H=0.5$. Multi-layered percolation however shows a very distinct exponent
+    $H=0.814$, which is consistent with the diffusion exponent shown inf
+    Figure~[???]. The fluctuation function of directed percolation does not
+    have a power-law behavior, [???].}
+\label{fig:dfaresults}
 \end{figure}
 \efloatseparator
  
@@ -694,40 +728,6 @@
     $10^6$ points equally spaced in the interval $t\in[0, t_f]$, where the
     values of $t_f$ used can be found in Table~[???].}
 \label{fig:asle_traces}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ip_trdr}
-\end{center}
-\caption{Example of a cluster perimeter of the isotropic percolation model in
-    the triangular lattice with a detail shown. The bottom graph is the driving
-    function obtained by applying the zipper algorithm to this trace.}
-\label{fig:ip_trdr}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/ml_trdr}
-\end{center}
-\caption{Example of a cluster perimeter of the multi-layered percolation model
-    in the triangular lattice ($\Delta=0.2$) with a detail shown. The bottom
-    graph is the driving function obtained by applying the zipper algorithm to
-    this trace.}
-\label{fig:ml_trdr}
-\end{figure}
-\efloatseparator
- 
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch6-asle/figs/dp_trdr}
-\end{center}
-\caption{Example of a cluster perimeter of the bond directed percolation model
-    in the square lattice with a detail shown. The bottom graph is the driving
-    function obtained by applying the zipper algorithm to this trace.}
-\label{fig:dp_trdr}
 \end{figure}
 \efloatseparator
  
