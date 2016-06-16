@@ -69,12 +69,37 @@ The percolation model as presented in Section~\ref{sec:perc} was initially
 motivated by transport in disordered media, like porous rocks. However, the
 morphology of earth's crust is highly non-uniform and
 anisotropic~\cite{Englman1986}, such as the case of stratified rocks formed by
-the layered deposition of different types of sediment, each with have different
+the layered deposition of different types of sediment, each with different
 physical properties such as density and porosity. This layered arrangement have
 a significant influence in the transport properties of these rocks. Aiming to
 model the structure of these kind of media, Dayan \textit{et
 al.}~\cite{Dayan1991} introduced yet another variant of the percolation
 model, called multi-layered percolation. 
+
+\begin{figure}[b]
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{chapters/ch5-anis/figs/mlperco_explain}
+\end{center}
+\caption{Schematic representation of the multi-layered percolation model. Each
+    layer (numbered $0$ through $9$ here) gets one of two probabilities of
+    occupation ($\bar{p}\pm\Delta$), chosen randomly with equal probabilities.
+    Otherwise, the percolation process goes as usual, occupying each site
+    according to the probabilities of each layer.}
+\label{fig:mlperco_explain}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{chapters/ch5-anis/figs/mlperco}
+\end{center}
+\caption{Three realizations of the multi-layered percolation model in the
+    square lattice. Black sites are unoccupied, dark cyan sites are occupied
+    and yellow sites are represent the largest cluster of the system. All
+    three realizations are in the critical point. The larger the value of
+    $\Delta$, the more anisotropic is the system, and the multi-layered
+    structure of the system becomes more evident.}
+\label{fig:mlperco}
+\end{figure}
 
 In this model we take a $d$-dimensional lattice composed of several
 $(d-1)$-dimensional sub-lattices (or layers) arranged in sequence as if they're
@@ -98,9 +123,10 @@ isotropic case when $\Delta=0$. See Figure~\ref{fig:mlperco_explain} for an
 illustration of the multi-layered percolation process. Figure~\ref{fig:mlperco}
 shows three realizations of the model for three different values of $\Delta$.
 The anisotropy can get very extreme, to the point where it's difficult to
-visualize the clusters. In Figure~\ref{fig:mlp_cluster} we used the
-self-organized percolation algorithm~\cite{Parteli2010} to generate individual
-clusters of multi-layered percolation.
+visualize the clusters. 
+%In Figure~\ref{fig:mlp_cluster} we used the
+%self-organized percolation algorithm~\cite{Parteli2010} to generate individual
+%clusters of multi-layered percolation.
 
 Just like isotropic percolation, the multi-layered version also undergoes a
 second-order phase transition from a non-percolated to a percolated phase. The
@@ -115,15 +141,16 @@ $\Delta\rightarrow 0.5$.
 Because actually generating clusters of multi-layered percolation can be a
 complicated matter and the model has no analytical solution, the critical
 properties of multi-layered percolation were determined numerically through
-analysis of the cluster perimeters~\cite{Dayan1991, Samyr2009}. This is done by
-generating cluster perimeters in a finite lattice, each perimeter defined by
-sequence of $N$ points at positions $\mathbf{r}_i=X_i\mathbf{x}+Y_i\mathbf{y}$.
-The root means square of the displacement in each direction
+analysis of the cluster perimeters~\cite{Dayan1991, Samyr2009, Parteli2010}.
+This is done by generating cluster perimeters in a finite lattice, each
+perimeter defined by sequence of $N$ points at positions
+$\mathbf{r}_i=X_i\mathbf{x}+Y_i\mathbf{y}$. The root means square of the
+displacement in each direction
 \begin{equation}
     F_{X}\left(n\right)=
     \sqrt{\frac{1}{N-n}\sum_{i}{\left(X_{i+n-1}-X_{i}\right)}^{2}},
 \end{equation}
-(and analogously for $Y$) scales like
+(and analogously for $Y$ and $F_Y$) scale like
 \begin{equation}
     F_{X}\left(n\right)\sim n^{-\bar{\nu}_{x}},
     \,\,\,\,\,\,\,\,\,
@@ -141,63 +168,20 @@ This means that all the $\Delta$ belong to the same universality class
 with $\bar{\nu}_x=0.94\pm0.01$ and $\bar{\nu}_y=0.21\pm0.01$, and
 indicates that $\nu_x=13/6$ and $\nu_y=1/2$.
 
-%As is expected, this model presents a second-order phase transition.
-%To determine the $\bar{p}_c(\Delta)$, Dayan et al.\ made use of the
-%cluster perimeter method.
+%\begin{figure}
+%\begin{center}
+    %\includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
+%\end{center}
+%\caption{A comparison of clusters of occupied sites in both isotropic and
+    %multi-layered percolation at their critical points. They were generated
+    %using the self-organized percolation algorithm~\cite{Parteli2010} (the
+    %dense ``core'' found on both clusters is an artifact of this method). The
+    %stratified nature of the multi-layered percolation makes itself evident
+    %even for the relatively low value of $\Delta$ used here.}
+%\label{fig:mlp_cluster}
+%\end{figure}
 
-%We generate various cluster perimeters using the exploration method described
-%in Sec.~[???]. Making use of the fact that at the critical point a cluster
-%perimeter have equal chances of being an external or an internal border. We
-%generate several cluster perimeter and count the ration $R(\bar{p}, \Delta)$
-%between the number of realizations where the path was an internal perimeter and
-%the number of realizations where it was an external perimeter. The critical
-%point is such that $R(\bar{p}_c, \Delta_c)=1$. In the case of a square lattice
-%(the one studied by Dayan), we observe that there is a function
-%$\bar{p}_c(\Delta)$ that defines the border between the percolating and
-%non-percolating phases. This result can be seen in Fig.~[???]. Somewhat
-%surprisingly the same method was performed for the triangular lattice, and we
-%observed that $\bar{p}_c=0.5$ independent of the value of $\Delta$.
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlperco_explain}
-\end{center}
-\caption{Schematic representation of the multi-layered percolation model. Each
-    layer (numbered $0$ through $9$ here) gets one of two probabilities of
-    occupation ($\bar{p}\pm\Delta$), chosen randomly with equal probabilities.
-    Otherwise, the percolation process goes as usual, occupying each site
-    according to the probabilities of each layer.}
-\label{fig:mlperco_explain}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlperco}
-\end{center}
-\caption{Three realizations of the multi-layered percolation model in the
-    square lattice. Black sites are unoccupied, dark cyan sites are occupied
-    and yellow sites are represent the largest cluster of the system. All
-    three realizations are in the critical point. The larger the value of
-    $\Delta$, the more anisotropic is the system, and the multi-layered
-    structure of the system becomes more evident.}
-\label{fig:mlperco}
-\end{figure}
-
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch5-anis/figs/mlp_cluster}
-\end{center}
-\caption{A comparison of clusters of occupied sites in both isotropic and
-    multi-layered percolation at their critical points. They were generated
-    using the self-organized percolation algorithm~\cite{Parteli2010} (the
-    dense ``core'' found on both clusters is an artifact of this method). The
-    stratified nature of the multi-layered percolation makes itself evident
-    even for the relatively low value of $\Delta$ used here.}
-\label{fig:mlp_cluster}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[t]
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch5-anis/figs/mlp_ps0}
 \end{center}
@@ -215,13 +199,24 @@ indicates that $\nu_x=13/6$ and $\nu_y=1/2$.
 \label{sec:dp}
 
 Another very important universality class of strongly anisotropic systems is
-yet another variation of the percolation model. Called \textit{directed
+also a variation of the percolation model. Called \textit{directed
 percolation}, this model can be seen as a spreading process. Starting from
 some initial condition, any occupied site can spread and occupy an adjacent
 site along a preferential direction with probability $p$; spread is prohibited
 in all other directions. Figure~\ref{fig:dperco_scheme} illustrate the process,
 and Figure~\ref{fig:dperco} shows the process in the three regimes:
 subcritical, critical and supercritical.
+
+\begin{figure}[t]
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{chapters/ch5-anis/figs/dperco_scheme}
+\end{center}
+\caption{Simple representation of bond directed percolation in a square
+    lattice. Here, the time flows upwards (although the time direction can be
+    chosen arbitrarily). A previously occupied bond has a probability $p$ of
+    occupying any of its two neighbors along the time direction.}
+\label{fig:dperco_scheme}
+\end{figure}
 
 Directed percolation is part of a larger group called dynamical phase
 transitions, where there is a strict order of cause and effect which allows one
@@ -265,18 +260,7 @@ turbulent flow also belongs to the same universality class~\cite{Lemoult2016}.
 
 \begin{figure}
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_scheme}
-\end{center}
-\caption{Simple representation of bond directed percolation in a square
-    lattice. Here, the time flows upwards (although the time direction can be
-    chosen arbitrarily). A previously occupied bond has a probability $p$ of
-    occupying any of its two neighbors along the time direction.}
-\label{fig:dperco_scheme}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco}
+    \includegraphics[width=0.8\textwidth]{chapters/ch5-anis/figs/dperco}
 \end{center}
 \caption{Three realizations of site directed percolation on a square lattice
     (here the time flows downwards). Being a absorbing phase transition model,
@@ -285,11 +269,11 @@ turbulent flow also belongs to the same universality class~\cite{Lemoult2016}.
     Above the critical point however the probability of reaching an absorbing
     state becomes vanishing.}
 \label{fig:dperco}
-\end{figure}
+%\end{figure}
 
-\begin{figure}
+%\begin{figure}[t]
 \begin{center}
-    \includegraphics[scale=0.5]{chapters/ch5-anis/figs/dperco_nt}
+    \includegraphics[width=0.6\textwidth]{chapters/ch5-anis/figs/dperco_nt}
 \end{center}
 \caption{Expected population of bond directed percolation as a function of time
     for various values of $p$. The critical point ($p_c\approx0.6447$) is the
@@ -297,3 +281,5 @@ turbulent flow also belongs to the same universality class~\cite{Lemoult2016}.
     N(t)\right\rangle>0$.}
 \label{fig:dperco_nt}
 \end{figure}
+
+\pagebreak

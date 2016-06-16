@@ -1,6 +1,18 @@
 \section{Conformal Invariance}
 \label{ch:conf}
 
+\begin{figure}[b]
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{chapters/ch3-conf/figs/cmapex}
+\end{center}
+\caption{Coordinates transformations in the complex plane can be divided into
+    conformal and non-conformal. Conformal transformations preserve the
+    intersection angles between lines, unlike the non-conformal. The
+    transformation from the square lattice in (a) into (b) is conformal
+    ($f(z)=z^2$), while the one from (a) to (c) ($f(z)=z|z|$) is not.}
+\label{fig:cmapex}
+\end{figure}
+
 In Section~\ref{sec:scaling} we talked about the principle of scale invariance
 and how incredibly useful it is. It is based on the fact that the correlation
 functions transform covariantly under a change in scale $\mathbf{r}\rightarrow
@@ -36,7 +48,7 @@ Figure~\ref{fig:lenna} shows an example of the same conformal map being applied
 to a large and a small image, showing how it does not deform the latter, it can
 only scale, translate or rotate it. Because of that, translational, rotational,
 and scaling invariance are obvious properties a system must have in order to be
-conformally invariant, another important ingredient is locality, that is, the
+conformally invariant. Another important ingredient is locality, that is, the
 presence of short range interactions. That's because if different parts of the
 system will be rescaled by different factors, they must not exert direct
 influence over one another (they can exert \textit{indirect} influence through
@@ -91,6 +103,19 @@ statistically similar, while above the critical point, which is not conformally
 invariant, the cluster structure is clearly non uniform after a deformation, as
 shown in Figure~\ref{fig:isingcm2}.
 
+\begin{figure}
+\begin{center}
+    \includegraphics[width=0.66\textwidth]{chapters/ch3-conf/figs/lenna}
+\end{center}
+\caption{Two identical images, one large (in grayscale) and the other small (in
+    red, shown in the zoom), are transformed from (a) to (b) using a conformal
+    map $f(z)=z/(200-z)$. While the large one is heavily deformed, the smaller
+    one was only translated and shrunk. This illustrates the fact that conformal
+    maps behave locally as a scale transformation.}
+\label{fig:lenna}
+\end{figure}
+
+
 In $d>2$ the group of conformal transformations is finite dimensional, and
 it is composed of only translations, rotations, dilations and the special
 transformation
@@ -111,7 +136,7 @@ in two dimensions, since more symmetries implies more constraints over the
 behavior of the system.
 
 Since the mathematics of analytical functions live and thrive in the complex
-plane, it is common to shift the analysis to it but making the transformations
+plane, it is common to shift the analysis to it by making the transformations
 \begin{equation}
     \begin{array}{cc}
         z=x+iy, & \bar{z}=x-iy
@@ -150,7 +175,7 @@ Therefore, conformal invariance produced a prediction of the finite-size
 scaling of the correlation length on a finite system.
 
 A particularly important quasi-primary operator is the stress-energy tensor,
-related to ``stiffness'' of the action when the system is subject to a small
+related to the ``stiffness'' of the action when the system is subject to a small
 deformation $\mathbf{r}\rightarrow \mathbf{r} + \epsilon(\mathbf{r})$, which
 should transform like
 \begin{equation}
@@ -172,30 +197,6 @@ tensor is. A specific conformal field theory (and as a consequence, the model
 being studied) is characterized by its central charge. The ising model, for
 example, has $c=1/2$ and the 3-state Potts model has
 $c=4/5$~\cite{Francesco1997}.
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch3-conf/figs/cmapex}
-\end{center}
-\caption{Coordinates transformations in the complex plane can be divided into
-    conformal and non-conformal. Conformal transformations preserve the
-    intersection angles between lines, unlike the non-conformal. The
-    transformation from the square lattice in (a) into (b) is conformal
-    ($f(z)=z^2$), while the one from (a) to (c) ($f(z)=z|z|$) is not.}
-\label{fig:cmapex}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=0.66\textwidth]{chapters/ch3-conf/figs/lenna}
-\end{center}
-\caption{Two identical images, one large (in grayscale) and the other small (in
-    red, shown in the zoom), are transformed from (a) to (b) using a conformal
-    map $f(z)=z/(200-z)$. While the large one is heavily deformed, the smaller
-    one was only translated and shrunk. This illustrates the fact that conformal
-    maps behave locally as a scale transformation.}
-\label{fig:lenna}
-\end{figure}
 
 \begin{figure}
 \begin{center}

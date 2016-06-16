@@ -30,7 +30,7 @@ important to us is the fact that these building blocks can organize themselves
 in several different ways. Each pattern of organization is called a
 \textit{phase}, and in which phase the systems finds itself depends on the
 value of some external parameters, like energy density, temperature, nutrient
-concentration or whether or not there's a fire in the building. Not only that
+concentration or whether or not there's a fire in the building. Not only that,
 but different phases of a same system display very different macroscopic
 behavior, despite no change taking place in their actual composition.
 
@@ -47,31 +47,7 @@ molecules move mostly unimpeded, interacting only when colliding directly. See
 Figure~\ref{fig:phases} for an illustration of how a molecule moves in the
 three phases.
 
-Not all phases concern the states of matter, however. Some are related to
-magnetic or electric properties. This is the case of ferromagnetic materials,
-materials that exhibit a persistent magnetization after being subject to a
-strong magnetic field, like your everyday fridge magnet. This phenomenon is a
-result of the alignment of the magnetic spins of the atoms or molecules that
-compose the material. In contrast, paramagnetic materials show no permanent
-magnetization. If you take a magnet and raise its temperature, eventually the
-thermal fluctuations will misalign the spins, zeroing out the magnetization and
-turning the ferromagnetic material into a paramagnetic one. Other examples of
-phase transitions also include the transition of a material into a
-superconductive state~\cite{Fisher1991} or when helium turns into into a
-superfluid~\cite{Campostrini2006}, both happening at very low temperatures.
-
-To better visualize the different phases of systems, it is common to make use
-of a \textit{phase diagram}. Simply put, a phase diagram is a graph where each
-axis represent one control parameter, and every point in this graph is labeled
-according to the phase the system finds itself for that value of the
-parameters. Figure~\ref{fig:water}a shows the very famous phase diagram of
-water as a function of temperature and pressure. The three main phases (solid,
-liquid and gas) are clearly marked, and the black lines are the boundary
-between the phases. Crossing any of these lines is followed by a sharp change
-on the properties of the system, as described previously. This is know as a
-\textit{phase transition}.
-
-\begin{figure}
+\begin{figure}[t]
 \begin{center}
     \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/phases}
 \end{center}
@@ -86,10 +62,34 @@ on the properties of the system, as described previously. This is know as a
 \label{fig:phases}
 \end{figure}
 
+Not all systems have phases related with the states of matter, however. Some
+are related to magnetic or electric properties. This is the case of
+ferromagnetic materials, materials that exhibit a persistent magnetization
+after being subject to a strong magnetic field, like your everyday fridge
+magnet. This phenomenon is a result of the alignment of the magnetic spins of
+the atoms or molecules that compose the material. In contrast, paramagnetic
+materials show no permanent magnetization. If you take a magnet and raise its
+temperature, eventually the thermal fluctuations will misalign the spins,
+zeroing out the magnetization and turning the ferromagnetic material into a
+paramagnetic one. Other examples of phase transitions also include the
+transition of a material into a superconductive state~\cite{Fisher1991} or when
+helium turns into into a superfluid~\cite{Campostrini2006}, both happening at
+very low temperatures.
 
-\begin{figure}
+To better visualize the different phases of systems, it is common to make use
+of a \textit{phase diagram}. Simply put, a phase diagram is a graph where each
+axis represent one control parameter, and every point in this graph is labeled
+according to the phase the system finds itself for that value of the
+parameters. Figure~\ref{fig:water}a shows the very famous phase diagram of
+water as a function of temperature and pressure. The three main phases (solid,
+liquid and gas) are clearly marked, and the black lines are the boundary
+between the phases. Crossing any of these lines is followed by a sharp change
+on the properties of the system, as described previously. This is know as a
+\textit{phase transition}.
+
+\begin{figure}[t]
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/water}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/water}
 \end{center}
 \caption{Phase diagram of water (a). Here, the three usual phases are
     distinguished, each separated from the other by a coexistence line. The
@@ -119,6 +119,8 @@ density (which is just the inverse of the volume). For ferromagnetic
 transitions we use the spontaneous magnetization. The choice of order parameter
 for several systems can be seen in Table~\ref{tab:ptex}.
 
+\input{chapters/ch2-crit/table.tex}
+
 Following the example of water, where the temperature and pressure are the
 control variables, the thermodynamic properties are determined by the Gibbs
 free energy
@@ -139,7 +141,7 @@ true, is that the entropy, another derivative of $G$,
 \end{equation}
 is also discontinuous at the boundary of a phase transition. Because the first
 derivatives of the free energy display a singularity, we say these phase
-transition are of \textit{first order}. This sudden changes happens because the
+transitions are of \textit{first order}. This sudden changes happens because the
 equilibrium state of the system (determined by the minimum of the free energy)
 shifts from one part of the phase space to another~\cite{Callen1985}, as
 illustrated in Figure~\ref{fig:gibbs1}. When the system is exactly at the
@@ -151,9 +153,9 @@ three phases (solid, liquid and gas) exist on the same system. Because the
 triple point is uniquely defined, it is the basis used to define the Kelvin
 temperature scale~\cite{Fermi1956}.
 
-\begin{figure}
+\begin{figure}[t]
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs1}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/gibbs1}
 \end{center}
 \caption{Why first order transitions happen. The left graph shows three points
     on the phase space of water. The red one is in the liquid phase, the blue
@@ -202,10 +204,13 @@ specific heat
 or the isothermal compressibility
 \begin{equation}
     \kappa_T=-\frac{1}{V}{\left(\frac{\partial V}{\partial p}\right)}_{T}=
-    -\frac{1}{V}{\left(\frac{\partial^{2}G}{\partial p^{2}}\right)}_{T},
+    -\frac{1}{V}{\left(\frac{\partial^{2}G}{\partial p^{2}}\right)}_{T}.
 \end{equation}
-This why going through a critical point is know as a \textit{second order}
-phase transition, and systems close to it are called \textit{critical systems}.
+Figure~\ref{fig:suscep} shows two examples of discontinuous heat capacity and
+susceptibility in real system. Because the second derivative of the free energy
+is discontinuous, going through a critical point is know as a \textit{second
+    order} phase transition, and systems close to it are called
+\textit{critical systems}.
 
 Second order transitions have a whole range of peculiar behavior associated
 with it. The most notorious is the presence of large fluctuations. In
@@ -217,7 +222,7 @@ sizes that scatter most visible light, giving the system a milky aspect.
 
 Although we focused a lot on the example of water, the ferromagnetic transition
 described in the previous section is probably the most studied kind of second
-order phase transition. In it the free energy is given by
+order phase transition. Its free energy is given by
 \begin{equation}
     F = -SdT-Mdh
 \end{equation}
@@ -232,7 +237,7 @@ diverging magnetic susceptibility
 
 \begin{figure}
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/gibbs2}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/gibbs2}
 \end{center}
 \caption{If we follow the (heuristic) Gibbs free energy along the liquid-gas
     line, we observe that at some critical point $T_c$ the two minima (related
@@ -246,7 +251,7 @@ diverging magnetic susceptibility
 
 \begin{figure}
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/suscep}
 \end{center}
 \caption{Examples of thermodynamical quantities in the vicinity of a second
     order phase transitions. The left graph shows the diverging magnetic
@@ -277,7 +282,6 @@ shallow, the probability distribution significantly broadens, so much that the
 difference between most probable and average cannot be
 ignored~\cite{Callen1985}.
 
-\input{chapters/ch2-crit/table.tex}
 
 \section{Critical Exponents and Universality}
 \label{sec:universality}
@@ -331,7 +335,6 @@ often.
 There are many other critical exponents outside the realm of thermodynamics.
 These exponents can only be studied by a full statistical mechanical framework.
 Two of the most important ones are related to the correlations of the system.
-
 Take the ferromagnetic transition, for instance. The influence of an individual
 spin is usually restricted over a finite region around it. That is to say,
 there is a length scale $\xi$ that if we take two spins separated by a distance
@@ -345,7 +348,7 @@ influence of the spins over each another. Therefore, it makes sense to think
 that somewhere in between there is a sweet spot where the balance between order
 and disorder makes the correlation length as large as possible.
 
-We can formalize this thought by defining the correlation function of a system,
+We can formalize this thought by defining the correlation function of a system
 \begin{equation}
     \label{eq:corr}
     C\left(x_{1},x_{2}\right)=
@@ -375,7 +378,7 @@ We know that on the critical point $\chi$ diverges, but  the integral on the
 right-hand side cannot diverge for finite $\xi$, given Eq.~\ref{eq:corr}.
 The conclusion is simple, not only the correlation length is maximal at the
 critical point, it is infinite! This divergence also has a critical exponent
-$\nu$ associated with it,
+$\nu$ associated with it
 \begin{equation}
     \label{eq:corlen}
     \begin{array}{ccccc}
@@ -384,7 +387,7 @@ $\nu$ associated with it,
     \end{array}
 \end{equation}
 The correlation function itself also cannot decay as an exponential, and goes
-instead as a power law, with yet another critical exponent $\eta$,
+instead as a power law, with yet another critical exponent $\eta$
 \begin{equation}
     \label{eq:critcor}
     \begin{array}{ccccc}
@@ -401,9 +404,11 @@ tides, in critical systems the large and small length scales are indissociable.
 Many authors consider this to be the defining characteristic of a second order
 phase transition.
 
+\input{chapters/ch2-crit/table2.tex}
+
 The most notable consequence of the dominance of long range correlations is
 that the critical behavior of the system is determined by the general
-properties of the fluctuations, which in turn is mainly determined by the
+properties of the fluctuations, which in turn are mainly determined by the
 dimensionality of the system and of the order parameter, and not by the details
 of the material that compose the system~\cite{Stanley1999}. As a consequence,
 all systems tend to group themselves into classes that share the same critical
@@ -412,8 +417,6 @@ liquid-gas transition falls in the same universality class as the ferromagnetic
 transition~\cite{Kim1984}. Table~\ref{tab:univ} show some examples of
 universality classes, systems that belong to it, and the values of their
 critical exponents.
-
-\input{chapters/ch2-crit/table2.tex}
 
 
 \section{Scaling Invariance}
@@ -444,7 +447,7 @@ defined according to Eq.~\ref{eq:corr}
     \right\rangle
     \left\langle
         \op\left(\mathbf{r_{2}}\right)
-    \right\rangle
+    \right\rangle,
     \\
     \label{eq:corr11}
     C_{\varepsilon}\left(\left|\mathbf{r_1}-\mathbf{r_2}\right|\right) & = &
@@ -525,7 +528,7 @@ This can be done by making $b=t^{-1/y_t}$, which yields
     t^{d/y_{t}}f\left(1,ht^{-y_{h}/y_{t}}\right)=
     t^{d/y_{t}}\Psi\left(ht^{-y_{h}/y_{t}}\right),
 \end{equation}
-where $\Psi$ is known as a scaling function, and it unique for a given
+where $\Psi$ is known as a scaling function, and it's unique for a given
 universality class. We can re-obtain the heat capacity by taking
 the second derivative as usual
 \begin{equation}
@@ -594,7 +597,7 @@ Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:nuscal} and~\ref{eq:etascal}.
 These are known as \textit{hyperscaling relations}, and amazingly no new
 critical exponent is needed to determine them, that is, only two are necessary
 to completely describe the critical exponents of a second-order phase
-transition, how convenient. Sadly the hyperscaling relations are not as sturdy
+transition, how convenient! Sadly the hyperscaling relations are not as sturdy
 as the scaling relations and can break down under the presence of (the
 creatively named) dangerously irrelevant operators~\cite{Nishimori2011}.
 
@@ -628,12 +631,12 @@ Of all phase transition models, Ising's is definitely the most famous, because,
 despite its simplicity, it is capable of capturing all of the main features of
 ferromagnetic materials near the critical point. I was also the first model
 with a second order phase transition to be analytically solved, and because of
-that today it forms the basis of our understanding of phase transitions to
+that, today it forms the basis of our understanding of phase transitions to
 the point that many latter important models, like the $O(n)$ and Potts
 models~\cite{Wu1982}, can be traced back to it.
 
 Simply put, the model consists of a set of classical spins $\{s_i\}$ that can
-take one of two values $1$ or $-1$. They are arranged in a lattice and are
+take one of two values: $1$ or $-1$. They are arranged in a lattice and are
 allowed to interact with their nearest neighbors. The Hamiltonian of the
 systems is given by
 \begin{equation}
@@ -646,6 +649,23 @@ of nearest neighbors. If we assume $J>0$, then the first term of the
 Hamiltonian favors the alignment of the spins, while the second one favors the
 alignment with an external magnetic field. See Figure~\ref{fig:ising} for some
 examples of the Ising model in two dimensions in a square lattice.
+
+\begin{figure}[b]
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising}
+\end{center}
+\caption{Realizations of the Ising model with three different
+    temperatures. The clusters of adjacent spin-up sites are colored according
+    to how many sites belong to it. The subcritical regime is dominated by the
+    large clusters. On the other hand, above the critical point, the system is
+    dominated by thermal fluctuations, undermining cluster formation. At the
+    critical point however, the clusters lack a characteristic length scale.
+    One can observe that the image has a certain ``depth'' to it. This happens
+    because clusters of all sizes are present, a mark of scale invariance,
+    the most important property of critical systems.}
+\label{fig:ising}
+\end{figure}
+
 
 The order parameter here is the spontaneous magnetization $M=\sum_i s_i / N$.
 If the temperature is too low the spins will tend to align themselves, giving
@@ -662,13 +682,26 @@ flipped and the magnetization is opposite $-M$. Both configurations have
 therefore the same probability $\exp(-E/k_b T)$. The system should then spend
 as much time on a positive magnetization as in a negative one, so the average
 magnetization should be zero.
-
 On the other hand, Peierls presented an argument for the presence of phase
 transitions in $d>1$~\cite{Peierls1936}, showing that in large enough systems
 (that is, in the thermodynamic limit) the thermal fluctuations at low
 temperatures are not enough to bring the system from a positive magnetization
 state to a negative one (and vice-versa), so the system would be ``stuck''
 with non-zero magnetization.
+
+\begin{figure}[t]
+\begin{center}
+    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_phase2}
+\end{center}
+\caption{The phase space of the Ising model (left). The color represents the
+    spontaneous magnetization $M$ as a function of the external magnetic field
+    $h$ and temperature $T$. The black line represents the coexistence line
+    where the phase transition is of first order, which means the magnetization
+    changes discontinuously like it's shown in the blue line. In the critical
+    point the change is continuous and a second order phase transition takes
+    place.}
+\label{fig:ising_phase2}
+\end{figure}
 
 The fact that both of these contradictory arguments seemed correct, led some to
 believe that statistical mechanics was inadequate to deal with critical
@@ -692,89 +725,9 @@ configurations is infinite, which should happen in the thermodynamic limit, the
 analyticity cannot be guaranteed, and the singularities typical of a second
 order phase transition are allowed to flourish.
 
-Let's take a look at the phase diagram of the Ising model.
-Figure~\ref{fig:ising_phase2} shows the 2D square lattice version. We observe a
-first order phase transition at $h=0$ and $T<T_c$, where the magnetization
-discontinuously flips direction. At $T=T_c$ the transition becomes continuous
-The value of the critical point is given by
-\begin{equation}
-    T_{c}=
-    \frac{2J}{k_{b}\log\left(1+\sqrt{2}\right)}
-    \approx2.27\frac{J}{k_{b}},
-\end{equation}
-and the magnetization along the coexistence line is~\cite{Yang1952}
-\begin{equation}
-    M={\left[1-\sinh^{-4}\left(\frac{2J}{k_{b}T}\right)\right]}^{1/8},
-\end{equation}
-from which we can determine that $\beta=1/8$. The values of the other exponents
-of the Ising universality class can be seen in Table~\ref{tab:univ}. The Ising
-universality class encompass more than just the ferromagnetic transition. For
-instance, the liquid-vapor critical point (like the one found in the water
-phase diagram) also falls in the same class.
-
-To this day no solution for three dimensions have been presented, with some
-authors arguing that such an accomplishment is not even
-possible~\cite{Istrail2000}.
-
-From a computational perspective, simulating the Ising model is particularly
-simple using the Metropolis-Hastings algorithm~\cite{Hastings1970}. At each
-step chose a random spin of the lattice and compute the change in energy
-$\Delta E$ that would occur if you were to flip the spin. In a square lattice
-this is given by (assuming $h=0$ and $J/k_b=1$)
-\begin{equation}
-    \Delta E=2s\left(i,j\right)\left[s\left(i+1,j\right)+
-    s\left(i-1,j\right)+s\left(i,j+1\right)+s\left(i,j-1\right)\right],
-\end{equation}
-where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ and $a$ is the
-lattice constant. You actually perform the flip $s(i,j)\rightarrow -s(i,j)$ if
-$\Delta E\leq 0$. If not, you should still perform the flip randomly with
-probability $\exp(-\Delta E / T)$. Thermodynamical properties can be computed from
-the fluctuation-dissipation theorem~\cite{Nishimori2011}, that 
-\begin{equation}
-    c=\frac{\left\langle E^{2}\right\rangle -\left\langle E\right\rangle ^{2}}{T^2},
-    \,\,\,\,\,\,\,\,
-    \chi=\frac{\left\langle M^{2}\right\rangle -\left\langle M\right\rangle ^{2}}{T}
-\end{equation}
-Figure~\ref{fig:ising_phase} shows the magnetization as a function of
-temperature compared to Onsager's solution, and Figure~\ref{fig:ising_cx} shows the
-specific heat and susceptibility, along with their characteristic divergence
-near the theoretical critical point.
-
-
-\begin{figure}
+\begin{figure}[t]
 \begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_phase2}
-\end{center}
-\caption{The phase space of the Ising model (left). The color represents the
-    spontaneous magnetization $M$ as a function of the external magnetic field
-    $h$ and temperature $T$. The black line represents the coexistence line
-    where the phase transition is of first order, which means the magnetization
-    changes discontinuously like it's shown in the blue line. In the critical
-    point the change is continuous and a second order phase transition takes
-    place.}
-\label{fig:ising_phase2}
-\end{figure}
-
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising}
-\end{center}
-\caption{Realizations of the Ising model with three different
-    temperatures. The clusters of adjacent spin-up sites are colored according
-    to how many sites belong to it. The subcritical regime is dominated by the
-    large clusters. On the other hand, above the critical point, the system is
-    dominated by thermal fluctuations, undermining cluster formation. At the
-    critical point however, the clusters lack a characteristic length scale.
-    One can observe that the image has a certain ``depth'' to it. This happens
-    because clusters of all sizes are present, a mark of scale invariance,
-    the most important property of critical systems.}
-\label{fig:ising}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/ising_phase}
+    \includegraphics[width=0.7\textwidth]{chapters/ch2-crit/figs/ising_phase}
 \end{center}
 \caption{Spontaneous magnetization as a function of temperature for the Ising
     model. The simulations were performed in a $128\times128$ square lattice.
@@ -788,30 +741,96 @@ near the theoretical critical point.
 \label{fig:ising_phase}
 \end{figure}
 
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
-\end{center}
-\caption{Specific heat and susceptibility computed from a simulation of the
-    Ising model in a $64\times 64$ square lattice. They are computed from the
-    fluctuation-dissipation theorem, where $c=T^{-2}\left(\left\langle
-    E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\right)$ and
-    $\chi=T^{-1}\left(\left\langle M^{2}\right\rangle -\left\langle
-    M\right\rangle ^{2}\right)$. Both quantities show the characteristic
-    diverging behavior near the critical point at $T_c\approx 2.27$.}
-\label{fig:ising_cx}
-\end{figure}
+Let's take a look at the phase diagram of the Ising model.
+Figure~\ref{fig:ising_phase2} shows the 2D square lattice version. We observe a
+first order phase transition at $h=0$ and $T<T_c$, where the magnetization
+discontinuously flips direction. At $T=T_c$ the transition becomes continuous
+The value of the critical point is given by
+\begin{equation}
+    T_{c}=
+    \frac{2J}{k_{b}\log\left(1+\sqrt{2}\right)}
+    \approx2.27\frac{J}{k_{b}},
+\end{equation}
+and the magnetization along the coexistence line is~\cite{Yang1952}
+\begin{equation}
+    \label{eq:ons}
+    M={\left[1-\sinh^{-4}\left(\frac{2J}{k_{b}T}\right)\right]}^{1/8}.
+\end{equation}
+See Figure~\ref{fig:ising_phase} for the overall behavior of $M$.
+From Eq.~\ref{eq:ons} we can determine that $\beta=1/8$. The values of the
+other exponents of the Ising universality class can be seen in
+Table~\ref{tab:univ}. The Ising universality class encompass more than just the
+ferromagnetic transition. For instance, the liquid-vapor critical point (like
+the one found in the water phase diagram) also falls in the same class. To this
+day no solution for three dimensions have been presented, with some authors
+arguing that such thing is not even possible~\cite{Istrail2000}.
+
+%From a computational perspective, simulating the Ising model is particularly
+%simple using the Metropolis-Hastings algorithm~\cite{Hastings1970}. At each
+%step chose a random spin of the lattice and compute the change in energy
+%$\Delta E$ that would occur if you were to flip the spin. In a square lattice
+%this is given by (assuming $h=0$ and $J/k_b=1$)
+%\begin{equation}
+    %\Delta E=2s\left(i,j\right)\left[s\left(i+1,j\right)+
+    %s\left(i-1,j\right)+s\left(i,j+1\right)+s\left(i,j-1\right)\right],
+%\end{equation}
+%where $s(i,j)$ is the spin at position $x=ai$ and $y=aj$ and $a$ is the
+%lattice constant. You actually perform the flip $s(i,j)\rightarrow -s(i,j)$ if
+%$\Delta E\leq 0$. If not, you should still perform the flip randomly with
+%probability $\exp(-\Delta E / T)$. Thermodynamical properties can be computed from
+%the fluctuation-dissipation theorem~\cite{Nishimori2011}, that 
+%\begin{equation}
+    %c=\frac{\left\langle E^{2}\right\rangle -\left\langle E\right\rangle ^{2}}{T^2},
+    %\,\,\,\,\,\,\,\,
+    %\chi=\frac{\left\langle M^{2}\right\rangle -\left\langle M\right\rangle ^{2}}{T}
+%\end{equation}
+%Figure~\ref{fig:ising_phase} shows the magnetization as a function of
+%temperature compared to Onsager's solution, and Figure~\ref{fig:ising_cx} shows the
+%specific heat and susceptibility, along with their characteristic divergence
+%near the theoretical critical point.
+
+%\begin{figure}
+%\begin{center}
+    %\includegraphics[width=\textwidth]{chapters/ch2-crit/figs/ising_cx}
+%\end{center}
+%\caption{Specific heat and susceptibility computed from a simulation of the
+    %Ising model in a $64\times 64$ square lattice. They are computed from the
+    %fluctuation-dissipation theorem, where $c=T^{-2}\left(\left\langle
+    %E^{2}\right\rangle -\left\langle E\right\rangle ^{2}\right)$ and
+    %$\chi=T^{-1}\left(\left\langle M^{2}\right\rangle -\left\langle
+    %M\right\rangle ^{2}\right)$. Both quantities show the characteristic
+    %diverging behavior near the critical point at $T_c\approx 2.27$.}
+%\label{fig:ising_cx}
+%\end{figure}
 
 
 
 \subsection{Percolation}
 \label{sec:perc}
 
+\begin{figure}[b]
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{chapters/ch2-crit/figs/isoperco}
+\end{center}
+%\caption{Realizations of the percolation model in a square lattice with three
+    %different occupation probabilities $p$. Black sites are unoccupied, blue
+    %ones are occupied, and the largest cluster is painted yellow. For small
+    %values of $p$, there is no cluster that connects opposite sides of the
+    %systems. Above the critical point however, the largest cluster promotes a
+    %global connectivity.}
+\caption{Percolation model with three
+    different occupation probabilities $p$. Black sites are unoccupied, blue
+    ones are occupied, and the largest cluster is painted yellow. 
+    We only observe a spanning cluster connecting different sides of the system
+    when $p\geq p_c$.}
+\label{fig:isoperco}
+\end{figure}
+
 While losing to the Ising model in terms of popularity, percolation certainly
-wins in term of simplicity. Introduced in 1957 by Broadbent and
+wins in terms of simplicity. Introduced in 1957 by Broadbent and
 Hammersley~\cite{Broadbent1957}, the question they were trying to answer was
 very humble: say we block a water pipe with a rock, how porous should the rock
-be for the water to be able to flow, even if at a very low flow rate? To find
+be for the water to be able to flow, even if at a very low rate? To find
 an answer, they modeled the rock as a square lattice where each site can be
 either occupied by the rocky substrate or a hole. The measure of the porosity
 is the ratio between the number of holes and the total number of sites in the
@@ -831,6 +850,20 @@ a percolating cluster, while above $p_c$ one is away present. See
 Figure~\ref{fig:isoperco} for some realizations of the percolation process
 in two dimensions in each state: subcritical, critical and supercritical.
 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{chapters/ch2-crit/figs/isoperco2}
+\end{center}
+\caption{The order parameter of the percolation model as a function of the
+    occupation probability for various system sizes. The order parameter here
+    is defined as the fraction of the system occupied by the largest cluster.
+    In the thermodynamical limit, the largest cluster have a finite size for
+    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
+    system. Above the critical point the largest cluster is infinite and occupies
+    a finite fraction.}
+\label{fig:isoperco2}
+\end{figure}
+
 This is the core of percolation theory, initially motivated by a transport
 problem. From a more generic perspective, Stauffer summarizes it
 better~\cite{Stauffer1994}: ``Each site of a lattice is occupied randomly with
@@ -845,7 +878,7 @@ system, which is basically a null fraction for a large enough system. As $p$
 approaches a critical probability $p_c$, the largest cluster grows to the order
 of the system size. Figure~\ref{fig:isoperco2} shows how the order parameter
 behaves for various sizes of a square lattice. It shows that as the system
-reaches the thermodynamical limit, the order parameter closely behaves as a
+reaches the thermodynamical limit, the order parameter closely resembles as a
 second order phase transition.
 
 The type of percolation described so far, where we occupy the sites of a lattice
@@ -857,6 +890,17 @@ bridge of resistors traversing it, along which electrical current can flow,
 thus passing from an isolating phase to a conductive one.
 Figure~\ref{fig:sitebond} illustrate the difference between site and bond
 percolation.
+
+\begin{figure}[b]
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
+\end{center}
+\caption{Examples of site and bond percolation in a square lattice.
+    In site percolation each site is occupied with probability $p$, while
+    in bond percolation any two neighboring sites are connected with a bond
+    with probability $p$.}
+\label{fig:sitebond}
+\end{figure}
 
 The exact value of the critical point is non universal and depends on whether
 it's site or bond percolation and on the lattice choice. The two more notorious
@@ -891,6 +935,7 @@ Section~\ref{sec:universality} we know it scales as
 \begin{equation}
     P\sim\left|p-p_c\right|^{-\beta}.
 \end{equation}
+\input{chapters/ch2-crit/table3.tex}
 We defined $P$ as the expected size of the largest cluster, which
 we can assume should be distributed like $n_s(p_c)-n_s(p)$ for
 $p < p_c$. Therefore, using Eqs.~\ref{eq:ns1} and~\ref{eq:ns2}
@@ -926,6 +971,7 @@ which leads, following the definition of the $\gamma$ exponent
 \begin{equation}
     \gamma=\frac{3-\tau}{\sigma}
 \end{equation}
+
 
 Once $\beta$ and $\gamma$ have been determined as a function of $\tau$ and
 $\sigma$, all other critical exponents can be derived using
@@ -964,44 +1010,3 @@ explosive percolation~\cite{Achlioptas2009} and invasive
 percolation~\cite{Wilkinson1983}, to name just a few.
 
 
-\begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{chapters/ch2-crit/figs/isoperco}
-\end{center}
-\caption{Realizations of the percolation model in a square lattice with three
-    different occupation probabilities $p$. Black sites are unoccupied, blue
-    ones are occupied, and the largest cluster is painted yellow. For small
-    values of $p$, there is no cluster that connects opposite sides of the
-    systems. Above the critical point however, the largest cluster promotes a
-    global connectivity, or, in terms of transport, the system becomes
-    permeable.}
-\label{fig:isoperco}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=0.7\textwidth]{chapters/ch2-crit/figs/isoperco2}
-\end{center}
-\caption{The order parameter of the percolation model as a function of the
-    occupation probability for various system sizes. The order parameter here
-    is defined as the fraction of the system occupied by the largest cluster.
-    In the thermodynamical limit, the largest cluster have a finite size for
-    $T<T_c\approx 0.592746$, that is, it occupies a negligible fraction of the
-    system. Above the critical point the largest cluster is infinite and occupies
-    a finite fraction.}
-\label{fig:isoperco2}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/sitebond}
-\end{center}
-\caption{Examples of site and bond percolation in a square lattice.
-    In site percolation each site is occupied with probability $p$, while
-    in bond percolation any two neighboring sites are connected with a bond
-    with probability $p$.}
-\label{fig:sitebond}
-\end{figure}
-
-
-\input{chapters/ch2-crit/table3.tex}
