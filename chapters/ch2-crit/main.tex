@@ -20,32 +20,25 @@ contributions to this end.
 %sciences~\cite{Kello2010}, social scieces~\cite{Kron2009} and
 %ecology~\cite{Sole1999}, to name just a few.
 
-To start, let's take a step back and look at the constituent parts of a system.
-We can get away with making very little assumptions about their actual
-identities. They can be elementary particles when studying high energy physics,
-atoms and molecules when determining the electronic properties of a material,
-living cells when observing the growing pattern of a colony of bacteria, or
-even people when trying to design buildings with safe exit routes. What is more
-important to us is the fact that these building blocks can organize themselves
-in several different ways. Each pattern of organization is called a
-\textit{phase}, and in which phase the systems finds itself depends on the
-value of some external parameters, like energy density, temperature, nutrient
-concentration or whether or not there's a fire in the building. Not only that,
-but different phases of a same system display very different macroscopic
-behavior, despite no change taking place in their actual composition.
+To start, let's take a step back and look at the building blocks of a physical
+system. These are the smallest subdivision that can be used to understand the
+system as whole. They can be elementary particles when studying high energy
+physics~\cite{Boyanovsky2006}, living cells when observing the growing pattern
+of a colony of bacteria~\cite{Matsushita1990}, or even people when studying
+crowd dynamics~\cite{Minoru1999}.
 
-The most elementary example here is water. At sea level, water is in its solid
-phase for temperatures lower than $0^\circ$C. That happens because the water
-molecules are locked in place by the cohesive forces that its neighbors exert
-on each other, forming a crystalline structure. When the temperature is higher
-than $0^\circ$C but lower than $100^\circ$C, the molecules acquire enough
-kinetic energy to be able to move through one another. They still interact
-strongly enough to be bound together but it is not sufficient to keep them
-fixed. This is the liquid phase. When the temperature is above $100^\circ$C,
-water is now in the gaseous state, where thermal movement dominates and the
-molecules move mostly unimpeded, interacting only when colliding directly. See
-Figure~\ref{fig:phases} for an illustration of how a molecule moves in the
-three phases.
+Many properties of such systems can be inferred by understanding their
+constituent parts, but what is more interesting is the fact that these building
+blocks can organize themselves in several different ways, each with radically
+different macroscopic behavior. The most elementary example here is water. Ice,
+vapor and liquid water are all composed of the same substance, H${}_2$O, the
+only difference is how these molecules are arranged: immobile and organized
+when solid; moving through each other in a dense crowded mess as a liquid; and
+dashing chaotically and isolated in the gas state. See Figure~\ref{fig:phases}
+for an illustration of how a water molecule moves in the three states. Each
+pattern of organization is called a \textit{phase}, and in which phase the
+systems finds itself depends on the value of some external parameters, normally
+the temperature (but not necessarily).
 
 \begin{figure}[t]
 \begin{center}
@@ -131,11 +124,19 @@ from which we can obtain the volume by taking its derivative
 \begin{equation}
     V={\left(\frac{\partial G}{\partial p}\right)}_T.
 \end{equation}
-If we now make an experimental apparatus to try and observe the behavior of the
-density of an amount of water during a phase transition, say the liquid-gas
+If we now make an experimental apparatus to try and observe how the density of
+an amount of water behaves during a phase transition, say the liquid-gas
 transition, what we see is shown in Figure~\ref{fig:water}b. The density (and
-therefore the volume) makes a discontinuous jump. Less evident, but no less
-true, is that the entropy, another derivative of $G$,
+therefore the volume) makes a discontinuous jump.
+
+This transition is characterized by the presence of latent heat, an amount of
+energy that the system releases or absorbs during a phase transition, which is
+a constant of the substance, and is independent on the temperature, pressure or
+other control parameters~\cite{Callen1985}. This means that when boiling a
+volume of water, the temperature of the liquid phase does not rise because the
+extra heat being added is being absorbed in form of latent heat. Because you
+add disorder to the system without changing its temperature, it happens that
+the entropy, another derivative of $G$,
 \begin{equation}
     S=-{\left(\frac{\partial G}{\partial T}\right)}_p,
 \end{equation}
@@ -170,14 +171,6 @@ temperature scale~\cite{Fermi1956}.
 \label{fig:gibbs1}
 \end{figure}
 
-
-First order transitions are characterized by the presence of latent heat, an
-amount of energy that the system releases or absorbs during a phase transition,
-which is a constant of the substance, and is independent on the temperature,
-pressure or other control parameters~\cite{Callen1985}. This means that when
-boiling a volume of water, the temperature of the liquid phase does not rise
-because the extra heat being added is being absorbed in form of latent heat.
-
 Now, looking again at Figure~\ref{fig:water}a one might ask why the liquid-gas
 transition line does not extend all the way through the phase diagram. This
 is where things start to get interesting. We've established that the free
@@ -206,18 +199,17 @@ or the isothermal compressibility
     \kappa_T=-\frac{1}{V}{\left(\frac{\partial V}{\partial p}\right)}_{T}=
     -\frac{1}{V}{\left(\frac{\partial^{2}G}{\partial p^{2}}\right)}_{T}.
 \end{equation}
-Figure~\ref{fig:suscep} shows two examples of discontinuous heat capacity and
-susceptibility in real system. Because the second derivative of the free energy
-is discontinuous, going through a critical point is know as a \textit{second
-    order} phase transition, and systems close to it are called
-\textit{critical systems}.
+Figure~\ref{fig:suscep} shows two examples of such discontinuities in real
+system. Because the second derivative of the free energy is discontinuous,
+going through a critical point is know as a \textit{second order} phase
+transition, and systems close to it are called \textit{critical systems}.
 
 Second order transitions have a whole range of peculiar behavior associated
 with it. The most notorious is the presence of large fluctuations. In
 Chapter~\ref{ch:intr} we mentioned the work of Thomas
 Andrews~\cite{Andrews1869}, who noticed that some substances become opaque at
 the critical point. This happens because the huge fluctuations in the spacial
-distribution of mass, forming ``blobs'' of water of all sizes, including the
+distribution of mass, forming water ``droplets'' of all sizes, including the
 sizes that scatter most visible light, giving the system a milky aspect.
 
 Although we focused a lot on the example of water, the ferromagnetic transition
@@ -251,7 +243,7 @@ diverging magnetic susceptibility
 
 \begin{figure}
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{chapters/ch2-crit/figs/suscep}
+    \includegraphics[width=1.0\textwidth]{chapters/ch2-crit/figs/suscep}
 \end{center}
 \caption{Examples of thermodynamical quantities in the vicinity of a second
     order phase transitions. The left graph shows the diverging magnetic
@@ -266,26 +258,25 @@ Not all phase transitions fall neatly into these two categories, however. The
 Kosterlitz-Thouless transition of the XY-Model (related to some superconducting
 transitions~\cite{Resnick1981}) could be considered of infinite order, because
 the free energy is infinitely differentiable~\cite{Kosterlitz1973}, although it
-shares some of similarities with second order transitions.
+shares some similarities with second order transitions.
 
-The discussion of phase transitions presented (very superficially) so far,
-rooted on the postulates of thermodynamics and in the analyticity of the free
-energy, is due to Landau~\cite{Landau1969}. While this theory manages to
-capture a few properties of critical systems, it fails catastrophically from a
-quantitative standpoint. The source of this discrepancy comes from some basic
-assumptions of statistical mechanics. You see, the maximum entropy postulate is
-derived from the fact that the probability of finding a system in any given
-state is distributed very narrowly around a value, this way we can assume the
-expected (average) energy of the system is the same as the most probable one.
-On the critical point however, because the minimum of the free energy is so
-shallow, the probability distribution significantly broadens, so much that the
-difference between most probable and average cannot be
-ignored~\cite{Callen1985}.
+The discussion of phase transitions presented so far, rooted on the postulates
+of thermodynamics and in the analyticity of the free energy, is due to
+Landau~\cite{Landau1969}. While this theory manages to capture a few properties
+of critical systems, it fails catastrophically from a quantitative standpoint.
+The source of this discrepancy comes from some basic assumptions of statistical
+mechanics. You see, the maximum entropy postulate is derived from the fact that
+the probability of finding a system in any given state is distributed very
+narrowly around a value, this way we can assume the expected (average) energy
+of the system is the same as the most probable one. On the critical point
+however, because the minimum of the free energy is so shallow, the probability
+distribution broadens significantly, so much that the difference between most
+probable and average cannot be ignored~\cite{Callen1985}.
 
 
 \section{Critical Exponents and Universality}
 \label{sec:universality}
-\newcommand{\op}{\sigma}
+\newcommand{\op}{\phi}
 \newcommand{\sfi}{J}
 
 We noted that several thermodynamical quantities diverge on the critical point.
@@ -370,8 +361,9 @@ decay constant $\xi$
 \end{equation}
 
 The relation between thermodynamics and the correlation function is governed
-by the fluctuation-dissipation theorem
+by the fluctuation-dissipation theorem~\cite{Henkel2013}
 \begin{equation}
+    \label{eq:flucdiss}
     \chi=\frac{\partial\op}{\partial \sfi}=\frac{1}{T}\int C\left(r\right)dr.
 \end{equation}
 We know that on the critical point $\chi$ diverges, but  the integral on the
@@ -386,8 +378,9 @@ $\nu$ associated with it
         \xi & \sim & {\left(T_c-T\right)}^{-\nu'} & \mbox{for} & T < T_c.
     \end{array}
 \end{equation}
-The correlation function itself also cannot decay as an exponential, and goes
-instead as a power law, with yet another critical exponent $\eta$
+At the critical point, the correlation function itself also cannot decay as an
+exponential, and goes instead as a power law, with yet another critical
+exponent $\eta$
 \begin{equation}
     \label{eq:critcor}
     \begin{array}{ccccc}
@@ -425,10 +418,11 @@ critical exponents.
 
 The list of critical exponents shown on the last section is far from
 exhaustive. More exotic, but no less important exponents include the fractal
-dimension, one-arm exponent and the crossing exponent, among others. It sure
-seems like a lot of work to completely describe a universality class, if one
-needs to compute dozens of exponents. Luckily with the very simple assumption
-of scaling invariance, we can greatly reduce the amount of work needed.
+dimension~\cite{Voss1984}, one-arm exponent~\cite{Lawler2001} and the crossing
+exponent~\cite{Aizenman1999}, among others. It sure seems like a lot of work to
+completely describe a universality class, if one needs to compute dozens of
+exponents. Luckily with the very simple assumption of scaling invariance, we
+can greatly reduce the amount of work needed.
 
 We will take a look at the correlation functions of the observables, which
 we'll refer as \textit{scaling operators}. The main ones are the order
@@ -480,13 +474,13 @@ following way
     C_{\varepsilon}\left(\mathbf{r};t,h\right) & = &
     b^{-2x_{\varepsilon}}C_{\varepsilon}\left(\mathbf{r}/b;tb^{y_{t}},hb^{y_{h}}\right)
 \end{eqnarray}
-where $x_\op$ and $x_\varepsilon$ are the scaling dimension of the scaling
-operators $\op$ and $\varepsilon$, and $y_t$ and $y_h$ are called the
+where $x_\op$ and $x_\varepsilon$ are the \textit{scaling dimension} of the
+scaling operators $\op$ and $\varepsilon$, and $y_t$ and $y_h$ are called the
 \textit{renormalization group eigenvalues} of their respective scaling fields.
 
-Following the fluctuation dissipation theorem, we can compute the susceptibility
-and the specific heat by integrating $C_\op$ and $C_\varepsilon$ respectively.
-This give us
+Following the fluctuation-dissipation theorem, Eq.~\ref{eq:flucdiss}, we can
+compute the susceptibility and the specific heat by integrating $C_\op$ and
+$C_\varepsilon$ respectively. This give us
 \begin{eqnarray}
     \label{eq:chi2}
     \chi\left(t,h\right) & = & b^{d-2x_{\op}}\chi\left(tb^{y_{t}},ht^{y_{h}}\right)\\
@@ -552,10 +546,10 @@ the relations
     \alpha+2\beta+\gamma              & = & 2\\
     \alpha+\beta\left(1+\delta\right) & = & 2,
 \end{eqnarray}
-These are known as the Rushbrooke equality~\cite{Rushbrooke1963} and Griffiths
-equality~\cite{Griffiths1967} respectively,  which are some of the greatest
-results of the scaling hypothesis, if you know the value of two of the
-thermodynamical exponents, you get the other two for free.
+These are know as \textit{scaling relations}~\cite{Rushbrooke1963,
+Griffiths1967}, and are some of the greatest results of the scaling
+hypothesis, because if you know the value of two of the thermodynamical
+exponents, you get the other two for free.
 
 How about the other two exponents, $\nu$ and $\eta$, related to the
 correlations of the order parameter, you might ask. We can also find a simple
@@ -635,10 +629,10 @@ that, today it forms the basis of our understanding of phase transitions to
 the point that many latter important models, like the $O(n)$ and Potts
 models~\cite{Wu1982}, can be traced back to it.
 
-Simply put, the model consists of a set of classical spins $\{s_i\}$ that can
-take one of two values: $1$ or $-1$. They are arranged in a lattice and are
-allowed to interact with their nearest neighbors. The Hamiltonian of the
-systems is given by
+Simply put, the model consists of a set of classical spins $\{s_i\}$, each
+taking one of two values: $1$ or $-1$. They are arranged in a lattice and are
+allowed to interact with their nearest neighbors. The Hamiltonian of this
+system is given by
 \begin{equation}
     \mathcal{H}=
     -J\sum_{\left\langle i,j\right\rangle }s_{i}s_{j}
@@ -648,7 +642,7 @@ Where $\sum_{\left\langle i,j\right\rangle}$ means a summation over all pairs
 of nearest neighbors. If we assume $J>0$, then the first term of the
 Hamiltonian favors the alignment of the spins, while the second one favors the
 alignment with an external magnetic field. See Figure~\ref{fig:ising} for some
-examples of the Ising model in two dimensions in a square lattice.
+realizations of the Ising model in two dimensions in a square lattice.
 
 \begin{figure}[b]
 \begin{center}
@@ -698,8 +692,9 @@ with non-zero magnetization.
     $h$ and temperature $T$. The black line represents the coexistence line
     where the phase transition is of first order, which means the magnetization
     changes discontinuously like it's shown in the blue line. In the critical
-    point the change is continuous and a second order phase transition takes
-    place.}
+    point (green line), the change becomes continuous and a second order phase
+    transition takes place. Beyond this point (red line), the transition is
+    always continuous.}
 \label{fig:ising_phase2}
 \end{figure}
 
@@ -723,7 +718,7 @@ the number of different configurations $\{s_i\}$ is finite, and a finite sum of
 exponentials is an analytical function. However, if the number of
 configurations is infinite, which should happen in the thermodynamic limit, the
 analyticity cannot be guaranteed, and the singularities typical of a second
-order phase transition are allowed to flourish.
+order phase transition are allowed to come about.
 
 \begin{figure}[t]
 \begin{center}
@@ -762,8 +757,8 @@ other exponents of the Ising universality class can be seen in
 Table~\ref{tab:univ}. The Ising universality class encompass more than just the
 ferromagnetic transition. For instance, the liquid-vapor critical point (like
 the one found in the water phase diagram) also falls in the same class. To this
-day no solution for three dimensions have been presented, with some authors
-arguing that such thing is not even possible~\cite{Istrail2000}.
+day no exact solution for three dimensions have been presented, as it happens
+with most higher dimension models.
 
 %From a computational perspective, simulating the Ising model is particularly
 %simple using the Metropolis-Hastings algorithm~\cite{Hastings1970}. At each
@@ -826,29 +821,29 @@ arguing that such thing is not even possible~\cite{Istrail2000}.
 \label{fig:isoperco}
 \end{figure}
 
-While losing to the Ising model in terms of popularity, percolation certainly
-wins in terms of simplicity. Introduced in 1957 by Broadbent and
-Hammersley~\cite{Broadbent1957}, the question they were trying to answer was
-very humble: say we block a water pipe with a rock, how porous should the rock
-be for the water to be able to flow, even if at a very low rate? To find
-an answer, they modeled the rock as a square lattice where each site can be
-either occupied by the rocky substrate or a hole. The measure of the porosity
-is the ratio between the number of holes and the total number of sites in the
-lattice. Of course, the more porous is a rock, the more holes it has. Assuming
-these holes are randomly and uniformly distributed on the substrate, they will
-often, by pure chance, fall into clusters of neighboring holes, which are in
-fact just bigger holes. Water will be able to flow through the rock only if we
-have a cluster that traverse the system from one side to the other. This
-cluster is called the \textit{percolating} (or spanning) cluster. So we can
-reframe the initial question as follows: whats the smallest value of porosity
-where a percolating cluster will always be present in the system. A 0\% porous
-rock would obviously always be impermeable, and a 100\% porous rock is just no
-rock at all (how zen!). But how about 50\%, or 40\%, or 60\%? The answer
-naturally depends on the size of the lattice, but for a very large one we
-observe the existence of a critical porosity $p_c$ below which we never observe
-a percolating cluster, while above $p_c$ one is away present. See
-Figure~\ref{fig:isoperco} for some realizations of the percolation process
-in two dimensions in each state: subcritical, critical and supercritical.
+While fiercely competing with the Ising model in terms of popularity,
+percolation certainly wins in terms of simplicity. Introduced in 1957 by
+Broadbent and Hammersley~\cite{Broadbent1957}, the question they were trying to
+answer was very humble: say we block a water pipe with a rock, how porous
+should the rock be for the water to be able to flow, even if at a very low
+rate? To find an answer, they modeled the rock as a square lattice where each
+site can be either occupied by the rocky substrate or a hole. The measure of
+the porosity is the ratio between the number of holes and the total number of
+sites in the lattice. Of course, the more porous is a rock, the more holes it
+has. Assuming these holes are randomly and uniformly distributed on the
+substrate, they will often, by pure chance, fall into clusters of neighboring
+holes, which are in fact just bigger holes. Water will be able to flow through
+the rock only if we have a cluster that traverse the system from one side to
+the other. This cluster is called the \textit{percolating} (or spanning)
+cluster. So we can reframe the initial question as follows: whats the smallest
+value of porosity where a percolating cluster will always be present in the
+system. A 0\% porous rock would obviously always be impermeable, and a 100\%
+porous rock is just no rock at all (how zen!). But how about 50\%, or 40\%, or
+60\%? The answer naturally depends on the size of the lattice, but for a very
+large one we observe the existence of a critical porosity $p_c$ below which we
+never observe a percolating cluster, while above $p_c$ one is away present. See
+Figure~\ref{fig:isoperco} for some realizations of the percolation process in
+two dimensions in each state: subcritical, critical and supercritical.
 
 \begin{figure}[h]
 \begin{center}
@@ -872,14 +867,16 @@ clusters of neighboring occupied sites thus formed''. At this point it's clear
 the system goes through a phase transition, each phase defined by the presence
 or not of a spanning cluster, which promotes a global connectivity of the
 system. We can study its properties by defining an order parameter $P$ as the
-fraction of the system occupied by the largest cluster, that is $P=N_\ell/N$.
-For small values of $p$, the largest cluster occupies a finite area of the
-system, which is basically a null fraction for a large enough system. As $p$
-approaches a critical probability $p_c$, the largest cluster grows to the order
-of the system size. Figure~\ref{fig:isoperco2} shows how the order parameter
-behaves for various sizes of a square lattice. It shows that as the system
-reaches the thermodynamical limit, the order parameter closely resembles as a
-second order phase transition.
+fraction of the system occupied by the largest cluster, that is $P=N_\ell/N$
+($N$ being the number of sites in the lattice and $N_\ell$ the number of sites
+belonging to the largest cluster). For small values of $p$, the largest cluster
+occupies a finite area of the system, which is basically a null fraction for a
+large enough system. As $p$ approaches a critical probability $p_c$, the
+largest cluster grows to the order of the system size.
+Figure~\ref{fig:isoperco2} shows how the order parameter behaves for various
+sizes of a square lattice. It shows that as the system reaches the
+thermodynamical limit, the order parameter closely resembles as a second order
+phase transition.
 
 The type of percolation described so far, where we occupy the sites of a lattice
 is called \textit{site percolation}. Alternatively we could instead occupy the
@@ -887,7 +884,7 @@ bonds. It is as if we had an empty isolating substrate with a potential
 difference $V$ put along it. We then randomly insert resistors between the
 sites with probability $p$. The system will have percolated when it has a
 bridge of resistors traversing it, along which electrical current can flow,
-thus passing from an isolating phase to a conductive one.
+thus passing from an isolating phase to a conductive one~\cite{Kirkpatrick1973}.
 Figure~\ref{fig:sitebond} illustrate the difference between site and bond
 percolation.
 
@@ -929,9 +926,9 @@ to the scaling of the cutoff parameter $c$
     \label{eq:sig}
     c\sim \left|p-p_c\right|^{-1/\sigma}.
 \end{equation}
-From these two exponents, $\tau$ and $\sigma$, we can determine all others.
-For instance take the order parameter as defined before. From
-Section~\ref{sec:universality} we know it scales as
+From these two exponents, $\tau$ and $\sigma$, we can determine all others
+listed in Section~\ref{sec:universality}. For instance take the order parameter
+as defined before. From Section~\ref{sec:universality} we know it scales as
 \begin{equation}
     P\sim\left|p-p_c\right|^{-\beta}.
 \end{equation}
@@ -957,25 +954,26 @@ which gives us the relation for $\beta$ as a function of $\tau$ and $\sigma$
 In a similar way, we can find $\gamma$ by using the susceptibility, defined in
 the percolation context as the second moment of the cluster size distribution
 \begin{eqnarray}
-    S & = & \int s^{2}n_{s}ds\\
+    \chi & = & \int s^{2}n_{s}ds\\
       & = & \int s^{2-\tau}e^{-cs}ds\\
       & = & c^{\tau-3}\int z^{2-\tau}e^{-z}dz
     \label{eq:susperco}
 \end{eqnarray}
 Since the integral term in Eq.~\ref{eq:susperco} is a constant, we have
 \begin{eqnarray}
- S & \propto & c^{\tau-3}\\
+    \chi & \propto & c^{\tau-3}\\
  & \propto & \left|p-p_{c}\right|^{-\left(3-\tau\right)/\sigma}.
 \end{eqnarray}
-which leads, following the definition of the $\gamma$ exponent
+which leads, following the relation of the $\gamma$ exponent
 \begin{equation}
     \gamma=\frac{3-\tau}{\sigma}
 \end{equation}
 
 
 Once $\beta$ and $\gamma$ have been determined as a function of $\tau$ and
-$\sigma$, all other critical exponents can be derived using
-Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:hs1}, and~\ref{eq:hs2}. Here
+$\sigma$, all other critical exponents can be derived using the scaling
+and hyperscaling relations (Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:hs1},
+and~\ref{eq:hs2}). Here
 are all of the others
 \begin{eqnarray}
     \alpha & = & 1-\frac{\tau-1}{\sigma}\\

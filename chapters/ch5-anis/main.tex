@@ -2,8 +2,8 @@
 \label{ch:anis}
 
 By now it should be clear that the notion of scale invariance is a central
-tenet of the modern critical phenomena narrative. Several critical systems
-however are explicitly not scale invariant in its strictest sense, systems they
+tenet of the modern critical phenomena narrative. There's a class of critical
+systems that are explicitly not scale invariant in its strictest sense, they
 have different properties depending on the direction in which you're looking,
 that is, they're \textit{anisotropic}. Anisotropy can arise due to the presence
 competing interactions, stratified structures or simply due to the system being
@@ -17,7 +17,7 @@ Such systems are called weakly anisotropic. On the other hand, there are
 systems that cannot have their anisotropy removed by rescaling of the axes, in
 fact rescaling only exacerbates the anisotropy. These are called
 \textit{strongly anisotropic} systems, and they present a significant, and
-often overlooked, challenge to those studying critical systems. That's because
+often overlooked, challenge to those studying critical phenomena. That's because
 these systems are not scale invariant \textit{per se}, so most of the results
 shown in Section~\ref{sec:scaling} do not translate well into these systems.
 We can, however, assume that they are invariant under an \textit{anisotropic}
@@ -30,8 +30,9 @@ scale transformation. This means that the correlation functions transform like
 where $\mathbf{r}=\mathbf{r}_{\parallel}+\mathbf{r}_{\perp}$ and the vectors
 $\mathbf{r}_{\parallel}$ and $\mathbf{r}_{\perp}$ represent preferential
 directions along which the critical properties of the system are different. The
-exponent $\theta$ is universal and called \textit{anisotropic exponent}, it
-basically quantifies the asymmetry between the directions.
+exponent $\theta$ is unique for each universality class and called
+\textit{anisotropic exponent}, it basically quantifies the asymmetry between
+the directions.
 
 Because the correlation functions are asymmetric, the critical exponents
 associated with it also have two different values $\eta_\parallel$,
@@ -73,8 +74,8 @@ the layered deposition of different types of sediment, each with different
 physical properties such as density and porosity. This layered arrangement have
 a significant influence in the transport properties of these rocks. Aiming to
 model the structure of these kind of media, Dayan \textit{et
-al.}~\cite{Dayan1991} introduced yet another variant of the percolation
-model, called multi-layered percolation. 
+al.}~\cite{Dayan1991} introduced a variant of the percolation
+model they called multi-layered percolation. 
 
 \begin{figure}[b]
 \begin{center}
@@ -140,12 +141,11 @@ $\Delta\rightarrow 0.5$.
 
 Because actually generating clusters of multi-layered percolation can be a
 complicated matter and the model has no analytical solution, the critical
-properties of multi-layered percolation were determined numerically through
-analysis of the cluster perimeters~\cite{Dayan1991, Samyr2009, Parteli2010}.
-This is done by generating cluster perimeters in a finite lattice, each
-perimeter defined by sequence of $N$ points at positions
-$\mathbf{r}_i=X_i\mathbf{x}+Y_i\mathbf{y}$. The root means square of the
-displacement in each direction
+properties were determined numerically through analysis of the cluster
+perimeters~\cite{Dayan1991, Samyr2009, Parteli2010}. This is done by generating
+cluster perimeters in a finite lattice, each defined by sequence of
+$N$ points at positions $\mathbf{r}_i=X_i\mathbf{x}+Y_i\mathbf{y}$. The root
+means square of the displacement in each direction
 \begin{equation}
     F_{X}\left(n\right)=
     \sqrt{\frac{1}{N-n}\sum_{i}{\left(X_{i+n-1}-X_{i}\right)}^{2}},
@@ -199,7 +199,7 @@ indicates that $\nu_x=13/6$ and $\nu_y=1/2$.
 \label{sec:dp}
 
 Another very important universality class of strongly anisotropic systems is
-also a variation of the percolation model. Called \textit{directed
+yet another variation of the percolation model. Called \textit{directed
 percolation}, this model can be seen as a spreading process. Starting from
 some initial condition, any occupied site can spread and occupy an adjacent
 site along a preferential direction with probability $p$; spread is prohibited

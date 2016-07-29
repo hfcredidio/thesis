@@ -613,25 +613,56 @@ the temporal scaling of the traces is more influenced by the diffusive
 properties of the drive than by the presence of long range correlations.
 
 
-\section{Conclusion}
+\chapter{Conclusion}
 \label{sec:concl}
+
+So we reach the end of this work. We hope that by now we made clear the
+importance and impact that the study of critical systems has had in both
+physics and mathematics. In our research we took to ourselves to explore two
+little understood areas: strongly anisotropic systems and Schramm-Loewner
+evolutions driven by non-Brownian stochastic processes.
+
+Strong anisotropy is the observed property that some systems have where several
+quantities behave differently depending on which direction you're measuring
+them. Particularly, we looked at two variants of the percolation model that
+display anisotropy. The first, Multi-layered percolation, was designed to
+simulate the transport properties in stratified (layered) media. The second,
+directed percolation, mimics the filtering of a fluid along a porous medium
+under the effect of gravity, so it flows only along a predetermined direction.
+
+We generated an ensemble of cluster perimeters in isotropic, multi-layered, and
+directed percolation, then used the zipper algorithm to compute the driving
+function from these curves and, looking at their diffusive properties, we found
+that they are anomalously diffusive. Multi-layered percolation is associated
+with superdiffusive driving functions while directed percolation with
+subdiffusive ones. This is the first time a physical model has been associated
+to driving functions with these properties.
+
+Furthermore, a detrended fluctuation analysis of the driving functions yielded
+mixed results. Multi-layered percolation showed a discernible positive
+correlation with a Hurst exponent $H\approx0.8$. Directed percolation however
+had inconclusive results, where the fluctuation function did not behave as a
+power law, as it would be expected. This could happen because of irregular
+behaviors in the series, like non-stationarity or the presence of
+singularities.
+
+In the second part of this work, we went one step further and looked at the
+opposite procedure, that is, what kind of traces we would obtain if we used
+anomalously diffusive processes as driving functions. We chose to use
+fractional Brownian motions with the parameters obtained from the previous
+analysis. We found that the resulting traces have a scaling behavior consistent
+with the multi-layered percolation. For directed percolation, again results
+were mixed. While the traces do not have spatial scaling exponents consistent
+with lattice model, the scaling in SLE time was surprisingly close.
 
 In summary, our numerical analysis offers compelling evidence that a variation
 of the Stochastic Loewner Evolution, obtained by taking as driving function a
 stochastic process with anomalous diffusion, may be the scaling limit of
-anisotropic critical models. In particular we looked at two anisotropic
-variants of percolation: directed percolation and multi-layered percolation.
-The former was found to be associated with subdiffusive driving functions,
-while the latter are superdiffusive. We also tested the inverse relation,
-finding that driving functions with anomalous diffusion do indeed generate
-traces with anisotropic features.  This possibility opens new questions, like
-how the critical exponents of SLE traces depend on the addition of long-term
-correlations to the driving function. Moreover, it would be interesting to know
-if one can obtain exponents of actual physical models with such a generalized
-theory. While some form of anisotropy was analytically verified in systems
-driven by L\'evy flights~\cite{Oikonomou2008}, the extension of the theoretical
-framework developed there to non-Markovian processes, like the fractional
-Brownian motions investigated here, is surely not evident, at least in a
-straightforward manner. We expect that the further developments of this new
-variant of SLE may provide some insight on the critical behavior of anisotropic
-systems, the same way the original SLE was to isotropic systems.
+anisotropic critical models. In particular, multi-layered percolation seems to
+have as scaling limit an SLE driven by a fractional Brownian motion with hurst
+exponent $H\approx0.8$ and diffusive constant $b\approx16$. The same could not
+be asserted for the directed percolation case, indicating that there's more to
+strong anisotropy than simply anomalous diffusion. We expect that the further
+developments of this new variant of SLE may provide some insight on the
+critical behavior of anisotropic systems, the same way the original SLE was to
+isotropic systems.
