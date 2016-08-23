@@ -3,13 +3,13 @@
 
 In this appendix we shall give an overview of the demonstration of Loewner's
 equation. For the mathematically inclined, a more detailed derivation can be
-found in~\cite{delMonaco2013}. Let's to this~\cite{Kager2004}.
+found in~\cite{delMonaco2013}. Let us do this~\cite{Kager2004}.
 
 In Chapter~\ref{ch:sle} we defined the uniformizing map $g_t$ as a conformal
 transformation that maps $\HH\setminus\gamma_{[0,t]}$ to $\HH$. The same way,
 for a given $dt>0$ there is a map $g_{t-dt}$ that takes
 $\HH\setminus\gamma_{[0,t-dt]}$ to $\HH$. We define a transition map
-$\tilde{g}_{t,dt}=g_t\circ g_{t-dt}^{-1}$ that maps
+$G_{t,dt}=g_t\circ g_{t-dt}^{-1}$ that maps
 $\HH\setminus\gamma_{[0,t-dt]}$ to $\HH\setminus\gamma_{[0,t]}$. For a
 reference of the relationship between these functions see
 Fig.~\ref{fig:proofscheme}.
@@ -26,27 +26,27 @@ Schwartz integral formula~\cite{Ahlfors1979}
 \end{equation}
 Since $\mbox{Im}\{\xi - f(z)\}=-\mbox{Im }f(z)$ for $\xi$ real we can write
 \begin{equation}
-    z-\tilde{g}_{t,dt}^{-1}\left(z\right)=
+    z-G_{t,dt}^{-1}\left(z\right)=
     \frac{1}{\pi}\int_{a}^{b}
-    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}{z-\xi}d\xi.
+    \frac{\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)}{z-\xi}d\xi.
 \end{equation}
 Where the interval $[a,b]$ is the (assumed finite) region where $\mbox{Im
-}\tilde{g}_{t,dt}^{-1}(z)>0$. Making the substitution
-$z\rightarrow\tilde{g}_{t,dt}(z)$ we obtain
+}G_{t,dt}^{-1}(z)>0$. Making the substitution
+$z\rightarrow G_{t,dt}(z)$ we obtain
 \begin{equation}
     \label{eq:proof1}
-    \tilde{g}_{t,dt}\left(z\right)-z=
+    G_{t,dt}\left(z\right)-z=
     \frac{1}{\pi}\int_{a}^{b}
-    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}
-    {\tilde{g}_{t,dt}\left(z\right)-\xi}d\xi.
+    \frac{\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)}
+    {G_{t,dt}\left(z\right)-\xi}d\xi.
 \end{equation}
 Multiplying both sides by $z$ and taking the limit $z\rightarrow\infty$ we
 obtain a formula for the half plane capacity
 \begin{equation}
     a_{t,dt}=\frac{1}{\pi}\int_{a}^{b}
-    \mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi.
+    \mbox{Im }G_{t,dt}^{-1}\left(\xi\right)d\xi.
 \end{equation}
-As mentioned in [\ldots], the choice of capacity is mostly arbitrary, but a
+As mentioned in Section~\ref{sec:le}, the choice of capacity is mostly arbitrary, but a
 common choice is
 \begin{equation}
     a_t = 2t,
@@ -58,7 +58,7 @@ which, based on the additivity property
 yields the relation
 \begin{equation}
     \label{eq:proof2}
-    \int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi=2\pi dt.
+    \int_{a}^{b}\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)d\xi=2\pi dt.
 \end{equation}
 
 We can now tackle the time derivative of the uniformizing map $g_t$
@@ -66,15 +66,15 @@ We can now tackle the time derivative of the uniformizing map $g_t$
     \frac{\partial g_{t}\left(z\right)}{\partial t}=
     \lim_{dt\rightarrow0}\frac{g_{t}\left(z\right)-g_{t-dt}\left(z\right)}{dt}.
 \end{equation}
-Using the fact that $g_{t}=\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)$,
+Using the fact that $g_{t}=G_{t,dt}\left(g_{t-dt}\left(z\right)\right)$,
 and Eqs.~\ref{eq:proof1} and~\ref{eq:proof2} we obtain
 \begin{equation}
     \frac{\partial g_{t}\left(z\right)}{\partial t}=
     \lim_{dt\rightarrow0}\frac{2}
-    {\int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}
+    {\int_{a}^{b}\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)d\xi}
     \int_{a}^{b}
-    \frac{\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)}
-    {\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)-\xi}d\xi.
+    \frac{\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)}
+    {G_{t,dt}\left(g_{t-dt}\left(z\right)\right)-\xi}d\xi.
     \label{eq:proof4}
 \end{equation}
 The second mean value theorem~\cite{Comenetz2002} for definite integrals states that
@@ -88,14 +88,14 @@ Applying that to Eq.~\ref{eq:proof4} leaves us with
     \label{eq:proof3}
      \frac{\partial g_{t}\left(z\right)}{\partial t}=
      \lim_{dt\rightarrow0}
-     \frac{2}{\tilde{g}_{t,dt}\left(g_{t-dt}\left(z\right)\right)-a}
-     \frac{\int_{a}^{c}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}
-          {\int_{a}^{b}\mbox{Im }\tilde{g}_{t,dt}^{-1}\left(\xi\right)d\xi}.
+     \frac{2}{G_{t,dt}\left(g_{t-dt}\left(z\right)\right)-a}
+     \frac{\int_{a}^{c}\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)d\xi}
+          {\int_{a}^{b}\mbox{Im }G_{t,dt}^{-1}\left(\xi\right)d\xi}.
 \end{equation}
-Since in the limit of $dt\rightarrow0$, $\mbox{Im }\tilde{g}_{t,dt}^{-1}(z)$ is
+Since in the limit of $dt\rightarrow0$, $\mbox{Im }G_{t,dt}^{-1}(z)$ is
 zero except for $z=U_t$, in other words, $a=b=U_t$. This means that the two
 integrals in Eq.~\ref{eq:proof3} take the same value and cancel each other. Add
-the fact that $\lim_{dt\rightarrow 0}\tilde{g}_{t,dt}$ is the identity map, and
+the fact that $\lim_{dt\rightarrow 0}G_{t,dt}$ is the identity map, and
 this leaves us with Loewner's equation
 \begin{equation}
     \frac{\partial g_t(z)}{\partial t} = \frac{2}{g_t(z) - U_t}.
@@ -105,8 +105,8 @@ this leaves us with Loewner's equation
 \begin{center}
     \includegraphics[scale=0.4]{chapters/ch7-apdx/figs/proofscheme}
 \end{center}
-\caption{Construction of the transition map $\tilde{g}_{t,dt}=g_t\circ
+\caption{Construction of the transition map $G_{t,dt}=g_t\circ
     g_{t-dt}^{-1}$. The interval $[a,b]$ is the region where
-    $\mbox{Im }\tilde{g}_{t,dt}(z)>0$.}
+    $\mbox{Im }G_{t,dt}(z)>0$.}
 \label{fig:proofscheme}
 \end{figure}

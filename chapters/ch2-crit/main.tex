@@ -4,10 +4,10 @@
 When trying to analyze a physical system, a big part of a physicist effort is
 dedicated to identifying the parts that compose the system and how they
 interact with each other. It is usually a daunting task to find an interaction
-model that captures all the relevant properties of a system. That's because the
+model that captures all the relevant properties of a system. That is because the
 macroscopic (i.e.\ collective) behavior does not follow trivially from the
 microscopic forces in place. In no area of physics this is more clear than in
-that of phase transitions and critical phenomena. What's so special about the
+that of phase transitions and critical phenomena. What is so special about the
 critical point, that allows a set of simple building blocks, which contain no
 global information about the system, display such a distinct and complex large
 scale behavior? This is the question scientists have been trying to solve in
@@ -20,7 +20,7 @@ contributions to this end.
 %sciences~\cite{Kello2010}, social scieces~\cite{Kron2009} and
 %ecology~\cite{Sole1999}, to name just a few.
 
-To start, let's take a step back and look at the building blocks of a physical
+To start, let us take a step back and look at the building blocks of a physical
 system. These are the smallest subdivision that can be used to understand the
 system as whole. They can be elementary particles when studying high energy
 physics~\cite{Boyanovsky2006}, living cells when observing the growing pattern
@@ -101,7 +101,7 @@ on the properties of the system, as described previously. This is know as a
 \label{sec:classification}
 
 Phase transitions are usually classified into two categories: first and second
-order. There's no consensus on the precise definition of each, but this does
+order. There is no consensus on the precise definition of each, but this does
 not matter a lot, since they behave quite differently. An old, but still often
 used definition was proposed by Ehrenfest~\cite{Jaeger1998}. But, before we get
 into that, we have to find a quantitative way of describing the phase of a
@@ -141,8 +141,8 @@ the entropy, another derivative of $G$,
     S=-{\left(\frac{\partial G}{\partial T}\right)}_p,
 \end{equation}
 is also discontinuous at the boundary of a phase transition. Because the first
-derivatives of the free energy display a singularity, we say these phase
-transitions are of \textit{first order}. This sudden changes happens because the
+derivatives of the free energy display a discontinuity, we say these phase
+transitions are of \textit{first order}. This sudden change happens because the
 equilibrium state of the system (determined by the minimum of the free energy)
 shifts from one part of the phase space to another~\cite{Callen1985}, as
 illustrated in Figure~\ref{fig:gibbs1}. When the system is exactly at the
@@ -173,7 +173,7 @@ temperature scale~\cite{Fermi1956}.
 
 Now, looking again at Figure~\ref{fig:water}a one might ask why the liquid-gas
 transition line does not extend all the way through the phase diagram. This
-is where things start to get interesting. We've established that the free
+is where things start to get interesting. We have established that the free
 energy have two equivalent minima when the system is over the coexistence line.
 Now, if we walk along this line following the behavior of the free energy, what
 we observe is that the ``dividing barrier'' between  the two minima gets shorter
@@ -183,7 +183,7 @@ minima merge. At this point it is not that the two phases coexist, they are
 indistinguishable from one another.
 
 If we look at the order parameter when the system pass through the critical
-point, we see that it is no longer discontinuous, as it's shown in
+point, we see that it is no longer discontinuous, as it is shown in
 Figure~\ref{fig:water}c. If we set the pressure to the same as the critical
 point and heat an amount of liquid water, the volume will rise continuously
 (although not necessarily smoothly) until it reaches the gaseous state. Not all
@@ -216,7 +216,7 @@ Although we focused a lot on the example of water, the ferromagnetic transition
 described in the previous section is probably the most studied kind of second
 order phase transition. Its free energy is given by
 \begin{equation}
-    F = -SdT-Mdh
+    dF = -SdT-Mdh
 \end{equation}
 where $M$ is the spontaneous magnetization (the order parameter in this case)
 and $h$ is an uniform external magnetic field. It is characterized by a
@@ -286,7 +286,8 @@ characterize the behavior of the system near the critical point. Here we will
 use $\op$ for the order parameter (the density for water, the magnetization for
 ferromagnets) and $\sfi$ for the source field (pressure for water, the external
 magnetic field for ferromagnets). This way we can define a generalized
-susceptibility $\chi=\partial\op/\partial \sfi$.
+susceptibility $\chi=\partial\op/\partial \sfi$ and specific heat
+$c=-\partial^2 f / \partial T^2$.
 
 In the thermodynamics domain there are four main critical exponents, each
 associated with a different quantity. We have the heat capacity exponent
@@ -320,7 +321,7 @@ $T=T_c$
 \end{equation}
 These exponents may have different values if you take the limit from above or
 bellow the critical point (unprimed and primed symbols respectively), but
-unless explicitly noted, we'll assume that they're the same, which happens
+unless explicitly noted, we will assume that they are the same, which happens
 often.
 
 There are many other critical exponents outside the realm of thermodynamics.
@@ -341,17 +342,24 @@ and disorder makes the correlation length as large as possible.
 
 We can formalize this thought by defining the correlation function of a system
 \begin{equation}
-    \label{eq:corr}
-    C\left(x_{1},x_{2}\right)=
-    C\left(\left|x_{1}-x_{2}\right|\right)=
-    \left\langle \op\left(x_{1}\right)\op\left(x_{2}\right)\right\rangle 
-    -\left\langle \op\left(x_{1}\right)\right\rangle
-    \left\langle \op\left(x_{2}\right)\right\rangle,
+    \label{eq:corr0}
+    C_{\op}\left(\left|\mathbf{r_1}-\mathbf{r_2}\right|\right) = 
+    \left\langle
+        \op\left(\mathbf{r_{1}}\right)
+        \op\left(\mathbf{r_{2}}\right)
+    \right\rangle -
+    \left\langle
+        \op\left(\mathbf{r_{1}}\right)
+    \right\rangle
+    \left\langle
+        \op\left(\mathbf{r_{2}}\right)
+    \right\rangle
 \end{equation}
-where $\op(x)$ is the local value of the order parameter at any given point of
-the system. The macroscopic value can be recovered from its expected value
-$\op=V^{-1}\int\op(x)d^d x$. The assumption that
-$C\left(x_{1},x_{2}\right)=C\left(\left|x_{1}-x_{2}\right|\right)$ comes from
+where $\op\left(\mathbf{r}\right)$ is the local value of the order parameter at
+any given point of the system. The macroscopic value can be recovered from its
+expected value $\op=V^{-1}\int\op(x)d^d x$. The assumption that
+$C\left(\mathbf{r_1},\mathbf{r_{2}}\right) =
+C\left(\left|\mathbf{r_{1}}-\mathbf{r_{2}}\right|\right)$ comes from
 translation invariance, which takes no specific point of the system as special.
 It is natural to expect that the correlations would decay exponentially, with a
 decay constant $\xi$
@@ -391,7 +399,7 @@ where $d$ is the number of spatial dimensions (usually 2 or 3, but it is often
 useful to leave it as a variable parameter~\cite{Wilson1972}). This is no minor
 fact, it means that near the critical point, all length scales contribute to
 the overall behavior of the system, making it that much more complicated to
-treat. Unlike, say, in fluid dynamics, where you don't need to know the details
+treat. Unlike, say, in fluid dynamics, where you do not need to know the details
 about the intermolecular interaction of water molecules to predict the ocean
 tides, in critical systems the large and small length scales are indissociable.
 Many authors consider this to be the defining characteristic of a second order
@@ -413,22 +421,22 @@ critical exponents.
 
 
 \section{Scaling Invariance}
-\label{sec:scaling}
+\label{sec:scalinginv}
 \renewcommand{\op}{\phi}
 
 The list of critical exponents shown on the last section is far from
 exhaustive. More exotic, but no less important exponents include the fractal
-dimension~\cite{Voss1984}, one-arm exponent~\cite{Lawler2001} and the crossing
+dimension~\cite{Voss1984}, one-arm exponent~\cite{Lawler2001b} and the crossing
 exponent~\cite{Aizenman1999}, among others. It sure seems like a lot of work to
 completely describe a universality class, if one needs to compute dozens of
 exponents. Luckily with the very simple assumption of scaling invariance, we
 can greatly reduce the amount of work needed.
 
 We will take a look at the correlation functions of the observables, which
-we'll refer as \textit{scaling operators}. The main ones are the order
-parameter density $\op(\mathbf{r})$ and energy density
+we will refer as \textit{scaling operators}. The main ones are the order
+parameter distribution $\op(\mathbf{r})$ and energy density
 $\varepsilon(\mathbf{r})$. The two-point correlation function of these fields is
-defined according to Eq.~\ref{eq:corr}
+defined according to Eq.~\ref{eq:corr0}
 \begin{eqnarray}
     \label{eq:corr10}
     C_{\op}\left(\left|\mathbf{r_1}-\mathbf{r_2}\right|\right) & = &
@@ -483,17 +491,17 @@ compute the susceptibility and the specific heat by integrating $C_\op$ and
 $C_\varepsilon$ respectively. This give us
 \begin{eqnarray}
     \label{eq:chi2}
-    \chi\left(t,h\right) & = & b^{d-2x_{\op}}\chi\left(tb^{y_{t}},ht^{y_{h}}\right)\\
+    \chi\left(t,h\right) & = & b^{d-2x_{\op}}\chi\left(tb^{y_{t}},hb^{y_{h}}\right)\\
     \label{eq:c2}
-    c\left(t,h\right) & = & b^{d-2x_{\varepsilon}}c\left(tb^{y_{t}},ht^{y_{h}}\right)
+    c\left(t,h\right) & = & b^{d-2x_{\varepsilon}}c\left(tb^{y_{t}},hb^{y_{h}}\right)
 \end{eqnarray}
 Recall that $\chi=-\partial^2 f/\partial h^2$ and $c=-\partial^2 f/\partial
-T^2$, therefore we can integrate Eq.~\ref{eq:chi2} and~\ref{eq:c2} twice,
+t^2$, therefore we can integrate Eq.~\ref{eq:chi2} and~\ref{eq:c2} twice,
 obtaining the free energy density $f=F/\mathcal{N}$
 \begin{equation}
     f\left(t,h\right)=
-    b^{d-2x_{\op}-2y_{h}}f\left(tb^{y_{t}},ht^{y_{h}}\right)=
-    b^{d-2x_{\varepsilon}-2y_{t}}f\left(tb^{y_{t}},ht^{y_{h}}\right),
+    b^{d-2x_{\op}-2y_{h}}f\left(tb^{y_{t}},hb^{y_{h}}\right)=
+    b^{d-2x_{\varepsilon}-2y_{t}}f\left(tb^{y_{t}},hb^{y_{h}}\right),
 \end{equation}
 from which we can deduce that $x_\op+y_h = x_\varepsilon+y_t$. As a matter of
 fact, the sum is constant for all pairs of scaling dimension and its conjugate
@@ -506,7 +514,7 @@ number of spatial dimensions, that is
 \end{equation}
 which leaves us with the neat relation
 \begin{equation}
-    f\left(t,h\right)=b^{-d}f\left(tb^{y_{t}},ht^{y_{h}}\right).
+    f\left(t,h\right)=b^{-d}f\left(tb^{y_{t}},hb^{y_{h}}\right).
 \end{equation}
 It is worth noting that this is not really the free energy of the system. The
 actual free energy have a singular and a regular part, the one described so
@@ -522,7 +530,7 @@ This can be done by making $b=t^{-1/y_t}$, which yields
     t^{d/y_{t}}f\left(1,ht^{-y_{h}/y_{t}}\right)=
     t^{d/y_{t}}\Psi\left(ht^{-y_{h}/y_{t}}\right),
 \end{equation}
-where $\Psi$ is known as a scaling function, and it's unique for a given
+where $\Psi$ is known as a scaling function, and it is unique for a given
 universality class. We can re-obtain the heat capacity by taking
 the second derivative as usual
 \begin{equation}
@@ -591,9 +599,9 @@ Eqs.~\ref{eq:scal1}--\ref{eq:scal2},~\ref{eq:nuscal} and~\ref{eq:etascal}.
 These are known as \textit{hyperscaling relations}, and amazingly no new
 critical exponent is needed to determine them, that is, only two are necessary
 to completely describe the critical exponents of a second-order phase
-transition, how convenient! Sadly the hyperscaling relations are not as sturdy
-as the scaling relations and can break down under the presence of (the
-creatively named) dangerously irrelevant operators~\cite{Nishimori2011}.
+transition, which is very convenient. Sadly the hyperscaling relations are not
+as sturdy as the scaling relations and can break down under the presence of
+dangerously irrelevant operators~\cite{Nishimori2011}.
 
 The arguments and assumptions used throughout this section were historically
 motivated through the study of renormalization group
@@ -639,10 +647,20 @@ system is given by
     -h\sum_{i}s_{i},
 \end{equation}
 Where $\sum_{\left\langle i,j\right\rangle}$ means a summation over all pairs
-of nearest neighbors. If we assume $J>0$, then the first term of the
-Hamiltonian favors the alignment of the spins, while the second one favors the
-alignment with an external magnetic field. See Figure~\ref{fig:ising} for some
-realizations of the Ising model in two dimensions in a square lattice.
+of nearest neighbors, and $J$ is the interaction coupling parameter. If we
+assume $J>0$, then the first term of the Hamiltonian favors the alignment of
+the spins, while the second one favors the alignment with an external magnetic
+field. See Figure~\ref{fig:ising} for some configurations $\left\{s_i\right\}$
+of the Ising model in two dimensions in a square lattice, which according to
+statistical mechanics are distributed with the probability
+\begin{equation}
+    P\left(\left\{ s_{i}\right\} \right)=
+    \frac{e^{-\mathcal{H}\left(\left\{ s_{i}\right\} \right)/k_b T}}
+         {\sum_{\left\{ s_{j}\right\} }
+          e^{-\mathcal{H}\left(\left\{ s_{j}\right\} \right)/k_b T}}.
+\end{equation}
+We can see that for higher temperatures, more disordered states (which have
+higher energy) are more probable.
 
 \begin{figure}[b]
 \begin{center}
@@ -691,7 +709,7 @@ with non-zero magnetization.
     spontaneous magnetization $M$ as a function of the external magnetic field
     $h$ and temperature $T$. The black line represents the coexistence line
     where the phase transition is of first order, which means the magnetization
-    changes discontinuously like it's shown in the blue line. In the critical
+    changes discontinuously like it is shown in the blue line. In the critical
     point (green line), the change becomes continuous and a second order phase
     transition takes place. Beyond this point (red line), the transition is
     always continuous.}
@@ -736,10 +754,10 @@ order phase transition are allowed to come about.
 \label{fig:ising_phase}
 \end{figure}
 
-Let's take a look at the phase diagram of the Ising model.
+Let us take a look at the phase diagram of the Ising model.
 Figure~\ref{fig:ising_phase2} shows the 2D square lattice version. We observe a
 first order phase transition at $h=0$ and $T<T_c$, where the magnetization
-discontinuously flips direction. At $T=T_c$ the transition becomes continuous
+discontinuously flips direction. At $T=T_c$ the transition becomes continuous.
 The value of the critical point is given by
 \begin{equation}
     T_{c}=
@@ -838,10 +856,10 @@ the other. This cluster is called the \textit{percolating} (or spanning)
 cluster. So we can reframe the initial question as follows: whats the smallest
 value of porosity where a percolating cluster will always be present in the
 system. A 0\% porous rock would obviously always be impermeable, and a 100\%
-porous rock is just no rock at all (how zen!). But how about 50\%, or 40\%, or
-60\%? The answer naturally depends on the size of the lattice, but for a very
-large one we observe the existence of a critical porosity $p_c$ below which we
-never observe a percolating cluster, while above $p_c$ one is away present. See
+porous rock is just no rock at all. But how about 50\%, or 40\%, or 60\%? The
+answer naturally depends on the size of the lattice, but for a very large one
+we observe the existence of a critical porosity $p_c$ below which we never
+observe a percolating cluster, while above $p_c$ one is away present. See
 Figure~\ref{fig:isoperco} for some realizations of the percolation process in
 two dimensions in each state: subcritical, critical and supercritical.
 
@@ -863,7 +881,7 @@ This is the core of percolation theory, initially motivated by a transport
 problem. From a more generic perspective, Stauffer summarizes it
 better~\cite{Stauffer1994}: ``Each site of a lattice is occupied randomly with
 probability $p$ independent of its neighbors. Percolation theory deals with the
-clusters of neighboring occupied sites thus formed''. At this point it's clear
+clusters of neighboring occupied sites thus formed''. At this point it is clear
 the system goes through a phase transition, each phase defined by the presence
 or not of a spanning cluster, which promotes a global connectivity of the
 system. We can study its properties by defining an order parameter $P$ as the
@@ -900,7 +918,7 @@ percolation.
 \end{figure}
 
 The exact value of the critical point is non universal and depends on whether
-it's site or bond percolation and on the lattice choice. The two more notorious
+it is site or bond percolation and on the lattice choice. The two more notorious
 examples are site percolation on a square lattice, that has a critical point at
 $p_c\approx0.592746$ and site percolation on a triangular lattice at $p_c=0.5$.
 Values of the critical point for various other lattices are shown in
@@ -989,7 +1007,7 @@ computer~\cite{Newman2000}.
 
 The critical exponents of two dimensional site percolation lattice have been
 exactly computed in the triangular lattice using Schramm Loewner
-Evolutions~\cite{Smirnov2001} (we'll get there in Chapter~\ref{ch:sle}). The
+Evolutions~\cite{Smirnov2001} (we will get there in Chapter~\ref{ch:sle}). The
 values found are $\tau=187/91$ and $\sigma=36/91$. The other exponents can be
 found in Table~\ref{tab:univ}. Other lattices have not been solved neither
 proved to be in the same universality class, although the numerical evidence

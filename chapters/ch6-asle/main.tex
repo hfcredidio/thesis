@@ -40,7 +40,7 @@ also valid in the opposite direction, that SLE consistently leads
 anomalously diffusive driving functions to traces that display clear
 anisotropic scaling. To test that, we generate Loewner traces driven by
 fractional Brownian motions with different values of $b$ and $H=\alpha/2$,
-which we'll refer as $SLE(b,H)$, and compare the scaling properties of the
+which we will refer as $SLE(b,H)$, and compare the scaling properties of the
 traces obtained with those of the lattice models.
 
 \section{Methods}
@@ -61,7 +61,7 @@ traces in order to obtain reliable results. The usual algorithms are normally
 very memory hungry because you need to store the state of all sites of the
 lattice. Since we are only interested in obtaining the perimeter of the
 percolating cluster, which consists of only a small portion of the lattice, one
-might imagine if there's a more efficient way of simulating these curves.
+might imagine if there is a more efficient way of simulating these curves.
 Luckily there is, thanks to the locality property of the percolation model. The
 method is called the \textit{percolation exploration process}~\cite{Cardy2005}.
 
@@ -85,7 +85,7 @@ method is called the \textit{percolation exploration process}~\cite{Cardy2005}.
 The exploration process is easier to define in the triangular lattice, because
 at any given time the walker is always facing a single site, unlike the square
 lattice, in which it faces two sites at once, complicating things a little (it
-doesn't make it impossible, though). In the exploration process, a walker is
+does not make it impossible, though). In the exploration process, a walker is
 put in an initial position at the bottom of the lattice. The walker observes
 the state of the site right in front of him. If it is unoccupied, the walker
 turns clockwise, otherwise it turns clockwise. Then the walker takes a step in
@@ -99,7 +99,7 @@ the left side of the bottom row of the lattice is always unoccupied and the
 right side is always occupied. This way the trace will always turn away from
 the real line.
 
-It's pretty clear the advantage of this method, you only need to store the
+It is pretty clear the advantage of this method, you only need to store the
 information about the sites directly adjacent to the perimeter, which can be
 cached in your container of preference, like a hash table (also known as maps
 or dictionaries), as illustrated in Figure~\ref{fig:explore}. This allow us to
@@ -471,7 +471,7 @@ evolves like
 \begin{equation}
     \left\langle U_{t}^{2}\right\rangle \sim bt^{2H}.
 \end{equation}
-We'll refer to this variant of SLE, driven by fractional Brownian motion, as
+We will refer to this variant of SLE, driven by fractional Brownian motion, as
 SLE$(b,H)$.
 
 We generated the drive $U_t$ as a fractional Brownian Motion with Hurst
@@ -523,7 +523,7 @@ with their respective reference models.
 
 First we look at the spatial scaling, which amounts to measure the critical
 exponents $\bar{\nu}_x$ and $\bar{\nu}_y$. To do that, we reparametrize the
-trace as a function of its length instead of the time. This means we'll have
+trace as a function of its length instead of the time. This means we will have
 a sequence of points $\{\gamma(\ell_i)\}$, where
 \begin{equation}
     \ell_i = \sum_{j=1}^i \left|\gamma_j-\gamma_{j-1}\right|.
@@ -623,7 +623,7 @@ little understood areas: strongly anisotropic systems and Schramm-Loewner
 evolutions driven by non-Brownian stochastic processes.
 
 Strong anisotropy is the observed property that some systems have where several
-quantities behave differently depending on which direction you're measuring
+quantities behave differently depending on which direction you are measuring
 them. Particularly, we looked at two variants of the percolation model that
 display anisotropy. The first, Multi-layered percolation, was designed to
 simulate the transport properties in stratified (layered) media. The second,
@@ -661,7 +661,7 @@ stochastic process with anomalous diffusion, may be the scaling limit of
 anisotropic critical models. In particular, multi-layered percolation seems to
 have as scaling limit an SLE driven by a fractional Brownian motion with hurst
 exponent $H\approx0.8$ and diffusive constant $b\approx16$. The same could not
-be asserted for the directed percolation case, indicating that there's more to
+be asserted for the directed percolation case, indicating that there is more to
 strong anisotropy than simply anomalous diffusion. We expect that the further
 developments of this new variant of SLE may provide some insight on the
 critical behavior of anisotropic systems, the same way the original SLE was to

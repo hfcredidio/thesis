@@ -13,7 +13,7 @@
 \label{fig:cmapex}
 \end{figure}
 
-In Section~\ref{sec:scaling} we talked about the principle of scale invariance
+In Section~\ref{sec:scalinginv} we talked about the principle of scale invariance
 and how incredibly useful it is. It is based on the fact that the correlation
 functions transform covariantly under a change in scale $\mathbf{r}\rightarrow
 b\mathbf{r}$. A \textit{global} change in scale, that is. One could imagine a
@@ -21,7 +21,7 @@ transformation $\mathbf{r}\rightarrow f(\mathbf{r})$ in which the scaling
 factor $b$ depends on the position. This would be a \textit{local} change of
 scale. This kind of transformation would deform the overall shape of the
 system, but in the direct vicinity of a point it would look like a regular
-scale transformation with possibly a rotation and translation. Surely we don't
+scale transformation with possibly a rotation and translation. Surely we don not
 expect every possible functional form of $f$ to behave like that, some of them would
 deform the geometry of the system even at the very small scales, so we must be
 careful when trying to generalize scale invariance. Luckily there is a class of
@@ -39,7 +39,8 @@ preserve the angle between any two vectors, that is
     \theta',
 \end{equation}
 as illustrated in Figure~\ref{fig:cmapex}. More formally, they are coordinate
-changes that that keep the metric invariant up to a local scaling factor
+changes that that keep the metric $g_{\mu\nu}$ invariant up to a local scaling
+factor $\Omega(\mathbf{r})$
 \begin{equation}
     g_{\mu\nu}'\left(\mathbf{r}'\right)=
     \Omega\left(\mathbf{r}\right)g_{\mu\nu}\left(\mathbf{r}\right).
@@ -49,7 +50,7 @@ to a large and a small image, showing how it does not deform the latter, it can
 only scale, translate or rotate it. Because of that, translational, rotational,
 and scaling invariance are obvious properties a system must have in order to be
 conformally invariant. Another important ingredient is locality, that is, the
-presence of short range interactions. That's because if different parts of the
+presence of short range interactions. That is because if different parts of the
 system will be rescaled by different factors, they must not exert direct
 influence over one another (they can exert \textit{indirect} influence through
 long range correlations though). The recipe for conformal invariance is, as
@@ -164,7 +165,7 @@ Fields covariant under any conformal map are called primary operators. The
 magnetization density and energy density fields of the ising model are primary
 operators, for example. We can derive an important result of critical phenomena
 by looking at how primary operators transform under the map
-$f(z)=L\log(z)/2\pi$, which maps the whole plane to an infinite strip of length
+$f(z)=L\log(z)/2\pi$, which maps the whole plane to an infinite strip of width
 $L$. Applying it to Eqs.~\ref{eq:cinv} and~\ref{eq:twop} we get a relation
 between the scaling dimension $x$ of the operator, correlation length $\xi$ and
 system size $L$

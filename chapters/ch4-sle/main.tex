@@ -3,7 +3,7 @@
 
 The most exciting advances in natural sciences happen when two previously
 unrelated or loosely related fields are brought together to give new insight
-into old problems. That's what happened when Descartes and Fermat joined
+into old problems. That is what happened when Descartes and Fermat joined
 algebra (which had just recently reached Europe) and geometry to form analytic
 geometry~\cite{Stillwell2010}, an indispensable part of the modern science and
 engineering mathematical toolbox. Or when Einstein applied the abstract and
@@ -30,7 +30,7 @@ themselves, but at the random curves that the form the boundary of clusters.
 This theory was an astounding success, not only rigorously reproducing
 previously established results, but also answering long standing unsolved
 problems, like Mandelbrot's conjecture that the boundary of a 2D Brownian
-motion has fractal dimension of $4/3$~\cite{Lawler2001}.
+motion has fractal dimension of $4/3$~\cite{Lawler2001a}.
 
 
 \section{Loewner Equation}
@@ -96,8 +96,8 @@ boundary $\partial D$ it is called \textit{chordal}.
 \end{figure}
 
 
-Let's parametrize the trace using a positive real parameter $t$ such that
-$\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we'll leave the
+Let us parametrize the trace using a positive real parameter $t$ such that
+$\gamma_{0}=r_1$ and $\gamma_{\infty}=r_2$. For now we will leave the
 parametrization choice free. We denote $\gamma_{[0,t]}$ the whole extent of the
 trace from $\gamma_0$ up to the tip $\gamma_t$. Therefore, for every value of
 $t$ we have a different uniformizing map
@@ -105,7 +105,7 @@ $g_t:D\setminus\gamma_{[0,t]}\rightarrow D$. We can imagine $t$ as a sort of
 time, and the evolution of the tip $\gamma_t$ as a growth process.
 An immediate question one might ask is, what is the relation between $D$,
 $\gamma$ and the $g_t$? Are they uniquely defined? Is there a kind of equation
-that relates these objects? Loewner's answer is ``yes'', as long as you're
+that relates these objects? Loewner's answer is ``yes'', as long as you are
 willing to make a few compromises.
 
 We can construct an equation for $g_t$ by shifting our attention from the trace
@@ -144,7 +144,7 @@ the most commonly used domain is the upper half plane
 $\HH=\{z|\mbox{Im}\{z\}\geq0\}$ with $\gamma_0=0$ and $\gamma_\infty=\infty$,
 which offers the practicality that $\partial\HH=\mathbb{R}$, so the driving
 function is real valued. In physical applications, it is much more common to
-use the chordal version, and it's the version we'll focus here.
+use the chordal version, and it is the version we will focus here.
 Figure~\ref{fig:radchord} show two examples of radial and chordal traces in
 these domains.
 
@@ -181,7 +181,7 @@ number of properties, including positivity, monotonicity and
 continuity~\cite{Kager2004}. The choice of capacity is intrinsically connected
 with the parametrization of the trace (the SLE time $t$) and it is far from a
 trivial point, which has drawn some attention from
-mathematicians~\cite{Lawler2011}. Here, we'll go with the most common choice of
+mathematicians~\cite{Lawler2011}. Here, we will go with the most common choice of
 $a(t)=2t$.
 
 \begin{figure}[b]
@@ -283,8 +283,8 @@ A big breakthrough in the area of critical phenomena happened when Oded Schramm
 used Loewner evolutions to study the interfaces that form in critical systems,
 like the perimeter of a percolation cluster. He did that by showing that all
 properties of conformally invariant models are codified in a family of Loewner
-evolutions driven by a fairly simple driving function. In this section we'll
-give an outline of this theory, but there's an abundance of material for the
+evolutions driven by a fairly simple driving function. In this section we will
+give an outline of this theory, but there is an abundance of material for the
 reader interested in digging deeper~\cite{Cardy2005, Kager2004, Henkel2012}.
 
 \begin{figure}[b]
@@ -305,7 +305,7 @@ If we want to describe conformally invariant critical systems using
 Loewner processes, we need to redefine the concept conformal invariance. The
 definition given in terms of the covariance of field operators
 (Eq.~\ref{eq:cinv}) does not translate well into the framework of Loewner
-evolutions because there's no way to incorporate the notion of field. Instead
+evolutions because there is no way to incorporate the notion of field. Instead
 we need to define it in terms of the curves that form the boundaries of
 clusters, which are meant to be the traces. To do that we take a measure theory
 approach (the more general mathematical theory of probability)~\cite{Ash2000}.
@@ -379,7 +379,7 @@ It is defined as having the following properties~\cite{Durrett1996}:
     \item $B_t$ is almost surely continuous.
 \end{itemize}
 This is a striking result. Using only a family of driving functions with a
-single parameter, we're able to describe all properties of many criticality
+single parameter, we are able to describe all properties of many criticality
 models. In the inaugural paper of SLE, Schramm showed that loop-erased random
 walks (random walks with the loops removed in chronological order) and uniform
 spanning trees converge to SLE with $\kappa=2$ and $\kappa=8$ respectively.
@@ -403,7 +403,7 @@ basically a function that varies randomly with time. This random variation
 gives the wiggly aspect of the trace, as seen in Figure~\ref{fig:sleexample}.
 This means that the higher the value of $\kappa$, the larger will be the
 variations of the Brownian motion, and the more wiggly the trace will be. When
-the value of $\kappa$ is less or equal than $4$ the trace won't wiggle so
+the value of $\kappa$ is less or equal than $4$ the trace will not wiggle so
 wildly to the point of touching itself. So in this case the trace is a simple
 curve, as we already suggested in the last section with Eq.~\ref{eq:holder}.
 When $\kappa>4$, however, the trace almost surely touch itself in all length
@@ -499,7 +499,7 @@ values of $\kappa$ identified include
 \begin{itemize}
     \item $\kappa=2$: loop-erased random walk~\cite{Schramm2000};
     \item $\kappa=8/3$: suspected to be self-avoiding walk~\cite{Kennedy2002},
-        proved to be the border of a 2D random walk~\cite{Lawler2001};
+        proved to be the border of a 2D random walk~\cite{Lawler2001a};
     \item $\kappa=3$: cluster boundaries of the Ising model~\cite{Chelkak2014};
     \item $\kappa=4$: harmonic explorer~\cite{Schramm2005};
     \item $\kappa=6$: boundaries of percolation clusters~\cite{Smirnov2001b};
@@ -650,7 +650,7 @@ with the other drawbacks.
 
 Since the Euler's method perform so poorly in the task of computing the SLE
 trace, a better method is needed. The one described here is called the
-\textit{zipper algorithm}, and it's used throughout this work. It is based on
+\textit{zipper algorithm}, and it is used throughout this work. It is based on
 the idea of discrete Loewner evolutions~\cite{Bauer2003, Kennedy2009}, series
 of smaller simpler Loewner evolutions.
 
@@ -710,7 +710,7 @@ The vertical slit is done by making
     \tilde{U}(t)=\Delta U,
 \end{equation}
 which generate a vertical trace going from $\Delta U$ to $\Delta U +
-i2\sqrt{\Delta t}$. This isn't strictly a Loewner evolution because the trace
+i2\sqrt{\Delta t}$. This is not strictly a Loewner evolution because the trace
 does not start at the origin, but this is a numerical approximation where the
 actual trace is a composition of many vertical slits, and the limit $\Delta t
 \rightarrow 0$ converges to an actual SLE trace. The $h_k$ in this case is
@@ -766,7 +766,7 @@ $O(N^{1.4})$~\cite{Kennedy2007}.
 
 The next challenge is to do the opposite task, obtaining a driving function
 from a given trace $\gamma_k$. This is much simpler when using a vertical slit.
-First let's invert Equation~\ref{eq:zip}
+First let us invert Equation~\ref{eq:zip}
 \begin{equation}
     \label{eq:unzip1}
     0=h_{k}^{-1}\circ h_{k-1}^{-1}\circ\cdots h_{1}^{-1}\left(\gamma_{k}\right).
