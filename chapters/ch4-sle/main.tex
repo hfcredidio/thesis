@@ -51,7 +51,7 @@ region of the complex plane into any shape we want by using a suitable
 conformal map, as illustrated in Figure~\ref{fig:scmap}. Luckily conformal maps
 are also bijective, so the inverse process is always possible too. In the
 majority of cases there is no simple form for the map, but they can be
-constructed at least numerically using Schwartz-Christoffel
+constructed at least numerically using Schwarz-Christoffel
 maps~\cite{Driscoll2002}. There is no restriction for the form of the domains
 involved, they can be as simple or complicated as desired, as long as they do
 not have any holes in it, and their boundary has more than one point.
@@ -301,18 +301,18 @@ reader interested in digging deeper~\cite{Cardy2005, Kager2004, Henkel2012}.
 \label{fig:confinv}
 \end{figure}
 
-If we want to describe conformally invariant critical systems using
-Loewner processes, we need to redefine the concept conformal invariance. The
-definition given in terms of the covariance of field operators
-(Eq.~\ref{eq:cinv}) does not translate well into the framework of Loewner
-evolutions because there is no way to incorporate the notion of field. Instead
-we need to define it in terms of the curves that form the boundaries of
-clusters, which are meant to be the traces. To do that we take a measure theory
-approach (the more general mathematical theory of probability)~\cite{Ash2000}.
-In this context, we define conformal invariance as follows: let $f$ be a
-conformal map between two domains $D$ and $D'$ such that $D'=f(D)$, then the
-measure over the set of traces that connect two points $z,w\in\partial D$
-should behave like~\cite{Cardy2005}
+If we want to describe conformally invariant critical systems using Loewner
+processes, we need to redefine the concept conformal invariance. The definition
+given in terms of the covariance of field operators (Eq.~\ref{eq:cinv}) does
+not translate well into the framework of Loewner evolutions because there is no
+way to incorporate the notion of field. Instead we need to define it in terms
+of the curves that form the boundaries of clusters, which are meant to be the
+traces. To do that we take a measure theory approach (the more general
+mathematical theory of probability)~\cite{Ash2000}. In this context, we define
+conformal invariance as follows: let $f$ be a conformal map between two domains
+$D$ and $D'$ such that $D'=f(D)$, then the measure $\mu_D(z, w)$ over the set
+of traces that connect two points $z,w\in\partial D$ should behave
+like~\cite{Cardy2005}
 \begin{equation}
     \newcommand{\pp}[1]{\left(#1\right)}
     f\circ\mu_D\pp{z,w} = \mu_{f(D)}\pp{f\pp{z}, f\pp{w}}.
@@ -379,11 +379,13 @@ It is defined as having the following properties~\cite{Durrett1996}:
     \item $B_t$ is almost surely continuous.
 \end{itemize}
 This is a striking result. Using only a family of driving functions with a
-single parameter, we are able to describe all properties of many criticality
-models. In the inaugural paper of SLE, Schramm showed that loop-erased random
-walks (random walks with the loops removed in chronological order) and uniform
-spanning trees converge to SLE with $\kappa=2$ and $\kappa=8$ respectively.
-Figure~\ref{fig:sleexample} shows a realization of SLE with $\kappa=2$.
+single parameter, $\kappa$, which plays the role of the diffusion coefficient
+of the Brownian motion. With it, we are able to describe all properties of many
+criticality models. In the inaugural paper of SLE, Schramm showed that
+loop-erased random walks (random walks with the loops removed in chronological
+order) and uniform spanning trees converge to SLE with $\kappa=2$ and
+$\kappa=8$ respectively. Figure~\ref{fig:sleexample} shows a realization of SLE
+with $\kappa=2$.
 
 \begin{figure}[b]
 \begin{center}
@@ -516,15 +518,16 @@ watersheds~\cite{Daryaei2012}.
 \label{sec:levy}
 
 As mentioned so far, SLE is a theory concerned with conformally invariant
-families of curves, which are always driven by a Brownian motion. In all other
-cases, however, the curves themselves are not required to be conformally
-invariant, even though the Loewner equation describes the time evolution of a
-conformal map~\cite{Henkel2012}. This opens space for the study of stochastic
-Loewner evolutions driven by processes that deviate from the Brownian motion.
-This is the case of the work of Rushkin \textit{et al.}~\cite{Rushkin2006,
-Oikonomou2008}, who studied SLE driven by L\'evy processes, $L_t$,
-which behave pretty much like the Brownian motion described in
-Section~\ref{sec:sle}, except the increments are distributed according to a
+families of curves, which are always driven by a Brownian motion. In cases
+where the driving function is a more general stochastic process, the
+curves themselves are not required to be conformally invariant, even though the
+Loewner equation describes the time evolution of a conformal
+map~\cite{Henkel2012}. This opens space for the study of stochastic Loewner
+evolutions driven by processes that deviate from the Brownian motion. This is
+the case of the work of Rushkin \textit{et al.}~\cite{Rushkin2006,
+Oikonomou2008}, who studied SLE driven by L\'evy processes, $L_t$, which
+behave pretty much like the Brownian motion described in Section~\ref{sec:sle},
+except the increments are distributed according to a
 power law in the limit of large $x$
 \begin{equation}
     P(L_{t+dt} - L_t \in [x, x+dx]) \propto \frac{1}{|x|^{1+\mu}}dxdt,
@@ -590,9 +593,9 @@ solution
 as long as $t - t_0$ is small enough. This way, the equation can be solved
 recursively by providing a discretized driving function $U_{t_i}$ with $t_0 =
 0 < t_{1}<\cdots<t_N$ and. Applying it to Loewner's equation
-(Eq.~\ref{eq:loew}) we have
+(Eq.~\ref{eq:loew}) we have, with initial condition $g_0(z)=z$,
 \begin{equation}
-    g_{t_{i+1}}(z) = g_{t_i}(z) + (t_{i+1} - t_i) \frac{2}{g_t(z) - U_{t_i}}.
+    g_{t_{i+1}}(z) = g_{t_i}(z) + (t_{i+1} - t_i) \frac{2}{g_{t_i}(z) - U_{t_i}}.
 \end{equation}
 
 \begin{figure}
@@ -638,7 +641,7 @@ as the value of $\kappa$ rises, to the point where the case $\kappa=6$
 
 Other problem with Euler's method in the context of Loewner evolutions is
 computational complexity. It requires $O(N)$ for each point of the space where
-you compute $g_t(z)$, considering the you use a $(M,M)$ regular grid, the whole
+you compute $g_t(z)$, considering that you use a $(M,M)$ regular grid, the whole
 algorithm have complexity $O(NM^2)$. This is further aggravated by the fact the
 most points are not necessary to actually compute the trace, making most of the
 computational effort useless. One possible advantage is the fact that this
@@ -768,7 +771,7 @@ The next challenge is to do the opposite task, obtaining a driving function
 from a given trace $\gamma_k$. This is much simpler when using a vertical slit.
 First let us invert Equation~\ref{eq:zip}
 \begin{equation}
-    \label{eq:unzip1}
+    \label{eq:unzip11}
     0=h_{k}^{-1}\circ h_{k-1}^{-1}\circ\cdots h_{1}^{-1}\left(\gamma_{k}\right).
 \end{equation}
 We know that the vertical slit maps the origin to $\Delta U+i2\sqrt{\Delta t}$,
@@ -777,7 +780,7 @@ that is
     \label{eq:unzip2}
     h_{k}\left(0\right)=\Delta U+i2\sqrt{\Delta t}.
 \end{equation}
-Combining Eq.~\ref{eq:unzip1} and Eq.~\ref{eq:unzip2} we have    
+Combining Eq.~\ref{eq:unzip11} and Eq.~\ref{eq:unzip2} we have    
 \begin{equation}
     \Delta U_{k}+i2\sqrt{\Delta t_{k}}=
     h_{k-1}^{-1}\circ\cdots h_{1}^{-1}\left(\gamma_{k}\right).

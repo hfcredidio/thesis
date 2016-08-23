@@ -88,9 +88,9 @@ lattice, in which it faces two sites at once, complicating things a little (it
 does not make it impossible, though). In the exploration process, a walker is
 put in an initial position at the bottom of the lattice. The walker observes
 the state of the site right in front of him. If it is unoccupied, the walker
-turns clockwise, otherwise it turns clockwise. Then the walker takes a step in
-the direction it is facing. This process is then repeated until one obtain a
-curve long enough. The algorithm guarantees that the curve will not
+turns clockwise, otherwise it turns counter-clockwise. Then the walker takes a
+step in the direction it is facing. This process is then repeated until one
+obtain a curve long enough. The algorithm guarantees that the curve will not
 self-intersect and will not get trapped.
 
 Because we restrict ourselves to chordal SLE, the walker can never leave the
@@ -167,7 +167,7 @@ same direction.
 Given a time series of $N$ data points $\{x_i\}$, we first generate a random walk
 out of it by making the cumulative profile of the series
 \begin{equation}
-    X_i = \sum_{i=1}^{N} \left({x_i - \left\langle x \right\rangle}\right).
+    X_i = \sum_{j=1}^{i} \left({x_j - \left\langle x \right\rangle}\right).
 \end{equation}
 The accumulated series is then divided in $m$ non overlapping partitions, each with
 $s = N/m$ elements. In case $N$ is not divisible by $m$ we can still make use
@@ -209,7 +209,7 @@ where $f_v(i)$ is the value of the trend in the point $i$. We define the fluctua
 function as the standard deviation of the detrended signal, which is a function
 of the number of points $s$ in each partition of the time series
 \begin{equation}
-    F(s) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}Y_i}.
+    F(s) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}Y_i^2}.
 \end{equation}
 
 A plot of $F(s)$ vs. $s$ in a log-log scale should show a straight line for
@@ -256,9 +256,10 @@ Davies-Harte algorithm to work is that they also be nonnegative. It is
 important to check for this condition even if just for debugging purposes,
 as it catches a lot of small mistakes.
 
-Let $W_{i\in[0,N]}$ be a sequence of $N+1$ random complex numbers where the
-real and imaginary parts are independently distributed according to a normal
-distribution with zero mean and unit variance. We then construct the series
+Finally, we define a series $W_{i\in[0,N]}$ to be a sequence of $N+1$ random
+complex numbers where the real and imaginary parts are independently
+distributed according to a normal distribution with zero mean and unit
+variance. We then construct the series
 \begin{equation}
     Y_{i\in[0,2N-1]}=\begin{cases}
         \sqrt{2Ng_{i}}\mbox{Re}\left\{ W_{i}\right\}  & \mbox{if } i=0,N\\
@@ -534,12 +535,13 @@ Table~\ref{tab:param}. We then compute the the root mean squared estimation of
 the displacement of the trace, that is,
 \begin{equation}
     \label{eq:correl}
-    F_X(i\Delta\ell) = \sqrt{\frac{1}{M-i}
+    F_X(id\ell) = \sqrt{\frac{1}{M-i}
     \sum_{j=0}^{M-i}{[X(\ell_{j+i}) - X(\ell_j)]}^2 },
 \end{equation}
-where $X(\ell) = \mbox{Re}\{\gamma(\ell)\}$.
-Analogously, $F_Y(i\Delta\ell)$ is defined taking instead
-$Y(\ell)=\mbox{Im}\{\gamma(\ell)\}$. These quantities should scale like
+where $X(\ell) = \mbox{Re}\{\gamma(\ell)\}$ and $d\ell=\ell_i-\ell_{i-1}=\ell_{\max}/M$.
+Analogously, $F_Y(id\ell)$ is defined taking instead
+$Y(\ell)=\mbox{Im}\{\gamma(\ell)\}$. These quantities should scale like, by taking
+$id\ell=\Delta\ell$,
 \begin{equation}
     F_{X}\left(\Delta\ell\right)\sim\Delta\ell^{\bar{\nu}_{x}},
     \,\,\,\,\,\,\,\,\,
@@ -606,8 +608,8 @@ isotropic percolation and SLE$(6.0,\, 0.5)$ both have $X\approx Y~t^{0.5}$, is
 in accordance with Eq.~\ref{eq:aniscale} with $\mu=2$, again as expected. The
 multi-layered case is also behaves very similarly with the SLE$(16.0,\,0.8)$.
 Now, somewhat surprisingly, the directed percolation result seems to match
-pretty closely the SLE$(3.8, 0.33)$ exponents, with $X~t^{0.33}$ and
-$Y~t^{0.5}$ approximately. It is unclear why this particular test showed
+pretty closely the SLE$(3.8, 0.33)$ exponents, with $X\sim t^{0.33}$ and
+$Y\sim t^{0.5}$ approximately. It is unclear why this particular test showed
 similar exponents, while the spatial scaling did not. One possibility is that
 the temporal scaling of the traces is more influenced by the diffusive
 properties of the drive than by the presence of long range correlations.
