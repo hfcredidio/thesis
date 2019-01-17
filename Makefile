@@ -1,15 +1,13 @@
-PDF=evince
-OS=$(shell uname)
-ifeq ($(OS), Darwin)
-PDF=open
-endif
+DOCKER_RUN=docker run -ti --rm -v $(shell pwd):/var/thesis -w /var/thesis blang/latex:ctanfull
 
 default: main
 
+shell:
+	$(DOCKER_RUN) bash
+
 main: main.tex chapters/*/main.tex main.bib
-	latexmk -pdf main
-	$(PDF) main.pdf 2> /dev/null &
+	$(DOCKER_RUN) latexmk -pdf main
 
 clean:
-	latexmk -C
-	rm main.bbl main.ttt main.fff
+	$(DOCKER_RUN) latexmk -C
+	rm -f main.bbl
